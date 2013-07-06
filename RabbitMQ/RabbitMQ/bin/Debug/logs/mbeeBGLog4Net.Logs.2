@@ -1,0 +1,3509 @@
+2013-06-24 00:41:46,448 [1] DEBUG RabbitMQ.Program - <!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script id="before-content" type="text/javascript">
+(function () {
+    if (typeof window.sdmedia !== 'object') window.sdmedia = {};
+    if (typeof window.sdmedia.site !== 'object') window.sdmedia.site = {};
+
+    var site = window.sdmedia.site;
+    site.rootdir = "//slashdot.org";
+}());
+
+var pageload = {
+	pagemark: '813157990630257200',
+	before_content: (new Date).getTime()
+};
+function pageload_done( $, console, maybe ){
+	pageload.after_readycode	= (new Date).getTime();
+	pageload.content_ready_time	= pageload.content_ready - pageload.before_content;
+	pageload.script_ready_time	= pageload.after_readycode - pageload.content_ready;
+	pageload.ready_time		= pageload.after_readycode - pageload.before_content;
+	// Only report 1% of cases.
+	maybe || (Math.random()>0.01) || $.ajax({ data: {
+		op: 'page_profile',
+		pagemark: pageload.pagemark,
+		dom: pageload.content_ready_time,
+		js: pageload.script_ready_time
+	} });
+}
+</script>
+
+
+	<title>Slashdot: News for nerds, stuff that matters</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+	<meta property="fb:admins" content="100000696822412">
+	<meta property="fb:page_id" content="267995220856">
+
+	<meta name="viewport" content="width=1000, user-scalable=yes, minimum-scale=0, maximum-scale=10.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+<link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/classic.css?release_20130620">
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie8-classic.css?release_20130620" ><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie7-classic.css?release_20130620" ><![endif]-->
+
+
+
+
+
+
+
+<!--  -->
+
+
+
+
+
+
+	<!-- <meta http-equiv="refresh" content="900000"> -->
+	<script src="//a.fsdn.com/sd/autorefresh-query.js?release_20130620"></script>
+	<script>
+		// Set Timeout to reload the page and trigger the manageQueryStringParam function
+		setTimeout(function(){
+			window.location = manageQueryStringParam('source', 'autorefresh');
+		}, 900000);
+	</script>
+
+
+
+<script src="//a.fsdn.com/sd/all-minified.js?release_20130620" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+(function(){
+var regexp=/\s*(?:\d+|many)\s+more\s*/i;
+
+	
+	var auto_more_count = 1;
+
+	function auto_more(){
+		var $more_link = $('#more-experiment a');
+		$more_link.each(function(){
+			var $lastitem = $('#firehoselist>article.fhitem:visible:last');
+			if ( Bounds.intersect(window, $lastitem) ) {
+			 // _any_ click can trigger, but click-specific ad will win
+				setTimeout(function(){ inlineAdFirehose($lastitem, 1); }, 0);
+			
+				!--auto_more_count && (auto_more=undefined);
+				// don't allow a call till the next paginate gets built and |more_possible|
+				$(document).unbind('scroll', call_auto_more);
+			}
+		});
+	};
+
+	function call_auto_more(){ auto_more && auto_more(); }
+	
+
+$('#more-experiment a').
+	live('more-possible', function( event ){
+		var $more_link=$(this);
+		if ( regexp.test($more_link.text()) ) {
+		
+			$(document).bind('scroll', call_auto_more);
+		} else {
+			$(document).unbind('scroll', call_auto_more);
+		
+		}
+	});
+})();
+</script>
+<!--[if lt IE 9]><script src="//a.fsdn.com/sd/html5.js"></script><![endif]-->
+
+
+<script type="text/javascript">
+(function() {
+    if (typeof window.janrain !== 'object') window.janrain = {};
+    if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
+    
+    /* _______________ can edit below this line _______________ */
+
+    janrain.settings.tokenUrl = 'https://slashdot.org/token_callback.pl';
+    janrain.settings.type = 'embed';
+    janrain.settings.appId = 'ggidemlconlmjciiohla';
+    janrain.settings.appUrl = 'https://login.slashdot.org';
+    janrain.settings.providers = ["google","twitter","facebook", "linkedin"];
+    janrain.settings.providersPerPage = '4';
+    janrain.settings.format = 'one column';
+    janrain.settings.actionText = 'Sign in using your account with';
+    janrain.settings.showAttribution = false;
+    janrain.settings.fontColor = '#666666';
+    janrain.settings.fontFamily = 'lucida grande, Helvetica, Verdana, sans-serif';
+    janrain.settings.backgroundColor = '#ffffff';
+    janrain.settings.width = '308';
+    janrain.settings.borderColor = '#C0C0C0';
+    janrain.settings.borderRadius = '5';    janrain.settings.buttonBorderColor = '#CCCCCC';
+    janrain.settings.buttonBorderRadius = '5';
+    janrain.settings.buttonBackgroundStyle = 'gradient';
+    janrain.settings.language = 'en';
+    janrain.settings.linkClass = 'janrainEngage';
+
+    /* _______________ can edit above this line _______________ */
+
+    function isReady() { janrain.ready = true; };
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", isReady, false);
+    } else {
+      window.attachEvent('onload', isReady);
+    }
+
+    var e = document.createElement('script');
+    e.type = 'text/javascript';
+    e.id = 'janrainAuthWidget';
+
+    if (document.location.protocol === 'https:') {
+      e.src = 'https://rpxnow.com/js/lib/login.slashdot.org/engage.js';
+    } else {
+      e.src = 'http://widget-cdn.rpxnow.com/js/lib/login.slashdot.org/engage.js';
+    }
+
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(e, s);
+})();
+</script>
+
+<script type="text/javascript">
+(function() {
+    if (typeof window.janrain !== 'object') window.janrain = {};
+    if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
+    if (typeof window.janrain.settings.share !== 'object') window.janrain.settings.share = {};
+    if (typeof window.janrain.settings.packages !== 'object') janrain.settings.packages = [];
+    janrain.settings.packages.push('share');
+
+    /* _______________ can edit below this line _______________ */
+
+    janrain.settings.share.providers = ["facebook","twitter","linkedin"];
+    janrain.settings.share.providersEmail = [];
+    janrain.settings.share.modes = ["broadcast","contact"];
+    janrain.settings.share.attributionDisplay = false;
+    janrain.settings.share.message = "";
+    janrain.settings.share.title = "";
+    janrain.settings.share.url = "";
+    janrain.settings.share.description = "";
+
+    // Modal Styles
+    janrain.settings.share.modalBackgroundColor = "#000000";
+    janrain.settings.share.modalBorderRadius = "5";
+    janrain.settings.share.modalOpacity = "0.5";
+    janrain.settings.share.modalWidth = "5";
+
+    // Body Styles
+    janrain.settings.share.bodyBackgroundColor = "#009DDC";
+    janrain.settings.share.bodyBackgroundColorOverride = false;
+    janrain.settings.share.bodyColor = "#333333";
+    janrain.settings.share.bodyContentBackgroundColor = "#ffffff";
+    janrain.settings.share.bodyFontFamily = "Helvetica";
+    janrain.settings.share.bodyTabBackgroundColor = "#f8f8f8";
+    janrain.settings.share.bodyTabColor = "#000000";
+
+    // Element Styles
+    janrain.settings.share.elementBackgroundColor = "#f6f6f6";
+    janrain.settings.share.elementBorderColor = "#cccccc";
+    janrain.settings.share.elementBorderRadius = "3";
+    janrain.settings.share.elementButtonBorderRadius = "6";
+    janrain.settings.share.elementButtonBoxShadow = "3";
+    janrain.settings.share.elementColor = "#333333";
+    janrain.settings.share.elementHoverBackgroundColor = "#eeeeee";
+    janrain.settings.share.elementLinkColor = "#009DDC";
+
+    /* _______________ can edit above this line _______________ */
+
+    function isReady() { janrain.ready = true; };
+    if (document.addEventListener) {
+        document.addEventListener("DOMContentLoaded", isReady, false);
+    } else {
+        window.attachEvent('onload', isReady);
+    }
+
+    var e = document.createElement('script');
+    e.type = 'text/javascript';
+    e.id = 'janrainWidgets';
+
+    if (document.location.protocol === 'https:') {
+      e.src = 'https://rpxnow.com/js/lib/login.slashdot.org/widget.js';
+    } else {
+      e.src = 'http://widget-cdn.rpxnow.com/js/lib/login.slashdot.org/widget.js';
+    }
+
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(e, s);
+})();
+
+$(document).ready(function(){
+    if(janrain) {
+        $("a.janrain").live('click', function () {
+
+            var $anchor = $(this);
+            var provider = $anchor.attr("data-provider");
+            var url = $anchor.attr("data-url");
+            var message = $anchor.attr("data-message");
+            var title = $anchor.attr("data-title");
+
+            janrain.engage.share.reset();
+            janrain.engage.share.showProvider(provider);
+            janrain.engage.share.setTitle(title);
+            janrain.engage.share.setMessage(message);
+            janrain.engage.share.setUrl(url);
+            janrain.engage.share.show();
+            return false;
+         });
+    }
+});
+
+
+</script>
+<meta http-equiv="X-XRDS-Location" content="http://slashdot.org/slashdot.xrds"><link rel="top" title="News for nerds, stuff that matters" href="//slashdot.org/">
+<link rel="search" title="Search Slashdot" href="//slashdot.org/search.pl">
+<link rel="alternate" title="Slashdot RSS" href="http://rss.slashdot.org/Slashdot/slashdot" type="application/rss+xml">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<!-- DoubleClick Random Number -->
+<script type="text/javascript">
+   dfp_ord=Math.random()*10000000000000000;
+   dfp_tile = 1;
+</script>
+<!-- End DoubleClick Random Number -->
+
+<script type="text/javascript">
+window.google_analytics_uacct = "UA-32013-5";
+
+var _gaq = _gaq || [];
+
+
+
+
+
+  _gaq.push(['_setAccount', 'UA-36136016-1']);
+  _gaq.push(['b._setAccount', 'UA-32013-5']);
+  _gaq.push(['_setDomainName', '.slashdot.org']);
+  _gaq.push(['b._setDomainName', '.slashdot.org']);
+
+	
+		_gaq.push(['_addIgnoredRef', 'slashdot.org']);
+		_gaq.push(['b._addIgnoredRef', 'slashdot.org']);
+	
+
+
+  _gaq.push(['_setCustomVar', 1, 'User Type',  'Anon', 3]);
+  _gaq.push(['b._setCustomVar', 1, 'User Type',  'Anon', 3]);
+	
+	_gaq.push(['_setCustomVar', 2, 'Page','index2', 3]);
+	_gaq.push(['b._setCustomVar', 2, 'Page','index2', 3]);
+
+	
+
+
+
+
+
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['b._trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  _gaq.push(['b._trackPageLoadTime']);
+
+
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body class="anon index2 ">
+
+
+	<div id="top_parent"></div>
+	<a name="topothepage"></a>
+
+<div id="topadspace">
+	<table id="topadtable"><tr><td>
+	<div class="ad1 advertisement"><!-- ad position 1 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad1">
+		
+			
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'mainpage';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/pg_index_p1_leader;pg=index2;logged_in=0;tile='+dfp_tile+';sz=728x90;u=;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+			
+		
+</div>
+<!-- End DoubleClick Ad Tag --></div>
+	</td>
+	<td>
+	
+	<div id="hubad">
+	<!-- begin ad tag (tile=1) -->
+	<script type="text/javascript">
+	//<![CDATA[
+		document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/sd_hub_icon;tile=' + dfp_tile + ';sz=200x90;ord=' + dfp_ord + '?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+	<noscript><a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ad.doubleclick.net/jump/ostg.slashdot/sd_hub_icon;tile=1;sz=200x90;ord=123456789?</tags> %26lt%3B%2Ftags%26gt" target="_blank"><img src="http://ad.doubleclick.net/ad/ostg.slashdot/sd_hub_icon;tile=1;sz=200x90;ord=123456789?" border="0" alt=""></a></noscript>
+	<!-- end ad tag -->
+	</div>
+
+</td></tr></table>
+</div>
+
+
+	<header class="col_wrapper container clearfix h">
+            <hgroup>
+                <section class="grid_9">
+			<div id="logo">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Slashdot joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt"><span>Slashdot</span></a>
+        			<div id="jump" class="hide">
+                			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Stories joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/#main-articles</tags> %26lt%3B%2Ftags%26gt">Stories</a><br>
+                			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Slash Boxes joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/#blocks</tags> %26lt%3B%2Ftags%26gt">Slash Boxes</a><br>
+                			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Comments joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/#comments</tags> %26lt%3B%2Ftags%26gt">Comments</a>
+        			</div>
+			</div>
+         <a class='data-title' href='mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/slash-stats/week</tags> %26lt%3B%2Ftags%26gt' id='sg_hof_mvtest_title' onclick="showHof('week'); return false;"><span class='ui-icon medal ico-w'></span></a>
+		
+
+
+			<form id="search" method="get" action="//slashdot.org/index2.pl">
+				<input type="text" name="fhfilter" value="" id="searchquery">
+				<span class="ui-icon search"></span>
+				<input type="submit" value="Search">
+				
+			</form>
+			
+			
+                </section>
+                <nav role="top-navigation" class="grid_15">
+		<ul class="dropnav">
+
+	<li>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Join joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/newuser</tags> %26lt%3B%2Ftags%26gt" onclick="getModalPrefs('newUserModal', 'Create Account', 1); $('#modal_box').addClass('join'); return false;">Join</a>
+		
+	</li>
+
+	<li>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Login joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box(); return false;">Login</a>
+		
+	</li>
+
+	<li>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Submit joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/submission</tags> %26lt%3B%2Ftags%26gt" title="Submit a Story to Slashdot">Submit</a>
+		
+	</li>
+
+	<li>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Newsletter joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdotheadlines.p.slashdot.org/slashdot_daily_newsletter.html</tags> %26lt%3B%2Ftags%26gt" onclick="newsletterSignup(); return false;" title="Subscribe to Newsletter">Newsletter</a>
+		
+	</li>
+
+	<li>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Jobs joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/job_board.pl</tags> %26lt%3B%2Ftags%26gt">Jobs</a>
+		
+	</li>
+
+	<li class="droparrowneeded">
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Channels joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/topic</tags> %26lt%3B%2Ftags%26gt">Channels</a>
+		
+			<ul>
+			
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=SlashBI joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/topic/bi</tags> %26lt%3B%2Ftags%26gt">SlashBI</a>
+			
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=SlashCloud joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/topic/cloud</tags> %26lt%3B%2Ftags%26gt">SlashCloud</a>
+			
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=SlashDataCenter joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/topic/datacenter</tags> %26lt%3B%2Ftags%26gt">SlashDataCenter</a>
+			
+			</ul>
+		
+	</li>
+
+	<li>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=SlashTV joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tv.slashdot.org/</tags> %26lt%3B%2Ftags%26gt" class="btn link slashtvico"><span>SlashTV</span></a>
+		
+	</li>
+
+</ul>
+
+
+<!-- dropnavstyle begin -->
+<style type="text/css">
+
+.dropnav{
+	border:none;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	font: "Arial, sans-serif;
+	font-size:1em;
+	font-weight:bold;
+	list-style:none;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	}
+.dropnav ul{
+	padding-top:10px;
+	background:none;
+	height:25px;
+	list-style:none;
+	margin:0;
+	padding:0;
+	}
+	.dropnav li{
+		float:right;
+		padding:0px;
+		}
+	.dropnav li a{
+		background:none bottom right no-repeat;
+		color:#ffffff;
+		display:block;
+		font-weight:normal;
+		line-height:25px;
+		margin:0px;
+		padding:0px 5px;
+		padding-bottom: 6px;
+		text-align:center;
+		text-decoration:none;
+		}
+		.dropnav li a:hover, .dropnav ul li:hover a{
+			 /* background: #005555 bottom center no-repeat; */
+			  color:#FFFFFF;
+			  text-decoration:underline; 
+			}
+	.dropnav li ul{
+		background:#004242;
+		display:none;
+		height:auto;
+		min-width:100px;
+		margin:0px;
+		padding:0px;
+		border:0px;
+		position:absolute;
+		z-index:200;
+		/*top:1em;
+		/*left:0;*/
+		}
+	.dropnav li:hover ul{
+		display:block;
+		
+		}
+	.dropnav li li {
+		display:block;
+		float:none;
+		min-width:100px;
+		margin:0px;
+		padding:0px;
+		}
+	.dropnav li:hover li a{
+		background:none;
+		
+		}
+	.dropnav li ul a{
+		display:block;
+		height:25px;
+		font-size:12px;
+		font-style:normal;
+		margin:0px;
+		padding:0px 10px 0px 15px;
+		text-align:left;
+		}
+		.dropnav li ul a:hover, .dropnav li ul li:hover a{
+		 	background:#005555 center left no-repeat; 
+			border:0px;
+			color:#ffffff;
+			text-decoration:none;
+			}
+	.dropnav p{
+		clear:left;
+		}
+
+	.dropnav li.droparrowneeded>a:after {
+		content: "\25BE";
+		margin-left: 5px; 
+		text-decoration: none;
+	}
+
+		
+</style>
+<!-- dropnavstyle end -->
+		
+                </nav>
+            </hgroup>
+        </header>
+
+
+
+
+	<section>
+   
+      <div id='embbeded_login_modal' class="hide">
+<form action="https://slashdot.org/my/login" method="post" onsubmit="if (global_returnto) { this.returnto.value = global_returnto }" class="embedded"><fieldset style="-webkit-border-radius:10px 10px 0 0;border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0">
+<div style='height:25px;'>&nbsp;</div>
+    <input type="hidden" name="returnto" value="">
+    <input type="hidden" name="op" value="userlogin">
+    <p>
+        <label class="fleft" for="unickname">Nickname:</label>
+        <input type="text" name="unickname" value="">
+    </p>
+    <p>
+        <label class="fleft" for="upasswd">Password:</label>
+        <input type="password" name="upasswd" placeholder="6-20 characters long">
+    </p>
+    <label class="checkbox"><input type="checkbox" name="login_temp" value="yes"> Public Terminal</label>
+    <br>
+    <hr>
+    <input type="submit" name="userlogin" value="Log In" class="fno"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Forgot your password? joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/mailpassword</tags> %26lt%3B%2Ftags%26gt" class="btn link" onclick="getModalPrefs('sendPasswdModal', 'Retrieve Password', 1); return false;">Forgot your password?</a>
+</fieldset></form>
+
+                <form action="//slashdot.org/login.pl" method="post"><fieldset style="-webkit-border-radius:0 0 10px 10px;border-radius:0 0 10px 10px;-moz-border-radius:0 0 10px 10px">
+                <input type="hidden" name="op" value="claim_openid">
+                <input type="hidden" name="openid_login" value="1">
+                <label for="openid_url" class="openid_url">
+                <input type="text" name="openid_url" value="http://" size="32" maxlength="255">
+                </label><br>
+                <input type="submit" value="Log in with OpenID" class="button fno" style="width:230px;">
+                </fieldset></form>
+                <div id="janrainEngageEmbed"></div>
+
+
+<div class="actions">
+ <a class="ico close" onclick="hide_login_slider();" href="mailto:jimmy@joeschedule.mailgun.org?subject=Close joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt"><span>Close</span></a>
+</div>
+</div>
+   
+   <div class="ad33 advertisement"><!-- ad position 33 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad33">
+		
+			
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'mainpage';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/mainpage_p33_powerswitch;pg=index2;logged_in=0;tile='+dfp_tile+';sz=980x66;u=;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+			
+		
+</div>
+<!-- End DoubleClick Ad Tag --></div>
+		<a name="main-articles"></a><!-- body begin -->
+
+
+
+
+
+
+
+	
+	<style type="text/css">
+menu, menu * {
+	text-decoration:none;
+}
+
+menu[type=context] {
+	display:none;
+	position:absolute;
+	z-index:10000;
+}
+
+menu[type=context]:not(.brief) {
+	background-color:#dfdfdf;
+	margin:0;
+	padding:2px 0.5em;
+	border-style:solid;
+	border-width:1px;
+	border-color:#eeeeee #aaaaaa #aaaaaa #eeeeee;
+	-moz-border-radius-topright:.7em;
+	-webkit-border-top-right-radius: 0.7em 0.7em;
+}
+
+menu.full[type=context] > a.slash-hover:first-child {
+	-moz-border-radius-topright:.6em;
+	-webkit-border-top-right-radius: 0.6em 0.6em;
+}
+
+
+
+menu.brief[type=context] > a {
+	-moz-border-radius:.6em;
+	-webkit-border-radius: 0.6em;
+	color:#ffffff;
+	background-color:#000000;
+}
+
+/*
+span.briefmenu a.tag:not(.datatype) {
+    padding-left:.5em;
+}
+*/
+
+
+
+
+/* #tag-menu a, #feedback-menu a  { */
+menu.tag-menu a {
+	display:list-item;
+	list-style:none;
+	text-align:left;
+	font-weight:bold;
+	color:black;
+	padding:0.1em 0.5em;
+	margin:-0.1em -0.5em;
+	cursor:pointer;
+}
+
+
+.tags .edit-bar { position:relative; }
+article aside .share .addthis_toolbox { display:block; width:60px; float:left; }
+article aside.view_mode .share { min-width:120px; padding-top:.5em; }
+#firehose.list article header h2 {padding-left: 20px; !important}
+.novote .vote { display:none; }
+.vote > a, .votedup > a, .voteddown > a {border-width:1px; border-style:solid; border-color:rgba(0,0,0,0.25); display:block; height:22px; width:22px; margin:-2px 3px 0 0; color:rgb(255,255,255); text-decoration:none; line-height:22px; text-align:center; font-weight:bold; font-size:14px; float:left; border-width:1px; border-style:solid; border-color:rgba(0,0,0,0.5); }
+.vote > a, .votedup > a, .voteddown > a {color:rgb(0,0,0);}
+article.fhitem-submission h2 .vote > a, article.fhitem-submission h2 .votedup > a, article.fhitem-submission h2 .voteddown > a { border-color:rgba(0,0,0,0.15); }
+.vote .up, .vote .down, .votedup .up, .votedup .down, .voteddown .up, .voteddown .down { border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; text-shadow:0 0 2px #000000; } 
+article:not(.fhitem-story) .vote .up,article:not(.fhitem-story) .vote .down,article:not(.fhitem-story) .votedup .up,article:not(.fhitem-story) .votedup .down,article:not(.fhitem-story) .voteddown .up,article:not(.fhitem-story) .voteddown .down { text-shadow:none !important; }
+.voteddown .down, .votedup .up { text-indent:2px; line-height:24px; }
+article:not(.fhitem-story) .votedup .up,article:not(.fhitem-story) .voteddown .down {background: rgb(174,174,174);background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(174,174,174)), to(rgb(193,193,193)));background-image: -moz-linear-gradient(100% 100% 90deg,rgb(193,193,193), rgb(174,174,174) 100%);color:rgb(0,0,0);}
+article.fhitem-story .votedup .up,article.fhitem-story .voteddown .down {background: rgb(0,66,66);background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(0,53,53)), to(rgb(0,102,102)));background-image: -moz-linear-gradient(100% 100% 90deg,rgb(0,102,102), rgb(0,53,53) 100%);}
+
+
+
+
+
+#tag-menu span.var-tag {
+font-weight:normal;
+color:#444444;
+}
+
+menu.reasons-menu a {
+padding:0 .25em 0 .25em;
+font-size:80%;
+-moz-border-radius:.5em;
+-webkit-border-radius:.5em;
+cursor:pointer;
+}
+
+menu.reasons-menu a:hover {
+background:rgb(153,153,153);
+background:-moz-linear-gradient(100% 100% 90deg, rgb(102,102,102), rgb(153,153,153) 70%) repeat scroll 0 0 rgb(102,102,102);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(153,153,153)), to(rgb(102,102,102)));
+color:#fff;
+text-decoration:none;
+font-weignt:normal;
+}
+
+article.fhitem-story menu.reasons-menu a:hover {
+background:#002323 !important;
+background:-moz-linear-gradient(100% 100% 90deg, #002323, #005353 70%) repeat scroll 0 0 #002323 !important;
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#005353), to(#002323)) !important;
+}
+
+
+menu.reasons-menu {
+	display:none;
+	margin:0;
+	padding:0;
+}
+
+div.fhitem h3 menu.reasons-menu {
+margin:0.25em 0 0;
+}
+
+div.fhitem h3 menu.reasons-menu a.tag {
+font-size:.8em;
+}
+
+#tag-menu a.slash-hover,
+#feedback-menu a.slash-hover,
+
+.tag-display span.tag:hover,
+.tag-display span.tag.trigger {
+	color:white;
+	background-color:rgb(0, 85, 85);
+}
+
+#tag-menu a.slash-hover span.var-tag {
+	color:#eee;
+}
+
+.tag-entry.default {
+        color:#ccc;
+}
+
+.brief .nix {
+	margin-top:-1.35em;
+	margin-left:0px;
+	margin-top:-1.15em;
+	text-decoration:none;
+	line-height:1.35em;
+	padding:0 2px;
+	-moz-border-radius:.6em 0 0 .6em;
+	-webkit-border-radius:.6em 0 0 .6em;
+	-o-border-radius:.6em 0 0 .6em;
+	border-radius:.6em 0 0 .6em;
+    color:#fff !important;
+    background:transparent !important;
+}
+
+.brief .nix:hover {
+    background:rgb(153,153,153) !important;
+    background:-moz-linear-gradient(100% 100% 90deg, rgb(102,102,102), rgb(153,153,153) 70%) repeat scroll 0 0 rgb(102,102,102) !important;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(153,153,153)), to(rgb(102,102,102))) !important;
+}
+
+</style>
+
+<menu id="nix-reasons" style="display:none">
+	<a class="tag">binspam</a><a class="tag">dupe</a><a class="tag">notthebest</a><a class="tag">offtopic</a><a class="tag">slownewsday</a><a class="tag">stale</a><a class="tag">stupid</a>
+</menu>
+<menu id="nod-reasons" style="display:none">
+	<a class="tag">fresh</a><a class="tag">funny</a><a class="tag">insightful</a><a class="tag">interesting</a><a class="tag">maybe</a>
+</menu>
+<menu id="comment-nix-reasons" style="display:none">
+	<a class="tag">offtopic</a><a class="tag">flamebait</a><a class="tag">troll</a><a class="tag">redundant</a><a class="tag">overrated</a>
+</menu>
+<menu id="comment-nod-reasons" style="display:none">
+	<a class="tag">insightful</a><a class="tag">interesting</a><a class="tag">informative</a><a class="tag">funny</a><a class="tag">underrated</a>
+</menu>
+
+<menu id="tag-nod-reasons" style="display:none">
+	<a class="tag">descriptive</a>
+</menu>
+<menu id="feedback-menu" class="tag-menu" type="context">
+	<a class="tag">typo</a><a class="tag">dupe</a><a class="tag">error</a>
+</menu>
+<menu id="tag-menu" class="tag-menu none" type="context">
+
+<!--	<a data-op="!" class="nix">!<span class="var-tag hide"></span></a>-->
+
+</menu>
+
+<script type="text/javascript">
+$(function(){
+var $CURRENT_MENU, $TAG_MENU=$('#tag-menu'), NOTNOT=/^!!/, IE7=/^7\.0/, TAG_PREFIX=/^\/tag\//;
+
+function get_tag_name( $tag ){
+	return ($tag.attr('href') || '').replace(TAG_PREFIX, '') || $tag.text().toLowerCase();
+}
+
+function trigger_menu( e, selector, $menu, menu_content ){
+	var $target=$(original_target(e, selector)), in_use=$target.is('.trigger');
+	if ( $CURRENT_MENU ) {
+		$CURRENT_MENU.menu('cancel', e);
+		$CURRENT_MENU = null;
+	}
+
+	if ( !in_use ) {
+		menu_content && $menu.stop(true, true).hide().html(menu_content);
+		($CURRENT_MENU=$menu).menu('context', e);
+	}
+	return !in_use;
+}
+
+function open_menu( trigger, $menu ){
+	var $trigger=$(trigger), $fhitem=$trigger.closest('.fhitem');
+	$fhitem.length && user_intent('interest', $fhitem[0]);
+
+	$menu.appendTo(document.body).css({ opacity:0 }).show();
+
+	var 	right	= $fhitem.offset().left + $fhitem.width(),
+		global	= $trigger.offset(),
+		local	= $menu.offsetParent().offset();
+
+	// Ugly IE position hack required:
+	$.browser.msie && IE7.test($.browser.version) && (local.top = 0);
+
+	// pin the menu (horizontally) on-screen
+	global.left = Math.min(global.left, right-$menu.width());
+
+	$trigger.addClass('trigger');
+	$menu.css({
+		position:	'absolute',
+		top:		global.top - local.top + $trigger.height(),
+		left:		global.left - local.left,
+		opacity:	1
+	});
+}
+
+function close_menu( trigger, $menu ){
+	$menu.hide();
+	$(trigger).removeClass('trigger');
+	($CURRENT_MENU===$menu) && ($CURRENT_MENU=false);
+}
+
+/* T2 tag context-menu */
+var $TAG_MENU=$('#tag-menu'), NOTNOT=/^!!/;
+
+
+    var user_is_admin = 0;
+
+	
+
+$('a[rel=tag]').live('mousedown',function(ea){
+    window.open(this.href);
+    return false;
+})
+
+$('.tag-bar .disagree').live('mousedown',function(ee){
+	var fhitem = $(original_target(ee)).closest('.fhitem')[0],
+		command = ('!' + $(original_target(ee)).attr("data-tag")).replace(NOTNOT, '');
+    try { Tags.submit(fhitem, command); } catch ( err ) {  }
+    return false;
+})
+
+
+
+$('a[rel=tag]').
+	live('mousedown', function( e ){
+        
+            return true;
+        
+
+	}).
+	live('click', function( e ){
+		if ( !logged_in ) {
+			var	target	= original_target(e),
+				tag	= $(target).text();
+			addfhfilter(tag);
+		}
+		e.preventDefault();
+		return false;
+	});
+
+$TAG_MENU.menu({
+	cssNamespace: 'slash',
+	liveTriggers: true,
+	clickDuration: 300,
+
+	start: function( e, ui ){
+		var	$tag	= $(ui.trigger),
+			tag	= get_tag_name($tag),
+			context	= firehose_settings && firehose_settings.viewtitle;
+
+		// Insert the tagname into the menu items where needed.
+		$TAG_MENU.find('span.var-tag').text(tag);
+		$TAG_MENU.find('a.nix').attr('title','not ' + tag);
+		
+
+			// non-admins may only delete their own tags
+		$TAG_MENU.find('a:[data-op="-"]').toggle($tag.is('.my'));
+	
+
+		// *tagname* in *viewtitle*
+		$TAG_MENU.find('a:[data-op="="]').toggle(!!context);
+		context && $TAG_MENU.find('span.var-view').text(context);
+
+		open_menu($tag, $TAG_MENU);
+	},
+
+	select: function( e, ui ){
+		var	$tag	= $(ui.trigger),
+			tag	= get_tag_name($tag),
+			op	= $(ui.select).attr('data-op'),
+			fhitem,
+			command;
+
+		// Global for positioning other things.
+		$related_trigger = $tag;
+
+		switch ( op ) {
+			case '=':
+				addfhfilter(tag);
+				break;
+
+			default:
+				fhitem = $tag.closest('.fhitem')[0];
+				command = (op + tag).replace(NOTNOT, '');
+				try { Tags.submit(fhitem, command); } catch ( err ) {  }
+				break;
+		}
+	},
+
+	stop: function( e, ui ){ close_menu(ui.trigger, $TAG_MENU); }
+});
+
+
+
+
+/* T2 feedback context-menu */
+
+
+
+/* T2 datatype context-menu (admin-only) */
+
+
+
+
+
+
+});
+</script>
+
+	
+	
+
+        <div class="col_1">
+            <nav role="sections" id="links" class="left_menu">
+    	   <ul class="menu" id="fhtablist_new">
+
+			
+				
+				
+				
+				
+					
+				
+				
+				<li class="active Stories">
+				
+				
+				
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Stories joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/stories</tags> %26lt%3B%2Ftags%26gt">Stories</a>
+				<span></span>
+				</li>
+				
+				
+				
+				
+				
+				<li class="Submissions">
+				
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Submissions joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/recent</tags> %26lt%3B%2Ftags%26gt">Submissions</a>
+				
+				</li>
+				
+				
+				
+				
+				
+				<li class="Popular">
+				
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Popular joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/popular</tags> %26lt%3B%2Ftags%26gt">Popular</a>
+				
+				</li>
+				
+				
+				
+				
+				
+				<li class="Blog">
+				
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Blog joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/blog</tags> %26lt%3B%2Ftags%26gt">Blog</a>
+				
+				</li>
+
+		
+	</ul>
+
+
+            <h4 class="hide" id="links-sections-title" class='active'>
+			
+				<a class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Slashdot joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Slashdot</a>
+				
+				
+				<script type="data">{ color: "", viewname: "stories", filter: "", name: "Main", id: 13 }</script>
+
+			
+		</h4>
+	
+	
+	
+	
+		<ul id="firehose-sections" role="sections" class="left_menu">
+	
+
+	<li class="enhancedspacer"></li>
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-askslashdot">
+			<a id="fhsectiontitle-4" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Ask Slashdot joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ask.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Ask Slashdot</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-bookreview">
+			<a id="fhsectiontitle-6" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Book Reviews joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://books.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Book Reviews</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-games">
+			<a id="fhsectiontitle-10" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Games joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://games.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Games</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-idle">
+			<a id="fhsectiontitle-28" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Idle joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://idle.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Idle</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-yro">
+			<a id="fhsectiontitle-17" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=YRO joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">YRO</a>
+			
+		</li>
+		
+	
+	<li class="enhancedspacer"></li>
+	 
+				
+
+		
+		
+		
+		<li class="" id="fhsection-cloud">
+			<a id="fhsectiontitle-cloud" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Cloud joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/stories/cloud</tags> %26lt%3B%2Ftags%26gt">Cloud</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-hardware">
+			<a id="fhsectiontitle-21" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Hardware joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://hardware.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Hardware</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-linux">
+			<a id="fhsectiontitle-19" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Linux joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://linux.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Linux</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-it">
+			<a id="fhsectiontitle-18" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Management joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://it.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Management</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-mobile">
+			<a id="fhsectiontitle-29" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Mobile joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://mobile.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Mobile</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		<li class="" id="fhsection-science">
+			<a id="fhsectiontitle-14" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Science joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://science.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Science</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		
+		<li class="" id="fhsection-security">
+			<a id="fhsectiontitle-security" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Security joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/stories/security</tags> %26lt%3B%2Ftags%26gt">Security</a>
+			
+		</li>
+		
+	 
+				
+
+		
+		
+		
+		<li class="" id="fhsection-storage">
+			<a id="fhsectiontitle-storage" class="data-title" href="mailto:jimmy@joeschedule.mailgun.org?subject=Storage joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/stories/storage</tags> %26lt%3B%2Ftags%26gt">Storage</a>
+			
+		</li>
+		
+	
+	</ul>
+            </nav>
+        </div>
+	
+        <div class="col_2">
+            <section id="content" class="grid_24">
+                <section id="firehose" class="nothumbs ">
+	
+		
+                    <div class="grid_24 msg" id="firehose-message-tray">
+                    <p>
+			
+			
+			Want to read Slashdot from your mobile device? Point it at <a href="mailto:jimmy@joeschedule.mailgun.org?subject=m.slashdot.org joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://m.slashdot.org/</tags> %26lt%3B%2Ftags%26gt">m.slashdot.org</a> and keep reading!
+			</p>
+                        <span class="slant"></span>
+                    </div>
+		   
+                    <a name="articles"></a>
+        
+                
+        
+
+        	<div class="grid_24">
+				<div class="paginate" id="fh-pag-div">
+<div class="menu" id="fh-paginate">
+
+
+
+
+        
+	 
+	 <a class="prevnextbutdis" href="mailto:jimmy@joeschedule.mailgun.org?subject=&laquo; Newer joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/#</tags> %26lt%3B%2Ftags%26gt" onclick="return false;">&laquo; Newer</a>
+        
+	 
+		<a class="prevnextbutact" href="mailto:jimmy@joeschedule.mailgun.org?subject=Older &raquo; joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?page=1</tags> %26lt%3B%2Ftags%26gt">Older &raquo;</a>
+
+	<span class="inactive more">
+		
+	</span>
+
+
+
+
+
+</div>
+</div>
+			</div>
+
+            <div id="firehoselist" class="fhroot fleft ">
+                <article id="firehose-47761923" data-fhid="47761923" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47761923</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47761923">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=playstation</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('playstation');">
+			
+				<img src="//a.fsdn.com/sd/topics/playstation_64.png" width="64" height="64" alt="PlayStation (Games)" title="PlayStation (Games)">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47761923"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=PlayStation 4 Will Be Running Modified Fre... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://games.slashdot.org/story/13/06/24/000250/playstation-4-will-be-running-modified-freebsd</tags> %26lt%3B%2Ftags%26gt">PlayStation 4 Will Be Running Modified FreeBSD</a></span>
+			
+			
+			<span class="comments commentcnt-47761923">90</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47761923">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47761923" datetime="on Sunday June 23, 2013 @10:58PM">on Sunday June 23, 2013 @10:58PM</time>
+	
+	
+		<br>from the under-the-hood dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47761923">
+
+		
+
+
+			<div id="text-47761923" class="p">
+			jones_supa writes <i>"This discovery comes nicely alongside the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=celebration of FreeBSD's 20th birthday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bsd.slashdot.org/story/13/06/22/0130244/happy-20th-birthday-freebsd</tags> %26lt%3B%2Ftags%26gt">celebration of FreeBSD's 20th birthday</a>, for all the UNIX nerds. The operating system powering the PlayStation 4 is <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Orbis OS, which is a Sony spin of FreeBSD ... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.phoronix.com/scan.php?page=news_item&amp;px=MTM5NDI</tags> %26lt%3B%2Ftags%26gt">Orbis OS, which is a Sony spin of FreeBSD 9.0</a>. It's not a huge surprise FreeBSD is being used over Linux, in part due to the more liberal licensing. The PlayStation 4 is x86-64 based now rather than Cell-based, which makes it easier to use FreeBSD. BSDs in general currently lack manufacturer supported full-feature AMD graphics driver, which leads to the conclusion that Sony and AMD have likely co-developed a discrete driver for the PS4. Some <a href="mailto:jimmy@joeschedule.mailgun.org?subject=pictures of the development kit boot loade... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.vgleaks.com/some-details-about-playstation-4-os-development/</tags> %26lt%3B%2Ftags%26gt">pictures of the development kit boot loader</a> (GRUB) have been published too."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 90 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://games.slashdot.org/story/13/06/24/000250/playstation-4-will-be-running-modified-freebsd</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47761923">90</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47761923" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=bsd joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/bsd</tags> %26lt%3B%2Ftags%26gt" target="_blank">bsd</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=freebsd joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/freebsd</tags> %26lt%3B%2Ftags%26gt" target="_blank">freebsd</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=games joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/games</tags> %26lt%3B%2Ftags%26gt" target="_blank">games</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47760281" data-fhid="47760281" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47760281</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47760281">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=power</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('power');">
+			
+				<img src="//a.fsdn.com/sd/topics/power_64.png" width="64" height="64" alt="Power" title="Power">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47760281"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=The Aging of Our Nuclear Power Plants Is N... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/2249237/the-aging-of-our-nuclear-power-plants-is-not-so-graceful</tags> %26lt%3B%2Ftags%26gt">The Aging of Our Nuclear Power Plants Is Not So Graceful</a></span>
+			
+			
+			<span class="comments commentcnt-47760281">174</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47760281">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47760281" datetime="on Sunday June 23, 2013 @07:57PM">on Sunday June 23, 2013 @07:57PM</time>
+	
+	
+		<br>from the tests-of-time dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47760281">
+
+		
+
+
+			<div id="text-47760281" class="p">
+			Lasrick writes <i>"This is a very thoughtful article on <a href="mailto:jimmy@joeschedule.mailgun.org?subject=nuclear power plant aging joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.thebulletin.org/nuclear-aging-not-so-graceful</tags> %26lt%3B%2Ftags%26gt">nuclear power plant aging</a>: how operators use early retirement of plants to extract concessions from rate-payers and a discussion on how California's 'forward-looking planning process' has probably mitigated disruption from the closing of San Onofre."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 174 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/2249237/the-aging-of-our-nuclear-power-plants-is-not-so-graceful</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47760281">174</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47760281" class="tag-bar none"><a class="popular topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=power joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/power</tags> %26lt%3B%2Ftags%26gt" target="_blank">power</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=technology joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/technology</tags> %26lt%3B%2Ftags%26gt" target="_blank">technology</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47757833" data-fhid="47757833" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47757833</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47757833">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=google</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('google');">
+			
+				<img src="//a.fsdn.com/sd/topics/google_64.png" width="64" height="64" alt="Google" title="Google">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47757833"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Google Preparing "Google Mine" For Organiz... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/215211/google-preparing-google-mine-for-organizing-and-sharing-your-stuff-on-google</tags> %26lt%3B%2Ftags%26gt">Google Preparing "Google Mine" For Organizing and Sharing Your Stuff On Google+</a></span>
+			
+			
+			<span class="comments commentcnt-47757833">79</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47757833">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47757833" datetime="on Sunday June 23, 2013 @06:42PM">on Sunday June 23, 2013 @06:42PM</time>
+	
+	
+		<br>from the have-some-google-for-your-google dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47757833">
+
+		
+
+
+			<div id="text-47757833" class="p">
+			MojoKid writes <i>"George Carlin said it best, we all 'need a place to put our stuff.' It seems the folks at Google understand this age old wisdom as well and as such will be launching a new service. <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Google Mine will reportedly soon be integr... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://hothardware.com/News/Google-Prepares-Google-Mine-For-Organizing-and-Sharing-Your-Stuff-On-G/</tags> %26lt%3B%2Ftags%26gt">Google Mine will reportedly soon be integrated with Google+</a> so that users can share their belongings with friends in circles they so designate. The new service will also allow G+ users to rate and review items as well, so that anyone in your Google+ stream that you allow, can see the items and your opinion of them. Reportedly there is also an Android app on the way for Mine, which seems like a natural of course, for sharing your stuff on the go. What's perhaps most interesting about the prospects of Google+ Mine could be the secondary benefit that Google receives from data 'mining' your shares on the items you own, use or want."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 79 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/215211/google-preparing-google-mine-for-organizing-and-sharing-your-stuff-on-google</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47757833">79</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47757833" class="tag-bar none"><a class="popular topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=google joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/google</tags> %26lt%3B%2Ftags%26gt" target="_blank">google</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=social joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/social</tags> %26lt%3B%2Ftags%26gt" target="_blank">social</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47756813" data-fhid="47756813" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47756813</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47756813">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=google</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('google');">
+			
+				<img src="//a.fsdn.com/sd/topics/google_64.png" width="64" height="64" alt="Google" title="Google">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47756813"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject= FTC Reviews Google's Purchase of Navigati... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/206214/ftc-reviews-googles-purchase-of-navigation-app-waze</tags> %26lt%3B%2Ftags%26gt"> FTC Reviews Google's Purchase of Navigation App Waze</a></span>
+			
+			
+			<span class="comments commentcnt-47756813">59</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47756813">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47756813" datetime="on Sunday June 23, 2013 @05:25PM">on Sunday June 23, 2013 @05:25PM</time>
+	
+	
+		<br>from the taking-a-closer-look dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47756813">
+
+		
+
+
+			<div id="text-47756813" class="p">
+			An anonymous reader writes <i>"Google's acquisition of Waze has peaked the interest of the FTC and is now <a href="mailto:jimmy@joeschedule.mailgun.org?subject=facing an antitrust review joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://blogs.wsj.com/digits/2013/06/22/google-confirms-antitrust-review-of-waze-deal/</tags> %26lt%3B%2Ftags%26gt">facing an antitrust review</a>. "Google confirmed that it has been contacted by lawyers from the Federal Trade Commission over the company's '$1.1 billion <a href="mailto:jimmy@joeschedule.mailgun.org?subject=acquisition of the mobile navigation compa... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/10/0349242/google-to-buy-waze-for-13-billion</tags> %26lt%3B%2Ftags%26gt">acquisition of the mobile navigation company Waze</a>, which closed in mid-June. A Google spokeswoman declined to comment on details of the antitrust review by the FTC. Representatives of the agency didn't immediately respond to a request for comment.'"</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 59 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/206214/ftc-reviews-googles-purchase-of-navigation-app-waze</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47756813">59</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47756813" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=business joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/business</tags> %26lt%3B%2Ftags%26gt" target="_blank">business</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=google joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/google</tags> %26lt%3B%2Ftags%26gt" target="_blank">google</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=usa joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/usa</tags> %26lt%3B%2Ftags%26gt" target="_blank">usa</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47753677" data-fhid="47753677" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47753677</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47753677">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=business</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('business');">
+			
+				<img src="//a.fsdn.com/sd/topics/business_64.png" width="64" height="64" alt="Businesses" title="Businesses">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47753677"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=A Different Approach To Making Alternative... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://science.slashdot.org/story/13/06/23/188228/a-different-approach-to-making-alternative-fuels-practical</tags> %26lt%3B%2Ftags%26gt">A Different Approach To Making Alternative Fuels Practical</a></span>
+			
+			
+			<span class="comments commentcnt-47753677">61</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47753677">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47753677" datetime="on Sunday June 23, 2013 @04:12PM">on Sunday June 23, 2013 @04:12PM</time>
+	
+	
+		<br>from the step-by-step dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47753677">
+
+		
+
+
+			<div id="text-47753677" class="p">
+			First time accepted submitter overmod writes <i>"Browsing on a completely unrelated subject, I came across this New York Times description of Solazyme. From the article: '...in 2003, Mr. Wolfson packed up and moved from New York to Palo Alto, Calif., where Mr. Dillon lived. They started a company called Solazyme. In mythical Valley tradition, they worked in Mr. Dillon&rsquo;s garage, growing algae in test tubes. And they found a small knot of investors attracted by the prospect of <a href="mailto:jimmy@joeschedule.mailgun.org?subject=compressing a multimillion-year process in... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.nytimes.com/2013/06/23/business/for-solazyme-a-side-trip-on-the-way-to-clean-fuel.html?src=me&amp;ref=general</tags> %26lt%3B%2Ftags%26gt">compressing a multimillion-year process into a matter of days</a>.
+
+Now, a decade later, they have released into the marketplace their very first algae-derived oil produced at a commercial scale. Yet the destination for this oil &mdash; pale, odorless and dispensed from a small matte-gold bottle with an eyedropper &mdash; is not gas tanks, but the faces of women worried about their aging skin.'  What I find interesting is the model they've adopted for short-term growth, which I would not have seen coming from a technology oriented toward biofuel production.  Leads me to wonder what other nominally-green technologies that would otherwise be slow if not impossible to scale to workable businesses might have 'niche' applications, with high perceived marginal value, that could be used to boost capital, rather than relying on donations, grants, or nebulous save-the-planet goodwill."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 61 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://science.slashdot.org/story/13/06/23/188228/a-different-approach-to-making-alternative-fuels-practical</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47753677">61</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47753677" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=business joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/business</tags> %26lt%3B%2Ftags%26gt" target="_blank">business</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=science joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/science</tags> %26lt%3B%2Ftags%26gt" target="_blank">science</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=technology joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/technology</tags> %26lt%3B%2Ftags%26gt" target="_blank">technology</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47751157" data-fhid="47751157" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47751157</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47751157">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=technology</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('technology');">
+			
+				<img src="//a.fsdn.com/sd/topics/technology_64.png" width="64" height="64" alt="Technology" title="Technology">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47751157"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Disney Research Creates Megastereo - Panor... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/168218/disney-research-creates-megastereo---panoramas-with-depth</tags> %26lt%3B%2Ftags%26gt">Disney Research Creates Megastereo - Panoramas With Depth</a></span>
+			
+			
+			<span class="comments commentcnt-47751157">38</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47751157">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47751157" datetime="on Sunday June 23, 2013 @03:05PM">on Sunday June 23, 2013 @03:05PM</time>
+	
+	
+		<br>from the getting-a-good-look dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47751157">
+
+		
+
+
+			<div id="text-47751157" class="p">
+			mikejuk writes <i>"Disney Research has made a breakthrough in implementing the technique of <a href="mailto:jimmy@joeschedule.mailgun.org?subject=acquiring depth information from a simple ... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.i-programmer.info/news/192-photography-a-imaging/6022-megastereo-panoramas-with-depth.html</tags> %26lt%3B%2Ftags%26gt">acquiring depth information from a simple camera scan of a scene</a>. For a perfect panorama you need to rotate the camera around its optical center, i.e. just rotate the camera. However, if you just rotate the camera about itself you don't get any parallax effects &mdash; which is why it makes the stitching together easier. If you want to get 3D information from the sequence of shots you need parallax. This means rotating the camera mounted on an offset arm or just moving the camera along an arc in your outstretched hand. The big problem with this method is that the parallax makes it more difficult to fit the mosaic together, and this is the problem that the research team has been working on.  Using a range of different scanning methods the results can be converted into high resolution panoramas automatically complete with 3D information."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 38 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/168218/disney-research-creates-megastereo---panoramas-with-depth</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47751157">38</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47751157" class="tag-bar none"><a class="popular popular topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=technology joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/technology</tags> %26lt%3B%2Ftags%26gt" target="_blank">technology</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47747197" data-fhid="47747197" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47747197</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47747197">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=government</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('government');">
+			
+				<img src="//a.fsdn.com/sd/topics/government_64.png" width="64" height="64" alt="Government" title="Government">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47747197"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Tennessee Official: Water Complaints Could... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/1227221/tennessee-official-water-complaints-could-be-act-of-terrorism</tags> %26lt%3B%2Ftags%26gt">Tennessee Official: Water Complaints Could be "Act of Terrorism"</a></span>
+			
+			
+			<span class="comments commentcnt-47747197">293</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47747197">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47747197" datetime="on Sunday June 23, 2013 @02:00PM">on Sunday June 23, 2013 @02:00PM</time>
+	
+	
+		<br>from the deep-water dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47747197">
+
+		
+
+
+			<div id="text-47747197" class="p">
+			An anonymous reader writes <i>"A Tennessee Department of Environment and Conservation deputy director is threatening citizens with being <a href="mailto:jimmy@joeschedule.mailgun.org?subject=listed as terrorists for giving official c... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.tennessean.com/article/20130621/NEWS02/306210110/Official-Water-complaints-could-act-terrorism-?gcheck=1</tags> %26lt%3B%2Ftags%26gt">listed as terrorists for giving official complaints</a>. Sherwin Smith, deputy director of TDEC&rsquo;s Division of Water Resources said: 'But you need to make sure that when you make water quality complaints you have a basis, because federally, if there's no water quality issues, that can be considered under Homeland Security an act of terrorism.' 'In terms of the comments made by a member of the Water Resources Division at the meeting, we are just receiving the information and looking into this on our end,' spokeswoman Meg Lockhart said. 'The department would like to fully assess what was said in the meeting. I am told that the meeting was far longer than the audio clip provided by SOCM and that Mr. Smith actually clarified his remarks. But again, we are looking into it.'"</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 293 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/1227221/tennessee-official-water-complaints-could-be-act-of-terrorism</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47747197">293</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47747197" class="tag-bar none"><a class="popular topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=government joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/government</tags> %26lt%3B%2Ftags%26gt" target="_blank">government</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=oppression joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/oppression</tags> %26lt%3B%2Ftags%26gt" target="_blank">oppression</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47746917" data-fhid="47746917" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47746917</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47746917">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=google</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('google');">
+			
+				<img src="//a.fsdn.com/sd/topics/google_64.png" width="64" height="64" alt="Google" title="Google">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47746917"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Google Fiber Adds 14th City: Lee's Summit joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/1215258/google-fiber-adds-14th-city-lees-summit</tags> %26lt%3B%2Ftags%26gt">Google Fiber Adds 14th City: Lee's Summit</a></span>
+			
+			
+			<span class="comments commentcnt-47746917">60</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47746917">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47746917" datetime="on Sunday June 23, 2013 @12:53PM">on Sunday June 23, 2013 @12:53PM</time>
+	
+	
+		<br>from the welcome-to-the-club dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47746917">
+
+		
+
+
+			<div id="text-47746917" class="p">
+			symbolset writes <i>"On Thursday night the Lee's Summit city council  <a href="mailto:jimmy@joeschedule.mailgun.org?subject=passed three resolutions to welcome Google... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.kansascity.com/2013/06/21/4305863/lees-summit-signs-on-to-google.html</tags> %26lt%3B%2Ftags%26gt">passed three resolutions to welcome Google Fiber</a> to their community. This is the 12th community in the Kansas City Metro Area to welcome Google Fiber and the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=14th city overall. joemailweb&body=%26lttags img=keep%26gt<tags img=keep>https://fiber.google.com/cities/#header=check</tags> %26lt%3B%2Ftags%26gt">14th city overall.</a>  The KC map now covers almost all of the KC metro area with parts in both Kansas and Missouri.  8 months into the rollout two fiberhoods have been completed, 30 more are under way and 50 more are to start by the end of summer.  This covers most of the territory of both Kansas Citys ahead of schedule and completes before the end of winter so the timeline has been accelerated.  As Google runs their fiber across town it appears they're putting backbones down the major thoroughfares to be trunks out to the wider communities.  With Provo wired with fiber already, Austin to start next it looks like Google Fiber's ambitions are not to just to deliver their symmetric gigabit uncapped, unfiltered, inexpensive fiber Internet to just a few privileged enclaves.  They still have <a href="mailto:jimmy@joeschedule.mailgun.org?subject=over 1,000 cities joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.nbcbayarea.com/blogs/press-here/Google-Fiber-Fuels-Startups--212372591.html</tags> %26lt%3B%2Ftags%26gt">over 1,000 cities</a> left to go who have already petitioned to be Google Fiber cities so it's not like they're going to run out of work."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 60 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://tech.slashdot.org/story/13/06/23/1215258/google-fiber-adds-14th-city-lees-summit</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47746917">60</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47746917" class="tag-bar none"><a class="popular topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=google joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/google</tags> %26lt%3B%2Ftags%26gt" target="_blank">google</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=internet joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/internet</tags> %26lt%3B%2Ftags%26gt" target="_blank">internet</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47746759" data-fhid="47746759" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47746759</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47746759">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=business</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('business');">
+			
+				<img src="//a.fsdn.com/sd/topics/business_64.png" width="64" height="64" alt="Businesses" title="Businesses">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47746759"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Ask Slashdot: Is an Online Identity Import... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ask.slashdot.org/story/13/06/23/129210/ask-slashdot-is-an-online-identity-important-when-searching-for-technical-jobs</tags> %26lt%3B%2Ftags%26gt">Ask Slashdot: Is an Online Identity Important When Searching For Technical Jobs?</a></span>
+			
+			
+			<span class="comments commentcnt-47746759">264</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47746759">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47746759" datetime="on Sunday June 23, 2013 @11:51AM">on Sunday June 23, 2013 @11:51AM</time>
+	
+	
+		<br>from the I-don't-know-who-you-are-anymore dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47746759">
+
+		
+
+
+			<div id="text-47746759" class="p">
+			First time accepted submitter quintessentialk writes <i>"I'm looking for a new engineering job. I'm in my early 30s, and have a degree and some experience. I don't have an online presence. Does it matter? Is a record of tweets, blog posts, articles, etc. expected for prospective employees these days? What if one is completely un-googleable (i.e., nothing comes up, good or bad)? Though I haven't been 'trying' to hide, I only rarely use my full name online and don't even have a consistent pseudonym. I don't have a website, and haven't blogged or tweeted. I'm currently in a field which does not publish. Should I start now, or is an first-time tweeter/blogger in 2013 worse than someone with no presence at all?"</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 264 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ask.slashdot.org/story/13/06/23/129210/ask-slashdot-is-an-online-identity-important-when-searching-for-technical-jobs</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47746759">264</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47746759" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=business joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/business</tags> %26lt%3B%2Ftags%26gt" target="_blank">business</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=it joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/it</tags> %26lt%3B%2Ftags%26gt" target="_blank">it</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=askslashdot joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/askslashdot</tags> %26lt%3B%2Ftags%26gt" target="_blank">askslashdot</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47746697" data-fhid="47746697" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47746697</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47746697">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=privacy</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('privacy');">
+			
+				<img src="//a.fsdn.com/sd/topics/privacy_64.png" width="64" height="64" alt="Privacy" title="Privacy">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47746697"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=The Return of Surveillance Camera Man joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/125244/the-return-of-surveillance-camera-man</tags> %26lt%3B%2Ftags%26gt">The Return of Surveillance Camera Man</a></span>
+			
+			
+			<span class="comments commentcnt-47746697">146</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47746697">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47746697" datetime="on Sunday June 23, 2013 @10:43AM">on Sunday June 23, 2013 @10:43AM</time>
+	
+	
+		<br>from the smile-for-the-camera dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47746697">
+
+		
+
+
+			<div id="text-47746697" class="p">
+			theodp writes <i>"Remember <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Surveillance Camera Man joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/12/11/01/2024215/seattles-creepy-cameraman-pushes-public-surveillance-buttons</tags> %26lt%3B%2Ftags%26gt">Surveillance Camera Man</a>, the anonymous guy who walked up to random people around Seattle and creeped them out by taking video of them without explanation? GeekWire reports that <a href="mailto:jimmy@joeschedule.mailgun.org?subject=he's back with a new video compilation of ... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.geekwire.com/2013/hes-back-creepy-cameraman-pushes-limits-in-new-video/</tags> %26lt%3B%2Ftags%26gt">he's back with a new video compilation of his adventures in pushing people's privacy buttons</a>, the latest installment in an apparent ongoing commentary on the pervasiveness of public surveillance, which has taken on a whole new twist with <a href="mailto:jimmy@joeschedule.mailgun.org?subject=increased fretting joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.nytimes.com/glogin?URI=http://bits.blogs.nytimes.com/2013/06/19/privacy-officials-worldwide-press-google-about-glass&amp;OQ=_rQ3D3Q26&amp;OP=c133f83Q2FhTQ24Phk2Q26hQ3AQ3AQ3AhBQ26jrh-,Q2At</tags> %26lt%3B%2Ftags%26gt">increased fretting</a> over the recording capabilities of Google Glass and heightened concern over privacy in general, thanks to the NSA data surveillance controversy."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 146 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/125244/the-return-of-surveillance-camera-man</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47746697">146</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47746697" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=privacy joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/privacy</tags> %26lt%3B%2Ftags%26gt" target="_blank">privacy</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=yro joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/yro</tags> %26lt%3B%2Ftags%26gt" target="_blank">yro</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=technology joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/technology</tags> %26lt%3B%2Ftags%26gt" target="_blank">technology</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47746621" data-fhid="47746621" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47746621</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47746621">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=privacy</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('privacy');">
+			
+				<img src="//a.fsdn.com/sd/topics/privacy_64.png" width="64" height="64" alt="Privacy" title="Privacy">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47746621"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Edward Snowden Leaves Hong Kong joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/120238/edward-snowden-leaves-hong-kong</tags> %26lt%3B%2Ftags%26gt">Edward Snowden Leaves Hong Kong</a></span>
+			
+			
+			<span class="comments commentcnt-47746621">447</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47746621">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:samzenpus@slashdot.org" rel="nofollow">samzenpus</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47746621" datetime="on Sunday June 23, 2013 @09:31AM">on Sunday June 23, 2013 @09:31AM</time>
+	
+	
+		<br>from the hit-the-road-jack dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47746621">
+
+		
+
+
+			<div id="text-47746621" class="p">
+			hazeii writes <i>"Ed Snowden, the US whistleblower responsible for exposing the degree to which the US watches its own citizens (as well as the rest of the world) is reported as having <a href="mailto:jimmy@joeschedule.mailgun.org?subject=left Hong Kong for Moscow joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.scmp.com/news/hong-kong/article/1267261/snowden-leaves-hong-kong-commercial-flight-moscow</tags> %26lt%3B%2Ftags%26gt">left Hong Kong for Moscow</a>.  According to the South China Morning Post, he is on a commercial flight to Russia but intriguingly it seems this is not his final destination. It's not clear whether this move is in response to the US request to extradite him."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 447 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/120238/edward-snowden-leaves-hong-kong</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47746621">447</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47746621" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=privacy joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/privacy</tags> %26lt%3B%2Ftags%26gt" target="_blank">privacy</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=usa joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/usa</tags> %26lt%3B%2Ftags%26gt" target="_blank">usa</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=snowden joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/snowden</tags> %26lt%3B%2Ftags%26gt" target="_blank">snowden</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47732317" data-fhid="47732317" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47732317</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47732317">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=microsoft</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('microsoft');">
+			
+				<img src="//a.fsdn.com/sd/topics/microsoft_64100.png" width="100" height="64" alt="Microsoft" title="Microsoft">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47732317"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Oracle and Microsoft To Announce Cloud Par... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://developers.slashdot.org/story/13/06/23/0255243/oracle-and-microsoft-to-announce-cloud-partnership-monday</tags> %26lt%3B%2Ftags%26gt">Oracle and Microsoft To Announce Cloud Partnership Monday</a></span>
+			
+			
+			<span class="comments commentcnt-47732317">76</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47732317">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:soulskill@slashdot.org" rel="nofollow">Soulskill</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47732317" datetime="on Sunday June 23, 2013 @08:25AM">on Sunday June 23, 2013 @08:25AM</time>
+	
+	
+		<br>from the they-go-together-like-peanut-butter-and-jellyfish dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47732317">
+
+		
+
+
+			<div id="text-47732317" class="p">
+			symbolset writes <i>"While some might liken the deal to the Empire joining up with the Trade Federation, there may be some interesting outcomes for this one.  On Monday <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Microsoft and Oracle joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.eweek.com/cloud/oracle-microsoft-ready-to-link-their-fortunes-in-the-cloud/</tags> %26lt%3B%2Ftags%26gt">Microsoft and Oracle</a> are <a href="mailto:jimmy@joeschedule.mailgun.org?subject=expected to announce a 'cloud" partnership... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bits.blogs.nytimes.com/2013/06/21/oracle-and-salesforce-a-data-sharing-deal/?_r=1&amp;</tags> %26lt%3B%2Ftags%26gt">expected to announce a 'cloud" partnership'</a>.  Although the two companies often seem to be at odds, two of their founders &mdash; Bill Gates and Larry Ellison &mdash; are partners in charity in the '<a href="mailto:jimmy@joeschedule.mailgun.org?subject=giving pledge joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://online.wsj.com/article/SB10001424052748704017904575409193790337162.html</tags> %26lt%3B%2Ftags%26gt">giving pledge</a>.'  Is this the beginning of a beautiful friendship? 'Oracle is battling an image not of growing up, but of growing old. On Thursday the company announced lower than expected earnings, which it ascribed to a tough economy overseas. Cloud-based software grew well, but remains a small part of its overall revenue. The company also said it would raise its dividend and announced a big stock buyback, behaviors usually undertaken by tech companies when they begin to grow more slowly.'"</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 76 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://developers.slashdot.org/story/13/06/23/0255243/oracle-and-microsoft-to-announce-cloud-partnership-monday</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47732317">76</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47732317" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=microsoft joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/microsoft</tags> %26lt%3B%2Ftags%26gt" target="_blank">microsoft</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=evilempire joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/evilempire</tags> %26lt%3B%2Ftags%26gt" target="_blank">evilempire</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=business joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/business</tags> %26lt%3B%2Ftags%26gt" target="_blank">business</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47728391" data-fhid="47728391" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47728391</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47728391">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=china</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('china');">
+			
+				<img src="//a.fsdn.com/sd/topics/china_64.png" width="64" height="64" alt="China" title="China">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47728391"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=US Hacked Chinese University Network joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/0045217/us-hacked-chinese-university-network</tags> %26lt%3B%2Ftags%26gt">US Hacked Chinese University Network</a></span>
+			
+			
+			<span class="comments commentcnt-47728391">293</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47728391">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:soulskill@slashdot.org" rel="nofollow">Soulskill</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47728391" datetime="on Sunday June 23, 2013 @05:23AM">on Sunday June 23, 2013 @05:23AM</time>
+	
+	
+		<br>from the plot-thickens dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47728391">
+
+		
+
+
+			<div id="text-47728391" class="p">
+			An anonymous reader writes <i>"Hong Kong's <em>South China Morning Post</em> reports that <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Tsinghua University, widely regarded as th... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.scmp.com/news/china/article/1266892/exclusive-nsa-targeted-chinas-tsinghua-university-extensive-hacking</tags> %26lt%3B%2Ftags%26gt">Tsinghua University, widely regarded as the mainland's top education and research institute, was the target of extensive hacking by US spies this year</a>, according to information leaked by Edward Snowden. The information also showed that the attacks on Tsinghua University were intensive and concerted efforts. In one single day of January, at least <a href="mailto:jimmy@joeschedule.mailgun.org?subject=63 computers and servers in Tsinghua Unive... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.guardian.co.uk/world/2013/jun/22/edward-snowden-us-china</tags> %26lt%3B%2Ftags%26gt">63 computers and servers in Tsinghua University have been hacked by the NSA</a>. The university is home to one of the mainland's six major backbone networks, the China Education and Research Network from where internet data from millions of Chinese citizens could be mined. Universities in Hong Kong and the mainland were revealed as targets of NSA's cyber-snooping activities last week when Snowden claimed the Chinese University of Hong Kong had been hacked."</i>
+The U.S. government is reportedly <a href="mailto:jimmy@joeschedule.mailgun.org?subject=hacking into Chinese mobile phone companie... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.scmp.com/news/china/article/1266821/us-hacks-chinese-mobile-phone-companies-steals-sms-data-edward-snowden</tags> %26lt%3B%2Ftags%26gt">hacking into Chinese mobile phone companies as well for access to text messages</a>. In related news, the U.S. has <a href="mailto:jimmy@joeschedule.mailgun.org?subject=asked Hong Kong to extradite Snowden joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.usatoday.com/story/news/world/2013/06/22/snowden-extradition/2449147/</tags> %26lt%3B%2Ftags%26gt">asked Hong Kong to extradite Snowden</a>, and the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=petition to pardon him joemailweb&body=%26lttags img=keep%26gt<tags img=keep>https://petitions.whitehouse.gov/petition/pardon-edward-snowden/Dp03vGYD</tags> %26lt%3B%2Ftags%26gt">petition to pardon him</a> has met that 100,000 signature threshold required for an official response from the administration</div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 293 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/0045217/us-hacked-chinese-university-network</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47728391">293</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47728391" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=china joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/china</tags> %26lt%3B%2Ftags%26gt" target="_blank">china</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=nsa joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/nsa</tags> %26lt%3B%2Ftags%26gt" target="_blank">nsa</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=usa joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/usa</tags> %26lt%3B%2Ftags%26gt" target="_blank">usa</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><article id="firehose-47732689" data-fhid="47732689" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47732689</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47732689">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=software</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('software');">
+			
+				<img src="//a.fsdn.com/sd/topics/software_64.png" width="64" height="64" alt="Software" title="Software">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47732689"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Ask Slashdot: Most Secure Browser In an Ag... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ask.slashdot.org/story/13/06/23/0317243/ask-slashdot-most-secure-browser-in-an-age-of-surveillance</tags> %26lt%3B%2Ftags%26gt">Ask Slashdot: Most Secure Browser In an Age of Surveillance?</a></span>
+			
+			
+			<span class="comments commentcnt-47732689">344</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47732689">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:soulskill@slashdot.org" rel="nofollow">Soulskill</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47732689" datetime="on Sunday June 23, 2013 @02:19AM">on Sunday June 23, 2013 @02:19AM</time>
+	
+	
+		<br>from the lynx-seems-pretty-safe dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47732689">
+
+		
+
+
+			<div id="text-47732689" class="p">
+			An anonymous reader writes <i>"With the discovery that the NSA may be gathering extensive amounts of data, and the evidence suggesting makers of some of the most popular browsers may be in on the action, I am more than a little wary of which web browser to use. Thus, I pose a question to the community: is there a 'most secure' browser in terms of avoiding personal data collection? Assuming we all know by know how to 'safely' browse the internet (don't click on that ad offering to free your computer of infections) what can the lay person do have a modicum of protection, or at least peace of mind?"</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 344 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ask.slashdot.org/story/13/06/23/0317243/ask-slashdot-most-secure-browser-in-an-age-of-surveillance</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47732689">344</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47732689" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=internet joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/internet</tags> %26lt%3B%2Ftags%26gt" target="_blank">internet</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=security joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/security</tags> %26lt%3B%2Ftags%26gt" target="_blank">security</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=software joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/software</tags> %26lt%3B%2Ftags%26gt" target="_blank">software</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article><div id="firehose-day-20130622" class="daybreak fhitem-chrome">
+    <div class="grid_12 tcenter before">
+    	<div class="slant"></div>
+        <a onclick="firehose_set_options('startdate', '20130623'); return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Yesterday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?startdate=20130623&amp;index=1</tags> %26lt%3B%2Ftags%26gt">Yesterday</a>
+    </div>
+    <div class="grid_12 tcenter after">
+    	<div class="slant"></div>
+        <a onclick="firehose_set_options('startdate', '20130622');  return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Saturday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?startdate=20130622&amp;index=1</tags> %26lt%3B%2Ftags%26gt">Saturday</a>
+    </div>
+</div><article id="firehose-47727115" data-fhid="47727115" data-fhtype="story" class="fhitem fhitem-story article usermode thumbs grid_24">
+<span class="sd-info-block" style="display: none">
+	<span class="sd-key-firehose-id">47727115</span>
+	<span class="type">story</span>
+	
+</span>
+
+	
+	
+	
+						
+						
+
+	<header>
+		
+			
+			<span class="topic" id="topic-47727115">
+				<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+			
+				
+			
+		 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/index2.pl?fhfilter=space</tags> %26lt%3B%2Ftags%26gt" onclick="return addfhfilter('space');">
+			
+				<img src="//a.fsdn.com/sd/topics/space_64.png" width="64" height="64" alt="Space" title="Space">
+			
+		</a>
+			</span>
+			
+		
+		<h2 class="story">
+				
+				
+				
+			<span id="title-47727115"> <a onclick="return toggle_fh_body_wrap_return(this);" href="mailto:jimmy@joeschedule.mailgun.org?subject=Planetary Resources Kickstarter Meets Its ... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://science.slashdot.org/story/13/06/22/2357220/planetary-resources-kickstarter-meets-its-initial-goal</tags> %26lt%3B%2Ftags%26gt">Planetary Resources Kickstarter Meets Its Initial Goal</a></span>
+			
+			
+			<span class="comments commentcnt-47727115">83</span>
+			
+
+                        
+		</h2>
+		<div class="details" id="details-47727115">
+		
+		Posted
+		by 
+	
+	
+		
+			<a href="mailto:soulskill@slashdot.org" rel="nofollow">Soulskill</a>
+		
+	
+	
+
+	
+	
+	<time id="fhtime-47727115" datetime="on Saturday June 22, 2013 @11:14PM">on Saturday June 22, 2013 @11:14PM</time>
+	
+	
+		<br>from the glad-we-gave-those-billionaires-a-million-bucks dept.
+	
+	</div>
+	</header>
+
+	<div class="body" id="fhbody-47727115">
+
+		
+
+
+			<div id="text-47727115" class="p">
+			symbolset writes <i>"Most of you know about Planetary Resources, the asteroid mining company, and their <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Kickstarter campaign joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.kickstarter.com/projects/1458134548/arkyd-a-space-telescope-for-everyone-0</tags> %26lt%3B%2Ftags%26gt">Kickstarter campaign</a> in the finest spirit of Heinlein's <a href="mailto:jimmy@joeschedule.mailgun.org?subject= The Man Who Sold the Moon joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://en.wikipedia.org/wiki/The_Man_Who_Sold_the_Moon</tags> %26lt%3B%2Ftags%26gt"> <em>The Man Who Sold the Moon</em></a>. The campaign has reached its minimum $1M goal to get funded with eight days left to go.  In celebration, PR's CEO and Chief Asteroid Miner Chris Lewicki does an interview with Forbes where he discusses <a href="mailto:jimmy@joeschedule.mailgun.org?subject=the future opportunities, the potential pi... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.forbes.com/sites/michaelvenables/2013/06/21/planetary-resources-lewicki-on-the-new-space-economy-and-second-space-race/</tags> %26lt%3B%2Ftags%26gt">the future opportunities, the potential pitfalls, and the unlimited potential of private sector space exploitation</a>.  It's well worth the read.  Planetary Resources' kickstarter has some worthy stretch goals that are well worth looking at, and the sort of supporter premiums that many Slashdotters will not want to miss.  Only $175,000 more and they get a second ground station, at $2M they add exoplanet search capability.  Both of these stretch goals are within reach."</i></div>
+			
+
+		
+		
+	</div>
+	<aside class="novote">
+	
+	</aside>
+	
+	<footer class="clearfix meta article-foot">
+		<div class="grid_10 l">
+		
+			<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 83 comments  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://science.slashdot.org/story/13/06/22/2357220/planetary-resources-kickstarter-meets-its-initial-goal</tags> %26lt%3B%2Ftags%26gt" class="read-more" title=""><span>Read the </span><strong class="comments commentcnt-47727115">83</strong> <span>comments</span> </a>
+		
+		</div>
+		
+			<div class="grid_14 r">
+				<span class="tright tags"><menu type="toolbar" class="edit-bar">
+	<a class="edit-toggle" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/my/login/</tags> %26lt%3B%2Ftags%26gt" onclick="show_login_box();return false;"><span class="ui-icon button collapse"></span></a>
+	<input class="tag-entry default" type="text" size="10" style="display:none" value="apply tags">
+
+	<span id="tagbar-47727115" class="tag-bar none"><a class="topic tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/</tags> %26lt%3B%2Ftags%26gt" target="_blank"></a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=space joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/space</tags> %26lt%3B%2Ftags%26gt" target="_blank">space</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=kickstarter joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/kickstarter</tags> %26lt%3B%2Ftags%26gt" target="_blank">kickstarter</a>
+<a class="popular tag" rel="statictag" href="mailto:jimmy@joeschedule.mailgun.org?subject=planetaryresources joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/tag/planetaryresources</tags> %26lt%3B%2Ftags%26gt" target="_blank">planetaryresources</a>
+</span>
+		
+
+</menu></span>
+			</div>
+		
+	</footer>
+	
+	
+
+</article>
+            </div>
+
+			<div class="grid_24">
+				<div class="paginate" id="fh-pag-div">
+<div class="menu" id="fh-paginate">
+
+
+
+
+        
+	 
+	 <a class="prevnextbutdis" href="mailto:jimmy@joeschedule.mailgun.org?subject=&laquo; Newer joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/#</tags> %26lt%3B%2Ftags%26gt" onclick="return false;">&laquo; Newer</a>
+        
+	 
+		<a class="prevnextbutact" href="mailto:jimmy@joeschedule.mailgun.org?subject=Older &raquo; joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?page=1</tags> %26lt%3B%2Ftags%26gt">Older &raquo;</a>
+
+	<span class="inactive more">
+		
+	</span>
+
+
+
+
+
+</div>
+</div>
+			</div>
+
+
+               
+<span id="itemsreturned" class="grid_24">
+
+</span>
+		
+                </section>
+		
+		
+                <aside id="slashboxes">
+                        
+			<div class="synd">
+			    <span class="syndlabel">Follow us:</span> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Twitter joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://twitter.com/slashdot</tags> %26lt%3B%2Ftags%26gt" class="tw">Twitter</a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Facebook joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.facebook.com/slashdot</tags> %26lt%3B%2Ftags%26gt" class="fb">Facebook</a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Google+ joemailweb&body=%26lttags img=keep%26gt<tags img=keep>https://plus.google.com/113450234747488780301</tags> %26lt%3B%2Ftags%26gt" class="gp">Google+</a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=RSS Feed joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://rss.slashdot.org/Slashdot/slashdot</tags> %26lt%3B%2Ftags%26gt" class="rss">RSS Feed</a>
+			</div>
+
+
+                        
+                <div class="ad83 advertisement"><!-- ad position 83 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad83">
+		
+			
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'mainpage';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/pg_index_p83_medrec;pg=index2;logged_in=0;dcopt=ist;tile='+dfp_tile+';sz=300x250,300x600;u=;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+			
+		
+</div>
+<!-- End DoubleClick Ad Tag --></div>
+                  <div id='my_forgebox'>
+                     
+                  </div>
+
+                
+                <article id="poll" class="nosort">
+        <header id="poll-title">
+        	<h2><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Slashdot Poll joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Slashdot Poll</a></h2>
+	</header>
+        <section class="b" id="poll-content">
+                <form action="//slashdot.org/pollBooth.pl" method="post">
+			<fieldset>
+				<legend>Poll</legend>
+				<input type="hidden" name="qid" value="2593">
+			
+				<p><strong>My view of touchscreen laptops:</strong></p>
+			
+				<label class="grid_24">
+				    <span class="grid_2"><input type="radio" name="aid" value="1"></span>
+				    <span class="grid_22">Tool of the devil: stupid and awful</span>
+				</label>
+			
+				<label class="grid_24">
+				    <span class="grid_2"><input type="radio" name="aid" value="2"></span>
+				    <span class="grid_22">I'm against them (annoying, smudgy)</span>
+				</label>
+			
+				<label class="grid_24">
+				    <span class="grid_2"><input type="radio" name="aid" value="3"></span>
+				    <span class="grid_22">Neutralish, but leaning slightly against</span>
+				</label>
+			
+				<label class="grid_24">
+				    <span class="grid_2"><input type="radio" name="aid" value="4"></span>
+				    <span class="grid_22">Neutralish, but warming to the concept</span>
+				</label>
+			
+				<label class="grid_24">
+				    <span class="grid_2"><input type="radio" name="aid" value="5"></span>
+				    <span class="grid_22">I like them, but not a fanatic</span>
+				</label>
+			
+				<label class="grid_24">
+				    <span class="grid_2"><input type="radio" name="aid" value="6"></span>
+				    <span class="grid_22">They're awesome; I'm hooked</span>
+				</label>
+			
+				<label class="grid_24">
+				    <span class="grid_2"><input type="radio" name="aid" value="7"></span>
+				    <span class="grid_22">There are touch-screen laptops?</span>
+				</label>
+			
+				<p class="fleft ft">
+					<input type="submit" value="Vote">
+					
+				</p>
+			        <p class="fright">
+                                	<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Read the 311 comments joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/poll/2593/my-view-of-touchscreen-laptops</tags> %26lt%3B%2Ftags%26gt">Read the <strong>311</strong> comments</a><br>
+                                	Voted on <strong>30332</strong> times.
+                        	</p>
+			</fieldset>
+		</form>
+		<div class="ad31 advertisement">
+<div id="fad31p">
+        <script type="text/javascript">
+
+        //<![CDATA[
+
+                var hint   = 'mainpage';
+
+                document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/pg_index_p31_lower_poll_spons;pg=index;logged_in=0;tile='+dfp_tile+';ord='+dfp_ord+'?"><\/script>');
+
+                dfp_tile++;
+        //]]>
+        </script>
+</div>
+</div>
+        </section>
+</article><div class="railad advertisement"><div class="ad86 advertisement"><!-- ad position 86 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad86">
+		
+			
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'mainpage';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/pg_index_CPL_medrec;pg=index2;logged_in=0;dcopt=ist;tile='+dfp_tile+';sz=300x250,300x600;u=;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+			
+		
+</div>
+<!-- End DoubleClick Ad Tag --></div></div><div class="railad advertisement"><script>
+var ooyala_video_player_data = {
+	templates: 'widget.html',
+	widgetUrl: '',
+	thumbnail: 'http://ak.c.ooyala.com/82MjNzYjqUgKB8epV_8wmVtwd8hf67uM/PE3O6Z9ojHeNSk7H4xMDoxOjBrO-I4W8',
+	player: 'a6b31e7305f7475795ef1c798c495905',
+	embed: '82MjNzYjqUgKB8epV_8wmVtwd8hf67uM',
+	title: 'IBM',
+};
+</script>
+<script src="/images/videoplayer/widget.js"></script>
+<div class="geeknet-video-widget-holder" data-templates="/images/videoplayer/widget.html"></div></div><div class="railad advertisement"><div class="ad85 advertisement"><!-- ad position 85 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad85">
+		
+			
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'mainpage';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/pg_index_p85_medrec;pg=index2;logged_in=0;dcopt=ist;tile='+dfp_tile+';sz=300x250,300x600;u=;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+			
+		
+</div>
+<!-- End DoubleClick Ad Tag --></div></div><article id="dice_jobs" class="nosort">
+        <header id="dice_jobs-title">
+        	<h2><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Latest Tech Jobs joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Latest Tech Jobs</a></h2>
+	</header>
+        <section class="b" id="dice_jobs-content">
+                <form action="//slashdot.org/job_board.pl" method="post">               
+    <div id="jobBoardWidgetSearchForm">
+        <fieldset> 
+            <input type="text" name="job_text" value="" placeholder="Senior Java Developer" size="20" maxlength="80">
+            <input type="submit" name="job_search_submit" value="Search" class="button">
+        </fieldset>
+    </div>
+</form>
+<div id="jobBoardWidget">
+	<ul id="dice_widget">
+
+	
+
+        	<li>
+			<a onclick="trackLinkDiceJob(this, 'JobWidget', 'http://www.dice.com/job/result/10271304/132563?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing');return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=BPM Lombardi Support ConsultantCincinnati,... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.dice.com/job/result/10271304/132563?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing</tags> %26lt%3B%2Ftags%26gt" target="_blank"><span id="job_title">BPM Lombardi Support Consultant</span><br>Cincinnati, OH</a>
+		</li>
+	
+
+        	<li>
+			<a onclick="trackLinkDiceJob(this, 'JobWidget', 'http://www.dice.com/job/result/10241294/311523?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing');return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Associate System Performance EngineerSouth... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.dice.com/job/result/10241294/311523?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing</tags> %26lt%3B%2Ftags%26gt" target="_blank"><span id="job_title">Associate System Performance Engineer</span><br>Southfield, MI</a>
+		</li>
+	
+
+        	<li>
+			<a onclick="trackLinkDiceJob(this, 'JobWidget', 'http://www.dice.com/job/result/amazon/221849?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing');return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Software Development ManagerSeattle, WA joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.dice.com/job/result/amazon/221849?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing</tags> %26lt%3B%2Ftags%26gt" target="_blank"><span id="job_title">Software Development Manager</span><br>Seattle, WA</a>
+		</li>
+	
+
+        	<li>
+			<a onclick="trackLinkDiceJob(this, 'JobWidget', 'http://www.dice.com/job/result/10109811/DWCTMEWADCO?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing');return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Exchange/ Windows ConsultantDenver, CO joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.dice.com/job/result/10109811/DWCTMEWADCO?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing</tags> %26lt%3B%2Ftags%26gt" target="_blank"><span id="job_title">Exchange/ Windows Consultant</span><br>Denver, CO</a>
+		</li>
+	
+
+        	<li>
+			<a onclick="trackLinkDiceJob(this, 'JobWidget', 'http://www.dice.com/job/result/cxcrstff/XXX1?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing');return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Technical Pre/Post Sales ConsultantBoston,... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.dice.com/job/result/cxcrstff/XXX1?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing</tags> %26lt%3B%2Ftags%26gt" target="_blank"><span id="job_title">Technical Pre/Post Sales Consultant</span><br>Boston, MA</a>
+		</li>
+	
+
+        	<li>
+			<a onclick="trackLinkDiceJob(this, 'JobWidget', 'http://www.dice.com/job/result/itca002/49941AC?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing');return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Statistical Programmer - PermanentRedwood ... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.dice.com/job/result/itca002/49941AC?src=19&CMPID=AF_SD_UP_JS_AV_OG_WG_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing</tags> %26lt%3B%2Ftags%26gt" target="_blank"><span id="job_title">Statistical Programmer - Permanent</span><br>Redwood City, CA</a>
+		</li>
+	
+            	<li>
+                    <div id="all_jobs"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=See All Jobs... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/job_board.pl</tags> %26lt%3B%2Ftags%26gt" target="_blank">See All Jobs...</a></div>
+                    <div id="dice_logo_sm">
+                        Powered by <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.dice.com/?CMPID=AF_SD_UP_JS_AV_OG_BN_&utm_source=Slashdot&utm_medium=Affiliate&utm_content=&utm_campaign=Advocacy_Ongoing</tags> %26lt%3B%2Ftags%26gt" target="_blank"><img src="//a.fsdn.com/sd/dice_logo.png"></a>
+                    </div>
+            </li>
+    </ul>
+</div>
+		
+        </section>
+</article><article class="nosort">
+	<header id="mostdiscussed-title">
+		<h2>Most Discussed</h2>
+	</header>
+	<section class="b" id="mostdiscussed-content">
+		<ul id="mostdiscussed">
+
+
+<li>
+<span class="cmntcnt"><span class="slant"></span><span>614<span class="hide"> comments</span></span></span>
+ <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Security Researcher Attacked While At Conf... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://news.slashdot.org/story/13/06/22/178252/security-researcher-attacked-while-at-conference?sbsrc=md</tags> %26lt%3B%2Ftags%26gt">Security Researcher Attacked While At Conference</a>
+</li>
+
+
+<li>
+<span class="cmntcnt"><span class="slant"></span><span>447<span class="hide"> comments</span></span></span>
+ <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Edward Snowden Leaves Hong Kong joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/120238/edward-snowden-leaves-hong-kong?sbsrc=md</tags> %26lt%3B%2Ftags%26gt">Edward Snowden Leaves Hong Kong</a>
+</li>
+
+
+<li>
+<span class="cmntcnt"><span class="slant"></span><span>344<span class="hide"> comments</span></span></span>
+ <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Ask Slashdot: Most Secure Browser In an Ag... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ask.slashdot.org/story/13/06/23/0317243/ask-slashdot-most-secure-browser-in-an-age-of-surveillance?sbsrc=md</tags> %26lt%3B%2Ftags%26gt">Ask Slashdot: Most Secure Browser In an Age of Surveillance?</a>
+</li>
+
+
+<li>
+<span class="cmntcnt"><span class="slant"></span><span>293<span class="hide"> comments</span></span></span>
+ <a href="mailto:jimmy@joeschedule.mailgun.org?subject=US Hacked Chinese University Network joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/0045217/us-hacked-chinese-university-network?sbsrc=md</tags> %26lt%3B%2Ftags%26gt">US Hacked Chinese University Network</a>
+</li>
+
+
+<li>
+<span class="cmntcnt"><span class="slant"></span><span>292<span class="hide"> comments</span></span></span>
+ <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Tennessee Official: Water Complaints Could... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://yro.slashdot.org/story/13/06/23/1227221/tennessee-official-water-complaints-could-be-act-of-terrorism?sbsrc=md</tags> %26lt%3B%2Ftags%26gt">Tennessee Official: Water Complaints Could be "Act of Terrorism"</a>
+</li>
+
+</ul>
+	</section>
+</article><article class="nosort">
+	<header id="srandblock-title">
+		<h2>Hot Comments</h2>
+	</header>
+	<section class="b" id="srandblock-content">
+		<ul>
+<li> <b><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Re:Oh well, it was nice while it lasted... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/comments.pl?sid=13/06/23/1227221&amp;cid=44086565&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">Re:Oh well, it was nice while it lasted...</a>
+	(5 points, Insightful)
+	by lxs</b>
+	on Sunday June 23, 2013 @02:35PM
+	<small>attached to
+	<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Tennessee Official: Water Complaints Could... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/article.pl?sid=13/06/23/1227221&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">Tennessee Official: Water Complaints Could be "Act of Terrorism"</a></small></li>
+
+<li> <b><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Re:I was entirely sympathetic to Snowden joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/comments.pl?sid=13/06/23/0045217&amp;cid=44083813&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">Re:I was entirely sympathetic to Snowden</a>
+	(5 points, Insightful)
+	by purnima</b>
+	on Sunday June 23, 2013 @06:22AM
+	<small>attached to
+	<a href="mailto:jimmy@joeschedule.mailgun.org?subject=US Hacked Chinese University Network joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/article.pl?sid=13/06/23/0045217&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">US Hacked Chinese University Network</a></small></li>
+
+<li> <b><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Re:I don't get it. joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/comments.pl?sid=13/06/23/1227221&amp;cid=44086339&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">Re:I don't get it.</a>
+	(5 points, Insightful)
+	by click2005</b>
+	on Sunday June 23, 2013 @02:11PM
+	<small>attached to
+	<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Tennessee Official: Water Complaints Could... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/article.pl?sid=13/06/23/1227221&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">Tennessee Official: Water Complaints Could be "Act of Terrorism"</a></small></li>
+
+<li> <b><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Re:License war commencing... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/comments.pl?sid=13/06/24/000250&amp;cid=44089093&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">Re:License war commencing...</a>
+	(5 points, Informative)
+	by Anonymous Coward</b>
+	on Sunday June 23, 2013 @11:16PM
+	<small>attached to
+	<a href="mailto:jimmy@joeschedule.mailgun.org?subject=PlayStation 4 Will Be Running Modified Fre... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/article.pl?sid=13/06/24/000250&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">PlayStation 4 Will Be Running Modified FreeBSD</a></small></li>
+
+<li> <b><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Re:Scare tactics joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/comments.pl?sid=13/06/23/1227221&amp;cid=44086419&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">Re:Scare tactics</a>
+	(5 points, Funny)
+	by K. S. Kyosuke</b>
+	on Sunday June 23, 2013 @02:18PM
+	<small>attached to
+	<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Tennessee Official: Water Complaints Could... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/article.pl?sid=13/06/23/1227221&amp;sbsrc=topcom</tags> %26lt%3B%2Ftags%26gt">Tennessee Official: Water Complaints Could be "Act of Terrorism"</a></small></li>
+</ul>
+	</section>
+</article><article id="thisday" class="nosort">
+        <header id="thisday-title">
+        	<h2><a href="mailto:jimmy@joeschedule.mailgun.org?subject=This Day on Slashdot joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt">This Day on Slashdot</a></h2>
+	</header>
+        <section class="b" id="thisday-content">
+                <style type="text/css">
+.thisday-yr {
+     background: none repeat scroll 0% 0% #333333;
+     color: #FFFFFF;
+     font-size: 105%;
+     font-weight: bold;
+}
+
+.thisday-tb tr td {
+     background: none repeat scroll 0% 0% #E6E6E6;
+}
+
+.thisday-tb tr td.thisday-yr {
+     background: none repeat scroll 0% 0% #006666;
+}
+
+.thisday-tb {
+	background: #333333;
+}
+
+
+.thisday-tb tbody tr:first-child td, tbody tr:first-child th {
+  border-top: 0px solid #BEBEBE;
+}
+</style>
+
+<table bgcolor="333333" class="thisday-tb"><tbody>
+
+
+<tr>
+	<td class="thisday-yr">
+		2012
+	</td>
+	<td>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Georgia Apple Store Refuses To Sell iPad T... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://apple.slashdot.org/story/12/06/24/2056214/georgia-apple-store-refuses-to-sell-ipad-to-iranian-american-teen?sbsrc=thisday</tags> %26lt%3B%2Ftags%26gt">Georgia Apple Store Refuses To Sell iPad To Iranian-American Teen</a>
+	</td>
+	<td>
+	<span style="" class="cmntcnt"><span style="background:#333" class="slant"></span><span style="background: #333; color:#fff; font-weight:bold; font-size:.85em">1116<span class="hide"> comments</span></span></span>
+	</td>
+</tr>
+
+
+<tr>
+	<td class="thisday-yr">
+		2009
+	</td>
+	<td>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=NASA Sticking To Imperial Units For Shuttl... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://science.slashdot.org/story/09/06/24/1430236/nasa-sticking-to-imperial-units-for-shuttle-replacement?sbsrc=thisday</tags> %26lt%3B%2Ftags%26gt">NASA Sticking To Imperial Units For Shuttle Replacement</a>
+	</td>
+	<td>
+	<span style="" class="cmntcnt"><span style="background:#333" class="slant"></span><span style="background: #333; color:#fff; font-weight:bold; font-size:.85em">901<span class="hide"> comments</span></span></span>
+	</td>
+</tr>
+
+
+<tr>
+	<td class="thisday-yr">
+		2008
+	</td>
+	<td>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Japan Imposes "Fine On Fat" joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://idle.slashdot.org/story/08/06/24/1420217/japan-imposes-fine-on-fat?sbsrc=thisday</tags> %26lt%3B%2Ftags%26gt">Japan Imposes "Fine On Fat"</a>
+	</td>
+	<td>
+	<span style="" class="cmntcnt"><span style="background:#333" class="slant"></span><span style="background: #333; color:#fff; font-weight:bold; font-size:.85em">1271<span class="hide"> comments</span></span></span>
+	</td>
+</tr>
+
+
+<tr>
+	<td class="thisday-yr">
+		2005
+	</td>
+	<td>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=IBM Shifts 14,000 Jobs to India joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://developers.slashdot.org/story/05/06/24/1523209/ibm-shifts-14000-jobs-to-india?sbsrc=thisday</tags> %26lt%3B%2Ftags%26gt">IBM Shifts 14,000 Jobs to India</a>
+	</td>
+	<td>
+	<span style="" class="cmntcnt"><span style="background:#333" class="slant"></span><span style="background: #333; color:#fff; font-weight:bold; font-size:.85em">1077<span class="hide"> comments</span></span></span>
+	</td>
+</tr>
+
+
+<tr>
+	<td class="thisday-yr">
+		2003
+	</td>
+	<td>
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Apple's G5 Speeds Challenged joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://apple.slashdot.org/story/03/06/24/1232237/apples-g5-speeds-challenged?sbsrc=thisday</tags> %26lt%3B%2Ftags%26gt">Apple's G5 Speeds Challenged</a>
+	</td>
+	<td>
+	<span style="" class="cmntcnt"><span style="background:#333" class="slant"></span><span style="background: #333; color:#fff; font-weight:bold; font-size:.85em">1595<span class="hide"> comments</span></span></span>
+	</td>
+</tr>
+
+</tbody></table>
+		
+        </section>
+</article><article id="freshmeat" class="nosort">
+        <header id="freshmeat-title">
+        	<h2><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Freecode.com releases joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://freshmeat.net/</tags> %26lt%3B%2Ftags%26gt">Freecode.com releases</a></h2>
+	</header>
+        <section class="b" id="freshmeat-content">
+                <ul><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=(R)?ex 0.42.2 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://feedproxy.google.com/~r/freshmeat/feeds/fm-releases-global/~3/g-cOEMNPQSs/rex-2</tags> %26lt%3B%2Ftags%26gt" rel="alternate">(R)?ex 0.42.2</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=isl 0.12 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://feedproxy.google.com/~r/freshmeat/feeds/fm-releases-global/~3/Njtvlf2EbtA/isl</tags> %26lt%3B%2Ftags%26gt" rel="alternate">isl 0.12</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=4MLinux 6.1 Media Edition joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://feedproxy.google.com/~r/freshmeat/feeds/fm-releases-global/~3/geEDCwG0M3c/4mlinux</tags> %26lt%3B%2Ftags%26gt" rel="alternate">4MLinux 6.1 Media Edition</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Hiawatha 9.2 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://feedproxy.google.com/~r/freshmeat/feeds/fm-releases-global/~3/wh6eeBK1x90/hiawatha</tags> %26lt%3B%2Ftags%26gt" rel="alternate">Hiawatha 9.2</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=FVWM-Crystal 3.2.3 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://feedproxy.google.com/~r/freshmeat/feeds/fm-releases-global/~3/NdIx4938b24/fvwm-crystal</tags> %26lt%3B%2Ftags%26gt" rel="alternate">FVWM-Crystal 3.2.3</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=amSynth 1.4.0 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://feedproxy.google.com/~r/freshmeat/feeds/fm-releases-global/~3/R_3tDf_-EAk/amsynth</tags> %26lt%3B%2Ftags%26gt" rel="alternate">amSynth 1.4.0</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=PeaZip 5.0 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://feedproxy.google.com/~r/freshmeat/feeds/fm-releases-global/~3/KbYWByOLRkk/peazip</tags> %26lt%3B%2Ftags%26gt" rel="alternate">PeaZip 5.0</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=G4L 0.45  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://feedproxy.google.com/~r/freshmeat/feeds/fm-releases-global/~3/Q1HEWaigoaI/g4l</tags> %26lt%3B%2Ftags%26gt" rel="alternate">G4L 0.45 </a></li></ul><br>
+<form method="get" action="http://freecode.com/search/"><div>
+        <div class="sb_heading">Search Freecode:</div><br>
+        <input type="hidden" name="link" value="freecode">
+        <input type="text" name="q">
+</div></form>
+
+<div class="right"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=More Freecode... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://freecode.com/</tags> %26lt%3B%2Ftags%26gt"><b>More Freecode...</b></a></div>
+                
+		
+        </section>
+</article><div id="slug-Crown" class="block nosort slug"><div class="content"></div></div><div id="slug-Top" class="block nosort slug"><div class="content"></div></div>
+		
+			<div class="advertisement marchex railad" style="padding-top:75px">
+            <div class="ad101 advertisement"><!-- ad position 101 -->
+	<!-- DoubleClick Ad Tag -->
+<div id="fad101">
+		
+			
+	
+	<script type="text/javascript">
+	//<![CDATA[
+
+		var hint   = 'mainpage';
+
+	document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/ostg.slashdot/pg_index_google_medrec;pg=index2;logged_in=0;dcopt=ist;tile='+dfp_tile+';sz=300x250,300x600;u=;ord='+dfp_ord+'?"><\/script>');
+		dfp_tile++;
+	//]]>
+	</script>
+			
+		
+</div>
+<!-- End DoubleClick Ad Tag --></div>
+			</div>
+		
+
+		
+
+                
+                        
+                        
+                        
+                
+		
+                </aside>
+	
+            </section>
+        </div>
+	
+
+<script type="text/javascript">
+firehose_exists = 1;
+$(function(){
+$('#firehose-filter').
+	focus(function(event){
+		gFocusedText = this;
+	}).
+	blur(function(event){
+		if ( gFocusedText === this ) {
+			gFocusedText = null;
+		}
+	});
+
+
+apply_updates_when(		'at-end', true);
+});
+
+			
+					firehose_settings.startdate = "";
+					firehose_settings.mode = "mixed";
+					firehose_settings.fhfilter = "";
+					firehose_settings.orderdir = "DESC";
+					firehose_settings.orderby = "createtime";
+					firehose_settings.duration = -1;
+					firehose_settings.color = "green";
+					firehose_settings.view = "stories";
+					firehose_settings.viewtitle = "";
+					firehose_settings.tab = "";
+					firehose_settings.base_filter = "";
+					firehose_settings.user_view_uid = "";
+					firehose_settings.sectionname = "Main";
+	
+	firehose_settings.issue = "";
+	firehose_settings.section = 13;
+	$('#searchquery').val(firehose_settings.fhfilter);
+
+	
+	firehose_sitename = "Slashdot";
+	firehose_slogan = "News for nerds, stuff that matters";
+	firehose_update_title_count();
+	firehose_smallscreen = 0;
+
+	
+
+	
+	
+		firehose_settings.index = 1;
+	
+
+	
+
+	var firehose_action_time = 0;
+	var firehose_user_class = 0;
+	
+
+	
+	var fh_color = "green";
+	fh_colors = [ "red", "orange", "yellow", "green", "blue", "indigo", "violet", "black" ];
+	var fh_colors_hash = new Array(0);
+	for (var i=0; i< fh_colors.length; i++) {
+		fh_colors_hash[fh_colors[i]] = i;
+	}
+
+	var fh_view_mode = "mixed";
+	firehose_settings.page = 0;
+	
+	fh_is_admin = 0;
+	var updateIntervalType = 2;
+	var inactivity_timeout = 3600;
+	setFirehoseAction();
+	var update_time = "2013-06-24 04:41:00";
+
+	var maxtime = "2013-06-24 04:41:00";
+	var insert_new_at = "top";
+
+	
+
+
+
+fh_ticksize = 15;
+sitename = 'idle.slashdot.org';
+
+
+
+
+$(window).scroll(function () {
+	inlineAdFirehose();
+});
+
+</script></section>
+
+
+
+
+
+<footer id="fhft" class="grid_24 nf">
+	<div id="logo_nf" class="fleft">
+		<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Slashdot joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt"><span>Slashdot</span></a>
+	</div>
+	<nav role="firehose footer">
+			
+
+	    
+			<ul id="pagination-controls">
+				
+					 
+					<li class="fleft"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Today joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?issue=20130624</tags> %26lt%3B%2Ftags%26gt">Today</a></li>
+				
+					 
+					<li class="fleft"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Sunday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?issue=20130623</tags> %26lt%3B%2Ftags%26gt">Sunday</a></li>
+				
+					 
+					<li class="fleft"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Saturday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?issue=20130622</tags> %26lt%3B%2Ftags%26gt">Saturday</a></li>
+				
+					 
+					<li class="fleft"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Friday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?issue=20130621</tags> %26lt%3B%2Ftags%26gt">Friday</a></li>
+				
+					 
+					<li class="fleft"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Thursday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?issue=20130620</tags> %26lt%3B%2Ftags%26gt">Thursday</a></li>
+				
+					 
+					<li class="fleft"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Wednesday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?issue=20130619</tags> %26lt%3B%2Ftags%26gt">Wednesday</a></li>
+				
+					 
+					<li class="fleft"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Tuesday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?issue=20130618</tags> %26lt%3B%2Ftags%26gt">Tuesday</a></li>
+				
+					 
+					<li class="fleft"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Monday joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/?issue=20130617</tags> %26lt%3B%2Ftags%26gt">Monday</a></li>
+				
+			</ul>
+			<script> /* fh_pag_update() */</script>
+	    
+        <ul class="fright submitstory">
+            <li class="fright"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Submit Story joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/submit</tags> %26lt%3B%2Ftags%26gt">Submit<span class="opt"> Story</span></a></li>
+        </ul>
+	</nav>
+</footer>
+	<section class="bq"><blockquote class="msg grid_24" cite="http://slashdot.org"><p>The reason that every major university maintains a department of
+mathematics is that it's cheaper than institutionalizing all those people.</p><span class="slant"></span></blockquote></section>
+<footer id="ft" class="grid_24">
+		<nav class="grid_10" role="footer">
+		    <ul>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=FAQ joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/faq</tags> %26lt%3B%2Ftags%26gt">FAQ</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Story Archive joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/archive.pl</tags> %26lt%3B%2Ftags%26gt">Story Archive</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Hall of Fame joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/hof.shtml</tags> %26lt%3B%2Ftags%26gt">Hall of Fame</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Advertising joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdotmedia.com/advertising-and-marketing-services/</tags> %26lt%3B%2Ftags%26gt">Advertising</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Jobs joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/job_board.pl</tags> %26lt%3B%2Ftags%26gt">Jobs</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Terms joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdotmedia.com/terms-of-use/</tags> %26lt%3B%2Ftags%26gt">Terms</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Privacy joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdotmedia.com/privacy-statement/</tags> %26lt%3B%2Ftags%26gt">Privacy</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Cookies/Opt Out joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdotmedia.com/opt-out-choices/</tags> %26lt%3B%2Ftags%26gt">Cookies/Opt Out</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=About joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/faq/slashmeta.shtml</tags> %26lt%3B%2Ftags%26gt">About</a></li>
+			<li><a href="mailto:feedback@slashdot.org">Feedback</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Slashdot Japan joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.jp/</tags> %26lt%3B%2Ftags%26gt">Slashdot Japan</a></li>
+			<li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Mobile View joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/#</tags> %26lt%3B%2Ftags%26gt" onclick="set_mobile_pref('mobile',1);return false;">Mobile View</a></li>
+		    </ul>
+		</nav>
+
+<br>
+                
+	        <div class="grid_14 tright tm">Trademarks property of their respective owners. Comments owned by the poster. <span class="nobr">Copyright &copy; 2013 Dice. All Rights Reserved.</span> <span class="nobr">Slashdot is a <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Dice Holdings, Inc. joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&p=irol-landing</tags> %26lt%3B%2Ftags%26gt" title="The Mother Ship">Dice Holdings, Inc.</a> service.</span></div>
+</footer>
+
+ 
+<div class="overlay"></div>
+<div class="modal-box">
+    <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Close joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/#</tags> %26lt%3B%2Ftags%26gt" id="close-modal">Close</a>
+    <article class="modal-content">
+    </article>
+    <footer>
+</footer></div>
+
+
+
+
+<div id="modal_cover" class="hide" onclick="hide_modal_box(); return false;"></div>
+<div id="modal_box" class="hide">
+      <div id="modal_box_content"></div>
+      <header class="n">
+                  <span class="fadeout"></span>
+                  <span class="fadeoutfade"></span>
+		  <span class="pf"><a class="ico close" onclick="hide_modal_box(); return false;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Close joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/#</tags> %26lt%3B%2Ftags%26gt"><span>Close</span></a></span>
+		  <h3 class="pf"><div id="logo"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Slashdot joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Slashdot</a></div><span id="preference_title"></span></h3>
+      </header>
+</div>
+
+<script type="text/javascript">
+COMSCORE.beacon({
+  c1:2,
+  c2:6035546,
+  c3:"",
+  c4:"",
+  c5:"",
+  c6:"",
+  c15:""
+});
+</script>
+<noscript><img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035546&amp;c3=&amp;c4=&amp;c5=&amp;c6=&amp;c15=&amp;cj=1" alt="comScore2"></noscript>
+
+
+<!-- Google Remarketing tag -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1002083962;
+var google_conversion_label = "G_uGCOaBlAQQ-qzq3QM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1002083962/?value=0&amp;label=G_uGCOaBlAQQ-qzq3QM&amp;guid=ON&amp;script=0">
+</div>
+</noscript>
+<script id="after-content" type="text/javascript">
+(function( $, fn, console ){
+	$ && fn && $(function(){ fn($, console); });
+})(window.jQuery, window.pageload_done, window.console);
+</script>
+
+<div class="busy genericspinner hide"><span>Working...</span></div>
+
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+
+http://localhost:61295/api/Excel
+{
+"Left":"
+<Input_Example>
+<Action> run_calculation </Action>
+<root_wb_pf>
+
+ <file>
+  <name>01RFishheads.xls</name>
+ </file>
+
+<input>
+ <CELL>  <Cell>$F8</Cell>   <Value> 14      </Value> </CELL>
+ <CELL>  <Cell>$F9</Cell>   <Value> 125     </Value> </CELL>
+ <CELL>  <Cell>$F10</Cell>  <Value> 1100000 </Value> </CELL>
+   <name>Vaccine model</name>
+</input>
+
+ <output>
+  <CELL>
+    <Cell>$D87</Cell>
+  </CELL>
+  <CELL>
+    <Cell>F87</Cell>
+  </CELL>
+  <CELL>
+    <Cell>G87</Cell>
+  </CELL>
+  <name>Printer friendly</name>
+</output>
+
+<output>
+  <CELL>
+    <Cell>AQ159</Cell>
+  </CELL>
+  <CELL>
+    <Cell>BB160</Cell>
+  </CELL>
+  <CELL>
+    <Cell>BB161</Cell>
+  </CELL>
+  <name>Calculations</name>
+</output>
+</root_wb_pf>
+
+</Input_Example>
+"}
+
+
+
+http://mvcapplication2-2.apphb.com/api/values/id
+
+http://localhost:61295/api/values/id
+
+Content-Type: application/json
+Host: localhost:61295
+Content-Length: 958
+
+
+
+{id:"
+<Input_Example>
+<Action> run_calculation </Action>
+<root_wb_pf>
+
+ <file>
+  <name>01RFishheads.xls</name>
+ </file>
+
+<input>
+ <CELL>  <Cell>$F8</Cell>   <Value> 14      </Value> </CELL>
+ <CELL>  <Cell>$F9</Cell>   <Value> 125     </Value> </CELL>
+ <CELL>  <Cell>$F10</Cell>  <Value> 1100000 </Value> </CELL>
+
+  <name>Vaccine model</name>
+</input>
+
+<input>
+ <CELL>
+    <Cell>AQ159</Cell>
+    <Value> Bringing back the spread sheet!  </Value> 
+  </CELL>
+  <name>Calculations</name>
+</input>
+
+<!-- A chart -->
+<output>
+  <name>Sum production costs</name>
+</output>
+
+<output>
+  <CELL>
+    <Cell>$D87</Cell>
+  </CELL>
+  <CELL>
+    <Cell>F87</Cell>
+  </CELL>
+  <CELL>
+    <Cell>G87</Cell>
+  </CELL>
+  <name>Printer friendly</name>
+</output>
+
+<output>
+  <CELL>
+    <Cell>AQ159</Cell>
+  </CELL>
+  <CELL>
+    <Cell>BB160</Cell>
+  </CELL>
+  <CELL>
+    <Cell>BB161</Cell>
+  </CELL>
+  <name>Calculations</name>
+</output>
+</root_wb_pf>
+
+</Input_Example>
+"}
+
+
+{id:"
+<Input_Example>
+<Action> run_calculation </Action>
+<root_wb_pf>
+<input>
+ <CELL>  <Cell>$F8</Cell>   <Value> 14      </Value> </CELL>
+ <CELL>  <Cell>$F9</Cell>   <Value> 125     </Value> </CELL>
+ <CELL>  <Cell>$F10</Cell>  <Value> 1100000 </Value> </CELL>
+
+  <name>Vaccine model</name>
+</input>
+
+<input>
+ <CELL>  <Cell>$F8</Cell>   <Value> 14      </Value> </CELL>
+ <CELL>  <Cell>$F9</Cell>   <Value> 125     </Value> </CELL>
+ <CELL>  <Cell>$F10</Cell>  <Value> 1100000 </Value> </CELL>
+
+  <name>Vaccine model</name>
+</input>
+
+<output>
+  <CELL>
+    <Cell>$D87</Cell>
+  </CELL>
+  <CELL>
+    <Cell>F87</Cell>
+  </CELL>
+  <CELL>
+    <Cell>G87</Cell>
+  </CELL>
+  <name>Printer friendly</name>
+</output>
+
+<output>
+  <CELL>
+    <Cell>F89</Cell>
+  </CELL>
+  <CELL>
+    <Cell>H11</Cell>
+  </CELL>
+  <CELL>
+    <Cell>M31</Cell>
+  </CELL>
+  <name>Printer friendly</name>
+</output>
+</root_wb_pf>
+
+</Input_Example>
+"}

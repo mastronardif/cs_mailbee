@@ -1,0 +1,72 @@
+{id:"
+<Input_Example>
+
+  <Action> run_calculation </Action>
+
+  <root_wb_pf>
+
+    <input>
+      <CELL>
+        <Cell>F37</Cell>
+        <Value>123</Value>
+      </CELL>
+      <CELL>
+        <Cell>F37</Cell>
+        <Value>23</Value>
+      </CELL>
+      <name>Vaccine model</name>
+    </input>
+
+
+    <output>
+      <CELL>
+        <Cell>$D87</Cell>
+      </CELL>
+      <CELL>
+        <Cell>F87</Cell>
+      </CELL>
+      <CELL>
+        <Cell>G87</Cell>
+      </CELL>
+      <CELL>
+        <Cell>$F88</Cell>
+      </CELL>
+      <CELL>
+        <Cell>g88</Cell>
+      </CELL>
+      <CELL>
+        <Cell>h88</Cell>
+      </CELL>
+
+      <name>Printer friendly</name>
+    </output>
+
+
+    <!-- a chart -->
+    <output>
+      <name>Sum production costs</name>
+    </output>
+
+    <output>
+      <name>Stock value pr kg</name>
+    </output>
+    <output>
+      <name>Number of fish in sea</name>
+    </output>
+
+    <output>
+      <name>Survival rate</name>
+    </output>
+
+    <output>
+      <name>Sum production costs</name>
+    </output>
+
+    <output>
+      <name>Operating and production costs</name>
+    </output>
+    
+  </root_wb_pf>
+
+</Input_Example>
+"}

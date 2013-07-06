@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
+using System.Xml.Xsl; 
+
+
+namespace myxslxml
+
+{
+    class MyXml
+    {
+        static public void my_XslXmlOut(string fnXml, string fnXsl, string fnOut)
+        {
+            XslCompiledTransform myXslTransform;
+            myXslTransform = new XslCompiledTransform();
+            myXslTransform.Load(fnXsl);
+            myXslTransform.Transform(fnXml, fnOut); 
+        }
+
+    static public T Deserialize<T>(string xml)
+    {
+        //var serializer = new XmlSerializer(typeof(T));
+        
+        //using (var stringReader = new StringReader(xml))
+        //{
+        //    var obj = (T)serializer.Deserialize(stringReader);
+        //    return obj;
+        ////stringReader.Dispose();
+        //}
+
+        //  Read the first XML file
+        TextReader tr = new StreamReader("c:\\Sample1.xml");
+
+        //  Deserialize the XML file into a LibraryType object
+        XmlSerializer serializer = new XmlSerializer(typeof(T));
+        T lib1 = (T)serializer.Deserialize(tr);
+        return lib1;
+    }
+     
+}
+
+}

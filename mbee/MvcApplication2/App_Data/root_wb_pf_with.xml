@@ -1,0 +1,550 @@
+<?xml-stylesheet href="root_wb_pf.xsl" type="text/xsl"?>
+<root_wb_pf>
+        <CELL>
+                <Row>1</Row>
+                <Cell>3</Cell>
+                <Value>PD Vaccine with No PD</Value>
+            </CELL>
+            <CELL>
+                <Row>2</Row>
+                <Cell>3</Cell>
+
+                <Value>555</Value>
+            </CELL>
+            <CELL>
+                <Row>3</Row>
+                <Cell>3</Cell>
+                <Value>44</Value>
+            </CELL>
+            <CELL>
+                <Row>4</Row>
+                <Cell>3</Cell>
+                <Value>Production parameters up until harvesting</Value>
+            </CELL>
+            <CELL>
+                <Row>5</Row>
+                <Cell>3</Cell>
+                <Value>44</Value>
+            </CELL>
+            <CELL>
+                <Row>6</Row>
+                <Cell>3</Cell>
+                <Value>Temperature curve</Value>
+            </CELL>
+            <CELL>
+                <Row>7</Row>
+                <Cell>3</Cell>
+                <Value>Fish released in week nr</Value>
+            </CELL>
+            <CELL>
+                <Row>8</Row>
+                <Cell>3</Cell>
+                <Value>Weight of smolt</Value>
+            </CELL>
+            <CELL>
+                <Row>9</Row>
+                <Cell>3</Cell>
+                <Value>Number of smolt released</Value>
+            </CELL>
+            <CELL>
+                <Row>10</Row>
+                <Cell>3</Cell>
+                <Value>xxxxxxxxxxx</Value>
+            </CELL>
+            <CELL>
+                <Row>11</Row>
+                <Cell>3</Cell>
+                <Value>Actual harvesting weight swimming in water (grams)</Value>
+            </CELL>
+            <CELL>
+                <Row>12</Row>
+                <Cell>3</Cell>
+                <Value>Growth rate. Adjustment of normal growth table</Value>
+            </CELL>
+            <CELL>
+                <Row>13</Row>
+                <Cell>3</Cell>
+                <Value>Biological FCR</Value>
+            </CELL>
+            <CELL>
+                <Row>14</Row>
+                <Cell>3</Cell>
+                <Value>Cost of feed in EUR / kg feed</Value>
+            </CELL>
+            <CELL>
+                <Row>15</Row>
+                <Cell>3</Cell>
+                <Value>Accumulated dead fish (loss as % of relased number). Only basis loss not related to PD</Value>
+            </CELL>
+            <CELL>
+                <Row>16</Row>
+                <Cell>3</Cell>
+                <Value>Cost of wages pr production site pr month</Value>
+            </CELL>
+            <CELL>
+                <Row>17</Row>
+                <Cell>3</Cell>
+                <Value>Unit cost of smolt (EUR). The cost includes all other vacines other than PD</Value>
+            </CELL>
+            <CELL>
+                <Row>18</Row>
+                <Cell>3</Cell>
+                <Value>Insurance value (EUR) pr individual</Value>
+            </CELL>
+            <CELL>
+                <Row>19</Row>
+                <Cell>3</Cell>
+                <Value>Insurance value(EUR) pr kg living fish</Value>
+            </CELL>
+            <CELL>
+                <Row>20</Row>
+                <Cell>3</Cell>
+                <Value>Insurance premium, percent of insurance value (sum of per ind and pr kg)</Value>
+            </CELL>
+            <CELL>
+                <Row>21</Row>
+                <Cell>3</Cell>
+                <Value>Other fixed costs (EUR) pr production site pr month</Value>
+            </CELL>
+            <CELL>
+                <Row>22</Row>
+                <Cell>3</Cell>
+                <Value>Depriciation pr production site pr month</Value>
+            </CELL>
+            <CELL>
+                <Row>23</Row>
+                <Cell>3</Cell>
+                <Value>Cost of the PD vaccine</Value>
+            </CELL>
+            <CELL>
+                <Row>24</Row>
+                <Cell>3</Cell>
+                <Value>Cost of injecting each fish with the PD vaccine</Value>
+            </CELL>
+            <CELL>
+                <Row>25</Row>
+                <Cell>3</Cell>
+                <Value>Cost of handling dead fish (EUR) pr kg</Value>
+            </CELL>
+            <CELL>
+                <Row>26</Row>
+                <Cell>3</Cell>
+                <Value>555</Value>
+            </CELL>
+            <CELL>
+                <Row>27</Row>
+                <Cell>3</Cell>
+                <Value>Production details with PD vaccination without PD outbreak</Value>
+            </CELL>
+            <CELL>
+                <Row>28</Row>
+                <Cell>3</Cell>
+                <Value>Total produced biomass (kg) swimming in sea</Value>
+            </CELL>
+            <CELL>
+                <Row>29</Row>
+                <Cell>3</Cell>
+                <Value>Economical FCR all living produced biomass living in sea</Value>
+            </CELL>
+            <CELL>
+                <Row>30</Row>
+                <Cell>3</Cell>
+                <Value>Total loss (kg)</Value>
+            </CELL>
+            <CELL>
+                <Row>31</Row>
+                <Cell>3</Cell>
+                <Value>Discarded at harvesting (% of produced biomass)</Value>
+            </CELL>
+            <CELL>
+                <Row>32</Row>
+                <Cell>3</Cell>
+                <Value>Discarded (kg) swimmng biomass</Value>
+            </CELL>
+            <CELL>
+                <Row>33</Row>
+                <Cell>3</Cell>
+                <Value>Remaining swimming biomass to be sold (kg)</Value>
+            </CELL>
+            <CELL>
+                <Row>34</Row>
+                <Cell>3</Cell>
+                <Value>Number of fish delivered to well boat</Value>
+            </CELL>
+            <CELL>
+                <Row>35</Row>
+                <Cell>3</Cell>
+                <Value>Number of fish lost incl. Lost during production</Value>
+            </CELL>
+            <CELL>
+                <Row>36</Row>
+                <Cell>3</Cell>
+                <Value>Loss from starving (% of living weight)</Value>
+            </CELL>
+            <CELL>
+                <Row>37</Row>
+                <Cell>3</Cell>
+                <Value>Blood loss (% of living weight)</Value>
+            </CELL>
+            <CELL>
+                <Row>38</Row>
+                <Cell>3</Cell>
+                <Value>Loss from gutting (% of living weight)</Value>
+            </CELL>
+            <CELL>
+                <Row>39</Row>
+                <Cell>3</Cell>
+                <Value>Total kilos harvested gutted packed</Value>
+            </CELL>
+            <CELL>
+                <Row>40</Row>
+                <Cell>3</Cell>
+                <Value>Quality split and sales income</Value>
+            </CELL>
+            <CELL>
+                <Row>41</Row>
+                <Cell>3</Cell>
+                <Value>Amount Superior (% of total production)</Value>
+            </CELL>
+            <CELL>
+                <Row>42</Row>
+                <Cell>3</Cell>
+                <Value>Amount Ordinary (% of total production)</Value>
+            </CELL>
+            <CELL>
+                <Row>43</Row>
+                <Cell>3</Cell>
+                <Value>Amount Production (% of total production)</Value>
+            </CELL>
+            <CELL>
+                <Row>44</Row>
+                <Cell>3</Cell>
+                <Value>Sum amounts (% of total production)</Value>
+            </CELL>
+            <CELL>
+                <Row>45</Row>
+                <Cell>3</Cell>
+                <Value>Kilos gutted packed Superior</Value>
+            </CELL>
+            <CELL>
+                <Row>46</Row>
+                <Cell>3</Cell>
+                <Value>Kilos gutted packed Ordinary</Value>
+            </CELL>
+            <CELL>
+                <Row>47</Row>
+                <Cell>3</Cell>
+                <Value>Kilos gutted packed Production</Value>
+            </CELL>
+            <CELL>
+                <Row>48</Row>
+                <Cell>3</Cell>
+                <Value>Sum kilos gutted packed fob shipment</Value>
+            </CELL>
+            <CELL>
+                <Row>49</Row>
+                <Cell>3</Cell>
+                <Value>Market price Superior EUR / kg gutted fresh fob Dublin</Value>
+            </CELL>
+            <CELL>
+                <Row>50</Row>
+                <Cell>3</Cell>
+                <Value>Market price Ordinary EUR / kg gutted fresh fob Dublin</Value>
+            </CELL>
+            <CELL>
+                <Row>51</Row>
+                <Cell>3</Cell>
+                <Value>Market price Production EUR / kg gutted fresh fob Dublin</Value>
+            </CELL>
+            <CELL>
+                <Row>52</Row>
+                <Cell>3</Cell>
+                <Value>Sales income EUR Superior</Value>
+            </CELL>
+            <CELL>
+                <Row>53</Row>
+                <Cell>3</Cell>
+                <Value>Sales income EUR Ordinary</Value>
+            </CELL>
+            <CELL>
+                <Row>54</Row>
+                <Cell>3</Cell>
+                <Value>Sales income EUR Production</Value>
+            </CELL>
+            <CELL>
+                <Row>55</Row>
+                <Cell>3</Cell>
+                <Value>Sum Sales income EUR</Value>
+            </CELL>
+            <CELL>
+                <Row>56</Row>
+                <Cell>3</Cell>
+                <Value>Well boat EUR / kg live fish</Value>
+            </CELL>
+            <CELL>
+                <Row>57</Row>
+                <Cell>3</Cell>
+                <Value>Sum well boat costs</Value>
+            </CELL>
+            <CELL>
+                <Row>58</Row>
+                <Cell>3</Cell>
+                <Value>Costs processing, ice, packaging pr kilo</Value>
+            </CELL>
+            <CELL>
+                <Row>59</Row>
+                <Cell>3</Cell>
+                <Value>Sum costs slaughtering, ice, packaging</Value>
+            </CELL>
+            <CELL>
+                <Row>60</Row>
+                <Cell>3</Cell>
+                <Value>Freight cost fob Dublin (EUR) pr kilo</Value>
+            </CELL>
+            <CELL>
+                <Row>61</Row>
+                <Cell>3</Cell>
+                <Value>SUM freight cost fob pre-shipment location (EUR) kilo</Value>
+            </CELL>
+            <CELL>
+                <Row>62</Row>
+                <Cell>3</Cell>
+                <Value>Market fee EUR pr kilo sold (Natureland)</Value>
+            </CELL>
+            <CELL>
+                <Row>63</Row>
+                <Cell>3</Cell>
+                <Value>Sum marketing fee (EUR)</Value>
+            </CELL>
+            <CELL>
+                <Row>64</Row>
+                <Cell>3</Cell>
+                <Value>SUM costs harvested gutted fish, wellboat, slaughtering, freight and market fees EUR</Value>
+            </CELL>
+            <CELL>
+                <Row>65</Row>
+                <Cell>3</Cell>
+                <Value>Operating result vaccinated without PD outbreak</Value>
+            </CELL>
+            <CELL>
+                <Row>66</Row>
+                <Cell>3</Cell>
+                <Value>Total production costs at prodction site</Value>
+            </CELL>
+            <CELL>
+                <Row>67</Row>
+                <Cell>3</Cell>
+                <Value>Total costs well boat, slaughtering, freight, market fees fob pre-shipment location</Value>
+            </CELL>
+            <CELL>
+                <Row>68</Row>
+                <Cell>3</Cell>
+                <Value>Total cost of PD vaccine and vaccination</Value>
+            </CELL>
+            <CELL>
+                <Row>69</Row>
+                <Cell>3</Cell>
+                <Value>Total cost of handling dead fish</Value>
+            </CELL>
+            <CELL>
+                <Row>70</Row>
+                <Cell>3</Cell>
+                <Value>Total costs gutted fresh packaged fob pre-shipment location</Value>
+            </CELL>
+            <CELL>
+                <Row>71</Row>
+                <Cell>3</Cell>
+                <Value>Sum Sales income EUR</Value>
+            </CELL>
+            <CELL>
+                <Row>72</Row>
+                <Cell>3</Cell>
+                <Value>Sum operating margin EUR of production cycle</Value>
+            </CELL>
+            <CELL>
+                <Row>73</Row>
+                <Cell>3</Cell>
+                <Value>555</Value>
+            </CELL>
+            <CELL>
+                <Row>74</Row>
+                <Cell>3</Cell>
+                <Value>Operating margin EUR / kg harvested live swimming</Value>
+            </CELL>
+            <CELL>
+                <Row>75</Row>
+                <Cell>3</Cell>
+                <Value>Operating margin EUR / kg head on gutted packed</Value>
+            </CELL>
+            <CELL>
+                <Row>76</Row>
+                <Cell>3</Cell>
+                <Value>Average cost EUR / kg head on gutted packaged</Value>
+            </CELL>
+            <CELL>
+                <Row>77</Row>
+                <Cell>3</Cell>
+                <Value>Average production cost EUR/kg live swimming</Value>
+            </CELL>
+            <CELL>
+                <Row>78</Row>
+                <Cell>3</Cell>
+                <Value>555</Value>
+            </CELL>
+            <CELL>
+                <Row>79</Row>
+                <Cell>3</Cell>
+                <Value>Cost split EUR / kg produced before harvesting</Value>
+            </CELL>
+            <CELL>
+                <Row>80</Row>
+                <Cell>3</Cell>
+                <Value>Smolt</Value>
+            </CELL>
+            <CELL>
+                <Row>81</Row>
+                <Cell>3</Cell>
+                <Value>PD Vaccine and vacination costs</Value>
+            </CELL>
+            <CELL>
+                <Row>82</Row>
+                <Cell>3</Cell>
+                <Value>Cost of wages</Value>
+            </CELL>
+            <CELL>
+                <Row>83</Row>
+                <Cell>3</Cell>
+                <Value>Other operating costs pr site</Value>
+            </CELL>
+            <CELL>
+                <Row>84</Row>
+                <Cell>3</Cell>
+                <Value>Cost of feed</Value>
+            </CELL>
+            <CELL>
+                <Row>85</Row>
+                <Cell>3</Cell>
+                <Value>Insurance premium</Value>
+            </CELL>
+            <CELL>
+                <Row>86</Row>
+                <Cell>3</Cell>
+                <Value>Depriciation cost</Value>
+            </CELL>
+            <CELL>
+                <Row>87</Row>
+                <Cell>3</Cell>
+                <Value>Handling of dead fish</Value>
+            </CELL>
+            <CELL>
+                <Row>88</Row>
+                <Cell>3</Cell>
+                <Value>Sum production cost live swimming EUR / kg</Value>
+            </CELL>
+            <CELL>
+                <Row>89</Row>
+                <Cell>3</Cell>
+               <Value>555</Value>
+            </CELL>
+            <CELL>
+                <Row>90</Row>
+                <Cell>3</Cell>
+                <Value>555</Value>
+            </CELL>
+            <CELL>
+                <Row>91</Row>
+                <Cell>3</Cell>
+            <Value>555</Value>
+            </CELL>
+            <CELL>
+                <Row>92</Row>
+                <Cell>3</Cell>
+                <Value>Effect of not having a PD outbreak if the fish is vaccinated:</Value>
+            </CELL>
+            <CELL>
+                <Row>93</Row>
+                <Cell>3</Cell>
+                <Value>Increase in biomass (kg swimming) produced at site:</Value>
+            </CELL>
+            <CELL>
+                <Row>94</Row>
+                <Cell>3</Cell>
+                <Value>Increase in biomass (kg) harvested head on gutted delivered to the market</Value>
+            </CELL>
+            <CELL>
+                <Row>95</Row>
+                <Cell>3</Cell>
+                <Value>Increased sales income without outbreak</Value>
+            </CELL>
+            <CELL>
+                <Row>96</Row>
+                <Cell>3</Cell>
+                <Value>Increased operating result without breakout</Value>
+            </CELL>
+            <CELL>
+                <Row>97</Row>
+                <Cell>3</Cell>
+                <Value>Effect of PD breakout with vaccinated fish:</Value>
+            </CELL>
+            <CELL>
+                <Row>98</Row>
+                <Cell>3</Cell>
+                <Value>Loss of gross sales income EUR pr fish packaged head on </Value>
+            </CELL>
+            <CELL>
+                <Row>99</Row>
+                <Cell>3</Cell>
+                <Value>Los of operating result EUR pr fish packaged head on</Value>
+            </CELL>
+            <CELL>
+                <Row>100</Row>
+                <Cell>3</Cell>
+                <Value>Effect of PD outbreak with non-vaccinated fish:</Value>
+            </CELL>
+            <CELL>
+                <Row>101</Row>
+                <Cell>3</Cell>
+                <Value>Loss of biomass (kg living) produced at site</Value>
+            </CELL>
+            <CELL>
+                <Row>102</Row>
+                <Cell>3</Cell>
+                <Value>Loss of biomass delivered to market packaged</Value>
+            </CELL>
+            <CELL>
+                <Row>103</Row>
+                <Cell>3</Cell>
+                <Value>Loss of sales income with outbreak</Value>
+            </CELL>
+            <CELL>
+                <Row>104</Row>
+                <Cell>3</Cell>
+                <Value>Loss of operating result with outbreak</Value>
+            </CELL>
+            <CELL>
+                <Row>105</Row>
+                <Cell>3</Cell>
+                <Value>Effect of PD with outbreak with non-vaccinated fish</Value>
+            </CELL>
+            <CELL>
+                <Row>106</Row>
+                <Cell>3</Cell>
+                <Value>Lost operating result EUR / individ packaged</Value>
+            </CELL>
+            <CELL>
+                <Row>107</Row>
+                <Cell>3</Cell>
+                <Value>Vaccinated fish with outbreak gives:</Value>
+            </CELL>
+            <CELL>
+                <Row>108</Row>
+                <Cell>3</Cell>
+                <Value>increased production:</Value>
+            </CELL>
+            <CELL>
+                <Row>109</Row>
+                <Cell>3</Cell>
+                <Value>increased income:</Value>
+            </CELL>
+        <name>Vaccine model</name>
+</root_wb_pf>

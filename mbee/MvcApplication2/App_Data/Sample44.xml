@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<troot_wb_pf>
+
+<input>
+  <CELL>
+    <Cell>3</Cell>
+    <Value>PD Vaccine with No PD</Value>
+  </CELL>
+  <CELL>
+    <Cell>3</Cell>
+    <Value>123</Value>
+  </CELL>
+  <CELL>
+    <Cell>3</Cell>
+    <Value>44</Value>
+  </CELL>
+  <name>Vaccine model</name>
+</input>
+
+<output>
+  <CELL>
+    <Cell>$D87</Cell>
+  </CELL>
+  <CELL>
+    <Cell>F87</Cell>
+  </CELL>
+  <CELL>
+    <Cell>G87</Cell>
+  </CELL>
+  <name>Printer friendly</name>
+</output>
+</troot_wb_pf>
