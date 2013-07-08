@@ -27,12 +27,39 @@ namespace myrabbitmq
         static public string Publish(string message)
         {
             string retval = string.Empty;
-            ConnectionFactory factory = new ConnectionFactory();
-            factory.HostName = "localhost";
 
-            using (IConnection connection = factory.CreateConnection())
+            //string CLOUDAMQP_URL = "amqp://dpmkytge:rCUQlkYztQPX6-hipTyVxK2rCKno-Dhp@lemur.cloudamqp.com/dpmkytge";
+            ////string myuri = "amqp://quest@localhost/";
+            ////string myuri = "amqp://quest@http://localhost/";                                   
+            //string myuri = "amqp://guest:guest@127.0.0.1/";
+
+            //// First we need a ConnectionFactory
+            //ConnectionFactory connFactory22 = new ConnectionFactory
+            //{
+            //    // AppSettings["CLOUDAMQP_URL"] contains the connection string
+            //    // when you've added the CloudAMQP Addon
+            //    //Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL"]
+            //    Uri = CLOUDAMQP_URL
+            //};
+
+            // First we need a ConnectionFactory
+            ConnectionFactory connFactory = new ConnectionFactory
             {
-                using (IModel channel = connection.CreateModel())
+                // AppSettings["CLOUDAMQP_URL"] contains the connection string
+                // when you've added the CloudAMQP Addon
+                Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL"]
+                //Uri = myuri
+            };
+
+           
+
+            //ConnectionFactory factory = new ConnectionFactory();
+            //factory.HostName = "localhost";
+            //using (IConnection connection = factory.CreateConnection())          
+            using (var conn = connFactory.CreateConnection())
+            {
+                //using (IModel channel = connection.CreateModel())
+                using (var channel = conn.CreateModel()) // Note, don't share channels between threads
                 {
                     channel.QueueDeclare(myRabbitMQVitals._queue, false, false, false, null);
                     channel.ExchangeDeclare(myRabbitMQVitals._exchange, RabbitMQ.Client.ExchangeType.Direct);

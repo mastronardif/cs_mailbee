@@ -24,12 +24,22 @@ namespace myrabbitmq
         static public string Publish(string message)
         {
             string retval = string.Empty;
-            ConnectionFactory factory = new ConnectionFactory();
-            factory.HostName = "localhost";
 
-            using (IConnection connection = factory.CreateConnection())
+            // First we need a ConnectionFactory
+            ConnectionFactory connFactory = new ConnectionFactory
             {
-                using (IModel channel = connection.CreateModel())
+                // AppSettings["CLOUDAMQP_URL"] contains the connection string
+                // when you've added the CloudAMQP Addon
+                Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL"]
+            };
+
+            //ConnectionFactory factory = new ConnectionFactory();
+            //factory.HostName = "localhost";
+            //using (IConnection connection = factory.CreateConnection())
+            using (var conn = connFactory.CreateConnection())
+            {
+                //using (IModel channel = connection.CreateModel())
+                using (var channel = conn.CreateModel()) // Note, don't share channels between threads
                 {
                     helperChannelDeclareBind(channel);
                     byte[] body = System.Text.Encoding.UTF8.GetBytes(message);

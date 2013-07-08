@@ -20,6 +20,7 @@ namespace RabbitMQ.Business
         static class myRabbitMQVitals
         {
             public static string _emailRoot = ConfigurationManager.AppSettings["EmailRoot"];
+            public static string _tagLine = ConfigurationManager.AppSettings["TagLine"];
         }
 
         static public string sendToGmail(string tag)
@@ -78,7 +79,12 @@ namespace RabbitMQ.Business
                         resp = MyBrowser.NormalizeHttpToEmail(url.AbsoluteUri, resp, myRabbitMQVitals._emailRoot);
                         //Program._log.Debug(retval);
 
-                        retval += mymail.MyMail.SendByMG22(to, from, resp);
+                        string tagLine = "<br/>"+myRabbitMQVitals._tagLine;
+                        tagLine += "<hr></hr>";
+                        tagLine += url; //encode_entities($tag);
+                        //_tagLine
+
+                        retval += mymail.MyMail.SendByMG22(to, from, resp + tagLine);
                         retval += "\n";
                     }
                 }
