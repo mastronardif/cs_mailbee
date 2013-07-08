@@ -29,9 +29,10 @@ namespace RabbitMQ
         {
             XmlConfigurator.Configure();
 
-            string op = (args.Length > 0) ? args[0] : ""; //string.Join(", ", args);
+            string op = (args.Length > 0) ? args[0] : "receive"; //string.Join(", ", args);
             string retval = string.Empty;
             Console.WriteLine(op);
+
             //op = "pop";
             switch (op.ToLower())
             {
