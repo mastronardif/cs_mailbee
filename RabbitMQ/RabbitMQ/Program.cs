@@ -64,7 +64,7 @@ namespace RabbitMQ
                 default:
                     Console.WriteLine("unkown action.  I did nothing.\n" +
                                        "Choices: \n" + 
-                                       "pop\nread or recieve\nsend\n" + 
+                                       "pop\nread or receive\nsend\n" + 
                                        "______________________\n"+
                                        "testJoemailweb\ntestJoeping\n");
 
