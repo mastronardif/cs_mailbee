@@ -1,0 +1,32 @@
+<MYMAIL>
+<HEADER>
+From: jimmy@joeschedule.mailgun.org
+To: Frank Mastronardi <mastronardif@gmail.com>
+Subject: c# bee joemailweb
+In-Reply-To: <CAAAKxgKEqWkQ_v3kPRhY+3ATgM1ePYcCLtv+-1qtT3T=s=AYsAmail.gmail.com>
+References: <CAAAKxgKEqWkQ_v3kPRhY+3ATgM1ePYcCLtv+-1qtT3T=s=AYsAmail.gmail.com>
+Message-Id: <FU uddy mailbox-19950-1311902078-753076ww3.pairlite.com>
+Date: Thu, 13 Oct 2011 21:14:38 -0400
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+
+</HEADER>
+
+<tags>
+ http://nytimes.com
+</tags>
+
+<tags>
+ http://drudgereport.com
+</tags>
+
+<tags>
+ http://slashdot.org
+</tags>
+
+<tags>
+ http://news.google.com/nwshp?hl=en&tab=wn
+</tags>
+
+
+</MYMAIL>
