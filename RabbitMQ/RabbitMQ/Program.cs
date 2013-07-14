@@ -113,30 +113,46 @@ namespace RabbitMQ
         //public static void MainReceive(string[] args)            
         public static void MainReceive(delReply reply)
         {
-            ConnectionFactory factory = new ConnectionFactory();
-            factory.HostName = "localhost";
-            using (IConnection connection = factory.CreateConnection())
-            using (IModel channel = connection.CreateModel())
+            //ConnectionFactory factory = new ConnectionFactory();
+            //factory.HostName = "localhost";
+
+            // First we need a ConnectionFactory
+            ConnectionFactory connFactory = new ConnectionFactory
             {
-                channel.QueueDeclare(myRabbitMQVitals._queue, false, false, false, null);
+                // AppSettings["CLOUDAMQP_URL"] contains the connection string
+                // when you've added the CloudAMQP Addon
+                Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL"]
+            };
 
-                QueueingBasicConsumer consumer = new QueueingBasicConsumer(channel);
-                channel.BasicConsume(myRabbitMQVitals._queue, true, consumer);
 
-                System.Console.WriteLine(" [*] Waiting for messages." +
-                                         "To exit press CTRL+C");
-                while (true)
+
+
+            //using (IConnection connection = factory.CreateConnection())
+            //using (IModel channel = connection.CreateModel())
+            using (var conn = connFactory.CreateConnection())
+            {
+                using (var channel = conn.CreateModel()) // Note, don't share channels between threads
                 {
-                    BasicDeliverEventArgs ea =
-                        (BasicDeliverEventArgs)consumer.Queue.Dequeue();
+                    channel.QueueDeclare(myRabbitMQVitals._queue, false, false, false, null);
 
-                    byte[] body = ea.Body;
+                    QueueingBasicConsumer consumer = new QueueingBasicConsumer(channel);
+                    channel.BasicConsume(myRabbitMQVitals._queue, true, consumer);
 
-                    string message = System.Text.Encoding.UTF8.GetString(body);
-                    System.Console.WriteLine(" [x] Received {0}", message);
+                    System.Console.WriteLine(" [*] Waiting for messages." +
+                                             "To exit press CTRL+C");
+                    while (true)
+                    {
+                        BasicDeliverEventArgs ea =
+                            (BasicDeliverEventArgs)consumer.Queue.Dequeue();
 
-                    reply(message);
+                        byte[] body = ea.Body;
 
+                        string message = System.Text.Encoding.UTF8.GetString(body);
+                        System.Console.WriteLine(" [x] Received {0}", message);
+
+                        reply(message);
+
+                    }
                 }
             }
         }
