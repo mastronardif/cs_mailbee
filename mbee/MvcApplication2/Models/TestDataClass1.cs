@@ -12,7 +12,7 @@ namespace MvcApplication2.Models
 "\n<HEADER>" +
 "\nFrom: jimmy@joeschedule.mailgun.org" +
 "\nTo: Frank Mastronardi <mastronardif@gmail.com>" +
-"\nSubject: dancer bee joemailweb" +
+"\nSubject: cs mbee joemailweb" +
 "\nIn-Reply-To: <CAAAKxgKEqWkQ_v3kPRhY+3ATgM1ePYcCLtv+-1qtT3T=s=AYsAmail.gmail.com>" +
 "\nReferences: <CAAAKxgKEqWkQ_v3kPRhY+3ATgM1ePYcCLtv+-1qtT3T=s=AYsAmail.gmail.com>" +
 "\nMessage-Id: <FU uddy mailbox-19950-1311902078-753076ww3.pairlite.com>" +

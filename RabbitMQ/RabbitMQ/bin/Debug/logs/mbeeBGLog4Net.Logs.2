@@ -1,1460 +1,4 @@
-2013-07-07 18:33:35,049 [1] DEBUG RabbitMQ.Program - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="RabbitMQ is a complete and highly reliable enterprise messaging system based on the emerging AMQP standard" /><meta name="googlebot" content="NOODP" /><meta name="google-site-verification" content="nSYeDgyKM9mw5CWcZuD0xu7iSWXlJijAlg9rcxVOYf4" /><meta name="google-site-verification" content="6UEaC3SWhpGQvqRnSJIEm2swxXpM5Adn4dxZhFsNdw0" /><link rel="stylesheet" href="/css/rabbit.css" type="text/css" /><!--[if IE 6]>
-      <link rel="stylesheet" href="/css/rabbit-ie6.css" type="text/css" />
-      <![endif]--><link rel="icon" type="/image/vnd.microsoft.icon" href="/favicon.ico" /><link rel="stylesheet" href="/css/tutorial.css" type="text/css" /><script type="text/javascript" src="/js/site.js"></script><script type="text/javascript" src="/js/ga-bootstrap.js"></script><title>RabbitMQ - Configuration</title>
-    
-  </head>
-  <body><div id="outerContainer"><div id="rabbit-logo"><a href="/"><img src="/img/rabbitmq_logo_strap.png" alt="RabbitMQ" width="253" height="53" /></a></div><div id="pivotal-logo"><a href="http://www.gopivotal.com/"><img src="/img/logo-pivotal-118x25.png" alt="Pivotal" width="118" height="25" /></a></div><div id="nav-search"><div id="search-box"><form action="/search.html" method="get"><input type="text" name="q" size="25" id="search-query" value="Search RabbitMQ" onfocus="handle_SearchBoxFocus();" onblur="handle_SearchBoxBlur();" /><input type="submit" id="search-button" alt="Search" value="" /></form></div><ul class="mainNav"><li><a href="/download.html">Installation</a></li><li><a href="/documentation.html" class="selected">Documentation</a></li><li><a href="/getstarted.html">Tutorials</a></li><li><a href="/services.html">Services</a></li><li><a href="/community.html">Community</a></li><li><a href="/blog/">Blog</a></li></ul></div><div class="nav-separator"></div><div id="left-content"><h1>Configuration</h1>
-      <div class="docSection"><a name="introduction" id="introduction"></a>
-      <p>
-      RabbitMQ comes with default built-in settings which will most likely be
-      sufficient for running your RabbitMQ server effectively. If it runs fine,
-      then you probably don't need any configuration at all.
-      </p>
-      <p>
-          If you have other constraints, RabbitMQ provides three general ways to
-          customise the server:
-      <dl>
-          <dt>
-              <a href="#define-environment-variables">environment variables</a>
-          </dt>
-          <dd>
-              define ports, file locations and names (taken from the shell, or
-              set in the <span class="code ">rabbitmq-env.conf</span> file)
-          </dd>
-          <dt>
-              <a href="#configuration-file">a configuration file</a>
-          </dt>
-          <dd>
-              defines server component settings for permissions, limits and
-              clusters, and also plugin settings.
-          </dd>
-          <dt>
-              <a href="parameters.html">runtime parameters and policies</a>
-          </dt>
-          <dd>
-              defines cluster-wide settings which can change at run time
-          </dd>
-      </dl>
-      </p>
-
-      <div class="docSubsection"><a name="verify-configuration" id="verify-configuration"></a>
-      <h3 class="docHeading">Verify Configuration</h3>
-         <p>
-           The active configuration can be verified in the broker log,
-           e.g. the active configuration file:
-         </p>
-           <pre class="sourcecode">
-config file(s) : /etc/rabbitmq/rabbitmq.config</pre>
-         <p>
-           will show up in the <a href="relocate.html">log file</a>.
-         </p>
-      </div>
-      </div>
-
-      <div class="docSection"><a name="customise-environment" id="customise-environment"></a>
-      <h2 class="docHeading">Customise RabbitMQ Environment</h2>
-        <div class="docSubsection"><a name="customise-general-unix-environment" id="customise-general-unix-environment"></a>
-        <h3 class="docHeading">Unix (general)</h3>
-          <p>
-              On Unix-based systems (including Linux, MacOSX) you can create/edit
-              <span class="code "><span class="path">rabbitmq-env.conf</span></span>
-              to define environment variables.
-              Its <a href="#config-location">location</a> is not configurable
-              (unlike <span class="code ">rabbitmq.config</span>).
-            </p>
-            <p>
-              Use the standard environment variable names
-              (but drop the RABBITMQ_ prefix) e.g.
-              <pre class="sourcecode">
-#example rabbitmq-env.conf file entries
-#Rename the node
-NODENAME=bunny@myhost
-#Config file location and new filename bunnies.config
-CONFIG_FILE=/etc/rabbitmq/testdir/bunnies</pre>
-              More <a href="man/rabbitmq-env.conf.5.man.html">info on using rabbitmq-env.conf</a>
-            </p>
-        </div>
-
-        <div class="docSubsection"><a name="customise-windows-environment" id="customise-windows-environment"></a>
-        <h3 class="docHeading">Windows</h3>
-            <p>
-               If you need to customise names, ports, locations, it is easiest
-               to configure environment variables in the Windows dialogue:
-               Start &gt; Settings &gt; Control Panel &gt; System &gt; Advanced &gt; Environment Variables.
-             </p>
-             <p>
-               Create or edit the system variable name and value.
-               For environment changes to take effect, open a new Command Prompt,
-               then restart the broker or re-install the service.
-            </p>
-        </div>
-      </div>
-
-      <div class="docSection"><a name="define-environment-variables" id="define-environment-variables"></a>
-        <h2 class="docHeading">RabbitMQ Environment Variables</h2>
-        <p>
-          RabbitMQ environment variable names have the
-          prefix <span class="code ">RABBITMQ_</span>. A typical variable
-          called <span class="code ">RABBITMQ_</span><i>var_name</i> is set as
-          follows:
-          <ul>
-            <li>
-              a shell environment variable called
-              <span class="code ">RABBITMQ_</span><i>var_name</i> is used if this is
-              defined;
-            </li>
-            <li><i>otherwise</i>, a variable called <i>var_name</i> is used if
-              this is set in the <span class="code ">rabbitmq-env.conf</span> file;</li>
-            <li><i>otherwise</i>, a system-specified default value is used.</li>
-          </ul>
-          <p>
-            In this way, variables set in the shell environment take
-            priority over variables set
-            in <span class="code ">rabbitmq-env.conf</span>, which in turn over-ride
-            RabbitMQ built-in defaults.
-          </p>
-        </p>
-        <p>
-          It is unlikely you will need to set any of these environment
-          variables. If you have non-standard requirements, then RabbitMQ
-          environment variables include, but are not limited to:
-        </p>
-        <div>
-          <table>
-            <tr><th>Name</th><th>Default</th><th>Description</th></tr>
-
-            <tr>
-              <td>RABBITMQ_NODE_IP_ADDRESS</td>
-              <td>
-                the empty string - meaning bind to all network interfaces.
-              </td>
-              <td>
-                Change this if you only want to bind to one network interface.
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_NODE_PORT</td>
-              <td>5672</td>
-              <td></td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_NODENAME</td>
-              <td>
-                <ul>
-                  <li>
-                    <b>Unix*:</b>
-                    <span class="code ">rabbit@<span class="envvar">$HOSTNAME</span></span>
-                  </li>
-                  <li>
-                    <b>Windows:</b>
-                    <span class="code ">rabbit@<span class="envvar">%COMPUTERNAME%</span></span>
-                  </li>
-                </ul>
-              </td>
-              <td>
-                The node name should be unique per
-                erlang-node-and-machine combination. To run multiple nodes,
-                see the
-                <a href="clustering.html">clustering guide</a>.
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_SERVICENAME</td>
-              <td><b>Windows Service:</b>
-                RabbitMQ</td>
-              <td>
-                The name of the installed service. This will appear in
-                <span class="code ">services.msc</span>.
-            </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_CONSOLE_LOG</td>
-              <td><b>Windows Service:</b></td>
-              <td>
-                Set this variable to <span class="code ">new</span> or <span class="code ">reuse</span>
-                to redirect console output from the server to a file named
-                <span class="envvar">%RABBITMQ_SERVICENAME%</span>.debug in the
-                default <b>RABBITMQ_BASE</b> directory.
-                <ul>
-                  <li>If not set, console output from the server will be discarded (default).</li>
-                  <li><span class="code ">new</span> A new file will be created
-                    each time the service starts.</li>
-                  <li><span class="code ">reuse</span> The file will be overwritten each time
-                    the service starts.</li>
-                </ul>
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_CTL_ERL_ARGS</td>
-              <td>None</td>
-              <td>
-                Parameters for the <span class="code ">erl</span> command used when invoking
-                <span class="code ">rabbitmqctl</span>. This should be overridden for
-                debugging purposes only.
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_SERVER_ERL_ARGS</td>
-              <td>
-                <ul>
-                  <li><b>Unix*:</b>
-                    <span class="sourcecode">"+K true +A30 +P 1048576 -kernel inet_default_connect_options [{nodelay,true}]"</span>
-                  </li>
-                  <li><b>Windows:</b> Not configurable</li>
-                </ul>
-              </td>
-              <td>
-                Standard parameters for the <span class="code ">erl</span> command used when
-                invoking the RabbitMQ Server. This should be overridden for
-                debugging purposes only.
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_SERVER_START_ARGS</td>
-              <td>None</td>
-              <td>
-                Extra parameters for the <span class="code ">erl</span> command used when
-                invoking the RabbitMQ Server. This will not override
-                <b>RABBITMQ_SERVER_ERL_ARGS</b>.
-              </td>
-            </tr>
-          </table>
-          * Unix, Linux, MacOSX
-          <p>
-            In addition, there are several environment variables which
-            tell RabbitMQ <a href="relocate.html">where to locate its
-            database, log files, plugins, configuration etc</a>.
-          </p>
-
-          <p>
-            Other variables upon which RabbitMQ depends are:
-          </p>
-          <table>
-            <th>Name</th><th>Default</th><th>Description</th>
-
-            <tr>
-              <td>HOSTNAME</td>
-              <td><ul>
-                  <li><b>Unix, Linux:</b> `env hostname`</li>
-                  <li><b>MacOSX:</b> `env hostname -s`</li>
-                </ul>
-              </td>
-              <td>The name of the current machine</td>
-            </tr>
-
-            <tr>
-              <td>COMPUTERNAME</td>
-              <td><b>Windows:</b> localhost</td>
-              <td>The name of the current machine</td>
-            </tr>
-
-            <tr>
-              <td>ERLANG_SERVICE_MANAGER_PATH</td>
-              <td><b>Windows Service:</b>
-                <span class="path">
-                  <span class="envvar">%ERLANG_HOME%</span>\erts-<var>x.x.x</var>\bin</span>
-              </td>
-              <td>
-                This path is the location of <span class="code ">erlsrv.exe</span>,
-                the Erlang service wrapper script.
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="docSection"><a name="configuration-file" id="configuration-file"></a>
-      <h2 class="docHeading">Configuration File</h2>
-        <div class="docSubsection"><a name="config-file" id="config-file"></a>
-        <h3 class="docHeading">The rabbitmq.config File</h3>
-        <p>
-          The configuration file <span class="code ">rabbitmq.config</span>
-          allows the RabbitMQ core application,
-          Erlang services and RabbitMQ plugins to be configured.
-          It is a standard Erlang configuration file, documented on the
-          <a href="http://www.erlang.org/doc/man/config.html">Erlang Config Man Page</a>.
-        </p>
-        <p>
-          An example configuration file follows:
-        </p>
-        <p>
-<pre class="sourcecode">
-  [
-    {mnesia, [{dump_log_write_threshold, 1000}]},
-    {rabbit, [{tcp_listeners, [5673]}]}
-  ].
-</pre>
-        </p>
-        <p>
-          This example will alter the dump_log_write_threshold for
-          mnesia (increasing from the default of 100), and alter the
-          port RabbitMQ listens on from 5672 to 5673.
-        </p>
-        <p>
-           This configuration file is not the same as
-          <span class="code ">rabbitmq-env.conf</span>, which can be used to set environment
-          variables on non-windows systems. A future release of RabbitMQ will unify the two configuration
-          mechanisms.
-        </p>
-        </div>
-
-        <div class="docSubsection"><a name="config-location" id="config-location"></a>
-        <h3 class="docHeading">Location of rabbitmq.config and rabbitmq-env.conf</h3>
-        <p>
-          The location of these files is distribution-specific. By default, they
-          are not created, but expect to be located in the following places on each platform:
-          <ul>
-            <li><b>Generic UNIX</b> - <span class="path"><span class="envvar">$RABBITMQ_HOME</span>/etc/rabbitmq/</span>
-            </li>
-            <li><b>Debian</b> - <span class="path">/etc/rabbitmq/</span></li>
-            <li><b>RPM</b> - <span class="path">/etc/rabbitmq/</span></li>
-            <li>
-              <b>Mac OS X (Macports)</b> - <span class="path"><span class="envvar">${install_prefix}</span>/etc/rabbitmq/</span>,
-              the Macports prefix is usually <span class="code ">/opt/local</span>
-            </li>
-            <li><b>Windows</b> - <span class="path"><span class="envvar">%APPDATA%</span>\RabbitMQ\</span></li>
-          </ul>
-        </p>
-        <p>
-          If <span class="code ">rabbitmq-env.conf</span> doesn't exist, it can be created manually
-          in the default location only. It is not used on Windows systems.
-        </p>
-        <p>
-          If <span class="code ">rabbitmq.config</span> doesn't exist, it can be created manually.
-          Set the <b>RABBITMQ_CONFIG_FILE</b> environment variable if you change the location.
-          The Erlang runtime automatically appends the .config extension to the
-          value of this variable.
-        </p>
-        <p>
-          Restart the server after changes. Windows service users need to take
-          <a href="/plugins.html#windows-restart">additional steps</a> when changing plugins.
-        </p>
-        </div>
-
-        <div class="docSubsection"><a name="config-items" id="config-items"></a>
-        <h3 class="docHeading">Variables Configurable in rabbitmq.config</h3>
-        <p>
-          Many users of RabbitMQ never need to change any of these
-          values, and some are fairly obscure. However, for
-          completeness they are all listed here.
-        </p>
-        <table>
-          <tr>
-            <th>Key</th>
-            <th>Documentation</th>
-          </tr>
-          <tr>
-            <td>
-              <span class="code ">tcp_listeners</span>
-            </td>
-            <td>
-              List of ports on which to listen for AMQP connections
-              (without SSL). Can contain integers (meaning "listen on
-              all interfaces") or tuples such as <span class="code ">{"127.0.0.1",
-              5672}</span> to listen on a single interface.
-
-              <p>Default: <span class="code ">[5672]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">ssl_listeners</span></td>
-            <td>
-              As above, for SSL connections.
-              <p>Default: <span class="code ">[]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">ssl_options</span></td>
-            <td>
-              SSL configuration. See the <a href="ssl.html#enabling-ssl">SSL
-              documentation</a>.
-              <p>Default: <span class="code ">[]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">vm_memory_high_watermark</span></td>
-            <td>
-              Memory threshold at which the flow control is
-              triggered. See
-              the <a href="memory.html">memory-based flow
-              control</a> documentation.
-              <p>Default: <span class="code ">0.4</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">disk_free_limit</span></td>
-            <td>
-              Disk free space limit of the partition on which RabbitMQ
-              is storing data. When available disk space falls below
-              this limit, flow control is triggered. The value may be
-              set relative to the total amount of RAM (e.g.
-              <span class="code ">{mem_relative, 1.0}</span>). The value may also be
-              set to an integer number of bytes. By default free disk
-              space must exceed 1GB. See
-              the <a href="memory.html#diskfreesup">memory-based flow
-              control</a> documentation.
-              <p>Default: <span class="code ">1000000000</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">log_levels</span></td>
-            <td>
-              Controls the granularity of logging. The value is a list
-              of log event category and log level pairs.
-
-              <p>
-                The level can be one of 'none' (no events are logged),
-                'error' (only errors are logged), 'warning' (only
-                errors and warning are logged), or 'info' (errors,
-                warnings and informational messages are logged).
-              </p>
-
-              <p>
-                At present there is just one category defined -
-                'connection', for all events relating to network
-                connections. Other, currently uncategorised, events
-                are always logged.
-              </p>
-              <p>Default: <span class="code ">[{connection, info}]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">frame_max</span></td>
-            <td>
-              Maximum permissible size of a frame (in bytes) to
-              negotiate with clients. Setting to 0 means "unlimited"
-              but will trigger a bug in some QPid clients. Setting a
-              larger value may improve throughput; setting a smaller
-              value may improve latency.
-              <p>Default: <span class="code ">131072</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">heartbeat</span></td>
-            <td>
-              Value representing the heartbeat delay, in seconds, that the
-              server sends in the <span class="code ">connection.tune</span> frame. If set to
-              0, heartbeats are disabled. Clients might not follow the server
-              suggestion, see the <a href="amqp-0-9-1-reference.html#connection.tune">AMQP
-              reference</a> for more details. Disabling heartbeats might improve
-              performance in situations with a great number of connections, but
-              might lead to connections dropping in the presence of network
-              devices that close inactive connections.
-              <p>Default: <span class="code ">600</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_vhost</span></td>
-            <td>
-              Virtual host to create when RabbitMQ creates a new
-              database from scratch. The
-              exchange <span class="code ">amq.rabbitmq.log</span> will exist in
-              this virtual host.
-              <p>Default: <span class="code ">&lt;&lt;"/"&gt;&gt;</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_user</span></td>
-            <td>
-              User name to create when RabbitMQ creates a new database
-              from scratch.
-              <p>Default: <span class="code ">&lt;&lt;"guest"&gt;&gt;</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_pass</span></td>
-            <td>
-              Password for the default user.
-              <p>Default: <span class="code ">&lt;&lt;"guest"&gt;&gt;</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_user_tags</span></td>
-            <td>
-              Tags for the default user.
-              <p>Default: <span class="code ">[administrator]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_permissions</span></td>
-            <td>
-              <a href="access-control.html">Permissions</a>
-              to assign to the default user when creating it.
-              <p>Default: <span class="code ">
-                  [&lt;&lt;".*"&gt;&gt;, &lt;&lt;".*"&gt;&gt;, &lt;&lt;".*"&gt;&gt;]
-              </span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">cluster_nodes</span></td>
-            <td>
-              Set this to cause clustering to <a href="clustering.html#auto-config">happen automatically</a>.  The
-              first element of the tuple is the nodes that the node will try to
-              cluster to.  The second element is either <span class="code ">disc</span> or
-              <span class="code ">ram</span> and determines the node type.
-              <p>Default: <span class="code ">{[], disc}</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">server_properties</span></td>
-            <td>
-              List of key-value pairs to announce to clients on connection.
-              <p>Default: <span class="code ">[]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">collect_statistics</span></td>
-            <td>
-              Statistics collection mode. Primarily relevant for the
-              management plugin. Options are:
-              <ul>
-                <li>none (do not emit statistics events)</li>
-                <li>coarse (emit per-queue / per-channel / per-connection statistics)</li>
-                <li>fine (also emit per-message statistics)</li>
-                </ul>
-              You probably don't want to change this yourself.
-              <p>Default: <span class="code ">none</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">collect_statistics_interval</span></td>
-            <td>
-              Statistics collection interval in
-              milliseconds. Primarily relevant for
-              the <a href="management.html#statistics-interval">management
-              plugin</a>.
-              <p>Default: <span class="code ">5000</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">auth_mechanisms</span></td>
-            <td>
-              <a href="authentication.html">SASL authentication
-              mechanisms</a> to offer to clients.
-              <p>Default: <span class="code ">['PLAIN', 'AMQPLAIN']</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">auth_backends</span></td>
-            <td>
-              List of authentication databases to use. Other databases
-              than <span class="code ">rabbit_auth_backend_internal</span> are
-              available through <a href="plugins.html">plugins</a>.
-              <p>Default: <span class="code ">[rabbit_auth_backend_internal]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">delegate_count</span></td>
-            <td>
-              Number of delegate processes to use for intra-cluster
-              communication. On a machine which has a very large
-              number of cores and is also part of a cluster, you may
-              wish to increase this value.
-              <p>Default: <span class="code ">16</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">trace_vhosts</span></td>
-            <td>
-              Used internally by
-              the <a href="firehose.html">tracer</a>. You shouldn't
-              change this.
-              <p>Default: <span class="code ">[]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">tcp_listen_options</span></td>
-            <td>
-              Default socket options. You probably don't want to
-              change this.
-
-              <p>Default:
-                <pre>[binary, {packet,        raw},
-         {reuseaddr,     true},
-         {backlog,       128},
-         {nodelay,       true},
-         {exit_on_close, false}]</pre>
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">hipe_compile</span></td>
-            <td>
-              Set to <span class="code ">true</span> to precompile parts of RabbitMQ
-              with the High Performance Erlang compiler. This will
-              increase the message rate that the server can handle,
-              while also increasing startup time.
-
-              <p>
-                You might see 20-50% better performance at the cost of
-                approximately 1 minute delay at startup. These
-                figures are highly workload- and hardware-dependent.
-              </p>
-              <p>
-                HiPE support may not be compiled into your Erlang
-                installation. If it is not, enabling this option will
-                just cause a warning message to be displayed and
-                startup will proceed as normal. For example, Debian /
-                Ubuntu users will need to install
-                the <span class="code ">erlang-base-hipe</span> package.
-              </p>
-              <p>
-                HiPE is not available at all on some platforms,
-                notably including Windows.
-              </p>
-              <p>
-                This option should be
-                considered <b>experimental</b>. If your Erlang VM
-                segfaults, disable this option again.
-              </p>
-              <p>Default: <span class="code ">false</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">cluster_partition_handling</span></td>
-            <td>
-              How to handle network partitions. One
-              of <span class="code ">ignore</span>,
-              <span class="code ">pause_minority</span>
-              or <span class="code ">autoheal</span>. See
-              the <a href="partitions.html#automatic-handling">documentation
-              on partitions</a> for more information.
-              <p>Default: <span class="code ">ignore</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">msg_store_index_module</span></td>
-            <td>
-              Implementation module for queue indexing. You probably
-              don't want to change this.
-              <p>Default: <span class="code ">rabbit_msg_store_ets_index</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">backing_queue_module</span></td>
-            <td>
-              Implementation module for queue contents. You probably
-              don't want to change this.
-              <p>Default: <span class="code ">rabbit_variable_queue</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">msg_store_file_size_limit</span></td>
-            <td>
-              Tunable value for the persister. You almost certainly
-              should not change this.
-              <p>Default: <span class="code ">16777216</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">queue_index_max_</span>
-              <span class="code ">journal_entries</span></td>
-            <td>
-              Tunable value for the persister. You almost certainly
-              should not change this.
-              <p>Default: <span class="code ">65536</span></p>
-            </td>
-          </tr>
-        </table>
-        <p>
-          In addition, many plugins can have sections in the
-          configuration file, with names of the
-          form <span class="code ">rabbitmq_<i>plugin</i></span>. Our maintained
-          plugins are documented in the following locations:
-        </p>
-        <ul>
-          <li><a href="management.html#configuration">rabbitmq_management</a></li>
-          <li><a href="management.html#configuration">rabbitmq_management_agent</a></li>
-          <li><a href="mochiweb.html">rabbitmq_mochiweb</a></li>
-          <li><a href="stomp.html">rabbitmq_stomp</a></li>
-          <li><a href="shovel.html">rabbitmq_shovel</a></li>
-          <li><a href="ldap.html">rabbitmq_auth_backend_ldap</a></li>
-        </ul>
-        </div>
-      </div>
-  </div><div id="right-nav"><div id="in-this-section"><h4>In This Section</h4><ul>
-     <li><a href="/features.html">Features</a></li>
-     <li><a href="/admin-guide.html" class="selected">Server Documentation</a><ul>
-       <li><a href="/configure.html" class="selected">Configuration</a><ul>
-         <li><a href="/relocate.html">File Locations</a></li>
-         <li><a href="/parameters.html">Parameters</a></li>
-       </ul></li>
-       <li><a href="/ssl.html">SSL Support</a></li>
-       <li><a href="/distributed.html">Distributed RabbitMQ</a></li>
-       <li><a href="/reliability.html">Reliable Delivery</a></li>
-       <li><a href="/clustering.html">Clustering</a></li>
-       <li><a href="/ha.html">High Availability</a></li>
-       <li><a href="/pacemaker.html">High Availability (pacemaker)</a></li>
-       <li><a href="/access-control.html">Access Control</a></li>
-       <li><a href="/authentication.html">SASL Authentication</a></li>
-       <li><a href="/memory.html">Flow Control</a></li>
-       <li><a href="/memory-use.html">Memory Use</a></li>
-       <li><a href="/firehose.html">Firehose / Tracing</a></li>
-       <li><a href="/manpages.html">Manual Pages</a></li>
-       <li><a href="/windows-quirks.html">Windows Quirks</a></li>
-       
-       
-       
-       
-     </ul></li>
-     <li><a href="/clients.html">Client Documentation</a></li>
-     <li><a href="/plugins.html">Plugins</a></li>
-     <li><a href="/news.html">News</a></li>
-     <li><a href="/protocol.html">Protocol</a></li>
-     <li><a href="/extensions.html">Our Extensions</a></li>
-     <li><a href="/build.html">Building</a></li>
-     
-       <li><a href="/previous.html">Previous Releases</a></li>
-     
-     <li><a href="/mpl.html">License</a></li>
-   </ul></div><div class="in-this-page"><h4>In This Page</h4><ul><li><a href="#introduction">Verify Configuration</a></li><li><a href="#customise-environment">Customise RabbitMQ Environment</a></li><li><a href="#define-environment-variables">RabbitMQ Environment Variables</a></li><li><a href="#configuration-file">Configuration File</a></li></ul></div></div><div class="clear"></div><div class="pageFooter"><p class="righter"><a href="/sitemap.html">Sitemap</a> |
-        <a href="/contact.html">Contact</a></p><p id="copyright">
-        Copyright © 2013 GoPivotal, Inc. All rights reserved
-        | <a href="http://www.gopivotal.com/privacy-policy">Privacy Policy</a></p></div></div></body>
-</html>
-
-2013-07-07 18:33:35,092 [1] DEBUG RabbitMQ.Program - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="description" content="RabbitMQ is a complete and highly reliable enterprise messaging system based on the emerging AMQP standard"><meta name="googlebot" content="NOODP"><meta name="google-site-verification" content="nSYeDgyKM9mw5CWcZuD0xu7iSWXlJijAlg9rcxVOYf4"><meta name="google-site-verification" content="6UEaC3SWhpGQvqRnSJIEm2swxXpM5Adn4dxZhFsNdw0"><link rel="stylesheet" href="/css/rabbit.css" type="text/css"><!--[if IE 6]>
-      <link rel="stylesheet" href="/css/rabbit-ie6.css" type="text/css" />
-      <![endif]--><link rel="icon" type="/image/vnd.microsoft.icon" href="/favicon.ico"><link rel="stylesheet" href="/css/tutorial.css" type="text/css"><script type="text/javascript" src="/js/site.js"></script><script type="text/javascript" src="/js/ga-bootstrap.js"></script><title>RabbitMQ - Configuration</title>
-    
-  </head>
-  <body><div id="outerContainer"><div id="rabbit-logo"><a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/</tags> %26lt%3B%2Ftags%26gt"><img src="/img/rabbitmq_logo_strap.png" alt="RabbitMQ" width="253" height="53"></a></div><div id="pivotal-logo"><a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.gopivotal.com/</tags> %26lt%3B%2Ftags%26gt"><img src="/img/logo-pivotal-118x25.png" alt="Pivotal" width="118" height="25"></a></div><div id="nav-search"><div id="search-box"><form action="/search.html" method="get"><input type="text" name="q" size="25" id="search-query" value="Search RabbitMQ" onfocus="handle_SearchBoxFocus();" onblur="handle_SearchBoxBlur();"><input type="submit" id="search-button" alt="Search" value=""></form></div><ul class="mainNav"><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Installation joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/download.html</tags> %26lt%3B%2Ftags%26gt">Installation</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Documentation joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/documentation.html</tags> %26lt%3B%2Ftags%26gt" class="selected">Documentation</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Tutorials joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/getstarted.html</tags> %26lt%3B%2Ftags%26gt">Tutorials</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Services joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/services.html</tags> %26lt%3B%2Ftags%26gt">Services</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Community joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/community.html</tags> %26lt%3B%2Ftags%26gt">Community</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Blog joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/blog/</tags> %26lt%3B%2Ftags%26gt">Blog</a></li></ul></div><div class="nav-separator"></div><div id="left-content"><h1>Configuration</h1>
-      <div class="docSection"><a name="introduction" id="introduction"></a>
-      <p>
-      RabbitMQ comes with default built-in settings which will most likely be
-      sufficient for running your RabbitMQ server effectively. If it runs fine,
-      then you probably don't need any configuration at all.
-      </p>
-      <p>
-          If you have other constraints, RabbitMQ provides three general ways to
-          customise the server:
-      <dl>
-          <dt>
-              <a href="mailto:jimmy@joeschedule.mailgun.org?subject=environment variables joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/configure.html#define-environment-variables</tags> %26lt%3B%2Ftags%26gt">environment variables</a>
-          </dt>
-          <dd>
-              define ports, file locations and names (taken from the shell, or
-              set in the <span class="code ">rabbitmq-env.conf</span> file)
-          </dd>
-          <dt>
-              <a href="mailto:jimmy@joeschedule.mailgun.org?subject=a configuration file joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/configure.html#configuration-file</tags> %26lt%3B%2Ftags%26gt">a configuration file</a>
-          </dt>
-          <dd>
-              defines server component settings for permissions, limits and
-              clusters, and also plugin settings.
-          </dd>
-          <dt>
-              <a href="mailto:jimmy@joeschedule.mailgun.org?subject=runtime parameters and policies joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/parameters.html</tags> %26lt%3B%2Ftags%26gt">runtime parameters and policies</a>
-          </dt>
-          <dd>
-              defines cluster-wide settings which can change at run time
-          </dd>
-      </dl>
-      </p>
-
-      <div class="docSubsection"><a name="verify-configuration" id="verify-configuration"></a>
-      <h3 class="docHeading">Verify Configuration</h3>
-         <p>
-           The active configuration can be verified in the broker log,
-           e.g. the active configuration file:
-         </p>
-           <pre class="sourcecode">
-config file(s) : /etc/rabbitmq/rabbitmq.config</pre>
-         <p>
-           will show up in the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=log file joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/relocate.html</tags> %26lt%3B%2Ftags%26gt">log file</a>.
-         </p>
-      </div>
-      </div>
-
-      <div class="docSection"><a name="customise-environment" id="customise-environment"></a>
-      <h2 class="docHeading">Customise RabbitMQ Environment</h2>
-        <div class="docSubsection"><a name="customise-general-unix-environment" id="customise-general-unix-environment"></a>
-        <h3 class="docHeading">Unix (general)</h3>
-          <p>
-              On Unix-based systems (including Linux, MacOSX) you can create/edit
-              <span class="code "><span class="path">rabbitmq-env.conf</span></span>
-              to define environment variables.
-              Its <a href="mailto:jimmy@joeschedule.mailgun.org?subject=location joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/configure.html#config-location</tags> %26lt%3B%2Ftags%26gt">location</a> is not configurable
-              (unlike <span class="code ">rabbitmq.config</span>).
-            </p>
-            <p>
-              Use the standard environment variable names
-              (but drop the RABBITMQ_ prefix) e.g.
-              <pre class="sourcecode">
-#example rabbitmq-env.conf file entries
-#Rename the node
-NODENAME=bunny@myhost
-#Config file location and new filename bunnies.config
-CONFIG_FILE=/etc/rabbitmq/testdir/bunnies</pre>
-              More <a href="mailto:jimmy@joeschedule.mailgun.org?subject=info on using rabbitmq-env.conf joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/man/rabbitmq-env.conf.5.man.html</tags> %26lt%3B%2Ftags%26gt">info on using rabbitmq-env.conf</a>
-            </p>
-        </div>
-
-        <div class="docSubsection"><a name="customise-windows-environment" id="customise-windows-environment"></a>
-        <h3 class="docHeading">Windows</h3>
-            <p>
-               If you need to customise names, ports, locations, it is easiest
-               to configure environment variables in the Windows dialogue:
-               Start &gt; Settings &gt; Control Panel &gt; System &gt; Advanced &gt; Environment Variables.
-             </p>
-             <p>
-               Create or edit the system variable name and value.
-               For environment changes to take effect, open a new Command Prompt,
-               then restart the broker or re-install the service.
-            </p>
-        </div>
-      </div>
-
-      <div class="docSection"><a name="define-environment-variables" id="define-environment-variables"></a>
-        <h2 class="docHeading">RabbitMQ Environment Variables</h2>
-        <p>
-          RabbitMQ environment variable names have the
-          prefix <span class="code ">RABBITMQ_</span>. A typical variable
-          called <span class="code ">RABBITMQ_</span><i>var_name</i> is set as
-          follows:
-          <ul>
-            <li>
-              a shell environment variable called
-              <span class="code ">RABBITMQ_</span><i>var_name</i> is used if this is
-              defined;
-            </li>
-            <li><i>otherwise</i>, a variable called <i>var_name</i> is used if
-              this is set in the <span class="code ">rabbitmq-env.conf</span> file;</li>
-            <li><i>otherwise</i>, a system-specified default value is used.</li>
-          </ul>
-          <p>
-            In this way, variables set in the shell environment take
-            priority over variables set
-            in <span class="code ">rabbitmq-env.conf</span>, which in turn over-ride
-            RabbitMQ built-in defaults.
-          </p>
-        </p>
-        <p>
-          It is unlikely you will need to set any of these environment
-          variables. If you have non-standard requirements, then RabbitMQ
-          environment variables include, but are not limited to:
-        </p>
-        <div>
-          <table>
-            <tr><th>Name</th><th>Default</th><th>Description</th></tr>
-
-            <tr>
-              <td>RABBITMQ_NODE_IP_ADDRESS</td>
-              <td>
-                the empty string - meaning bind to all network interfaces.
-              </td>
-              <td>
-                Change this if you only want to bind to one network interface.
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_NODE_PORT</td>
-              <td>5672</td>
-              <td></td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_NODENAME</td>
-              <td>
-                <ul>
-                  <li>
-                    <b>Unix*:</b>
-                    <span class="code ">rabbit@<span class="envvar">$HOSTNAME</span></span>
-                  </li>
-                  <li>
-                    <b>Windows:</b>
-                    <span class="code ">rabbit@<span class="envvar">%COMPUTERNAME%</span></span>
-                  </li>
-                </ul>
-              </td>
-              <td>
-                The node name should be unique per
-                erlang-node-and-machine combination. To run multiple nodes,
-                see the
-                <a href="mailto:jimmy@joeschedule.mailgun.org?subject=clustering guide joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/clustering.html</tags> %26lt%3B%2Ftags%26gt">clustering guide</a>.
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_SERVICENAME</td>
-              <td><b>Windows Service:</b>
-                RabbitMQ</td>
-              <td>
-                The name of the installed service. This will appear in
-                <span class="code ">services.msc</span>.
-            </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_CONSOLE_LOG</td>
-              <td><b>Windows Service:</b></td>
-              <td>
-                Set this variable to <span class="code ">new</span> or <span class="code ">reuse</span>
-                to redirect console output from the server to a file named
-                <span class="envvar">%RABBITMQ_SERVICENAME%</span>.debug in the
-                default <b>RABBITMQ_BASE</b> directory.
-                <ul>
-                  <li>If not set, console output from the server will be discarded (default).</li>
-                  <li><span class="code ">new</span> A new file will be created
-                    each time the service starts.</li>
-                  <li><span class="code ">reuse</span> The file will be overwritten each time
-                    the service starts.</li>
-                </ul>
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_CTL_ERL_ARGS</td>
-              <td>None</td>
-              <td>
-                Parameters for the <span class="code ">erl</span> command used when invoking
-                <span class="code ">rabbitmqctl</span>. This should be overridden for
-                debugging purposes only.
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_SERVER_ERL_ARGS</td>
-              <td>
-                <ul>
-                  <li><b>Unix*:</b>
-                    <span class="sourcecode">"+K true +A30 +P 1048576 -kernel inet_default_connect_options [{nodelay,true}]"</span>
-                  </li>
-                  <li><b>Windows:</b> Not configurable</li>
-                </ul>
-              </td>
-              <td>
-                Standard parameters for the <span class="code ">erl</span> command used when
-                invoking the RabbitMQ Server. This should be overridden for
-                debugging purposes only.
-              </td>
-            </tr>
-
-            <tr>
-              <td>RABBITMQ_SERVER_START_ARGS</td>
-              <td>None</td>
-              <td>
-                Extra parameters for the <span class="code ">erl</span> command used when
-                invoking the RabbitMQ Server. This will not override
-                <b>RABBITMQ_SERVER_ERL_ARGS</b>.
-              </td>
-            </tr>
-          </table>
-          * Unix, Linux, MacOSX
-          <p>
-            In addition, there are several environment variables which
-            tell RabbitMQ <a href="mailto:jimmy@joeschedule.mailgun.org?subject=where to locate its
-            database, ... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/relocate.html</tags> %26lt%3B%2Ftags%26gt">where to locate its
-            database, log files, plugins, configuration etc</a>.
-          </p>
-
-          <p>
-            Other variables upon which RabbitMQ depends are:
-          </p>
-          <table>
-            <th>Name</th><th>Default</th><th>Description</th>
-
-            <tr>
-              <td>HOSTNAME</td>
-              <td><ul>
-                  <li><b>Unix, Linux:</b> `env hostname`</li>
-                  <li><b>MacOSX:</b> `env hostname -s`</li>
-                </ul>
-              </td>
-              <td>The name of the current machine</td>
-            </tr>
-
-            <tr>
-              <td>COMPUTERNAME</td>
-              <td><b>Windows:</b> localhost</td>
-              <td>The name of the current machine</td>
-            </tr>
-
-            <tr>
-              <td>ERLANG_SERVICE_MANAGER_PATH</td>
-              <td><b>Windows Service:</b>
-                <span class="path">
-                  <span class="envvar">%ERLANG_HOME%</span>\erts-<var>x.x.x</var>\bin</span>
-              </td>
-              <td>
-                This path is the location of <span class="code ">erlsrv.exe</span>,
-                the Erlang service wrapper script.
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="docSection"><a name="configuration-file" id="configuration-file"></a>
-      <h2 class="docHeading">Configuration File</h2>
-        <div class="docSubsection"><a name="config-file" id="config-file"></a>
-        <h3 class="docHeading">The rabbitmq.config File</h3>
-        <p>
-          The configuration file <span class="code ">rabbitmq.config</span>
-          allows the RabbitMQ core application,
-          Erlang services and RabbitMQ plugins to be configured.
-          It is a standard Erlang configuration file, documented on the
-          <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Erlang Config Man Page joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.erlang.org/doc/man/config.html</tags> %26lt%3B%2Ftags%26gt">Erlang Config Man Page</a>.
-        </p>
-        <p>
-          An example configuration file follows:
-        </p>
-        <p>
-<pre class="sourcecode">
-  [
-    {mnesia, [{dump_log_write_threshold, 1000}]},
-    {rabbit, [{tcp_listeners, [5673]}]}
-  ].
-</pre>
-        </p>
-        <p>
-          This example will alter the dump_log_write_threshold for
-          mnesia (increasing from the default of 100), and alter the
-          port RabbitMQ listens on from 5672 to 5673.
-        </p>
-        <p>
-           This configuration file is not the same as
-          <span class="code ">rabbitmq-env.conf</span>, which can be used to set environment
-          variables on non-windows systems. A future release of RabbitMQ will unify the two configuration
-          mechanisms.
-        </p>
-        </div>
-
-        <div class="docSubsection"><a name="config-location" id="config-location"></a>
-        <h3 class="docHeading">Location of rabbitmq.config and rabbitmq-env.conf</h3>
-        <p>
-          The location of these files is distribution-specific. By default, they
-          are not created, but expect to be located in the following places on each platform:
-          <ul>
-            <li><b>Generic UNIX</b> - <span class="path"><span class="envvar">$RABBITMQ_HOME</span>/etc/rabbitmq/</span>
-            </li>
-            <li><b>Debian</b> - <span class="path">/etc/rabbitmq/</span></li>
-            <li><b>RPM</b> - <span class="path">/etc/rabbitmq/</span></li>
-            <li>
-              <b>Mac OS X (Macports)</b> - <span class="path"><span class="envvar">${install_prefix}</span>/etc/rabbitmq/</span>,
-              the Macports prefix is usually <span class="code ">/opt/local</span>
-            </li>
-            <li><b>Windows</b> - <span class="path"><span class="envvar">%APPDATA%</span>\RabbitMQ\</span></li>
-          </ul>
-        </p>
-        <p>
-          If <span class="code ">rabbitmq-env.conf</span> doesn't exist, it can be created manually
-          in the default location only. It is not used on Windows systems.
-        </p>
-        <p>
-          If <span class="code ">rabbitmq.config</span> doesn't exist, it can be created manually.
-          Set the <b>RABBITMQ_CONFIG_FILE</b> environment variable if you change the location.
-          The Erlang runtime automatically appends the .config extension to the
-          value of this variable.
-        </p>
-        <p>
-          Restart the server after changes. Windows service users need to take
-          <a href="mailto:jimmy@joeschedule.mailgun.org?subject=additional steps joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/plugins.html#windows-restart</tags> %26lt%3B%2Ftags%26gt">additional steps</a> when changing plugins.
-        </p>
-        </div>
-
-        <div class="docSubsection"><a name="config-items" id="config-items"></a>
-        <h3 class="docHeading">Variables Configurable in rabbitmq.config</h3>
-        <p>
-          Many users of RabbitMQ never need to change any of these
-          values, and some are fairly obscure. However, for
-          completeness they are all listed here.
-        </p>
-        <table>
-          <tr>
-            <th>Key</th>
-            <th>Documentation</th>
-          </tr>
-          <tr>
-            <td>
-              <span class="code ">tcp_listeners</span>
-            </td>
-            <td>
-              List of ports on which to listen for AMQP connections
-              (without SSL). Can contain integers (meaning "listen on
-              all interfaces") or tuples such as <span class="code ">{"127.0.0.1",
-              5672}</span> to listen on a single interface.
-
-              <p>Default: <span class="code ">[5672]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">ssl_listeners</span></td>
-            <td>
-              As above, for SSL connections.
-              <p>Default: <span class="code ">[]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">ssl_options</span></td>
-            <td>
-              SSL configuration. See the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=SSL
-              documentation joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/ssl.html#enabling-ssl</tags> %26lt%3B%2Ftags%26gt">SSL
-              documentation</a>.
-              <p>Default: <span class="code ">[]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">vm_memory_high_watermark</span></td>
-            <td>
-              Memory threshold at which the flow control is
-              triggered. See
-              the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=memory-based flow
-              control joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/memory.html</tags> %26lt%3B%2Ftags%26gt">memory-based flow
-              control</a> documentation.
-              <p>Default: <span class="code ">0.4</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">disk_free_limit</span></td>
-            <td>
-              Disk free space limit of the partition on which RabbitMQ
-              is storing data. When available disk space falls below
-              this limit, flow control is triggered. The value may be
-              set relative to the total amount of RAM (e.g.
-              <span class="code ">{mem_relative, 1.0}</span>). The value may also be
-              set to an integer number of bytes. By default free disk
-              space must exceed 1GB. See
-              the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=memory-based flow
-              control joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/memory.html#diskfreesup</tags> %26lt%3B%2Ftags%26gt">memory-based flow
-              control</a> documentation.
-              <p>Default: <span class="code ">1000000000</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">log_levels</span></td>
-            <td>
-              Controls the granularity of logging. The value is a list
-              of log event category and log level pairs.
-
-              <p>
-                The level can be one of 'none' (no events are logged),
-                'error' (only errors are logged), 'warning' (only
-                errors and warning are logged), or 'info' (errors,
-                warnings and informational messages are logged).
-              </p>
-
-              <p>
-                At present there is just one category defined -
-                'connection', for all events relating to network
-                connections. Other, currently uncategorised, events
-                are always logged.
-              </p>
-              <p>Default: <span class="code ">[{connection, info}]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">frame_max</span></td>
-            <td>
-              Maximum permissible size of a frame (in bytes) to
-              negotiate with clients. Setting to 0 means "unlimited"
-              but will trigger a bug in some QPid clients. Setting a
-              larger value may improve throughput; setting a smaller
-              value may improve latency.
-              <p>Default: <span class="code ">131072</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">heartbeat</span></td>
-            <td>
-              Value representing the heartbeat delay, in seconds, that the
-              server sends in the <span class="code ">connection.tune</span> frame. If set to
-              0, heartbeats are disabled. Clients might not follow the server
-              suggestion, see the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=AMQP
-              reference joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/amqp-0-9-1-reference.html#connection.tune</tags> %26lt%3B%2Ftags%26gt">AMQP
-              reference</a> for more details. Disabling heartbeats might improve
-              performance in situations with a great number of connections, but
-              might lead to connections dropping in the presence of network
-              devices that close inactive connections.
-              <p>Default: <span class="code ">600</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_vhost</span></td>
-            <td>
-              Virtual host to create when RabbitMQ creates a new
-              database from scratch. The
-              exchange <span class="code ">amq.rabbitmq.log</span> will exist in
-              this virtual host.
-              <p>Default: <span class="code ">&lt;&lt;"/"&gt;&gt;</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_user</span></td>
-            <td>
-              User name to create when RabbitMQ creates a new database
-              from scratch.
-              <p>Default: <span class="code ">&lt;&lt;"guest"&gt;&gt;</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_pass</span></td>
-            <td>
-              Password for the default user.
-              <p>Default: <span class="code ">&lt;&lt;"guest"&gt;&gt;</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_user_tags</span></td>
-            <td>
-              Tags for the default user.
-              <p>Default: <span class="code ">[administrator]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">default_permissions</span></td>
-            <td>
-              <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Permissions joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/access-control.html</tags> %26lt%3B%2Ftags%26gt">Permissions</a>
-              to assign to the default user when creating it.
-              <p>Default: <span class="code ">
-                  [&lt;&lt;".*"&gt;&gt;, &lt;&lt;".*"&gt;&gt;, &lt;&lt;".*"&gt;&gt;]
-              </span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">cluster_nodes</span></td>
-            <td>
-              Set this to cause clustering to <a href="mailto:jimmy@joeschedule.mailgun.org?subject=happen automatically joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/clustering.html#auto-config</tags> %26lt%3B%2Ftags%26gt">happen automatically</a>.  The
-              first element of the tuple is the nodes that the node will try to
-              cluster to.  The second element is either <span class="code ">disc</span> or
-              <span class="code ">ram</span> and determines the node type.
-              <p>Default: <span class="code ">{[], disc}</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">server_properties</span></td>
-            <td>
-              List of key-value pairs to announce to clients on connection.
-              <p>Default: <span class="code ">[]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">collect_statistics</span></td>
-            <td>
-              Statistics collection mode. Primarily relevant for the
-              management plugin. Options are:
-              <ul>
-                <li>none (do not emit statistics events)</li>
-                <li>coarse (emit per-queue / per-channel / per-connection statistics)</li>
-                <li>fine (also emit per-message statistics)</li>
-                </ul>
-              You probably don't want to change this yourself.
-              <p>Default: <span class="code ">none</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">collect_statistics_interval</span></td>
-            <td>
-              Statistics collection interval in
-              milliseconds. Primarily relevant for
-              the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=management
-              plugin joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/management.html#statistics-interval</tags> %26lt%3B%2Ftags%26gt">management
-              plugin</a>.
-              <p>Default: <span class="code ">5000</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">auth_mechanisms</span></td>
-            <td>
-              <a href="mailto:jimmy@joeschedule.mailgun.org?subject=SASL authentication
-              mechanis... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/authentication.html</tags> %26lt%3B%2Ftags%26gt">SASL authentication
-              mechanisms</a> to offer to clients.
-              <p>Default: <span class="code ">['PLAIN', 'AMQPLAIN']</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">auth_backends</span></td>
-            <td>
-              List of authentication databases to use. Other databases
-              than <span class="code ">rabbit_auth_backend_internal</span> are
-              available through <a href="mailto:jimmy@joeschedule.mailgun.org?subject=plugins joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/plugins.html</tags> %26lt%3B%2Ftags%26gt">plugins</a>.
-              <p>Default: <span class="code ">[rabbit_auth_backend_internal]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">delegate_count</span></td>
-            <td>
-              Number of delegate processes to use for intra-cluster
-              communication. On a machine which has a very large
-              number of cores and is also part of a cluster, you may
-              wish to increase this value.
-              <p>Default: <span class="code ">16</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">trace_vhosts</span></td>
-            <td>
-              Used internally by
-              the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=tracer joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/firehose.html</tags> %26lt%3B%2Ftags%26gt">tracer</a>. You shouldn't
-              change this.
-              <p>Default: <span class="code ">[]</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">tcp_listen_options</span></td>
-            <td>
-              Default socket options. You probably don't want to
-              change this.
-
-              <p>Default:
-                <pre>[binary, {packet,        raw},
-         {reuseaddr,     true},
-         {backlog,       128},
-         {nodelay,       true},
-         {exit_on_close, false}]</pre>
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">hipe_compile</span></td>
-            <td>
-              Set to <span class="code ">true</span> to precompile parts of RabbitMQ
-              with the High Performance Erlang compiler. This will
-              increase the message rate that the server can handle,
-              while also increasing startup time.
-
-              <p>
-                You might see 20-50% better performance at the cost of
-                approximately 1 minute delay at startup. These
-                figures are highly workload- and hardware-dependent.
-              </p>
-              <p>
-                HiPE support may not be compiled into your Erlang
-                installation. If it is not, enabling this option will
-                just cause a warning message to be displayed and
-                startup will proceed as normal. For example, Debian /
-                Ubuntu users will need to install
-                the <span class="code ">erlang-base-hipe</span> package.
-              </p>
-              <p>
-                HiPE is not available at all on some platforms,
-                notably including Windows.
-              </p>
-              <p>
-                This option should be
-                considered <b>experimental</b>. If your Erlang VM
-                segfaults, disable this option again.
-              </p>
-              <p>Default: <span class="code ">false</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">cluster_partition_handling</span></td>
-            <td>
-              How to handle network partitions. One
-              of <span class="code ">ignore</span>,
-              <span class="code ">pause_minority</span>
-              or <span class="code ">autoheal</span>. See
-              the <a href="mailto:jimmy@joeschedule.mailgun.org?subject=documentation
-              on partitions joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/partitions.html#automatic-handling</tags> %26lt%3B%2Ftags%26gt">documentation
-              on partitions</a> for more information.
-              <p>Default: <span class="code ">ignore</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">msg_store_index_module</span></td>
-            <td>
-              Implementation module for queue indexing. You probably
-              don't want to change this.
-              <p>Default: <span class="code ">rabbit_msg_store_ets_index</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">backing_queue_module</span></td>
-            <td>
-              Implementation module for queue contents. You probably
-              don't want to change this.
-              <p>Default: <span class="code ">rabbit_variable_queue</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">msg_store_file_size_limit</span></td>
-            <td>
-              Tunable value for the persister. You almost certainly
-              should not change this.
-              <p>Default: <span class="code ">16777216</span></p>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="code ">queue_index_max_</span>
-              <span class="code ">journal_entries</span></td>
-            <td>
-              Tunable value for the persister. You almost certainly
-              should not change this.
-              <p>Default: <span class="code ">65536</span></p>
-            </td>
-          </tr>
-        </table>
-        <p>
-          In addition, many plugins can have sections in the
-          configuration file, with names of the
-          form <span class="code ">rabbitmq_<i>plugin</i></span>. Our maintained
-          plugins are documented in the following locations:
-        </p>
-        <ul>
-          <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=rabbitmq_management joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/management.html#configuration</tags> %26lt%3B%2Ftags%26gt">rabbitmq_management</a></li>
-          <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=rabbitmq_management_agent joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/management.html#configuration</tags> %26lt%3B%2Ftags%26gt">rabbitmq_management_agent</a></li>
-          <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=rabbitmq_mochiweb joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/mochiweb.html</tags> %26lt%3B%2Ftags%26gt">rabbitmq_mochiweb</a></li>
-          <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=rabbitmq_stomp joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/stomp.html</tags> %26lt%3B%2Ftags%26gt">rabbitmq_stomp</a></li>
-          <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=rabbitmq_shovel joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/shovel.html</tags> %26lt%3B%2Ftags%26gt">rabbitmq_shovel</a></li>
-          <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=rabbitmq_auth_backend_ldap joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/ldap.html</tags> %26lt%3B%2Ftags%26gt">rabbitmq_auth_backend_ldap</a></li>
-        </ul>
-        </div>
-      </div>
-  </div><div id="right-nav"><div id="in-this-section"><h4>In This Section</h4><ul>
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Features joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/features.html</tags> %26lt%3B%2Ftags%26gt">Features</a></li>
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Server Documentation joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/admin-guide.html</tags> %26lt%3B%2Ftags%26gt" class="selected">Server Documentation</a><ul>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Configuration joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/configure.html</tags> %26lt%3B%2Ftags%26gt" class="selected">Configuration</a><ul>
-         <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=File Locations joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/relocate.html</tags> %26lt%3B%2Ftags%26gt">File Locations</a></li>
-         <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Parameters joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/parameters.html</tags> %26lt%3B%2Ftags%26gt">Parameters</a></li>
-       </ul></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=SSL Support joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/ssl.html</tags> %26lt%3B%2Ftags%26gt">SSL Support</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Distributed RabbitMQ joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/distributed.html</tags> %26lt%3B%2Ftags%26gt">Distributed RabbitMQ</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Reliable Delivery joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/reliability.html</tags> %26lt%3B%2Ftags%26gt">Reliable Delivery</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Clustering joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/clustering.html</tags> %26lt%3B%2Ftags%26gt">Clustering</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=High Availability joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/ha.html</tags> %26lt%3B%2Ftags%26gt">High Availability</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=High Availability (pacemaker) joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/pacemaker.html</tags> %26lt%3B%2Ftags%26gt">High Availability (pacemaker)</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Access Control joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/access-control.html</tags> %26lt%3B%2Ftags%26gt">Access Control</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=SASL Authentication joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/authentication.html</tags> %26lt%3B%2Ftags%26gt">SASL Authentication</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Flow Control joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/memory.html</tags> %26lt%3B%2Ftags%26gt">Flow Control</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Memory Use joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/memory-use.html</tags> %26lt%3B%2Ftags%26gt">Memory Use</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Firehose / Tracing joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/firehose.html</tags> %26lt%3B%2Ftags%26gt">Firehose / Tracing</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Manual Pages joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/manpages.html</tags> %26lt%3B%2Ftags%26gt">Manual Pages</a></li>
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Windows Quirks joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/windows-quirks.html</tags> %26lt%3B%2Ftags%26gt">Windows Quirks</a></li>
-       
-       
-       
-       
-     </ul></li>
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Client Documentation joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/clients.html</tags> %26lt%3B%2Ftags%26gt">Client Documentation</a></li>
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Plugins joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/plugins.html</tags> %26lt%3B%2Ftags%26gt">Plugins</a></li>
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=News joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/news.html</tags> %26lt%3B%2Ftags%26gt">News</a></li>
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Protocol joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/protocol.html</tags> %26lt%3B%2Ftags%26gt">Protocol</a></li>
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Our Extensions joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/extensions.html</tags> %26lt%3B%2Ftags%26gt">Our Extensions</a></li>
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Building joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/build.html</tags> %26lt%3B%2Ftags%26gt">Building</a></li>
-     
-       <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Previous Releases joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/previous.html</tags> %26lt%3B%2Ftags%26gt">Previous Releases</a></li>
-     
-     <li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=License joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/mpl.html</tags> %26lt%3B%2Ftags%26gt">License</a></li>
-   </ul></div><div class="in-this-page"><h4>In This Page</h4><ul><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Verify Configuration joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/configure.html#introduction</tags> %26lt%3B%2Ftags%26gt">Verify Configuration</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Customise RabbitMQ Environment joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/configure.html#customise-environment</tags> %26lt%3B%2Ftags%26gt">Customise RabbitMQ Environment</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=RabbitMQ Environment Variables joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/configure.html#define-environment-variables</tags> %26lt%3B%2Ftags%26gt">RabbitMQ Environment Variables</a></li><li><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Configuration File joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/configure.html#configuration-file</tags> %26lt%3B%2Ftags%26gt">Configuration File</a></li></ul></div></div><div class="clear"></div><div class="pageFooter"><p class="righter"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Sitemap joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/sitemap.html</tags> %26lt%3B%2Ftags%26gt">Sitemap</a> |
-        <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Contact joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.rabbitmq.com/contact.html</tags> %26lt%3B%2Ftags%26gt">Contact</a></p><p id="copyright">
-        Copyright © 2013 GoPivotal, Inc. All rights reserved
-        | <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Privacy Policy joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.gopivotal.com/privacy-policy</tags> %26lt%3B%2Ftags%26gt">Privacy Policy</a></p></div></div></body>
-</html>
-
-2013-07-07 18:48:30,614 [1] DEBUG RabbitMQ.Program - 
+2013-07-07 18:56:13,441 [11] DEBUG RabbitMQ.Program - 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -1725,7 +269,7 @@ Some photos may be <a href="http://www.ncsu.edu/project/nc10percent/img/in-seaso
 </body>
 </html>
 
-2013-07-07 18:48:30,619 [1] DEBUG RabbitMQ.Program - 
+2013-07-07 18:56:13,474 [11] DEBUG RabbitMQ.Program - 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -1996,3 +540,486 @@ Some photos may be <a href="mailto:jimmy@joeschedule.mailgun.org?subject=copyrig
 </body>
 </html>
 
+2013-07-07 19:58:39,353 [10] DEBUG RabbitMQ.Program - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"> <head>
+<base href="http://bytes.com/" /><!--[if IE]></base><![endif]--> <title>app.config XML - C# / C Sharp</title> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> <meta name="keywords" content="app,config,XML, app.config XML, questions, insights, articles, development, programming, business, it, technology, small business" /> <meta name="description" content="app.config XML. C# / C Sharp Forums on Bytes." /> <meta itemprop="name" content="app.config XML"> <meta itemprop="description" content="C# / C Sharp question on Bytes."> <link rel="canonical" href="http://bytes.com/topic/c-sharp/answers/510875-app-config-xml" />  <style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.7.6 CSS
+* Style: 'bytes.answers'; Style ID: 18
+*/
+@import url("/clientscript/vbulletin_css/style-8fe5d790-00018.css");
+</style> <link rel="stylesheet" type="text/css" href="/clientscript/vbulletin_important.css?v=376" />  <script type="text/javascript" src="/clientscript/yui/yahoo-dom-event/yahoo-dom-event.js?v=376"></script> <script type="text/javascript" src="/clientscript/yui/connection/connection-min.js?v=376"></script> <script type="text/javascript" src="/clientscript/navMenu.js"></script> <script type="text/javascript" src="/clientscript/CodeTags.js"></script> <script type="text/javascript"> <!--
+var SESSIONURL = "s=4df0b39239863f7056cfeed54603e071&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "/images/misc";
+var vb_disable_ajax = parseInt("0", 10);
+window.onload = navMenuExp; 
+// --> </script> <script type="text/javascript" src="/clientscript/vbulletin_global.js?v=376"></script> <link rel="alternate" type="application/rss+xml" title="Bytes RSS Feed" href="/external.php?type=RSS2" /> <link rel="alternate" type="application/rss+xml" title="Bytes - answers - RSS Feed" href="/external.php?type=RSS2&amp;forumids=326" /> <script type="text/javascript" src="http://bytes.com/clientscript/vbulletin_post_loader.js?v=376"></script> <style type="text/css" id="vbulletin_showthread_css"> <!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	--> </style> <script type="text/javascript" src="http://bytes.com/ads/as_header.js"></script> <script type='text/javascript'>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+        })();
+        </script> <script type='text/javascript'>
+        googletag.cmd.push(function() {
+        
+        
+        
+        googletag.pubads().setTargeting("keywords", "development");
+googletag.pubads().setTargeting("keywords", "c-sharp");
+googletag.pubads().setTargeting("keywords", "answers");
+
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+        });
+        </script> </head> <body> <div class="codeBlur" id="codeBlur">&nbsp;</div> <div class="codeAbs" id="codeAbs">&nbsp;</div> <div style="margin: 0px 0px 0px 0px; padding:5px 0px 5px 0px; background-color:#2D2D2D; width: 100%; z-index: 10; border-bottom: 3px solid #CCC;"> <table class="tempwrapper"> <tr> <td width="475px;"> <div > <ul id="navbar"> <li id="channel"><a href='http://bytes.com/careers/' id="channeltitle">Careers</a><ul><li><a href='http://bytes.com/topic/career-advice/'>Career Advice</a></li><li><a href='http://bytes.com/topic/consulting-contracting/'>Consulting and Contracting</a></li><li><a href='http://bytes.com/topic/hr-recruiting/'>HR and Recruiting</a></li><li><a href='http://bytes.com/topic/interview-questions/'>Interview Questions</a></li><li><a href='http://bytes.com/topic/resumes/'>Resumes Portfolios and Certification</a></li><li><a href='http://bytes.com/topic/salaries-compensation/'>Salaries and Compensation</a></li></ul></li><li id="channel"><a href='http://bytes.com/it/' id="channeltitle">IT</a><ul><li><a href='http://bytes.com/topic/apache/'>Apache Web Server</a></li><li><a href='http://bytes.com/topic/computer-hardware/'>Computer Hardware</a></li><li><a href='http://bytes.com/topic/cms/'>Content Management Systems</a></li><li><a href='http://bytes.com/topic/data-management/'>Data Management</a></li><li><a href='http://bytes.com/topic/desktop-software/'>Desktop Software</a></li><li><a href='http://bytes.com/topic/iis/'>IIS / Internet Information Server</a></li><li><a href='http://bytes.com/topic/macosx/'>Mac OS X</a></li><li><a href='http://bytes.com/topic/excel/'>Microsoft Excel</a></li><li><a href='http://bytes.com/topic/windows/'>Microsoft Windows / Windows 7 / Vista / XP</a></li><li><a href='http://bytes.com/topic/mobile/'>Mobile Phones and PDAs</a></li><li><a href='http://bytes.com/topic/networking/'>Networking - Hardware / Configuration</a></li><li><a href='http://bytes.com/topic/security/'>Security</a></li><li><a href='http://bytes.com/topic/unix/'>Unix / Linux / BSD</a></li><li><a href='http://bytes.com/topic/web-applications/'>Web Applications</a></li><li><a href='http://bytes.com/topic/windows-server/'>Windows Server 2003 / 2008</a></li></ul></li><li id="channel"><a href='http://bytes.com/development/' id="channeltitle">Software Development</a><ul><li><a href='http://bytes.com/topic/net/'>.NET Framework</a></li><li><a href='http://bytes.com/topic/apis/'>APIs</a></li><li><a href='http://bytes.com/topic/asp-classic/'>ASP / Active Server Pages</a></li><li><a href='http://bytes.com/topic/asp-net/'>ASP.NET</a></li><li><a href='http://bytes.com/topic/algorithms/'>Algorithms / Advanced Math</a></li><li><a href='http://bytes.com/topic/c/'>C / C++</a></li><li><a href='http://bytes.com/topic/c-sharp/'>C# / C Sharp</a></li><li><a href='http://bytes.com/topic/coldfusion/'>ColdFusion</a></li><li><a href='http://bytes.com/topic/db2/'>DB2 Database</a></li><li><a href='http://bytes.com/topic/flash/'>Flash / Actionscript</a></li><li><a href='http://bytes.com/topic/html-css/'>HTML / CSS</a></li><li><a href='http://bytes.com/topic/java/'>Java</a></li><li><a href='http://bytes.com/topic/javascript/'>JavaScript / Ajax / DHTML</a></li><li><a href='http://bytes.com/topic/access/'>Microsoft Access / VBA</a></li><li><a href='http://bytes.com/topic/sql-server/'>Microsoft SQL Server</a></li><li><a href='http://bytes.com/topic/mobile-development/'>Mobile Development</a></li><li><a href='http://bytes.com/topic/mysql/'>MySQL Database</a></li><li><a href='http://bytes.com/topic/oracle/'>Oracle Database</a></li><li><a href='http://bytes.com/topic/php/'>PHP</a></li><li><a href='http://bytes.com/topic/perl/'>Perl</a></li><li><a href='http://bytes.com/topic/postgresql/'>PostgreSQL Database</a></li><li><a href='http://bytes.com/topic/python/'>Python</a></li><li><a href='http://bytes.com/topic/ruby/'>Ruby / Ruby on Rails</a></li><li><a href='http://bytes.com/topic/software-development/'>Software Development</a></li><li><a href='http://bytes.com/topic/visual-basic-net/'>Visual Basic .NET</a></li><li><a href='http://bytes.com/topic/visual-basic/'>Visual Basic 4 / 5 / 6</a></li><li><a href='http://bytes.com/topic/xaml/'>XAML / WPF / Silverlight</a></li><li><a href='http://bytes.com/topic/xml/'>XML</a></li></ul></li><li id="channel"><a href='http://bytes.com/marketing/' id="channeltitle">Internet Marketing</a><ul><li><a href='http://bytes.com/topic/ppc/'>Pay Per Click</a></li><li><a href='http://bytes.com/topic/seo/'>SEO</a></li><li><a href='http://bytes.com/topic/social-media/'>Social Media</a></li><li><a href='http://bytes.com/topic/ecommerce/'>eCommerce</a></li></ul></li> </ul> </div> </td> <td align="right"> <div id="login_box"> <ul> <li> <a href="/register/" rel="nofollow" class="btn_awesome btn_orange btn_small">Join Now</a> </li> <li> <a href="/login/" rel="nofollow">login</a> </li> </ul> </div> </td> </tr> </table> </div> <div style="margin: 5px 0px 5px 0px; padding:0px 0px 0px 0px; width: 100%; z-index: 10;"> <table class="tempwrapper"> <tr> <td align="left" width="140px;"> <A HREF="http://bytes.com"><IMG SRC="/images/bytes_logo_a4k80.gif" WIDTH="151px" HEIGHT="44px" BORDER="0" ALT="Bytes IT Community" style="padding-top:8px;"></A> </td> <td align="left">  <div class="top_header_topmenu"> <div class="newquestion"> <a href="http://bytes.com/submit/g/326/" rel="nofollow" class="btn_awesome btn_green btn_medium">
+                                                + Ask Question
+                                            </a> </div> <p class="header_nav"> <span class="header_types"> <a href="/answers/" class="green_tag">Questions</a> <a href="/insights/" class="blue_tag">Articles</a> <a href="/browse/">Browse Topics</a> <a href="/topic/">Latest</a> <a href="/users/">Top Members</a> <a href="/faq.php">FAQ</a> </span> </p> </div>  </td> </tr> </table> </div>  <div class="navtable"> <div class="navbar_box"> <div style="float:right; width:350px; text-align:right;"> <form action="http://bytes.com/search.php" method="post" name="search" style="margin:0px; padding: 0px;"> <input type="hidden" name="do" value="process" /> <input type="hidden" name="showposts" value="0" /> <input type="hidden" name="quicksearch" value="1" /> <input type="hidden" name="forumchoice[]" value="" /> <input type="text" name="query" size="20" value="" onfocus="this.value=''" style="font-size: 12px; vertical-align: middle;margin:0px; padding:0px;"/> <input type="submit" value="Search" name="gobutton" style="font-size: 12px; height: 1.85em; vertical-align: middle; margin:0px; padding: 0px;"> </form> </div> <a href="/" accesskey="1">home</a> &gt; <a href="/browse/" accesskey="1">topics</a> <span class="navbar">&gt; <a href="http://bytes.com/topic/c-sharp/">c# / c sharp</a></span> <span class="navbar">&gt; <a href="http://bytes.com/topic/c-sharp/answers/">questions</a></span>
+
+ &gt; 
+
+	 app.config xml
+
+
+
+			
+		
+		
+		
+		
+	
+	
+
+
+
+<div style="clear:both;"></div> </div> </div> <div class="tempwrapper"> <div style="padding: 15px 0px 15px 20px; margin-top:15px; font-size:1.2em; font-weight: bold; background-color:#ecfdf5; color:#454747"> <div style="width: 180px;display:inline;float:left;"><a href="http://bytes.com/submit/g/288/" rel="nofollow" class="btn_awesome btn_green btn_large">+ Ask a Question</a></div>
+ 
+ Need help? Post your question and get tips &amp; solutions from a community of 377,285 IT Pros &amp; Developers. 
+ It's quick &amp; easy.<br/> </div> </div> <table class="maintable"> <tr> <td valign="top"> <h1 style="font-size: 15pt; padding: 0px 0px 5px 0px; margin-bottom: 10px; border-bottom: 1px solid #ccc;"> <a href="http://bytes.com/topic/c-sharp/answers/510875-app-config-xml">app.config XML</a> </h1> <table border="0" cellspacing="0" cellpadding="0"> <tr> <td style="border-right: 1px solid #ccc; padding-right:10px;" height="1000px" valign="top" width="635px">  <a name="poststop" id="poststop"></a>    <div id="posts" style="padding: 0px; margin: 0px;">  <div id="edit1987636" style="padding:0px 0px 0px 0px; margin: 0px;">  <table id="post1987636" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="margin-bottom: 10px; clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 0px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="David P. Donahue" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="http://bytes.com/"><img src="/images/da/default_avatar_D.gif" width="50px" height="50px" alt="David P. Donahue" border="0" /></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987636">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987636"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="/register/" rel="nofollow">David P. Donahue</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987636">
+
+				
+			
+				 I'm trying to put some useful strings for my application into an<br />
+app.config file so I can edit them without having to re-compile, namely<br />
+my connection string and query strings.<br /> <br />
+However, when my application loads the file, it seems to be blowing up<br />
+at any point where the query strings have a &lt; or a character.  Is<br />
+there something I need to do to escape these characters and/or other<br />
+special characters in the XML?<br />
+-David<br /> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987636"  id="postcount1987636" name="1" title="permalink">1</a> </div>  <div class="actionbuttons"> <div style="float:right;"> <a href="/register/" rel="nofollow">Post Reply</a> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div style="margin: 0px 0px 0px 70px; padding: 0px;font-size: 115%; font-weight: bold; color:#666;">
+
+Share this Question
+
+</div> <div style="margin: 5px 0px 15px 70px;"> <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbytes.com%2Ftopic%2Fc-sharp%2Fanswers%2F510875-app-config-xml&amp;t=app.config XML" alt="Share this on facebook"><img src="/images/facebook.png"></a> <a href="http://twitter.com/?status=app.config XML - http://bytes.com/topic/c-sharp/answers/510875-app-config-xml" alt="Share this on twitter"><img src="/images/twitter.png"></a> <a href="http://plus.google.com/share?url=http%3A%2F%2Fbytes.com%2Ftopic%2Fc-sharp%2Fanswers%2F510875-app-config-xml" alt="Share this on Google+" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="http://bytes.com/images/gplus-32.png" alt="Share on Google+"></a> <a href="http://www.linkedin.com/cws/share?url=http%3A%2F%2Fbytes.com%2Ftopic%2Fc-sharp%2Fanswers%2F510875-app-config-xml" alt="Share this on linkedin"><img src="/images/linkedin.png"></a> </div> <div style="clear:both;"></div> <div style="margin: 20px 0px 5px 0px"> <span style="padding: 0px; margin: 0px 25px 0px 65px;font-size:110%; font-weight:bold;">4 Replies </span> <div style="clear:both;"></div> </div> <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 15px 0px; padding:0px;"> <script type="text/JavaScript">//
+google_ad_client = 'pub-8550604525820387'; /* substitute your client_id (pub-#) */
+google_ad_channel = "0164673410";
+google_ad_output = 'js';
+google_max_num_ads = '2';
+google_ad_type = 'text';
+google_image_size = '728x90';
+google_feedback = 'on';
+google_skip = 0; /* to skip for multiple units, insert this snippet for each ad call */
+//</script> <script language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>  <div id="edit1987654" style="padding:0px 0px 0px 0px; margin: 0px;">  <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 0px 0px; padding:0px;"> <table id="post1987654" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 15px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="Thomas T. Veldhouse" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="http://bytes.com/"><img src="/images/da/default_avatar_T.gif" width="50px" height="50px" alt="Thomas T. Veldhouse" border="0" /></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987654">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987654"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="/register/" rel="nofollow">Thomas T. Veldhouse</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987654">
+
+					
+	
+				 David P. Donahue &lt;ddonahue@ccs.neu.eduwrote:
+	<blockquote class="post_quotes">	
+				I'm trying to put some useful strings for my application into an<br />
+app.config file so I can edit them without having to re-compile, namely<br />
+my connection string and query strings.<br /><br />
+However, when my application loads the file, it seems to be blowing up<br />
+at any point where the query strings have a &lt; or a character.  Is<br />
+there something I need to do to escape these characters and/or other<br />
+special characters in the XML?<br /> </blockquote>
+
+This probably isn't the proper forum, but here you go.<br /> <br />
+&amp;lt; 	&lt; 	less than<br />
+&amp;gt; 		greater than<br />
+&amp;amp; 	&amp; 	ampersand<br />
+&amp;apos; 	' 	apostrophe<br />
+&amp;quot; 	&quot; 	quotation mark<br /> <br />
+--<br />
+Thomas T. Veldhouse<br />
+Key Fingerprint: 2DB9 813F F510 82C2 E1AE  34D0 D69D 1EDC D5EC AED1<br /> <br /> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987654"  id="postcount1987654" name="2" title="permalink">2</a> </div>  <div class="actionbuttons"> <div style="float:right;"> </div> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div id="edit1987678" style="padding:0px 0px 0px 0px; margin: 0px;">  <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 0px 0px; padding:0px;"> <table id="post1987678" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 15px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="David P. Donahue" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="http://bytes.com/"><img src="/images/da/default_avatar_D.gif" width="50px" height="50px" alt="David P. Donahue" border="0" /></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987678">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987678"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="/register/" rel="nofollow">David P. Donahue</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987678">
+
+					
+	
+				 This probably isn't the proper forum, but here you go.
+	<blockquote class="post_quotes">	
+				&gt;<br />
+&amp;lt; 	&lt; 	less than<br />
+&amp;gt; 		greater than<br />
+&amp;amp; 	&amp; 	ampersand<br />
+&amp;apos; 	' 	apostrophe<br />
+&amp;quot; 	&quot; 	quotation mark
+</blockquote>
+
+Oh, so it's the same as in HTML?  I guess I should have tried that :)<br />
+Thanks!<br /> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987678"  id="postcount1987678" name="3" title="permalink">3</a> </div>  <div class="actionbuttons"> <div style="float:right;"> </div> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div id="edit1987705" style="padding:0px 0px 0px 0px; margin: 0px;">  <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 0px 0px; padding:0px;"> <table id="post1987705" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 15px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="Kevin Spencer" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="http://bytes.com/"><img src="/images/da/default_avatar_K.gif" width="50px" height="50px" alt="Kevin Spencer" border="0" /></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987705">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987705"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="/register/" rel="nofollow">Kevin Spencer</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987705">
+
+					
+	
+				 No, it's not the same as HTML. It's similar. In some cases, it's quite<br />
+different.<br /> <br />
+--<br />
+HTH,<br /> <br />
+Kevin Spencer<br />
+Microsoft MVP<br />
+Professional Chicken Salad Alchemist<br /> <br />
+What You Seek Is What You Get.<br />
+&quot;David P. Donahue&quot; &lt;ddonahue@ccs.neu.eduwrote in message<br />
+news:uf0ddJSpGHA.1140@TK2MSFTNGP05.phx.gbl...
+	<blockquote class="post_quotes"> <blockquote class="post_quotes">	
+				&gt;This probably isn't the proper forum, but here you go.<br /><br />&amp;lt; &lt; less than<br />&amp;gt; greater than<br />&amp;amp; &amp; ampersand &amp;apos; ' apostrophe<br />&amp;quot; &quot; quotation mark
+</blockquote> <br />
+Oh, so it's the same as in HTML?  I guess I should have tried that :)<br />
+Thanks!
+</blockquote> <br /> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987705"  id="postcount1987705" name="4" title="permalink">4</a> </div>  <div class="actionbuttons"> <div style="float:right;"> </div> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div id="edit1987720" style="padding:0px 0px 0px 0px; margin: 0px;"> <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 0px 0px; padding:0px;"> <table id="post1987720" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 15px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="Thomas T. Veldhouse" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="http://bytes.com/"><img src="/images/da/default_avatar_T.gif" width="50px" height="50px" alt="Thomas T. Veldhouse" border="0" /></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987720">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987720"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="/register/" rel="nofollow">Thomas T. Veldhouse</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987720">
+
+					
+	
+				 Kevin Spencer &lt;uce@ftc.govwrote:
+	<blockquote class="post_quotes">	
+				No, it's not the same as HTML. It's similar. In some cases, it's quite<br />
+different.<br /> </blockquote>
+
+Indeed.  The grand daddy of XML:<br /> <br />
+1.0 <a rel="nofollow" href="http://www.w3.org/TR/REC-xml/" target="_blank">http://www.w3.org/TR/REC-xml/</a><br />
+1.1 <a rel="nofollow" href="http://www.w3.org/TR/xml11/" target="_blank">http://www.w3.org/TR/xml11/</a><br /> <br />
+Of course ... these are just &quot;recommendations&quot;  :-)<br /> <br />
+--<br />
+Thomas T. Veldhouse<br />
+Key Fingerprint: 2DB9 813F F510 82C2 E1AE  34D0 D69D 1EDC D5EC AED1<br /> <br /> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987720"  id="postcount1987720" name="5" title="permalink">5</a> </div>  <div class="actionbuttons"> <div style="float:right;"> </div> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div id="lastpost"></div> </div>    <div style="clear:both;"></div> <div style="clear:both;"></div> <div style="clear:both;"></div> <div style="margin:25px 25px 25px 0px;"> <h3 style="border-bottom: 1px solid #ccc; margin: 0px; padding: 0px 0px 3px 0px;">Post your reply</h3> <div style="float:right; padding:0px; margin:10px 0px 10px 0px; width: 100px; text-align: right;"> <a href="/register/" class="btn_orange btn_awesome" rel="nofollow"> Post Reply</a> </div> <p style="padding:0px; margin:10px 0px 10px 0px; font-size: 120%; font-weight: bold;">Help answer this question</p> </div>  <br/> <br/> <div style="clear:both"></div> <div style="margin:40px 25px 25px 0px;">  <p style="padding:0px; margin:10px 0px 10px 70px; font-size: 110%; font-weight: bold;"> <a href="http://bytes.com/topic/c-sharp/answers/" style="font-weight: bold;">Browse more C# / C Sharp Questions on Bytes</a>  </div>    </td> <td width="15px" class="spacer"></td> <td width="300px" height="1000px" valign="top"> <img src="/images/sidecolumn.gif" width="300px" height="1px" border="0" style="margin: 0px; padding: 0px;"> <div class="navbox"> <h3>Question stats</h3> <ul> <li> <span>viewed: 3098</span> </li> <li> <span>replies: 4</span> </li> <li> <span>date asked: Jul 11 '06</span> </li> </ul> <div style="margin:10px 0px 10px 0px; padding: 10px 0px 10px 0px;"> <a href="http://bytes.com/subscription.php?do=addsubscription&amp;t=510875" class="btn_blue btn_awesome" rel="nofollow">Subscribe</a> to get updates
+	
+     </div> <div style="clear:both"></div> </div> <div class="navbox"> <h3>Similar topics</h3> <ul> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/asp-net/answers/847985-get-data-local-web-config-not-machine-config">Get data from Local Web.config not machine.config</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/net/answers/673836-wiring-up-app-config-file-deploying-app-config-file">Wiring up an App.Config file - deploying the App.Config file</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/visual-basic-net/answers/675904-vb-dotnet-application-runs-without-app-exe-config-file">VB dotnet application runs without app.exe.config file??</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/asp-net/answers/677467-web-config-question-2-0-a">web.config question 2.0</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/asp-net/answers/489425-machine-config">Machine Config</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/python/answers/466808-why-use-special-config-formats">why use special config formats?</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/net/answers/463063-app-config">app.config</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/c-sharp/answers/453695-where-app-exe-config-supposed-go">Where is the app.exe.config supposed to go?</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/python/answers/31694-ann-configobj-3-0-0-simple-config-file-parsing">ANN : ConfigObj 3.0.0 - Simple config file parsing</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="http://bytes.com/topic/python/answers/24384-lightweight-human-readable-config">lightweight human-readable config?</a> </li> </ul> </div>   </td> </tr> </table> </td> </tr> </table> <div class="navtable"> <br /> </div> <table class="maintable footer"> <tr> <td> <div style="width: 650px; float:left;">
+BYTES.COM � 2013
+<br/>
+Formerly "TheScripts.com" from 2005-2008
+<br /> <A HREF="/about_us.html">About Bytes</A> | <a href="/mediakit.html">Advertise on Bytes</a> | <a href="/contactus.html">Contact Us</a> <br /> <a href="/sitemap/">Sitemap</a> 
+
+ | <a href="/sitemap/f-326.html">C# / C Sharp Answers Sitemap</a> | <a href="/sitemap/f-327.html">C# / C Sharp Insights Sitemap</a> </div> <div style="width: 250px; float:right; text-align:right;"> <a href="http://twitter.com/bytes" rel="nofollow"><img src="/images/twitter.png" height="32px" width="32px" border="0px" title="Follow us on Twitter for the latest Bytes updates."></a> <a href="http://www.facebook.com/bytes" rel="nofollow"><img src="/images/facebook.png" height="32px" width="32px" border="0px" title="Follow us on Facebook for the latest Bytes updates."></a> <br />
+Follow us to get the Latest Bytes Updates
+
+</div> </td> </tr> </table> <script type="text/javascript"> <!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//--> </script> <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-90111-7']);
+  _gaq.push(['_setDomainName', 'bytes.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>  
+<script type="text/javascript">
+//<![CDATA[
+
+window.orig_onload = window.onload;
+window.onload = function() {
+var cpost=document.location.hash.substring(1);var cpost2='';if(cpost){ var ispost=cpost.substring(0,4)=='post';if(ispost)cpost2='post_'+cpost.substring(4);if((cobj = fetch_object(cpost))||(cobj = fetch_object(cpost2))){cobj.scrollIntoView(true);}else if(ispost){cpostno = cpost.substring(4,cpost.length);if(parseInt(cpostno)>0){location.replace('http://bytes.com/showthread.php?p='+cpostno);};} }
+
+if(typeof window.orig_onload == "function") window.orig_onload();
+}
+
+//]]>
+</script>
+</body> </html>
+2013-07-07 19:58:39,385 [10] DEBUG RabbitMQ.Program - <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"> <head>
+<base href="http://bytes.com/"><!--[if IE]></base><![endif]--> <title>app.config XML - C# / C Sharp</title> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> <meta name="keywords" content="app,config,XML, app.config XML, questions, insights, articles, development, programming, business, it, technology, small business"> <meta name="description" content="app.config XML. C# / C Sharp Forums on Bytes."> <meta itemprop="name" content="app.config XML"> <meta itemprop="description" content="C# / C Sharp question on Bytes."> <link rel="canonical" href="http://bytes.com/topic/c-sharp/answers/510875-app-config-xml">  <style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.7.6 CSS
+* Style: 'bytes.answers'; Style ID: 18
+*/
+@import url("/clientscript/vbulletin_css/style-8fe5d790-00018.css");
+</style> <link rel="stylesheet" type="text/css" href="/clientscript/vbulletin_important.css?v=376">  <script type="text/javascript" src="/clientscript/yui/yahoo-dom-event/yahoo-dom-event.js?v=376"></script> <script type="text/javascript" src="/clientscript/yui/connection/connection-min.js?v=376"></script> <script type="text/javascript" src="/clientscript/navMenu.js"></script> <script type="text/javascript" src="/clientscript/CodeTags.js"></script> <script type="text/javascript"> <!--
+var SESSIONURL = "s=4df0b39239863f7056cfeed54603e071&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "/images/misc";
+var vb_disable_ajax = parseInt("0", 10);
+window.onload = navMenuExp; 
+// --> </script> <script type="text/javascript" src="/clientscript/vbulletin_global.js?v=376"></script> <link rel="alternate" type="application/rss+xml" title="Bytes RSS Feed" href="/external.php?type=RSS2"> <link rel="alternate" type="application/rss+xml" title="Bytes - answers - RSS Feed" href="/external.php?type=RSS2&amp;forumids=326"> <script type="text/javascript" src="http://bytes.com/clientscript/vbulletin_post_loader.js?v=376"></script> <style type="text/css" id="vbulletin_showthread_css"> <!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	--> </style> <script type="text/javascript" src="http://bytes.com/ads/as_header.js"></script> <script type='text/javascript'>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+        })();
+        </script> <script type='text/javascript'>
+        googletag.cmd.push(function() {
+        
+        
+        
+        googletag.pubads().setTargeting("keywords", "development");
+googletag.pubads().setTargeting("keywords", "c-sharp");
+googletag.pubads().setTargeting("keywords", "answers");
+
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+        });
+        </script> </head> <body> <div class="codeBlur" id="codeBlur">&nbsp;</div> <div class="codeAbs" id="codeAbs">&nbsp;</div> <div style="margin: 0px 0px 0px 0px; padding:5px 0px 5px 0px; background-color:#2D2D2D; width: 100%; z-index: 10; border-bottom: 3px solid #CCC;"> <table class="tempwrapper"> <tr> <td width="475px;"> <div> <ul id="navbar"> <li id="channel"><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Careers joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/careers/</tags> %26lt%3B%2Ftags%26gt' id="channeltitle">Careers</a><ul><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Career Advice joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/career-advice/</tags> %26lt%3B%2Ftags%26gt'>Career Advice</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Consulting and Contracting joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/consulting-contracting/</tags> %26lt%3B%2Ftags%26gt'>Consulting and Contracting</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=HR and Recruiting joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/hr-recruiting/</tags> %26lt%3B%2Ftags%26gt'>HR and Recruiting</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Interview Questions joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/interview-questions/</tags> %26lt%3B%2Ftags%26gt'>Interview Questions</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Resumes Portfolios and Certification joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/resumes/</tags> %26lt%3B%2Ftags%26gt'>Resumes Portfolios and Certification</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Salaries and Compensation joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/salaries-compensation/</tags> %26lt%3B%2Ftags%26gt'>Salaries and Compensation</a></li></ul></li><li id="channel"><a href='mailto:jimmy@joeschedule.mailgun.org?subject=IT joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/it/</tags> %26lt%3B%2Ftags%26gt' id="channeltitle">IT</a><ul><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Apache Web Server joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/apache/</tags> %26lt%3B%2Ftags%26gt'>Apache Web Server</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Computer Hardware joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/computer-hardware/</tags> %26lt%3B%2Ftags%26gt'>Computer Hardware</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Content Management Systems joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/cms/</tags> %26lt%3B%2Ftags%26gt'>Content Management Systems</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Data Management joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/data-management/</tags> %26lt%3B%2Ftags%26gt'>Data Management</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Desktop Software joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/desktop-software/</tags> %26lt%3B%2Ftags%26gt'>Desktop Software</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=IIS / Internet Information Server joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/iis/</tags> %26lt%3B%2Ftags%26gt'>IIS / Internet Information Server</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Mac OS X joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/macosx/</tags> %26lt%3B%2Ftags%26gt'>Mac OS X</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Microsoft Excel joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/excel/</tags> %26lt%3B%2Ftags%26gt'>Microsoft Excel</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Microsoft Windows / Windows 7 / Vista / XP joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/windows/</tags> %26lt%3B%2Ftags%26gt'>Microsoft Windows / Windows 7 / Vista / XP</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Mobile Phones and PDAs joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/mobile/</tags> %26lt%3B%2Ftags%26gt'>Mobile Phones and PDAs</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Networking - Hardware / Configuration joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/networking/</tags> %26lt%3B%2Ftags%26gt'>Networking - Hardware / Configuration</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Security joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/security/</tags> %26lt%3B%2Ftags%26gt'>Security</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Unix / Linux / BSD joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/unix/</tags> %26lt%3B%2Ftags%26gt'>Unix / Linux / BSD</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Web Applications joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/web-applications/</tags> %26lt%3B%2Ftags%26gt'>Web Applications</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Windows Server 2003 / 2008 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/windows-server/</tags> %26lt%3B%2Ftags%26gt'>Windows Server 2003 / 2008</a></li></ul></li><li id="channel"><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Software Development joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/development/</tags> %26lt%3B%2Ftags%26gt' id="channeltitle">Software Development</a><ul><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=.NET Framework joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/net/</tags> %26lt%3B%2Ftags%26gt'>.NET Framework</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=APIs joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/apis/</tags> %26lt%3B%2Ftags%26gt'>APIs</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=ASP / Active Server Pages joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/asp-classic/</tags> %26lt%3B%2Ftags%26gt'>ASP / Active Server Pages</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=ASP.NET joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/asp-net/</tags> %26lt%3B%2Ftags%26gt'>ASP.NET</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Algorithms / Advanced Math joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/algorithms/</tags> %26lt%3B%2Ftags%26gt'>Algorithms / Advanced Math</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=C / C++ joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c/</tags> %26lt%3B%2Ftags%26gt'>C / C++</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=C# / C Sharp joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/</tags> %26lt%3B%2Ftags%26gt'>C# / C Sharp</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=ColdFusion joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/coldfusion/</tags> %26lt%3B%2Ftags%26gt'>ColdFusion</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=DB2 Database joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/db2/</tags> %26lt%3B%2Ftags%26gt'>DB2 Database</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Flash / Actionscript joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/flash/</tags> %26lt%3B%2Ftags%26gt'>Flash / Actionscript</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=HTML / CSS joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/html-css/</tags> %26lt%3B%2Ftags%26gt'>HTML / CSS</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Java joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/java/</tags> %26lt%3B%2Ftags%26gt'>Java</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=JavaScript / Ajax / DHTML joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/javascript/</tags> %26lt%3B%2Ftags%26gt'>JavaScript / Ajax / DHTML</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Microsoft Access / VBA joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/access/</tags> %26lt%3B%2Ftags%26gt'>Microsoft Access / VBA</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Microsoft SQL Server joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/sql-server/</tags> %26lt%3B%2Ftags%26gt'>Microsoft SQL Server</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Mobile Development joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/mobile-development/</tags> %26lt%3B%2Ftags%26gt'>Mobile Development</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=MySQL Database joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/mysql/</tags> %26lt%3B%2Ftags%26gt'>MySQL Database</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Oracle Database joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/oracle/</tags> %26lt%3B%2Ftags%26gt'>Oracle Database</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=PHP joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/php/</tags> %26lt%3B%2Ftags%26gt'>PHP</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Perl joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/perl/</tags> %26lt%3B%2Ftags%26gt'>Perl</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=PostgreSQL Database joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/postgresql/</tags> %26lt%3B%2Ftags%26gt'>PostgreSQL Database</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Python joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/python/</tags> %26lt%3B%2Ftags%26gt'>Python</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Ruby / Ruby on Rails joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/ruby/</tags> %26lt%3B%2Ftags%26gt'>Ruby / Ruby on Rails</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Software Development joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/software-development/</tags> %26lt%3B%2Ftags%26gt'>Software Development</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Visual Basic .NET joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/visual-basic-net/</tags> %26lt%3B%2Ftags%26gt'>Visual Basic .NET</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Visual Basic 4 / 5 / 6 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/visual-basic/</tags> %26lt%3B%2Ftags%26gt'>Visual Basic 4 / 5 / 6</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=XAML / WPF / Silverlight joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/xaml/</tags> %26lt%3B%2Ftags%26gt'>XAML / WPF / Silverlight</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=XML joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/xml/</tags> %26lt%3B%2Ftags%26gt'>XML</a></li></ul></li><li id="channel"><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Internet Marketing joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/marketing/</tags> %26lt%3B%2Ftags%26gt' id="channeltitle">Internet Marketing</a><ul><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Pay Per Click joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/ppc/</tags> %26lt%3B%2Ftags%26gt'>Pay Per Click</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=SEO joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/seo/</tags> %26lt%3B%2Ftags%26gt'>SEO</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=Social Media joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/social-media/</tags> %26lt%3B%2Ftags%26gt'>Social Media</a></li><li><a href='mailto:jimmy@joeschedule.mailgun.org?subject=eCommerce joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/ecommerce/</tags> %26lt%3B%2Ftags%26gt'>eCommerce</a></li></ul></li> </ul> </div> </td> <td align="right"> <div id="login_box"> <ul> <li> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Join Now joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/register/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow" class="btn_awesome btn_orange btn_small">Join Now</a> </li> <li> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=login joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/login/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">login</a> </li> </ul> </div> </td> </tr> </table> </div> <div style="margin: 5px 0px 5px 0px; padding:0px 0px 0px 0px; width: 100%; z-index: 10;"> <table class="tempwrapper"> <tr> <td align="left" width="140px;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/</tags> %26lt%3B%2Ftags%26gt"><img src="/images/bytes_logo_a4k80.gif" width="151px" height="44px" border="0" alt="Bytes IT Community" style="padding-top:8px;"></a> </td> <td align="left">  <div class="top_header_topmenu"> <div class="newquestion"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+                                        ... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/submit/g/326/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow" class="btn_awesome btn_green btn_medium">
+                                                + Ask Question
+                                            </a> </div> <p class="header_nav"> <span class="header_types"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Questions joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/answers/</tags> %26lt%3B%2Ftags%26gt" class="green_tag">Questions</a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Articles joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/insights/</tags> %26lt%3B%2Ftags%26gt" class="blue_tag">Articles</a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Browse Topics joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/browse/</tags> %26lt%3B%2Ftags%26gt">Browse Topics</a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Latest joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/</tags> %26lt%3B%2Ftags%26gt">Latest</a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Top Members joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/users/</tags> %26lt%3B%2Ftags%26gt">Top Members</a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=FAQ joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/faq.php</tags> %26lt%3B%2Ftags%26gt">FAQ</a> </span> </p> </div>  </td> </tr> </table> </div>  <div class="navtable"> <div class="navbar_box"> <div style="float:right; width:350px; text-align:right;"> <form action="http://bytes.com/search.php" method="post" name="search" style="margin:0px; padding: 0px;"> <input type="hidden" name="do" value="process"> <input type="hidden" name="showposts" value="0"> <input type="hidden" name="quicksearch" value="1"> <input type="hidden" name="forumchoice[]" value=""> <input type="text" name="query" size="20" value="" onfocus="this.value=''" style="font-size: 12px; vertical-align: middle;margin:0px; padding:0px;"> <input type="submit" value="Search" name="gobutton" style="font-size: 12px; height: 1.85em; vertical-align: middle; margin:0px; padding: 0px;"> </form> </div> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=home joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/</tags> %26lt%3B%2Ftags%26gt" accesskey="1">home</a> &gt; <a href="mailto:jimmy@joeschedule.mailgun.org?subject=topics joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/browse/</tags> %26lt%3B%2Ftags%26gt" accesskey="1">topics</a> <span class="navbar">&gt; <a href="mailto:jimmy@joeschedule.mailgun.org?subject=c# / c sharp joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/</tags> %26lt%3B%2Ftags%26gt">c# / c sharp</a></span> <span class="navbar">&gt; <a href="mailto:jimmy@joeschedule.mailgun.org?subject=questions joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/</tags> %26lt%3B%2Ftags%26gt">questions</a></span>
+
+ &gt; 
+
+	 app.config xml
+
+
+
+			
+		
+		
+		
+		
+	
+	
+
+
+
+<div style="clear:both;"></div> </div> </div> <div class="tempwrapper"> <div style="padding: 15px 0px 15px 20px; margin-top:15px; font-size:1.2em; font-weight: bold; background-color:#ecfdf5; color:#454747"> <div style="width: 180px;display:inline;float:left;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=+ Ask a Question joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/submit/g/288/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow" class="btn_awesome btn_green btn_large">+ Ask a Question</a></div>
+ 
+ Need help? Post your question and get tips &amp; solutions from a community of 377,285 IT Pros &amp; Developers. 
+ It's quick &amp; easy.<br> </div> </div> <table class="maintable"> <tr> <td valign="top"> <h1 style="font-size: 15pt; padding: 0px 0px 5px 0px; margin-bottom: 10px; border-bottom: 1px solid #ccc;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=app.config XML joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/510875-app-config-xml</tags> %26lt%3B%2Ftags%26gt">app.config XML</a> </h1> <table border="0" cellspacing="0" cellpadding="0"> <tr> <td style="border-right: 1px solid #ccc; padding-right:10px;" height="1000px" valign="top" width="635px">  <a name="poststop" id="poststop"></a>    <div id="posts" style="padding: 0px; margin: 0px;">  <div id="edit1987636" style="padding:0px 0px 0px 0px; margin: 0px;">  <table id="post1987636" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="margin-bottom: 10px; clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 0px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="David P. Donahue" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/</tags> %26lt%3B%2Ftags%26gt"><img src="/images/da/default_avatar_D.gif" width="50px" height="50px" alt="David P. Donahue" border="0"></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987636">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987636"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="mailto:jimmy@joeschedule.mailgun.org?subject=David P. Donahue joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/register/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">David P. Donahue</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987636">
+
+				
+			
+				 I'm trying to put some useful strings for my application into an<br>
+app.config file so I can edit them without having to re-compile, namely<br>
+my connection string and query strings.<br> <br>
+However, when my application loads the file, it seems to be blowing up<br>
+at any point where the query strings have a &lt; or a character.  Is<br>
+there something I need to do to escape these characters and/or other<br>
+special characters in the XML?<br>
+-David<br> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="mailto:jimmy@joeschedule.mailgun.org?subject=1 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987636</tags> %26lt%3B%2Ftags%26gt" id="postcount1987636" name="1" title="permalink">1</a> </div>  <div class="actionbuttons"> <div style="float:right;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Post Reply joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/register/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">Post Reply</a> </div> </div>  </div></td> </tr> </table>   </div></td> </tr> </table>   <div style="margin: 0px 0px 0px 70px; padding: 0px;font-size: 115%; font-weight: bold; color:#666;">
+
+Share this Question
+
+</div> <div style="margin: 5px 0px 15px 70px;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>https://www.facebook.com/sharer/sharer.php?u=http:%2F%2Fbytes.com%2Ftopic%2Fc-sharp%2Fanswers%2F510875-app-config-xml&amp;t=app.config XML</tags> %26lt%3B%2Ftags%26gt" alt="Share this on facebook"><img src="/images/facebook.png"></a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://twitter.com/?status=app.config XML - http://bytes.com/topic/c-sharp/answers/510875-app-config-xml</tags> %26lt%3B%2Ftags%26gt" alt="Share this on twitter"><img src="/images/twitter.png"></a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://plus.google.com/share?url=http:%2F%2Fbytes.com%2Ftopic%2Fc-sharp%2Fanswers%2F510875-app-config-xml</tags> %26lt%3B%2Ftags%26gt" alt="Share this on Google+" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img src="http://bytes.com/images/gplus-32.png" alt="Share on Google+"></a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.linkedin.com/cws/share?url=http:%2F%2Fbytes.com%2Ftopic%2Fc-sharp%2Fanswers%2F510875-app-config-xml</tags> %26lt%3B%2Ftags%26gt" alt="Share this on linkedin"><img src="/images/linkedin.png"></a> </div> <div style="clear:both;"></div> <div style="margin: 20px 0px 5px 0px"> <span style="padding: 0px; margin: 0px 25px 0px 65px;font-size:110%; font-weight:bold;">4 Replies </span> <div style="clear:both;"></div> </div> <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 15px 0px; padding:0px;"> <script type="text/JavaScript">//
+google_ad_client = 'pub-8550604525820387'; /* substitute your client_id (pub-#) */
+google_ad_channel = "0164673410";
+google_ad_output = 'js';
+google_max_num_ads = '2';
+google_ad_type = 'text';
+google_image_size = '728x90';
+google_feedback = 'on';
+google_skip = 0; /* to skip for multiple units, insert this snippet for each ad call */
+//</script> <script language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>  <div id="edit1987654" style="padding:0px 0px 0px 0px; margin: 0px;">  <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 0px 0px; padding:0px;"> <table id="post1987654" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 15px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="Thomas T. Veldhouse" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/</tags> %26lt%3B%2Ftags%26gt"><img src="/images/da/default_avatar_T.gif" width="50px" height="50px" alt="Thomas T. Veldhouse" border="0"></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987654">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987654"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="mailto:jimmy@joeschedule.mailgun.org?subject=Thomas T. Veldhouse joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/register/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">Thomas T. Veldhouse</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987654">
+
+					
+	
+				 David P. Donahue &lt;ddonahue@ccs.neu.eduwrote:
+	<blockquote class="post_quotes">	
+				I'm trying to put some useful strings for my application into an<br>
+app.config file so I can edit them without having to re-compile, namely<br>
+my connection string and query strings.<br><br>
+However, when my application loads the file, it seems to be blowing up<br>
+at any point where the query strings have a &lt; or a character.  Is<br>
+there something I need to do to escape these characters and/or other<br>
+special characters in the XML?<br> </blockquote>
+
+This probably isn't the proper forum, but here you go.<br> <br>
+&amp;lt; 	&lt; 	less than<br>
+&amp;gt; 		greater than<br>
+&amp;amp; 	&amp; 	ampersand<br>
+&amp;apos; 	' 	apostrophe<br>
+&amp;quot; 	&quot; 	quotation mark<br> <br>
+--<br>
+Thomas T. Veldhouse<br>
+Key Fingerprint: 2DB9 813F F510 82C2 E1AE  34D0 D69D 1EDC D5EC AED1<br> <br> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="mailto:jimmy@joeschedule.mailgun.org?subject=2 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987654</tags> %26lt%3B%2Ftags%26gt" id="postcount1987654" name="2" title="permalink">2</a> </div>  <div class="actionbuttons"> <div style="float:right;"> </div> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div id="edit1987678" style="padding:0px 0px 0px 0px; margin: 0px;">  <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 0px 0px; padding:0px;"> <table id="post1987678" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 15px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="David P. Donahue" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/</tags> %26lt%3B%2Ftags%26gt"><img src="/images/da/default_avatar_D.gif" width="50px" height="50px" alt="David P. Donahue" border="0"></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987678">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987678"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="mailto:jimmy@joeschedule.mailgun.org?subject=David P. Donahue joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/register/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">David P. Donahue</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987678">
+
+					
+	
+				 This probably isn't the proper forum, but here you go.
+	<blockquote class="post_quotes">	
+				&gt;<br>
+&amp;lt; 	&lt; 	less than<br>
+&amp;gt; 		greater than<br>
+&amp;amp; 	&amp; 	ampersand<br>
+&amp;apos; 	' 	apostrophe<br>
+&amp;quot; 	&quot; 	quotation mark
+</blockquote>
+
+Oh, so it's the same as in HTML?  I guess I should have tried that :)<br>
+Thanks!<br> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="mailto:jimmy@joeschedule.mailgun.org?subject=3 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987678</tags> %26lt%3B%2Ftags%26gt" id="postcount1987678" name="3" title="permalink">3</a> </div>  <div class="actionbuttons"> <div style="float:right;"> </div> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div id="edit1987705" style="padding:0px 0px 0px 0px; margin: 0px;">  <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 0px 0px; padding:0px;"> <table id="post1987705" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 15px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="Kevin Spencer" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/</tags> %26lt%3B%2Ftags%26gt"><img src="/images/da/default_avatar_K.gif" width="50px" height="50px" alt="Kevin Spencer" border="0"></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987705">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987705"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="mailto:jimmy@joeschedule.mailgun.org?subject=Kevin Spencer joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/register/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">Kevin Spencer</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987705">
+
+					
+	
+				 No, it's not the same as HTML. It's similar. In some cases, it's quite<br>
+different.<br> <br>
+--<br>
+HTH,<br> <br>
+Kevin Spencer<br>
+Microsoft MVP<br>
+Professional Chicken Salad Alchemist<br> <br>
+What You Seek Is What You Get.<br>
+&quot;David P. Donahue&quot; &lt;ddonahue@ccs.neu.eduwrote in message<br>
+news:uf0ddJSpGHA.1140@TK2MSFTNGP05.phx.gbl...
+	<blockquote class="post_quotes"> <blockquote class="post_quotes">	
+				&gt;This probably isn't the proper forum, but here you go.<br><br>&amp;lt; &lt; less than<br>&amp;gt; greater than<br>&amp;amp; &amp; ampersand &amp;apos; ' apostrophe<br>&amp;quot; &quot; quotation mark
+</blockquote> <br>
+Oh, so it's the same as in HTML?  I guess I should have tried that :)<br>
+Thanks!
+</blockquote> <br> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="mailto:jimmy@joeschedule.mailgun.org?subject=4 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987705</tags> %26lt%3B%2Ftags%26gt" id="postcount1987705" name="4" title="permalink">4</a> </div>  <div class="actionbuttons"> <div style="float:right;"> </div> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div id="edit1987720" style="padding:0px 0px 0px 0px; margin: 0px;"> <hr style="color:#ccc; background-color:#ccc; height:1px; border:none; margin:0px 25px 0px 0px; padding:0px;"> <table id="post1987720" cellpadding="0px" cellspacing="0px" border="0" width="100%" align="center" style="clear:both;"> <tr> <td class="alt2" style="padding:0px">  <div style="margin: 15px 25px 15px 0px; padding-top: 0px;"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr> <td class="alt2" valign="top" width="55px"> <div title="Thomas T. Veldhouse" style="float: left; border: 1px solid #ccc; padding 2px; width: 50px; background-color: #EBEBEB; margin: 0px 0px 5px 0px;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/</tags> %26lt%3B%2Ftags%26gt"><img src="/images/da/default_avatar_T.gif" width="50px" height="50px" alt="Thomas T. Veldhouse" border="0"></a> </div> <div class="smallfont" style="text-align:right; margin-right:2px;">
+						P: n/a
+					</div> </td> <td class="alt1" valign="top" id="td_post_1987720">  <div style="margin: 0px 0px 0px 15px; width: 505px;"> <a name="post1987720"></a> <div style="font-weight: bold; margin: 0px 0px 0px 0px;"> <span> <a class="bigusername" href="mailto:jimmy@joeschedule.mailgun.org?subject=Thomas T. Veldhouse joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/register/</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">Thomas T. Veldhouse</a> </span> </div>  <div style="font-size: 105%; margin: 15px 0px 0px 0px; line-height: 20px; word-wrap: break-word;" id="post_message_1987720">
+
+					
+	
+				 Kevin Spencer &lt;uce@ftc.govwrote:
+	<blockquote class="post_quotes">	
+				No, it's not the same as HTML. It's similar. In some cases, it's quite<br>
+different.<br> </blockquote>
+
+Indeed.  The grand daddy of XML:<br> <br>
+1.0 <a rel="nofollow" href="mailto:jimmy@joeschedule.mailgun.org?subject=http://www.w3.org/TR/REC-xml/ joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.w3.org/TR/REC-xml/</tags> %26lt%3B%2Ftags%26gt" target="_blank">http://www.w3.org/TR/REC-xml/</a><br>
+1.1 <a rel="nofollow" href="mailto:jimmy@joeschedule.mailgun.org?subject=http://www.w3.org/TR/xml11/ joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.w3.org/TR/xml11/</tags> %26lt%3B%2Ftags%26gt" target="_blank">http://www.w3.org/TR/xml11/</a><br> <br>
+Of course ... these are just &quot;recommendations&quot;  :-)<br> <br>
+--<br>
+Thomas T. Veldhouse<br>
+Key Fingerprint: 2DB9 813F F510 82C2 E1AE  34D0 D69D 1EDC D5EC AED1<br> <br> </div>   <div style="line-height: 13px; font-size: 8pt; color: #999999; margin: 15px 0px 0px 0px;">
+							
+							
+							
+							
+								Jul 11 '06
+                                                                #<a href="mailto:jimmy@joeschedule.mailgun.org?subject=5 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/510875-app-config-xml#post1987720</tags> %26lt%3B%2Ftags%26gt" id="postcount1987720" name="5" title="permalink">5</a> </div>  <div class="actionbuttons"> <div style="float:right;"> </div> </div> </div>  </td> </tr> </table> </div>  </td> </tr> </table> </div>  <div id="lastpost"></div>     <div style="clear:both;"></div> <div style="clear:both;"></div> <div style="clear:both;"></div> <div style="margin:25px 25px 25px 0px;"> <h3 style="border-bottom: 1px solid #ccc; margin: 0px; padding: 0px 0px 3px 0px;">Post your reply</h3> <div style="float:right; padding:0px; margin:10px 0px 10px 0px; width: 100px; text-align: right;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= Post Reply joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/register/</tags> %26lt%3B%2Ftags%26gt" class="btn_orange btn_awesome" rel="nofollow"> Post Reply</a> </div> <p style="padding:0px; margin:10px 0px 10px 0px; font-size: 120%; font-weight: bold;">Help answer this question</p> </div>  <br> <br> <div style="clear:both"></div> <div style="margin:40px 25px 25px 0px;">  <p style="padding:0px; margin:10px 0px 10px 70px; font-size: 110%; font-weight: bold;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Browse more C# / C Sharp Questions on Byte... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/</tags> %26lt%3B%2Ftags%26gt" style="font-weight: bold;">Browse more C# / C Sharp Questions on Bytes</a>  </div>    </div></div></td> <td width="15px" class="spacer"></td> <td width="300px" height="1000px" valign="top"> <img src="/images/sidecolumn.gif" width="300px" height="1px" border="0" style="margin: 0px; padding: 0px;"> <div class="navbox"> <h3>Question stats</h3> <ul> <li> <span>viewed: 3098</span> </li> <li> <span>replies: 4</span> </li> <li> <span>date asked: Jul 11 '06</span> </li> </ul> <div style="margin:10px 0px 10px 0px; padding: 10px 0px 10px 0px;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Subscribe joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/subscription.php?do=addsubscription&amp;t=510875</tags> %26lt%3B%2Ftags%26gt" class="btn_blue btn_awesome" rel="nofollow">Subscribe</a> to get updates
+	
+     </div> <div style="clear:both"></div> </div> <div class="navbox"> <h3>Similar topics</h3> <ul> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Get data from Local Web.config not machine... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/asp-net/answers/847985-get-data-local-web-config-not-machine-config</tags> %26lt%3B%2Ftags%26gt">Get data from Local Web.config not machine.config</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Wiring up an App.Config file - deploying t... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/net/answers/673836-wiring-up-app-config-file-deploying-app-config-file</tags> %26lt%3B%2Ftags%26gt">Wiring up an App.Config file - deploying the App.Config file</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=VB dotnet application runs without app.exe... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/visual-basic-net/answers/675904-vb-dotnet-application-runs-without-app-exe-config-file</tags> %26lt%3B%2Ftags%26gt">VB dotnet application runs without app.exe.config file??</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=web.config question 2.0 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/asp-net/answers/677467-web-config-question-2-0-a</tags> %26lt%3B%2Ftags%26gt">web.config question 2.0</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Machine Config joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/asp-net/answers/489425-machine-config</tags> %26lt%3B%2Ftags%26gt">Machine Config</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=why use special config formats? joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/python/answers/466808-why-use-special-config-formats</tags> %26lt%3B%2Ftags%26gt">why use special config formats?</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=app.config joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/net/answers/463063-app-config</tags> %26lt%3B%2Ftags%26gt">app.config</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=Where is the app.exe.config supposed to go... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/c-sharp/answers/453695-where-app-exe-config-supposed-go</tags> %26lt%3B%2Ftags%26gt">Where is the app.exe.config supposed to go?</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=ANN : ConfigObj 3.0.0 - Simple config file... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/python/answers/31694-ann-configobj-3-0-0-simple-config-file-parsing</tags> %26lt%3B%2Ftags%26gt">ANN : ConfigObj 3.0.0 - Simple config file parsing</a> </li> <li class="smallfont" style="margin-bottom:3px; padding: 0px;"><a href="mailto:jimmy@joeschedule.mailgun.org?subject=lightweight human-readable config? joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/topic/python/answers/24384-lightweight-human-readable-config</tags> %26lt%3B%2Ftags%26gt">lightweight human-readable config?</a> </li> </ul> </div>   </td> </tr> </table> </td> </tr> </table> <div class="navtable"> <br> </div> <table class="maintable footer"> <tr> <td> <div style="width: 650px; float:left;">
+BYTES.COM � 2013
+<br>
+Formerly "TheScripts.com" from 2005-2008
+<br> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=About Bytes joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/about_us.html</tags> %26lt%3B%2Ftags%26gt">About Bytes</a> | <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Advertise on Bytes joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/mediakit.html</tags> %26lt%3B%2Ftags%26gt">Advertise on Bytes</a> | <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Contact Us joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/contactus.html</tags> %26lt%3B%2Ftags%26gt">Contact Us</a> <br> <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Sitemap joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/sitemap/</tags> %26lt%3B%2Ftags%26gt">Sitemap</a> 
+
+ | <a href="mailto:jimmy@joeschedule.mailgun.org?subject=C# / C Sharp Answers Sitemap joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/sitemap/f-326.html</tags> %26lt%3B%2Ftags%26gt">C# / C Sharp Answers Sitemap</a> | <a href="mailto:jimmy@joeschedule.mailgun.org?subject=C# / C Sharp Insights Sitemap joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://bytes.com/sitemap/f-327.html</tags> %26lt%3B%2Ftags%26gt">C# / C Sharp Insights Sitemap</a> </div> <div style="width: 250px; float:right; text-align:right;"> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://twitter.com/bytes</tags> %26lt%3B%2Ftags%26gt" rel="nofollow"><img src="/images/twitter.png" height="32px" width="32px" border="0px" title="Follow us on Twitter for the latest Bytes updates."></a> <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.facebook.com/bytes</tags> %26lt%3B%2Ftags%26gt" rel="nofollow"><img src="/images/facebook.png" height="32px" width="32px" border="0px" title="Follow us on Facebook for the latest Bytes updates."></a> <br>
+Follow us to get the Latest Bytes Updates
+
+</div> </td> </tr> </table> <script type="text/javascript"> <!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//--> </script> <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-90111-7']);
+  _gaq.push(['_setDomainName', 'bytes.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>  
+<script type="text/javascript">
+//<![CDATA[
+
+window.orig_onload = window.onload;
+window.onload = function() {
+var cpost=document.location.hash.substring(1);var cpost2='';if(cpost){ var ispost=cpost.substring(0,4)=='post';if(ispost)cpost2='post_'+cpost.substring(4);if((cobj = fetch_object(cpost))||(cobj = fetch_object(cpost2))){cobj.scrollIntoView(true);}else if(ispost){cpostno = cpost.substring(4,cpost.length);if(parseInt(cpostno)>0){location.replace('http://bytes.com/showthread.php?p='+cpostno);};} }
+
+if(typeof window.orig_onload == "function") window.orig_onload();
+}
+
+//]]>
+</script>
+</body> </html>

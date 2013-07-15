@@ -476,3 +476,6 @@ Content-Type: text/html; charset="UTF-8"
 2013-07-14 18:26:43,704 [16] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
 2013-07-14 18:26:43,704 [16] DEBUG MvcApplication2.Controllers.HomeController - op = http://stackoverflow.com/questions/17538058/appharbor-background-process-not-working-no-errors-shown
 2013-07-14 18:26:43,719 [16] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-15 18:59:28,131 [18] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-15 18:59:28,154 [18] DEBUG MvcApplication2.Controllers.HomeController - op = http://csmailbee.apphb.com/
+2013-07-15 18:59:28,295 [18] DEBUG MvcApplication2.Controllers.HomeController - debug = 
