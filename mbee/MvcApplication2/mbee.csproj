@@ -155,6 +155,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\MyMailGun.cs" />
     <Compile Include="Models\MyRabbitMQ.cs" />
     <Compile Include="Models\MyMail.cs" />
     <Compile Include="Models\MyBitmap.cs" />

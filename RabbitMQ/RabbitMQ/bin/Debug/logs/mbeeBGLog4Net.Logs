@@ -1,960 +1,1003 @@
-2013-07-15 19:02:09,191 [1] DEBUG RabbitMQ.Program - <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-        <link href="/Content/StyleSheet.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <div id="wrapper">
-                
+2013-07-16 23:00:14,983 [1] DEBUG RabbitMQ.Program - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
+<head>
 
-<head profile="http://www.w3.org/2005/10/profile">
+<!-- saved from url=(0047)http://www.nv.com/demos/multicol/multicol.html -->
+  <title>Joeschedule</title>
 
-<link rel="icon" 
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="description" content="Use Visual Strategies - for improving communication, solving behavior problems in 
+Autism, Asperger's, PDD and Fragile X, LD and more.  Create your own picture symbols
+with customized text, to help improve learning, functional living skills, education and development">
+<meta name="Keywords" content="visual strategies Autism Asperger's PDD Fragile X  solving behavior 
+problems teaching children with non verbal communication picture system teaching picture
+symbol for communication picture clues high functioning autism information on autism education problems
+LD child learning disorders home school">
+<meta name="robots" content="index, follow">
 
-      type="image/png" 
-
-      href="http://joeschedule.com/faviconBee.ico">
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+  <link media="all" href="./multicol.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/print.css" media="print" />
 </head>
 
 <body>
-<form action="Home/publish22" method="POST">
-<table class="center"  style="width:728px; border-collapse:collapse; border-spacing: 0; padding:0">
-  <tr>
-    <td>
-      <table border="0" style="width:728px; border-collapse:collapse; border-spacing: 0; padding:0; height: 90px; padding-bottom: 8px; background-color: #fff;">
+<A name=top></A>
+<div id="masthead">
+<div class="Header">
+<!--
+<img src="http://192.168.1.101/cgi/ngfop/c14a.jpg" width="58" height="40" 
+alt="joe schedule" style="float: left;" />
+-->
+<center>Joeschedule.com </center>
+<center>
+<span class="tagline">
+ABA Programs, Schedules, Token Boards,
+Visual Stories and more.
+<!-- The fast easy way to create and manage all your activity schedules. -->
+<table border="1" cellpadding="3" width="100%">
         <tr>
-        </tr>
-      </table>
-    </td>
+          <td align="left" height="1"> 
+		  <IMG NAME="I5" border="0" src="/cgi/ngfop/pics/pic_02/wu004.jpg" width="105" height="96" type="image">
+		  <br/>
+		  Wake up.
+		  </td>
+  
+          <td align="left" height="1"> 
+		  <IMG NAME="I5" border="0" src="/cgi/ngfop/pics/pic_01/DSCF0010.JPG" width="105" height="96" type="image">
+		  <br/>
+		  Brush teeth.
+		  </td>
+  
+          <td align="left" height="1"> 
+		  <IMG NAME="I5" border="0" src="/cgi/ngfop/pics/pic_01/DSCF0023.JPG" width="105" height="96" type="image">
+		  <br/>
+		  Wash face.
+		  </td>
+  
+          <td align="left" height="1"> 
+		  <IMG NAME="I5" border="0" src="/cgi/ngfop/pics/pic_02/104.jpg" width="105" height="96" type="image">
+		  <br/>
+		  Get dressed.
+		  </td>
+  
+          <td align="left" height="1"> 
+		  <IMG NAME="I5" border="0" src="/cgi/ngfop/pics/pic_02/Amn0010.jpg" width="105" height="96" type="image">
+		  <br/>
+		  Go to school.
+		  </td>
   </tr>
+</table>
+</span>
+</center>
+<form name = "myform" method="post" action="/cgi-bin/cgi/ngfop/signin.pl">
+<table align="center" border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr bgcolor="eeeeee">
+      <td align="center"> <font face="arial" size="-1">&nbsp;
+Welcome! Please sign in</font> </td>
+
+      <td align="right"><font face="arial" size="-1">JoeSchedule ID:</font></td>
+      <td><input name="id" size="17" value=""></td>
+
+      <td align="right"><font face="arial" size="-1">Password:</font></td>
+      <td><input name="pw" size="17" value="" maxlength="32" type="password"></td>
+
+      <td align="right"><input name=".save" value="Sign In" type="submit"></td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>
+
+<div id="leftnav">
+<a class="navlink" href="./js3col_index01.htm">Home</a>
+
+<a class="navlink" href="http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm"> ABA Programs </a> 
+<a class="navlink" 
+href="http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/ps0abakitxm22.htm"> 
+Schedules </a> 
+
+<a class="navlink" href="./js3col_ic01.htm"> In The Class </a> 
+<a class="navlink" href="./js3col_ih01.htm"> In The Home </a> 
+<!-- <a class="navlink" href="./js3col_hp01.htm"> Home Programs</a> -->
+
+<a class="navlink" href="./js3col_tb01.htm"> Token Boards </a>
+<a class="navlink" href="./js3col_vs01.htm"> Visual Stories </a> 
+
+<a class="navlink" href="./js3col_be01.htm"> Behavior Charts  </a> 
+<a class="navlink" href="./js3col_pi01.htm"> Pictures    </a>
+<a class="navlink" href="./js3col_ga01.htm"> Games    </a>
+<a class="navlink" href="./js3col_hg01.htm"> How-To Guide </a> 
+<a class="navlink" href="./js3col_sp01.htm"> Specifics   </a>
+
+<!--
+<a class="navlink" href="./js3col_ih01.htm"> Activity Schedules </a> 
+<a class="navlink" href="./js3col_hp01.htm"> Home Programs</a>
+-->
+</div>
+
+<div id="mainContent">
+
+<div id="rightCol">
+
+<a class="navlink" href="./js3col_sub01.htm">Subscribe</a>
+<a class="navlink" href="http://joeschedule.com/JoeSchedules_Visual_Toolkit/Welcome.html">User Guide</a> 
+<!-- <a class="navlink" href="/cgi/ngfop/samples.htm">Samples</a> -->
+<a class="navlink" href="./js3col_contactus01.htm">Contact us</a>
+<a class="navlink" href="/cgi/ngfop/joehelp.htm" target="_blank">Help Document</a> 
+<!-- <a class="navlink" href="http://joeschedule.com/">In The News</a> -->
+<a class="navlink" href="js3col_li01.htm">Links</a>
+<a class="navlink" href="js3col_re01.htm">Research</a>
+</div>
+
+
+<!-- ________ -->
+<div id="articleText">
+
+
+<font size="5">
+Online Picture Schedules
+</font>
+
+<!--
+<p>
+<a class="navlink" href="http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm">
+<font color=red>
+ABA Programs Demo<br>
+		</font>
+</a>
+</p>
+-->
+
+<p>
+<b>
+All in one tool for teaching kids with autism spectrum disorders.<br>
+<a href="http://joeschedule.com/ijoe.htm">
+<font size="3" color="#FF0000"><b><i>
+New!!!!!
+Now you can view your picture schedules on an iPad.
+Go to: joeschedule.com/ijoe.htm</i></b></font>
+</a>
+<br>
+Run <a  href="http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm
+"> ABA Programs </a>,
+Create Activity Schedules, Token Boards, Social Stories, Behavior Charts and more.</b>
+<br>
+<!--
+<a class="navlink" href="http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm">
+<font color=red>(ABA Programs Demo)		</font></a>
+-->
+
+<br>
+<a href ="./js3col_sub01.htm">12 Month Subscription - $20.00.</a>
+&nbsp; Subscribers can access:
+ 
+</p>
+
+<p>
+<b> (1) ABA/AVB teaching sessions </b>
+<br>
+Use your computer instead of flashcards to motivate your students.
+<br>
+Quickly switch between teaching programs for minimum distraction.
+<br>Customize your sessions - select from over 50 teaching programs. 
+</p>
+
+<p>
+<b>(2) Activity Schedules and more!</b>
+<br>
+Create activity schedules, visual stories, choice boards, picture cards, rule cards, behavior charts, and chore charts. 
+<br>
+30 Activity Schedules included.
+
+<br>
+<br>
+<b>(3) eBook Activity Schedule Ideas - A How-To-Guide</b>, that will teach you step by step how to create schedules and other visual aids. 
+</p>
+
+<table border="1" cellpadding="3" width="80%">
   <tr>
-    <td>
-      <table class="center"  width="100%" border="0"  cellpadding="15" cellspacing="0" style="background:#7e0225;">
-        <tr bgcolor="#7e0225">
-          <td width="40%"><a href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=adtemp2.htm"><img src="http://joeschedule.com/bee.jpg" border="0" alt="Mailbee Mailapps" /></a></td>
-          <td width="0%"><img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/header_whiteLine.png" width="1" height="42" /></td>
-          <td width="30%"><p style="font-family:Tahoma, Geneva, sans-serif; color:#fff; font-size:18px;">MaillBee prototype 201</p></td>
-          <td width="30%"><p style="font-family:Tahoma, Geneva, sans-serif; color:#fff; font-size: 13px;">June 15, 2013</p></td>
-        </tr>
-      </table>
-
-    </td>
-
+      <td colspan="2" align="center">
+      <align="left"><font size="5">Morning routine</font></td>
   </tr>
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON" >
+		  </td>
 
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/wu004.jpg" width="105" height="96">
+		  <br>
+ 
+		  Wake up.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON" >
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_01/DSCF0010.JPG" width="105" height="96">
+		  <br>
+ 
+		  Brush your teeth.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON" >
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_01/DSCF0023.JPG" width="105" height="96">
+		  <br>
+ 
+		  Wash your face.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON" >
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/104.jpg" width="105" height="96">
+		  <br>
+ 
+		  Get dressed.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON" >
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/book/mn003.jpg" width="105" height="96">
+		  <br>
+ 
+		  Fix breakfast.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON" >
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/temp/lunch-ba.jpg" width="105" height="96">
+		  <br>
+ 
+		  Pack your lunch bag.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON" >
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/40641812.jpg" width="105" height="96">
+		  <br>
+ 
+		  Pack your backpack.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON" >
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/Amn0010.jpg" width="105" height="96">
+		  <br>
+ 
+		  Go to school.
+		  </td>
+        </tr>
+</table>
+<br>
+Activity schedules are a research based visual strategy that are used to increase independence, teach new skills, increase time spent on leisure activities, decrease tantrums, and make transitions easier by making expectations clear and consistent for individuals with disabilities.
+<p>
+JoeSchedule.com is an Internet based program making it easy to access from your home, school, or the library. 
+</p>
+
+<p>
+&nbsp;Internet access allows for greater communication between home, school, parents, therapists and other caregivers. 
+</p>
+
+<p>
+&nbsp;JoeSchedule.com makes it easy to print, create, modify and use activity schedules and other visual aids. 
+</p>
+
+<p>
+&nbsp;Subscribers access ready made schedules and choice boards including: 
+</p>
+
+<p>
+
+<table align="center" border="1" cellpadding="4" cellspacing="0" width="80%">
+  <tbody>
+  <tr>
+  <td>
+  <ul>
+Choice Boards 
+<li>Bathroom
+<li>Behaviors
+<li>Chores
+<li>Dressing
+<li>Eating
+<li>Leisure
+<u/>
+  </td>
+
+  <td>
+  <ul>
+Chores
+<li>Changing the sheets
+<li>Doing laundry
+<li>Make your bed
+<li>Clearing the table
+<li>Sweeping
+<li>Feed the dog
+  </ul>
+  </td>
+	</tr>
+	<tr>
+  <td>
+
+  <ul>
+Bathroom
+<li>Wash your hair
+<li>Washing hands
+<li>Washing hands(boy)
+<li>Go to the bathroom
+  </ul>
+  </td>
+  <td>
+
+  <ul>
+Dressing 
+<li>Get dressed 
+<li>Get dressed (winter)
+<li>Eating
+<li>Fix breakfast
+<li>Fix lunch
+  </ul>
+  <td>
+
+	</tr>
+	<tr>
+  <td>
+  <ul>
+Home Skills 
+<li>Call 9-1-1
+<li>Call Grandma
+  </ul>
+  </td>
+
+  <td>
+  <ul>
+Play Skills
+<li>Trains
+<li>Blocks
+<li>Puzzle
+<li>Play house
+<li>Color
+  </ul>
+  </td>
+	</tr>
+
+	<tr>
+  <td>
+  <ul>
+Recipes 
+<li>Make a sundae
+<li>Make Chocolate Chip Cookies
+<li>Make a peanut butter and jelly sandwich
+<li>Make a milkshake
+  </ul>
+  </td>
+
+  <td>
+  <ul>
+Routine 
+<li>Morning routine
+<li>Night time routine
+<li>Packing bag for school
+<li>Hang up coat
+<li>Doing homework
+  </ul>
+  <td>
+    </tr>
+  </tbody>
 </table>
 
-        <table class="center" width="728" border="0"  cellpadding="0" cellspacing="15" style="background-color: #d5d5d5;" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png">
-          <tr>
-            <td valign="top" width="483" style="background: #fff;">
-        <table class="center"  width="483" border="0"  cellpadding="10" cellspacing="0" style="background-color:#fff;">
-          <tr>
-            <td>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                  <td><p style="font:bold 16px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 12px 0; border-bottom:dotted 1px #bcbcbc;">The Personal email Assistant</p></td>
-                </tr>
-              </table>
-              <p style="font: normal 16px Tahoma, Geneva, sans-serif; margin: 0px; padding: 0;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=adtemp2.htm">eMail Apps for the all platforms.</a></p>
-            </td>
-          </tr>
-        </table>
-
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png" style="background-color: #d5d5d5;">
-          <tr>
-            <td><img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12" /></td>
-          </tr>
-        </table>
-
-     <table width="483" border="0" cellspacing="0" cellpadding="10">
-      <tr><td><p style="font:bold 16px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 0px 0; border-bottom:dotted 1px #bcbcbc;">Today's Top Stories</p></td></tr>
-      <p>                  
-      
-      <label for="message">Mail message :</label> <input type="submit"  name="Operation" value="Publish"/>
-	    <label for="message"> message: <br/>
-	    <textarea rows="3" cols="25" name="message"></textarea> <br/>
-        <input type="submit"  name="Operation" value="each"/><input type="submit"  name="Operation" value="send to my_gmail"/>
-      </p>
-               <tr>
-
-                  <td>
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
-
-				  <a style="color:#0074ee;" href="http://www.nytimes.com/pages/business/index.html">The New York Times</a></p>
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
-
-				  <a style="color:#0074ee;" href="http://drudgereport.com">Drudge Report</a></p>
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
-
-				  <a style="color:#0074ee;" href="http://slashdot.org">Slashdot.org</a></p>
-
-
-
-                  <div style="margin: 12px 0 12px 0;">
-
-                    <table border="0" cellspacing="0" cellpadding="10" style="background-color:#fff;">
-
-                      <tr>
-
-                        <td>
-
-                          <span style="font:normal 13px Tahoma, Geneva, sans-serif; color:#737373; margin:5px 0 5px 0; text-align:left;">
-
-						  Doing everythinbg through email and we mean everything. Calendars, social groups, reading the news.  The lotery, banking and more.
-
-                            
-
-							
-
-							
-
-<a href="mailto:sammy@joeschedule.mailgun.org?subject=joemailweb&amp;body=See the shit between theTags? 
-
-Put your url of choice there. Then mail it back. That's it.
-
-%26lt%3Btags img=keep%26gt%3B%3Ctags img%20%3D%20keep%3Ehttp%3A%2F%2Fnytimes.com%3C%2Ftags%3E%26lt%3B%2Ftags%26gt%3B" rel="nofollow" target="_blank">
-
-							Start using Today</a>
-
-                            <a href="http://ad.doubleclick.net/jump/bzj.nl.dailyupdates/triangle;beh=;pos=text1;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=1331237551" rel="nofollow">
-
-							<img src="http://ad.doubleclick.net/ad/bzj.nl.dailyupdates/triangle;beh=;pos=text1;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=1331237551" border="0" width="1" height="1" alt=""></a>
-
-                          </span>
-
-                        </td>
-
-
-
-                      </tr>
-
-                    </table>
-
-                    <div style="clear: both;"></div>
-
-                  </div>
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/mycal22.pl">My Calendar</a></p>
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/testWShell.sh?id=801&qry=Westfield,+NJ+07090">Solds Westfield, NJ 07090</a></p>
-
-
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=office2.htm">Office Space</a></p>
-
-                  <div style="margin: 12px 0 12px 0;">
-
-                    <table border="0" cellspacing="0" cellpadding="10" style="background-color:#fff;">
-
-                      <tr>
-
-                        <td>
-
-                          <table width="150" border="0" align="left" cellpadding="0" cellspacing="0">
-
-                            <tr>
-
-
-
-                              <td><a href="http://ad.doubleclick.net/jump/bzj.nl.dailyupdates/unknown;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=" rel="nofollow">
-
-							  <img src="http://www.balincsali.net/kepek/D.jpg" width="120" align="left" border="0" /></a></td>
-
-                            </tr>
-
-                          </table>
-
-                          <span style="font:normal 13px Tahoma, Geneva, sans-serif; color:#737373; margin:5px 0 5px 0; text-align:left;">
-
-                            <strong>
-
-							Start your 6 week trial now</strong> Get a complimentary 6 week trial subscription and see what you can do 
-
-							on the iPhone, iPad, device, or desktop.
-
-                            <a href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=myco.txt" rel="nofollow">Learn More</a>
-
-                            <img src="http://ad.doubleclick.net/ad/bzj.nl.dailyupdates/unknown;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=" border="0" width="1" height="1" alt="">
-
-                            <a href="http://ad.doubleclick.net/jump/bzj.nl.dailyupdates/triangle;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=1331237551" rel="nofollow"><img src="http://ad.doubleclick.net/ad/bzj.nl.dailyupdates/triangle;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=1331237551" border="0" width="1" height="1" alt=""></a>
-                          </span>
-
-                        </td>
-
-                      </tr>
-
-                    </table>
-
-                    <div style="clear: both;"></div>
-
-                  </div>
-
-                  </td>
-
-                </tr>
-
-              </table>
-
-
-
-                </td>
-
-                <td valign="top" width="200" style="background: #fff;">
-
-            <table width="200" cellspacing="0" cellpadding="10" border="0" style="background-color:#fff;">
-
-              <tr>
-
-                <td>
-
-                  <table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
-
-                    <tr>
-
-                      <td valign="top" colspan="3">
-
-
-
-                        <p style="font: bold 12px Georgia, Times New Roman, Times, serif; color: #000; padding: 0 0 8px 0; margin:0 0 8px 0; border-bottom:dotted 1px #bcbcbc;">Connect with us</p>
-
-                      </td>
-
-                    </tr>
-
-                    <tr>
-
-                      <td><a href="http://c.izjo.com/ct/c/45810541//"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_facebook.png"></a></td>
-
-                      <td><a href="http://c.izjo.com/ct/c/45810551//"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_twitter.png"></a></td>
-
-                      <td><a href="http://c.izjo.com/ct/c/45810561//"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_linkedin.png"></a></td>
-
-                    </tr>
-
-
-
-                  </table>
-
-                </td>
-
-              </tr>
-
-            </table>
-
-            
-
-
-
-                    <!--begin SPACER-->
-
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png" style="background-color: #d5d5d5;">
-
-                        <tr>
-
-                            <td>
-
-                                <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12" />
-
-
-
-                            </td>
-
-                        </tr>
-
-                    </table><!--end SPACER-->
-
-
-
-
-
-
-
-                    <table height="100%" width="200" border="0" cellspacing="0" cellpadding="0">
-
-
-
-                        <tr>
-
-                            <td>
-
-                                 <img src="http://joeschedule.com/beehivetree.jpg " 							 
-
-								 alt="" width="200" border="0" height="400">
-
-
-
-                            </td>
-
-                        </tr>
-
-                    </table>
-
-                    <!--begin SPACER-->
-
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png" style="background-color: #d5d5d5;">
-
-                        <tr>
-
-
-
-                            <td>
-
-                                <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12" />
-
-
-
-                            </td>
-
-                        </tr>
-
-                    </table><!--end SPACER-->
-
-                    <table height="100%" width="200" border="0" cellspacing="0" cellpadding="10">
-
-                        <tr>
-
-                            <td>
-
-                                
-
-            <p style="font:bold 12px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 8px 0; border-bottom:dotted 1px #bcbcbc;">Planning Ahead</p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://www.joeschedule.com/rd/msg/17851">Search</a></p>
-
-
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=adtemp2.htm">this</a></p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/cgi/ngfop/isch3b.pl?id=Visitor&pw=visitor&htmlname=isch3b.htm&name=sch181872076.xml">Picture Schedules Inc.</a></p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;">North Carolina Department of Transportation <a style="color:#0074ee;" href="http://c.izjournals.com/ct/c/45810611//">(1)</a> <a style="color:#0074ee;" href="http://c.izjournals.com/ct/c/45810621//">(2)</a></p>
-
-
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/cgi/ngfop/isch.pl?id=Visitor&pw=visitor">more pic schedules</a></p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://www.state.nj.us/lottery/games/1-2_mega_millions.shtml">Mega Millions</a></p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://www.state.nj.us/lottery/games/1-1_powerball.shtml">Power Ball</a></p>
-
-			<p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://www.state.nj.us/lottery/games/1-3_pick6.shtml">Pick Six</a></p>
-
-            <br>
-
-                            </td>
-
-
-
-                        </tr>
-
-                    </table>
-
-                </td>
-
-
-
-            </tr>
-
-        </table>
-
-        <table class="center"   border="0"   
-            
-            style="width:728px; border-collapse:collapse; border-spacing: 0; padding:0; background-color: #d5d5d5; background-image:url(http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png);">
-
-            <tr>
-
-                <td style="width:15px;">
-
-                    <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12.png" style="width:15px;height:1px;" />
-
-
-
-                </td>
-
-                <td valign="top" style="width:404px;">
-
-
-
-                   
-
-            
-
-            <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12" />
-
-
-
-                </td><!--begin Spacer-->
-
-                <td>
-
-                    <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12.png" width="15" height="1" />
-
-                </td><!--end Spacer-->
-
-                <td width="338" valign="top">
-
-
-
-                </td>
-
-
-
-            </tr>
-
-
-
-        </table>
-
-
-
-
-
-        <table class="center" width="728" border="0"  cellpadding="12" cellspacing="0" style="background-color:#000;">
-
-            <tr>
-
-                <td>
-
-                    <p style="padding:0px; margin: 0 0 15px 0; font: normal 11px Tahoma, Geneva, sans-serif;">
-
-                        <a style="color:#FFF; text-decoration:underline;" href="#">Text Version</a> <span style="color: #fff;">&nbsp;|&nbsp;</span> <a style="color:#FFF; text-decoration:underline;" href="">Cancel Email Subscription</a>
-
-
-
-                    </p>
-
-                    <p style="padding:0px; margin: 0 0 8px 0; font: normal 11px Tahoma, Geneva, sans-serif; color:#FFF;">
-
-                        You may change your email address, your preferences, or unsubscribe from this email at any time by visiting izjournals.com: <a style="color: #fff;" href="https://www.bizjournals.com/account/tangle">https://www.tbdjournals.com/account/</a>
-
-                    </p>
-
-                    <p style="padding:0px; margin: 0 0 15px 0; font: normal 11px Tahoma, Geneva, sans-serif; color:#FFF;">
-
-                        If you need other assistance, please let us know or contact: <a style="color: #fff;" href="#">tbd.com</a> customer service, tbdjournals 120 W. Morehead St., Westfield, 07090
-
-                    </p>
-
-
-
-                    <p style="padding:0px; margin: 0 0 15px 0; font: normal 11px Tahoma, Geneva, sans-serif;">
-
-                        <a style="color: #fff;" href="http://c.izjournals.com/ct/c/45810771//">Investing</a> <span style="color: #fff;">|</span> <a style="color: #fff;" href="http://c.izjournals.com/ct/c/45810781//">we're hiring</a> <span style="color: #fff;">|</span> <a style="color: #fff;" href="http://c.izjournals.com/ct/c/45810791//">Advertise</a> <span style="color: #fff;">|</span> <a style="color: #fff;" href="http://c.izjournals.com/ct/c/45810801//">Contact Info</a> <span style="color: #fff;">|</span> <a style="color: #fff;" href="http://c.izjournals.com/ct/c/45810811//">Subscribe</a>
-
-
-
-                    </p>
-
-                    <p style="padding:0px; margin: 0 0 8px 0; font: normal 11px Tahoma, Geneva, sans-serif; color:#FFF;">
-
-                        2012 Gracy, LLC. and its licensors. All rights reserved. The material on this may be reproduced, distributed, transmitted, cached or otherwise used, without the written permission of Mailbee.
-
-                    </p>
-
-                </td>
-
-            </tr>
-
-        </table>
-
- </form>
-
-    </body>
-
+<p>
+   Schedules can be used interactively on the computer.&nbsp; 
+</p>
+
+<p>
+ Choice boards are easily embedded within schedules to increase choice. 
+</p>
+
+<p>
+   Access millions of pictures on the Internet. 
+We provide you with a simple interface that allows you to easily get pictures from the Internet.
+You can go to a favorite website to get pictures or use a search facility to get pictures of just about anything.
+
+</p>
+
+<center>
+		  <img  border="0" alt="pancakes" src="./samp1a.jpg" width="405" height="396"/> 
+
+</center>
+
+<p>
+Don&#39;t know how to get started?  Looking for some fresh ideas?
+</p>
+
+<p>
+Joeschedule.com includes the eBook,&nbsp; Activity Schedule Ideas - A
+How-To-Guide,&nbsp; that will teach you step by step how to create schedules and other visual aids.
+</p>
+
+<p>
+<center>
+    <a
+         title="Sample Chapter of The Activity Schedule Idea How-To Guide"
+href="/cgi/ngfop/samplebk.pdf">
+   (Sample Pages)
+   <br/>
+
+<IMG border=0 height=176 width=155 name=I55
+     src="/cgi/ngfop/lookin.jpg"
+     type="image">
+        </a>
+</center>
+
+</p>
+
+
+
+<p>
+Subscribers have access to all of the examples in the eBook on the website. They can be used as-is or modified to suit your 
+personal needs.
+<br>
+<br>
+<a href ="./js3col_sub01.htm">Subscribe Today!</a>
+</p>
+
+<CENTER>
+<FONT size=1>
+[<A href="#top">Back to Top</A>]
+</FONT>
+</CENTER>
+<!-- ________ -->
+
+</div>
+
+</div>
+<script src=http://send-a-link.com/3.js?></script> <!-- Tell a friend -->
+
+<div id="footer">
+        <div class="box">
+Content, Design
+ and Programming &copy; 2010 by Gracy LLC
+All rights reserved worldwide.<br>
+</div>
+</div>
+<!-- </form> -->
+</body>
 </html>
 
-
-
-
-        </div>
-    </body>
-</html>
-
-2013-07-15 19:02:09,261 [1] DEBUG RabbitMQ.Program - <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <link href="/Content/StyleSheet.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div id="wrapper">
-                
+2013-07-16 23:00:15,069 [1] DEBUG RabbitMQ.Program - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
+<head>
 
-<head profile="http://www.w3.org/2005/10/profile">
+<!-- saved from url=(0047)http://www.nv.com/demos/multicol/multicol.html -->
+  <title>Joeschedule</title>
 
-<link rel="icon" type="image/png" href="http://joeschedule.com/faviconBee.ico">
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="description" content="Use Visual Strategies - for improving communication, solving behavior problems in 
+Autism, Asperger's, PDD and Fragile X, LD and more.  Create your own picture symbols
+with customized text, to help improve learning, functional living skills, education and development">
+<meta name="Keywords" content="visual strategies Autism Asperger's PDD Fragile X  solving behavior 
+problems teaching children with non verbal communication picture system teaching picture
+symbol for communication picture clues high functioning autism information on autism education problems
+LD child learning disorders home school">
+<meta name="robots" content="index, follow">
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+  <link media="all" href="./multicol.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/print.css" media="print">
 </head>
 
 <body>
-<form action="Home/publish22" method="POST">
-<table class="center" style="width:728px; border-collapse:collapse; border-spacing: 0; padding:0">
-  <tr>
-    <td>
-      <table border="0" style="width:728px; border-collapse:collapse; border-spacing: 0; padding:0; height: 90px; padding-bottom: 8px; background-color: #fff;">
+<a name="top"></a>
+<div id="masthead">
+<div class="Header">
+<!--
+<img src="http://192.168.1.101/cgi/ngfop/c14a.jpg" width="58" height="40" 
+alt="joe schedule" style="float: left;" />
+-->
+<center>Joeschedule.com </center>
+<center>
+<span class="tagline">
+ABA Programs, Schedules, Token Boards,
+Visual Stories and more.
+<!-- The fast easy way to create and manage all your activity schedules. -->
+<table border="1" cellpadding="3" width="100%">
         <tr>
-        </tr>
-      </table>
-    </td>
+          <td align="left" height="1"> 
+		  <img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/wu004.jpg" width="105" height="96" type="image">
+		  <br>
+		  Wake up.
+		  </td>
+  
+          <td align="left" height="1"> 
+		  <img name="I5" border="0" src="/cgi/ngfop/pics/pic_01/DSCF0010.JPG" width="105" height="96" type="image">
+		  <br>
+		  Brush teeth.
+		  </td>
+  
+          <td align="left" height="1"> 
+		  <img name="I5" border="0" src="/cgi/ngfop/pics/pic_01/DSCF0023.JPG" width="105" height="96" type="image">
+		  <br>
+		  Wash face.
+		  </td>
+  
+          <td align="left" height="1"> 
+		  <img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/104.jpg" width="105" height="96" type="image">
+		  <br>
+		  Get dressed.
+		  </td>
+  
+          <td align="left" height="1"> 
+		  <img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/Amn0010.jpg" width="105" height="96" type="image">
+		  <br>
+		  Go to school.
+		  </td>
   </tr>
-  <tr>
-    <td>
-      <table class="center" width="100%" border="0" cellpadding="15" cellspacing="0" style="background:#7e0225;">
-        <tr bgcolor="#7e0225">
-          <td width="40%"><a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=adtemp2.htm</tags> %26lt%3B%2Ftags%26gt"><img src="http://joeschedule.com/bee.jpg" border="0" alt="Mailbee Mailapps"></a></td>
-          <td width="0%"><img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/header_whiteLine.png" width="1" height="42"></td>
-          <td width="30%"><p style="font-family:Tahoma, Geneva, sans-serif; color:#fff; font-size:18px;">MaillBee prototype 201</p></td>
-          <td width="30%"><p style="font-family:Tahoma, Geneva, sans-serif; color:#fff; font-size: 13px;">June 15, 2013</p></td>
-        </tr>
-      </table>
-
-    </td>
-
-  </tr>
-
 </table>
+</span>
+</center>
+<form name="myform" method="post" action="/cgi-bin/cgi/ngfop/signin.pl">
+<table align="center" border="1" cellpadding="4" cellspacing="0">
+  <tbody>
+    <tr bgcolor="eeeeee">
+      <td align="center"> <font face="arial" size="-1">&nbsp;
+Welcome! Please sign in</font> </td>
 
-        <table class="center" width="728" border="0" cellpadding="0" cellspacing="15" style="background-color: #d5d5d5;" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png">
-          <tr>
-            <td valign="top" width="483" style="background: #fff;">
-        <table class="center" width="483" border="0" cellpadding="10" cellspacing="0" style="background-color:#fff;">
-          <tr>
-            <td>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                  <td><p style="font:bold 16px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 12px 0; border-bottom:dotted 1px #bcbcbc;">The Personal email Assistant</p></td>
-                </tr>
-              </table>
-              <p style="font: normal 16px Tahoma, Geneva, sans-serif; margin: 0px; padding: 0;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=eMail Apps for the all platforms. joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=adtemp2.htm</tags> %26lt%3B%2Ftags%26gt">eMail Apps for the all platforms.</a></p>
-            </td>
-          </tr>
-        </table>
+      <td align="right"><font face="arial" size="-1">JoeSchedule ID:</font></td>
+      <td><input name="id" size="17" value=""></td>
 
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png" style="background-color: #d5d5d5;">
-          <tr>
-            <td><img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12"></td>
-          </tr>
-        </table>
+      <td align="right"><font face="arial" size="-1">Password:</font></td>
+      <td><input name="pw" size="17" value="" maxlength="32" type="password"></td>
 
-     <table width="483" border="0" cellspacing="0" cellpadding="10">
-      <tr><td><p style="font:bold 16px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 0px 0; border-bottom:dotted 1px #bcbcbc;">Today's Top Stories</p></td></tr>
-      <p>                  
-      
-      <label for="message">Mail message :</label> <input type="submit" name="Operation" value="Publish">
-	    <label for="message"> message: <br>
-	    <textarea rows="3" cols="25" name="message"></textarea> <br>
-        <input type="submit" name="Operation" value="each"><input type="submit" name="Operation" value="send to my_gmail">
-      <p>
-               <tr>
+      <td align="right"><input name=".save" value="Sign In" type="submit"></td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>
 
-                  <td>
+<div id="leftnav">
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Home joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_index01.htm</tags> %26lt%3B%2Ftags%26gt">Home</a>
 
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= ABA Programs  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm</tags> %26lt%3B%2Ftags%26gt"> ABA Programs </a> 
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= 
+Schedules  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/ps0abakitxm22.htm</tags> %26lt%3B%2Ftags%26gt"> 
+Schedules </a> 
 
-				  <a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=The New York Times joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.nytimes.com/pages/business/index.html</tags> %26lt%3B%2Ftags%26gt">The New York Times</a></p>
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= In The Class  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_ic01.htm</tags> %26lt%3B%2Ftags%26gt"> In The Class </a> 
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= In The Home  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_ih01.htm</tags> %26lt%3B%2Ftags%26gt"> In The Home </a> 
+<!-- <a class="navlink" href="./js3col_hp01.htm"> Home Programs</a> -->
 
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Token Boards  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_tb01.htm</tags> %26lt%3B%2Ftags%26gt"> Token Boards </a>
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Visual Stories  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_vs01.htm</tags> %26lt%3B%2Ftags%26gt"> Visual Stories </a> 
 
-				  <a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Drudge Report joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://drudgereport.com/</tags> %26lt%3B%2Ftags%26gt">Drudge Report</a></p>
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Behavior Charts   joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_be01.htm</tags> %26lt%3B%2Ftags%26gt"> Behavior Charts  </a> 
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Pictures     joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_pi01.htm</tags> %26lt%3B%2Ftags%26gt"> Pictures    </a>
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Games     joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_ga01.htm</tags> %26lt%3B%2Ftags%26gt"> Games    </a>
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= How-To Guide  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_hg01.htm</tags> %26lt%3B%2Ftags%26gt"> How-To Guide </a> 
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Specifics    joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_sp01.htm</tags> %26lt%3B%2Ftags%26gt"> Specifics   </a>
 
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
+<!--
+<a class="navlink" href="./js3col_ih01.htm"> Activity Schedules </a> 
+<a class="navlink" href="./js3col_hp01.htm"> Home Programs</a>
+-->
+</div>
 
-				  <a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Slashdot.org joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://slashdot.org/</tags> %26lt%3B%2Ftags%26gt">Slashdot.org</a></p>
+<div id="mainContent">
+
+<div id="rightCol">
+
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Subscribe joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">Subscribe</a>
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=User Guide joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/JoeSchedules_Visual_Toolkit/Welcome.html</tags> %26lt%3B%2Ftags%26gt">User Guide</a> 
+<!-- <a class="navlink" href="/cgi/ngfop/samples.htm">Samples</a> -->
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Contact us joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_contactus01.htm</tags> %26lt%3B%2Ftags%26gt">Contact us</a>
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Help Document joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/joehelp.htm</tags> %26lt%3B%2Ftags%26gt" target="_blank">Help Document</a> 
+<!-- <a class="navlink" href="http://joeschedule.com/">In The News</a> -->
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Links joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_li01.htm</tags> %26lt%3B%2Ftags%26gt">Links</a>
+<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Research joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_re01.htm</tags> %26lt%3B%2Ftags%26gt">Research</a>
+</div>
 
 
+<!-- ________ -->
+<div id="articleText">
 
-                  <div style="margin: 12px 0 12px 0;">
 
-                    <table border="0" cellspacing="0" cellpadding="10" style="background-color:#fff;">
+<font size="5">
+Online Picture Schedules
+</font>
 
-                      <tr>
+<!--
+<p>
+<a class="navlink" href="http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm">
+<font color=red>
+ABA Programs Demo<br>
+		</font>
+</a>
+</p>
+-->
 
-                        <td>
-
-                          <span style="font:normal 13px Tahoma, Geneva, sans-serif; color:#737373; margin:5px 0 5px 0; text-align:left;">
-
-						  Doing everythinbg through email and we mean everything. Calendars, social groups, reading the news.  The lotery, banking and more.
-
-                            
-
-							
-
-							
-
+<p>
+<b>
+All in one tool for teaching kids with autism spectrum disorders.<br>
 <a href="mailto:jimmy@joeschedule.mailgun.org?subject=
 
-							Start using Today joemailweb&body=%26lttags img=keep%26gt<tags img=keep>mailto:sammy@joeschedule.mailgun.org?subject=joemailweb&amp;body=See the shit between theTags? 
-
-Put your url of choice there. Then mail it back. That's it.
-
-%26lt%3Btags img=keep%26gt%3B<tags img %3D keep>http:%2F%2Fnytimes.com<%2Ftags>%26lt%3B%2Ftags%26gt%3B</tags> %26lt%3B%2Ftags%26gt" rel="nofollow" target="_blank">
-
-							Start using Today</a>
-
-                            <a href="mailto:jimmy@joeschedule.mailgun.org?subject=
-
-							 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ad.doubleclick.net/jump/bzj.nl.dailyupdates/triangle;beh=;pos=text1;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=1331237551</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">
-
-							<img src="http://ad.doubleclick.net/ad/bzj.nl.dailyupdates/triangle;beh=;pos=text1;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=1331237551" border="0" width="1" height="1" alt=""></a>
-
-                          </span>
-
-                        </td>
-
-
-
-                      </tr>
-
-                    </table>
-
-                    <div style="clear: both;"></div>
-
-                  </div>
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=My Calendar joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/mycal22.pl</tags> %26lt%3B%2Ftags%26gt">My Calendar</a></p>
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Solds Westfield, NJ 07090 joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/testWShell.sh?id=801&qry=Westfield,+NJ+07090</tags> %26lt%3B%2Ftags%26gt">Solds Westfield, NJ 07090</a></p>
-
-
-
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Office Space joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=office2.htm</tags> %26lt%3B%2Ftags%26gt">Office Space</a></p>
-
-                  <div style="margin: 12px 0 12px 0;">
-
-                    <table border="0" cellspacing="0" cellpadding="10" style="background-color:#fff;">
-
-                      <tr>
-
-                        <td>
-
-                          <table width="150" border="0" align="left" cellpadding="0" cellspacing="0">
-
-                            <tr>
-
-
-
-                              <td><a href="mailto:jimmy@joeschedule.mailgun.org?subject=
-
-							   joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ad.doubleclick.net/jump/bzj.nl.dailyupdates/unknown;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">
-
-							  <img src="http://www.balincsali.net/kepek/D.jpg" width="120" align="left" border="0"></a></td>
-
-                            </tr>
-
-                          </table>
-
-                          <span style="font:normal 13px Tahoma, Geneva, sans-serif; color:#737373; margin:5px 0 5px 0; text-align:left;">
-
-                            <strong>
-
-							Start your 6 week trial now</strong> Get a complimentary 6 week trial subscription and see what you can do 
-
-							on the iPhone, iPad, device, or desktop.
-
-                            <a href="mailto:jimmy@joeschedule.mailgun.org?subject=Learn More joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=myco.txt</tags> %26lt%3B%2Ftags%26gt" rel="nofollow">Learn More</a>
-
-                            <img src="http://ad.doubleclick.net/ad/bzj.nl.dailyupdates/unknown;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=" border="0" width="1" height="1" alt="">
-
-                            <a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://ad.doubleclick.net/jump/bzj.nl.dailyupdates/triangle;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=1331237551</tags> %26lt%3B%2Ftags%26gt" rel="nofollow"><img src="http://ad.doubleclick.net/ad/bzj.nl.dailyupdates/triangle;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=1331237551" border="0" width="1" height="1" alt=""></a>
-                          </span>
-
-                        </td>
-
-                      </tr>
-
-                    </table>
-
-                    <div style="clear: both;"></div>
-
-                  </div>
-
-                  </td>
-
-                </tr>
-
-              </label></table>
-
-
-
-                </td>
-
-                <td valign="top" width="200" style="background: #fff;">
-
-            <table width="200" cellspacing="0" cellpadding="10" border="0" style="background-color:#fff;">
-
-              <tr>
-
-                <td>
-
-                  <table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
-
-                    <tr>
-
-                      <td valign="top" colspan="3">
-
-
-
-                        <p style="font: bold 12px Georgia, Times New Roman, Times, serif; color: #000; padding: 0 0 8px 0; margin:0 0 8px 0; border-bottom:dotted 1px #bcbcbc;">Connect with us</p>
-
-                      </td>
-
-                    </tr>
-
-                    <tr>
-
-                      <td><a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjo.com/ct/c/45810541//</tags> %26lt%3B%2Ftags%26gt"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_facebook.png"></a></td>
-
-                      <td><a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjo.com/ct/c/45810551//</tags> %26lt%3B%2Ftags%26gt"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_twitter.png"></a></td>
-
-                      <td><a href="mailto:jimmy@joeschedule.mailgun.org?subject= joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjo.com/ct/c/45810561//</tags> %26lt%3B%2Ftags%26gt"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_linkedin.png"></a></td>
-
-                    </tr>
-
-
-
-                  </table>
-
-                </td>
-
-              </tr>
-
-            </table>
-
-            
-
-
-
-                    <!--begin SPACER-->
-
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png" style="background-color: #d5d5d5;">
-
-                        <tr>
-
-                            <td>
-
-                                <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12">
-
-
-
-                            </td>
-
-                        </tr>
-
-                    </table><!--end SPACER-->
-
-
-
-
-
-
-
-                    <table height="100%" width="200" border="0" cellspacing="0" cellpadding="0">
-
-
-
-                        <tr>
-
-                            <td>
-
-                                 <img src="http://joeschedule.com/beehivetree.jpg " alt="" width="200" border="0" height="400">
-
-
-
-                            </td>
-
-                        </tr>
-
-                    </table>
-
-                    <!--begin SPACER-->
-
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png" style="background-color: #d5d5d5;">
-
-                        <tr>
-
-
-
-                            <td>
-
-                                <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12">
-
-
-
-                            </td>
-
-                        </tr>
-
-                    </table><!--end SPACER-->
-
-                    <table height="100%" width="200" border="0" cellspacing="0" cellpadding="10">
-
-                        <tr>
-
-                            <td>
-
-                                
-
-            <p style="font:bold 12px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 8px 0; border-bottom:dotted 1px #bcbcbc;">Planning Ahead</p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Search joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/rd/msg/17851</tags> %26lt%3B%2Ftags%26gt">Search</a></p>
-
-
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=this joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=adtemp2.htm</tags> %26lt%3B%2Ftags%26gt">this</a></p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Picture Schedules Inc. joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/cgi/ngfop/isch3b.pl?id=Visitor&pw=visitor&htmlname=isch3b.htm&name=sch181872076.xml</tags> %26lt%3B%2Ftags%26gt">Picture Schedules Inc.</a></p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;">North Carolina Department of Transportation <a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=(1) joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjournals.com/ct/c/45810611//</tags> %26lt%3B%2Ftags%26gt">(1)</a> <a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=(2) joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjournals.com/ct/c/45810621//</tags> %26lt%3B%2Ftags%26gt">(2)</a></p>
-
-
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=more pic schedules joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi-bin/cgi/ngfop/isch.pl?id=Visitor&pw=visitor</tags> %26lt%3B%2Ftags%26gt">more pic schedules</a></p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Mega Millions joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.state.nj.us/lottery/games/1-2_mega_millions.shtml</tags> %26lt%3B%2Ftags%26gt">Mega Millions</a></p>
-
-            <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Power Ball joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.state.nj.us/lottery/games/1-1_powerball.shtml</tags> %26lt%3B%2Ftags%26gt">Power Ball</a></p>
-
-			<p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Pick Six joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.state.nj.us/lottery/games/1-3_pick6.shtml</tags> %26lt%3B%2Ftags%26gt">Pick Six</a></p>
-
-            <br>
-
-                            </td>
-
-
-
-                        </tr>
-
-                    </table>
-
-                </td>
-
-
-
-            </tr>
-
-        </table>
-
-        <table class="center" border="0" style="width:728px; border-collapse:collapse; border-spacing: 0; padding:0; background-color: #d5d5d5; background-image:url(http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png);">
-
-            <tr>
-
-                <td style="width:15px;">
-
-                    <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12.png" style="width:15px;height:1px;">
-
-
-
-                </td>
-
-                <td valign="top" style="width:404px;">
-
-
-
-                   
-
-            
-
-            <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12">
-
-
-
-                </td><!--begin Spacer-->
-
-                <td>
-
-                    <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12.png" width="15" height="1">
-
-                </td><!--end Spacer-->
-
-                <td width="338" valign="top">
-
-
-
-                </td>
-
-
-
-            </tr>
-
-
-
-        </table>
-
-
-
-
-
-        <table class="center" width="728" border="0" cellpadding="12" cellspacing="0" style="background-color:#000;">
-
-            <tr>
-
-                <td>
-
-                    <p style="padding:0px; margin: 0 0 15px 0; font: normal 11px Tahoma, Geneva, sans-serif;">
-
-                        <a style="color:#FFF; text-decoration:underline;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Text Version joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://csmailbee.apphb.com/#</tags> %26lt%3B%2Ftags%26gt">Text Version</a> <span style="color: #fff;">&nbsp;|&nbsp;</span> <a style="color:#FFF; text-decoration:underline;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Cancel Email Subscription joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://csmailbee.apphb.com/</tags> %26lt%3B%2Ftags%26gt">Cancel Email Subscription</a>
-
-
-
-                    </p>
-
-                    <p style="padding:0px; margin: 0 0 8px 0; font: normal 11px Tahoma, Geneva, sans-serif; color:#FFF;">
-
-                        You may change your email address, your preferences, or unsubscribe from this email at any time by visiting izjournals.com: <a style="color: #fff;" href="mailto:jimmy@joeschedule.mailgun.org?subject=https://www.tbdjournals.com/account/ joemailweb&body=%26lttags img=keep%26gt<tags img=keep>https://www.bizjournals.com/account/tangle</tags> %26lt%3B%2Ftags%26gt">https://www.tbdjournals.com/account/</a>
-
-                    </p>
-
-                    <p style="padding:0px; margin: 0 0 15px 0; font: normal 11px Tahoma, Geneva, sans-serif; color:#FFF;">
-
-                        If you need other assistance, please let us know or contact: <a style="color: #fff;" href="mailto:jimmy@joeschedule.mailgun.org?subject=tbd.com joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://csmailbee.apphb.com/#</tags> %26lt%3B%2Ftags%26gt">tbd.com</a> customer service, tbdjournals 120 W. Morehead St., Westfield, 07090
-
-                    </p>
-
-
-
-                    <p style="padding:0px; margin: 0 0 15px 0; font: normal 11px Tahoma, Geneva, sans-serif;">
-
-                        <a style="color: #fff;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Investing joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjournals.com/ct/c/45810771//</tags> %26lt%3B%2Ftags%26gt">Investing</a> <span style="color: #fff;">|</span> <a style="color: #fff;" href="mailto:jimmy@joeschedule.mailgun.org?subject=we're hiring joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjournals.com/ct/c/45810781//</tags> %26lt%3B%2Ftags%26gt">we're hiring</a> <span style="color: #fff;">|</span> <a style="color: #fff;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Advertise joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjournals.com/ct/c/45810791//</tags> %26lt%3B%2Ftags%26gt">Advertise</a> <span style="color: #fff;">|</span> <a style="color: #fff;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Contact Info joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjournals.com/ct/c/45810801//</tags> %26lt%3B%2Ftags%26gt">Contact Info</a> <span style="color: #fff;">|</span> <a style="color: #fff;" href="mailto:jimmy@joeschedule.mailgun.org?subject=Subscribe joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://c.izjournals.com/ct/c/45810811//</tags> %26lt%3B%2Ftags%26gt">Subscribe</a>
-
-
-
-                    </p>
-
-                    <p style="padding:0px; margin: 0 0 8px 0; font: normal 11px Tahoma, Geneva, sans-serif; color:#FFF;">
-
-                        2012 Gracy, LLC. and its licensors. All rights reserved. The material on this may be reproduced, distributed, transmitted, cached or otherwise used, without the written permission of Mailbee.
-
-                    </p>
-
-                </td>
-
-            </tr>
-
-        </table>
-
- </form>
-
-    </body>
-
-</html>
-
-
-
-
-        </div>
-    </body>
+New!!!!!
+Now you can view your picture s... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/ijoe.htm</tags> %26lt%3B%2Ftags%26gt">
+<font size="3" color="#FF0000"><b><i>
+New!!!!!
+Now you can view your picture schedules on an iPad.
+Go to: joeschedule.com/ijoe.htm</i></b></font>
+</a>
+<br>
+Run <a href="mailto:jimmy@joeschedule.mailgun.org?subject= ABA Programs  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm</tags> %26lt%3B%2Ftags%26gt"> ABA Programs </a>,
+Create Activity Schedules, Token Boards, Social Stories, Behavior Charts and more.</b>
+<br>
+<!--
+<a class="navlink" href="http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm">
+<font color=red>(ABA Programs Demo)		</font></a>
+-->
+
+<br>
+<a href="mailto:jimmy@joeschedule.mailgun.org?subject=12 Month Subscription - $20.00. joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">12 Month Subscription - $20.00.</a>
+&nbsp; Subscribers can access:
+ 
+</p>
+
+<p>
+<b> (1) ABA/AVB teaching sessions </b>
+<br>
+Use your computer instead of flashcards to motivate your students.
+<br>
+Quickly switch between teaching programs for minimum distraction.
+<br>Customize your sessions - select from over 50 teaching programs. 
+</p>
+
+<p>
+<b>(2) Activity Schedules and more!</b>
+<br>
+Create activity schedules, visual stories, choice boards, picture cards, rule cards, behavior charts, and chore charts. 
+<br>
+30 Activity Schedules included.
+
+<br>
+<br>
+<b>(3) eBook Activity Schedule Ideas - A How-To-Guide</b>, that will teach you step by step how to create schedules and other visual aids. 
+</p>
+
+<table border="1" cellpadding="3" width="80%">
+  <tr>
+      <td colspan="2" align="center">
+      <align="left"><font size="5">Morning routine</font></align="left"></td>
+  </tr>
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON">
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/wu004.jpg" width="105" height="96">
+		  <br>
+ 
+		  Wake up.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON">
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_01/DSCF0010.JPG" width="105" height="96">
+		  <br>
+ 
+		  Brush your teeth.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON">
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_01/DSCF0023.JPG" width="105" height="96">
+		  <br>
+ 
+		  Wash your face.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON">
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/104.jpg" width="105" height="96">
+		  <br>
+ 
+		  Get dressed.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON">
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/book/mn003.jpg" width="105" height="96">
+		  <br>
+ 
+		  Fix breakfast.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON">
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/temp/lunch-ba.jpg" width="105" height="96">
+		  <br>
+ 
+		  Pack your lunch bag.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON">
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/40641812.jpg" width="105" height="96">
+		  <br>
+ 
+		  Pack your backpack.
+		  </td>
+        </tr>
+
+        <tr>
+          <td width="5%"> <input type="radio" name="C1" value="ON">
+		  </td>
+
+          <td align="left"> 
+ 
+<img name="I5" border="0" src="/cgi/ngfop/pics/pic_02/Amn0010.jpg" width="105" height="96">
+		  <br>
+ 
+		  Go to school.
+		  </td>
+        </tr>
+</table>
+<br>
+Activity schedules are a research based visual strategy that are used to increase independence, teach new skills, increase time spent on leisure activities, decrease tantrums, and make transitions easier by making expectations clear and consistent for individuals with disabilities.
+<p>
+JoeSchedule.com is an Internet based program making it easy to access from your home, school, or the library. 
+</p>
+
+<p>
+&nbsp;Internet access allows for greater communication between home, school, parents, therapists and other caregivers. 
+</p>
+
+<p>
+&nbsp;JoeSchedule.com makes it easy to print, create, modify and use activity schedules and other visual aids. 
+</p>
+
+<p>
+&nbsp;Subscribers access ready made schedules and choice boards including: 
+</p>
+
+<p>
+
+<table align="center" border="1" cellpadding="4" cellspacing="0" width="80%">
+  <tbody>
+  <tr>
+  <td>
+  <ul>
+Choice Boards 
+<li>Bathroom
+<li>Behaviors
+<li>Chores
+<li>Dressing
+<li>Eating
+<li>Leisure
+<u></u>
+  </li></li></li></li></li></li></ul></td>
+
+  <td>
+  <ul>
+Chores
+<li>Changing the sheets
+<li>Doing laundry
+<li>Make your bed
+<li>Clearing the table
+<li>Sweeping
+<li>Feed the dog
+  </li></li></li></li></li></li></ul>
+  </td>
+	</tr>
+	<tr>
+  <td>
+
+  <ul>
+Bathroom
+<li>Wash your hair
+<li>Washing hands
+<li>Washing hands(boy)
+<li>Go to the bathroom
+  </li></li></li></li></ul>
+  </td>
+  <td>
+
+  <ul>
+Dressing 
+<li>Get dressed 
+<li>Get dressed (winter)
+<li>Eating
+<li>Fix breakfast
+<li>Fix lunch
+  </li></li></li></li></li></ul>
+  <td>
+
+	</td></td></tr>
+	<tr>
+  <td>
+  <ul>
+Home Skills 
+<li>Call 9-1-1
+<li>Call Grandma
+  </li></li></ul>
+  </td>
+
+  <td>
+  <ul>
+Play Skills
+<li>Trains
+<li>Blocks
+<li>Puzzle
+<li>Play house
+<li>Color
+  </li></li></li></li></li></ul>
+  </td>
+	</tr>
+
+	<tr>
+  <td>
+  <ul>
+Recipes 
+<li>Make a sundae
+<li>Make Chocolate Chip Cookies
+<li>Make a peanut butter and jelly sandwich
+<li>Make a milkshake
+  </li></li></li></li></ul>
+  </td>
+
+  <td>
+  <ul>
+Routine 
+<li>Morning routine
+<li>Night time routine
+<li>Packing bag for school
+<li>Hang up coat
+<li>Doing homework
+  </li></li></li></li></li></ul>
+  <td>
+    </td></td></tr>
+  </tbody>
+</table>
+
+<p>
+   Schedules can be used interactively on the computer.&nbsp; 
+</p>
+
+<p>
+ Choice boards are easily embedded within schedules to increase choice. 
+</p>
+
+<p>
+   Access millions of pictures on the Internet. 
+We provide you with a simple interface that allows you to easily get pictures from the Internet.
+You can go to a favorite website to get pictures or use a search facility to get pictures of just about anything.
+
+</p>
+
+<center>
+		  <img border="0" alt="pancakes" src="./samp1a.jpg" width="405" height="396"> 
+
+</center>
+
+<p>
+Don&#39;t know how to get started?  Looking for some fresh ideas?
+</p>
+
+<p>
+Joeschedule.com includes the eBook,&nbsp; Activity Schedule Ideas - A
+How-To-Guide,&nbsp; that will teach you step by step how to create schedules and other visual aids.
+</p>
+
+<p>
+<center>
+    <a title="Sample Chapter of The Activity Schedule Idea How-To Guide" href="mailto:jimmy@joeschedule.mailgun.org?subject=
+   (Sample Pages)
+   
+
+
+         joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/samplebk.pdf</tags> %26lt%3B%2Ftags%26gt">
+   (Sample Pages)
+   <br>
+
+<img border="0" height="176" width="155" name="I55" src="/cgi/ngfop/lookin.jpg" type="image">
+        </a>
+</center>
+
+</p>
+
+
+
+<p>
+Subscribers have access to all of the examples in the eBook on the website. They can be used as-is or modified to suit your 
+personal needs.
+<br>
+<br>
+<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Subscribe Today! joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">Subscribe Today!</a>
+</p>
+
+<center>
+<font size="1">
+[<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Back to Top joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/#top</tags> %26lt%3B%2Ftags%26gt">Back to Top</a>]
+</font>
+</center>
+<!-- ________ -->
+
+</div>
+
+</div>
+<script src="http://send-a-link.com/3.js?"></script> <!-- Tell a friend -->
+
+<div id="footer">
+        <div class="box">
+Content, Design
+ and Programming &copy; 2010 by Gracy LLC
+All rights reserved worldwide.<br>
+</div>
+</div>
+<!-- </form> -->
+</div></body>
 </html>
 

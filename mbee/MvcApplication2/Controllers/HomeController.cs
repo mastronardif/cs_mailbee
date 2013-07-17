@@ -7,6 +7,7 @@ using MvcApplication2.Models;
 using System.Drawing;
 using log4net;
 using MvcApplication2.Business;
+using mymailgun;
 
 namespace MvcApplication2.Controllers
 {
@@ -24,8 +25,17 @@ namespace MvcApplication2.Controllers
         public ActionResult publish22(FormCollection collection)
         {
             string op = collection["Operation"];
+
+
             string msg = collection["message"];
             string debug = string.Empty;
+
+            // July 15th 2013
+            //$msg = jm002ra::reply(\%allparams);
+            //makeReplyFromMailGun
+            msg = MyMailGun.makeReplyFromMailGun(collection);
+            // July 15th 2013
+
 
             _log.Debug("op = " + op);
             _log.Debug("op = " + msg);

@@ -479,3 +479,130 @@ Content-Type: text/html; charset="UTF-8"
 2013-07-15 18:59:28,131 [18] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
 2013-07-15 18:59:28,154 [18] DEBUG MvcApplication2.Controllers.HomeController - op = http://csmailbee.apphb.com/
 2013-07-15 18:59:28,295 [18] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-15 20:44:22,124 [106] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-15 20:44:22,213 [106] DEBUG MvcApplication2.Controllers.HomeController - op = http://slashdot.org
+2013-07-15 20:44:22,266 [106] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-15 20:52:38,407 [107] DEBUG MvcApplication2.Controllers.HomeController - op = Publish
+2013-07-15 20:52:38,408 [107] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 20:54:30,469 [108] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 20:54:30,470 [108] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 20:55:49,291 [105] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 20:55:49,291 [105] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 20:56:53,228 [95] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 20:56:53,229 [95] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 21:01:21,061 [105] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-15 21:01:21,062 [105] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 21:02:14,571 [90] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-15 21:02:15,122 [90] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 21:11:09,664 [98] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-15 21:11:09,665 [98] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 21:15:12,104 [92] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-15 21:15:12,105 [92] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 21:16:31,927 [95] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-15 21:16:31,927 [95] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 23:20:37,002 [10] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-15 23:20:37,062 [10] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 23:26:10,593 [15] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-15 23:26:10,602 [15] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-15 23:42:46,054 [22] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-15 23:42:46,064 [22] DEBUG MvcApplication2.Controllers.HomeController - op = $mailheader
+
+2013-07-16 21:25:38,946 [23] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-16 21:25:38,955 [23] DEBUG MvcApplication2.Controllers.HomeController - op = Received:by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject:joemailweb
+X-Mailer:iPod Mail (9A405)
+Message-Id:<8950389B-9325-4430-83FB-343C91A319D9@gmail.com>
+Date:Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf:Neutral
+
+
+2013-07-16 22:41:30,034 [19] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-16 22:41:30,044 [19] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From:joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: 
+Received:by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject:joemailweb
+X-Mailer:iPod Mail (9A405)
+Date:Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf:Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-16 22:52:44,390 [6] DEBUG MvcApplication2.Controllers.HomeController - op =  VCAP_SERVICES
+2013-07-16 22:52:44,400 [6] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To:  
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-16 22:53:51,475 [6] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-16 22:53:51,476 [6] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+
+</MYMAIL>
+
+2013-07-16 22:56:23,177 [6] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-16 22:56:23,178 [6] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+
+</MYMAIL>
+
+2013-07-16 22:57:21,682 [6] DEBUG MvcApplication2.Controllers.HomeController - op = 
+2013-07-16 22:57:21,683 [6] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+
+</MYMAIL>
+
