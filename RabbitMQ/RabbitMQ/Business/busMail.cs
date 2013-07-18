@@ -15,7 +15,7 @@ namespace RabbitMQ.Business
     public class busMail
     {
         public const string joemailweb = "joemailweb";
-        public const string joeping    = "joeping";
+        public const string joeping = "joeping";
 
         static class myRabbitMQVitals
         {
@@ -53,7 +53,7 @@ namespace RabbitMQ.Business
                 if (!CheckWhiteList(hdr)) { return "Failed whitelist test!"; }
 
                 // vitals
-                string from = myRabbitMQVitals._emailRoot;
+                string from = hdr.From.Address; //myRabbitMQVitals._emailRoot;
                 string to = hdr.To[0].Address; //hdr.To.ToList().ToString(); // make the comma sep list, and remove whitelist
                 //string cc, bcc = hdr.To.ToList().ToString(); // make the comma sep list, and remove whitelist
                 string subject = hdr.Subject.ToString();
@@ -76,10 +76,10 @@ namespace RabbitMQ.Business
                         resp = MyBrowser.GetResponse(url);
 
                         // Noramlise the a href to email, and reomve images if requested.
-                        resp = MyBrowser.NormalizeHttpToEmail(url.AbsoluteUri, resp, myRabbitMQVitals._emailRoot);
+                        resp = MyBrowser.NormalizeHttpToEmail(url.AbsoluteUri, resp, from); //myRabbitMQVitals._emailRoot);
                         //Program._log.Debug(retval);
 
-                        string tagLine = "<br/>"+myRabbitMQVitals._tagLine;
+                        string tagLine = "<br/>" + myRabbitMQVitals._tagLine;
                         tagLine += "<hr></hr>";
                         tagLine += url; //encode_entities($tag);
                         //_tagLine
@@ -93,7 +93,7 @@ namespace RabbitMQ.Business
                     // joeping 
                     Uri urlDetermine = new System.Uri("http://yahoo.com");  // FM fix this
 
-                    resp = MyBrowser.NormalizeHttpToEmail(urlDetermine.AbsoluteUri, hdr.Body, myRabbitMQVitals._emailRoot);
+                    resp = MyBrowser.NormalizeHttpToEmail(urlDetermine.AbsoluteUri, hdr.Body, from); //myRabbitMQVitals._emailRoot);
 
                     //Program._log.Debug(retval);
 
@@ -113,7 +113,7 @@ namespace RabbitMQ.Business
         {
             // pop a message from the queue.
             string retval = MyRabbotMQ.Pop();
-            
+
             return Reply(retval);
 
             //// Parse the data for vitals.
@@ -162,9 +162,9 @@ namespace RabbitMQ.Business
             //{
             //    // joeping 
             //    Uri urlDetermine = new System.Uri("http://yahoo.com");  // FM fix this
-                
+
             //    MyBrowser.NormalizeHttpToEmail(urlDetermine.AbsoluteUri, hdr.Body, myRabbitMQVitals._emailRoot);
-                
+
             //    //Program._log.Debug(retval);
 
             //    retval += mymail.MyMail.SendByMG22(to, from, retval);
