@@ -606,3 +606,21 @@ Content-Type: text/html; charset="UTF-8"
 
 </MYMAIL>
 
+2013-07-17 19:55:23,255 [111] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-17 19:55:24,285 [111] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+

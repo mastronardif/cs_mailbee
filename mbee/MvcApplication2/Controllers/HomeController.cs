@@ -34,6 +34,12 @@ namespace MvcApplication2.Controllers
             //$msg = jm002ra::reply(\%allparams);
             //makeReplyFromMailGun
             msg = MyMailGun.makeReplyFromMailGun(collection);
+            if ((msg.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1) &&
+                (msg.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1))
+            {
+                op = "publish";
+            }
+
             // July 15th 2013
 
 
