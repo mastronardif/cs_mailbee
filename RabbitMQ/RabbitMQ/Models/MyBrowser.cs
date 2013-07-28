@@ -93,7 +93,7 @@ namespace RabbitMQ.Models
 
         }
 
-        static public string NormalizeHttpToEmail44(string url, string src, string emailRoot, bool bRemoveimgs)
+        static public string NormalizeHttpToEmail(string url, string src, string emailRoot, bool bRemoveimgs)
         {
             Program._log.Debug(src);
             string retval = string.Empty;
@@ -123,15 +123,31 @@ namespace RabbitMQ.Models
 
                     string href = att.Value;
 
-                    Uri urlNext = new Uri(href, UriKind.RelativeOrAbsolute);
-                    // Make it absolute if it's relative
-                    if (!urlNext.IsAbsoluteUri)
+                    //fm 7/27/13 Uri urlNext = new Uri(href, UriKind.RelativeOrAbsolute);
+                    Uri urlNext = null;
+
+                    if (Uri.TryCreate(href, UriKind.RelativeOrAbsolute, out urlNext))
                     {
-                        urlNext = new Uri(urlRoot, urlNext);
+                        // Make it absolute if it's relative
+                        if (!urlNext.IsAbsoluteUri)
+                        {
+                           // urlNext = new Uri(urlRoot, urlNext);
+                            if (Uri.TryCreate(urlRoot, urlNext, out urlNext))
+                            {
+                                ;
+                            }
+                        }
                     }
 
+                    // Make it absolute if it's relative
+                    //fm 7/27/13  if (!urlNext.IsAbsoluteUri)
+                    //fm 7/27/13 {
+//fm 7/27/13                         urlNext = new Uri(urlRoot, urlNext);
+                    //fm 7/27/13                     }
+
                     //if (link.Attributes["href"].Value.ToString().Contains("http"))
-                    if (urlNext.ToString().Contains("http"))
+                    //FM 7/26/13 if (urlNext.ToString().Contains("http"))
+                    if (urlNext != null && urlNext.ToString().Contains("http"))
                     {
                         //Console.WriteLine(link.Attributes["href"].Value);
 
@@ -289,10 +305,42 @@ namespace RabbitMQ.Models
         
         }
 
-
-        static public string NormalizeHttpToEmail(string url, string src, string emailRoot)
+        public static string RemoveStyleAttributes(string strHtml)
         {
-            return NormalizeHttpToEmail44(url, src, emailRoot, false);
+            string retval = string.Empty;
+            HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
+
+            html.LoadHtml(strHtml);
+
+            //var elementsWithStyleAttribute = html.DocumentNode.SelectNodes("//@style");
+            var elementsWithStyleAttribute = html.DocumentNode.SelectNodes("//link[@href] | //style/@type");
+
+            if (elementsWithStyleAttribute != null)
+            {
+                foreach (var element in elementsWithStyleAttribute)
+                {
+                    //element.Attributes["style"].Remove();
+                    element.Remove();
+                }
+            }
+
+            using (StringWriter writer = new StringWriter())
+            {
+                html.Save(writer);
+                retval = writer.ToString();
+            }
+
+            //Program._log.Debug(retval);
+
+            return retval;
+
+            //html.ToString();
+        }
+
+
+        static public string REMOVME______NormalizeHttpToEmail(string url, string src, string emailRoot)
+        {
+            return NormalizeHttpToEmail(url, src, emailRoot, false);
             //return NormalizeHttpToEmail33(url, src, emailRoot);
             //return NormalizeHttpToEmail22(src, emailRoot);
 

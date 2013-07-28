@@ -33,10 +33,11 @@ namespace MvcApplication2.Controllers
             // July 15th 2013
             //$msg = jm002ra::reply(\%allparams);
             //makeReplyFromMailGun
-            msg = MyMailGun.makeReplyFromMailGun(collection);
-            if ((msg.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1) &&
-                (msg.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1))
+            string msgMG = MyMailGun.makeReplyFromMailGun(collection);
+            if ((msgMG.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1) &&
+                (msgMG.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1))
             {
+                msg = msgMG;
                 op = "publish";
             }
 

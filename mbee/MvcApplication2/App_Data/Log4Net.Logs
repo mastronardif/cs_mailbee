@@ -750,3 +750,217 @@ Content-Type: text/html; charset="UTF-8"
  <tags>http://www.joeschedule.com</tags>
 </MYMAIL>
 
+2013-07-19 21:51:29,747 [23] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 21:51:29,771 [23] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-19 22:00:30,129 [15] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 22:00:30,130 [15] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-19 22:01:22,499 [16] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 22:01:22,499 [16] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-19 22:09:40,727 [17] DEBUG MvcApplication2.Controllers.HomeController - op = Publish
+2013-07-19 22:09:41,221 [17] DEBUG MvcApplication2.Controllers.HomeController - op = adrfg
+2013-07-19 22:12:49,182 [21] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-19 22:12:49,183 [21] DEBUG MvcApplication2.Controllers.HomeController - op = http://www.nytimes.com/2013/07/20/business/media/with-accused-bombers-selfie-rolling-stone-got-more-attention-than-it-may-have-wanted.html?ref=business&_r=0
+2013-07-19 22:12:49,248 [21] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-19 22:19:11,552 [30] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 22:19:11,561 [30] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-19 22:21:12,960 [29] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 22:21:12,961 [29] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-19 22:26:44,483 [20] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 22:26:44,484 [20] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-19 22:41:07,456 [12] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 22:41:07,456 [12] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-19 22:49:38,422 [21] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 22:49:38,422 [21] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-19 22:53:16,443 [38] DEBUG MvcApplication2.Controllers.HomeController - op = publish
+2013-07-19 22:53:16,445 [38] DEBUG MvcApplication2.Controllers.HomeController - op = 
+<MYMAIL>
+<HEADER>
+From: ah@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags img=keep>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-07-20 17:46:15,025 [94] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-20 17:46:15,026 [94] DEBUG MvcApplication2.Controllers.HomeController - op = http://wwwgis2.wcpss.net/addressLookup/index.php?SelectAssignment2013=2013-14&DefaultAction=SelectAssignment2013&NodeID=111.1&StreetName=Varnell Ave&StreetNumber=1814&StreetZipCode=27612
+2013-07-20 17:46:15,126 [94] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-21 19:13:25,530 [66] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-21 19:13:25,572 [66] DEBUG MvcApplication2.Controllers.HomeController - op = http://wwwgis2.wcpss.net/addressLookup/index.php?SelectAssignment2013=2013-14&DefaultAction=SelectAssignment2013&NodeID=111.1&StreetName=%20Davidson%20St&StreetNumber=612&StreetZipCode=27609
+2013-07-21 19:13:25,682 [66] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-21 21:20:02,809 [30] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-21 21:20:02,953 [30] DEBUG MvcApplication2.Controllers.HomeController - op = http://slashdot.org/
+2013-07-21 21:20:09,791 [30] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 20:33:29,363 [9] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 20:33:29,421 [9] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 20:33:29,793 [9] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 20:39:09,999 [14] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 20:39:09,999 [14] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 20:39:10,130 [14] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 20:40:26,446 [16] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 20:40:26,446 [16] DEBUG MvcApplication2.Controllers.HomeController - op = http://slashdot.org/
+2013-07-27 20:40:26,496 [16] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 20:42:50,749 [10] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 20:42:50,749 [10] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 20:42:50,794 [10] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 20:43:18,876 [10] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 20:43:18,876 [10] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 20:43:18,923 [10] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 21:21:03,823 [43] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 21:21:03,824 [43] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 21:21:03,872 [43] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 21:37:21,121 [23] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 21:37:21,122 [23] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 21:37:21,167 [23] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 22:00:09,044 [12] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 22:00:09,045 [12] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 22:00:09,091 [12] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 22:02:03,234 [12] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 22:02:03,234 [12] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 22:02:03,281 [12] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 22:04:04,793 [5] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 22:04:04,793 [5] DEBUG MvcApplication2.Controllers.HomeController - op = http://news.slashdot.org/story/13/07/27/1625255/news-worth-buying-on-paper
+2013-07-27 22:04:04,840 [5] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 22:15:17,947 [36] DEBUG MvcApplication2.Controllers.HomeController - op = each
+2013-07-27 22:15:17,947 [36] DEBUG MvcApplication2.Controllers.HomeController - op = http://www.nytimes.com/pages/business/index.html
+2013-07-27 22:31:05,784 [46] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 22:31:05,795 [46] DEBUG MvcApplication2.Controllers.HomeController - op = joeschedule.com
+2013-07-27 22:31:06,042 [46] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-07-27 22:32:00,579 [46] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-07-27 22:32:00,580 [46] DEBUG MvcApplication2.Controllers.HomeController - op = http://joeschedule.com
+2013-07-27 22:32:00,660 [46] DEBUG MvcApplication2.Controllers.HomeController - debug = 

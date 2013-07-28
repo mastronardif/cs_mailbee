@@ -22,6 +22,9 @@ namespace mymailgun
             string bot = string.Empty;
             string jsonHeader = collection["message-headers"];
 
+            if (jsonHeader == null)
+                return string.Empty;
+
 //            string jsonHeader = @"[
 //   {
 //     'Name': 'Product 1',
