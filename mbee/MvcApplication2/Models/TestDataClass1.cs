@@ -10,13 +10,13 @@ namespace MvcApplication2.Models
         static public string strMail = ""+
 "\n<MYMAIL>" +
 "\n<HEADER>" +
-"\nFrom: jimmy@joeschedule.mailgun.org" +
+"\nFrom: ah@joeschedule.mailgun.org" +
 "\nTo: Frank Mastronardi <mastronardif@gmail.com>" +
 "\nSubject: cs mbee joemailweb" +
 "\nIn-Reply-To: <CAAAKxgKEqWkQ_v3kPRhY+3ATgM1ePYcCLtv+-1qtT3T=s=AYsAmail.gmail.com>" +
 "\nReferences: <CAAAKxgKEqWkQ_v3kPRhY+3ATgM1ePYcCLtv+-1qtT3T=s=AYsAmail.gmail.com>" +
 "\nMessage-Id: <FU uddy mailbox-19950-1311902078-753076ww3.pairlite.com>" +
-"\nDate: Thu, 13 Oct 2011 21:14:38 -0400" +
+"\nDate: Thu, 28 Jul 2013 21:14:38 -0400" +
 "\nMIME-Version: 1.0" +
 "Content-Type: text/html; charset=\"UTF-8\"" +
 "\n" +
