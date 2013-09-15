@@ -24,6 +24,38 @@ namespace myrabbitmq
 
     class MyRabbotMQ
     {
+
+        static public string wtf(string message)
+        {
+            string retval = string.Empty;
+
+            // First we need a ConnectionFactory
+            ConnectionFactory connFactory = new ConnectionFactory
+            {
+                Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL"]
+            };
+
+            using (var conn = connFactory.CreateConnection())
+            {
+                //using (IModel channel = connection.CreateModel())
+                using (var channel = conn.CreateModel()) // Note, don't share channels between threads
+                {
+                    channel.QueueDeclare(myRabbitMQVitals._queue, false, false, false, null);
+                    channel.ExchangeDeclare(myRabbitMQVitals._exchange, RabbitMQ.Client.ExchangeType.Direct);
+                    channel.QueueBind(myRabbitMQVitals._queue, myRabbitMQVitals._exchange, myRabbitMQVitals._routing_key);
+
+                    //channel.QueuePurge(myRabbitMQVitals._queue);
+
+                    //byte[] body = System.Text.Encoding.UTF8.GetBytes(message);
+                    //channel.BasicPublish(myRabbitMQVitals._exchange, myRabbitMQVitals._routing_key, null, body);
+                }
+            }
+
+            return retval;
+        }
+
+
+
         static public string Publish(string message)
         {
             string retval = string.Empty;

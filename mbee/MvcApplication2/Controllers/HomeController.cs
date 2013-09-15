@@ -20,6 +20,18 @@ namespace MvcApplication2.Controllers
         //            System.Reflection.MethodBase.GetCurrentMethod()
         //             .DeclaringType);
 
+        public ActionResult wtf(FormCollection collection)
+        {
+            int iCnt = 230;
+
+            // count msgs on queue
+
+
+            string str = string.Format("what the fuck how many <b>{0}</b>", iCnt);
+            return Content(string.Format("<hr>{0}</hr>", str));
+            //return RedirectToAction("Index");
+        }
+
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult publish22(FormCollection collection)
@@ -51,7 +63,7 @@ namespace MvcApplication2.Controllers
             switch (sw)
             {
                 case "publish":
-                    debug = busMail.publish(msg);
+                   // Fm 915/13 something went wrong!!!! debug = busMail.publish(msg);
                     break;
                 case "send to my_gmail":
                     string tagValue = collection["message"];

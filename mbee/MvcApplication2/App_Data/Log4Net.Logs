@@ -967,3 +967,6 @@ Content-Type: text/html; charset="UTF-8"
 2013-07-27 22:44:31,917 [24] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
 2013-07-27 22:44:31,918 [24] DEBUG MvcApplication2.Controllers.HomeController - op = http://www.nytimes.com/pages/business/index.html
 2013-07-27 22:44:31,978 [24] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-14 21:35:44,702 [24] DEBUG MvcApplication2.Controllers.HomeController - op = send to my_gmail
+2013-09-14 21:35:44,780 [24] DEBUG MvcApplication2.Controllers.HomeController - op = http://www.nytimes.com/pages/business/index.html
+2013-09-14 21:35:44,915 [24] DEBUG MvcApplication2.Controllers.HomeController - debug = 
