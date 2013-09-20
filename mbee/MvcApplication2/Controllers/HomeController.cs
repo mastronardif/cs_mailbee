@@ -65,7 +65,8 @@ namespace MvcApplication2.Controllers
                 switch (sw)
                 {
                     case "publish":
-                        // Fm 9/15/13 something went wrong!!!! debug = busMail.publish(msg);
+                        // Fm 9/19/13 removed something went wrong!!!! 
+                        debug = busMail.publish(msg);
                         break;
                     case "send to my_gmail":
                         string tagValue = collection["message"];
