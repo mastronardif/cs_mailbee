@@ -31,7 +31,6 @@ namespace myrabbitmq
                 // AppSettings["CLOUDAMQP_URL"] contains the connection string
                 // when you've added the CloudAMQP Addon
                 Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL"]
-				//Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL22"]
             };
 
             //ConnectionFactory factory = new ConnectionFactory();

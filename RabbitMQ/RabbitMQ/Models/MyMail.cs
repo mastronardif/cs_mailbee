@@ -75,39 +75,39 @@ namespace mymail
             return retval;
         }
 
-        static public string SendByMG(string tagValue)
-        {
-            string retval = string.Empty;
+        //static public string SendByMG(string tagValue)
+        //{
+        //    string retval = string.Empty;
 
-            var client = new RestClient();
-            client.BaseUrl       = myyMailVitals._MGurl;
-            client.Authenticator = new HttpBasicAuthenticator("api", myyMailVitals._MGApiKey);
+        //    var client = new RestClient();
+        //    client.BaseUrl       = myyMailVitals._MGurl;
+        //    client.Authenticator = new HttpBasicAuthenticator("api", myyMailVitals._MGApiKey);
 
-            RestRequest request = new RestRequest();
-            request.AddParameter("from", "mastronardif@gmail.com"); //"jimmy@joeschedule.mailgun.org");
-            request.AddParameter("to", "jimmy@joeschedule.mailgun.org"); //""jimmy@joeschedule.mailgun.org"
+        //    RestRequest request = new RestRequest();
+        //    request.AddParameter("from", "mastronardif@gmail.com"); //"jimmy@joeschedule.mailgun.org");
+        //    request.AddParameter("to", "jimmy@joeschedule.mailgun.org"); //""jimmy@joeschedule.mailgun.org"
 
-            // mailgun test
-            request.AddParameter("sender", "mastronardif@gmail.com"); //"jimmy@joeschedule.mailgun.org");
+        //    // mailgun test
+        //    request.AddParameter("sender", "mastronardif@gmail.com"); //"jimmy@joeschedule.mailgun.org");
             
-            string subject = "joemailweb";                           
-            request.AddParameter("subject", subject);
+        //    string subject = "joemailweb";                           
+        //    request.AddParameter("subject", subject);
 
-            //request.AddParameter("message-headers", "[[\"Received\",+\"by+184.173.173.18+with+SMTP+mgrt+-1057111050%3B+Tue,+17+Jan+2012+18:56:20++0000\"],+[\"X-Envelope-From\",+\"<mastronardif@gmail.com>\"],+[\"Received\",+\"from+mail-vx0-f182.google.com+(mail-vx0-f182.google.com+[209.85.220.182])\tby+mxa.mailgun.org+(Postfix)+with+ESMTPS+id+E1BDDF0209F\tfor+<joemail@joeschedule.mailgun.org>%3B+Tue,+17+Jan+2012+18:56:19++0000+(UTC)\"],+[\"Received\",+\"by+vcbfl17+with+SMTP+id+fl17so3214754vcb.13++++++++for+<joemail@joeschedule.mailgun.org>%3B+Tue,+17+Jan+2012+10:56:19+-0800+(PST)\"],+[\"Dkim-Signature\",+\"v=1%3B+a=rsa-sha256%3B+c=relaxed/relaxed%3B++++++++d=gmail.com%3B+s=gamma%3B++++++++h=subject:from:content-type:x-mailer:message-id:date:to+++++++++:content-transfer-encoding:mime-version%3B++++++++bh=ZYFs+jTX+yDm+CU7V4aOn0xfMazZHenergPOiHqdz0I=%3B++++++++b=iGgQ3eNkFyTUVXBPJ6VTnZ3y7cYE0koa4adSKZ4XuRx03hRqo2AkpfWMRvr4DUllAb+++++++++zpIvo4BFS3fP9+BsbprJlmB0tzzJKZWYIxFyTsHEonC5yPBnOaFEplutOtO5WsRW8JEF+++++++++HuOEz88KqELQ8m2lXvv6fYNu4Jr2Fq/w58nCk=\"],+[\"Received\",+\"by+10.220.149.68+with+SMTP+id+s4mr11262277vcv.43.1326826579740%3B++++++++Tue,+17+Jan+2012+10:56:19+-0800+(PST)\"],+[\"Received\",+\"from+[192.168.1.101]+(static-64-115-239-70.isp.broadviewnet.net.+[64.115.239.70])++++++++by+mx.google.com+with+ESMTPS+id+fe5sm19231559vdc.8.2012.01.17.10.56.18++++++++(version=TLSv1/SSLv3+cipher=OTHER)%3B++++++++Tue,+17+Jan+2012+10:56:19+-0800+(PST)\"],+[\"Subject\",+\"oeping+joemailweb\"],+[\"From\",+\"Frank+Mastronardi+<mastronardif@gmail.com>"],+["X-Mailer",+"iPod+Mail+(9A405)"],+["Message-Id",+"<8950389B-9325-4430-83FB-343C91A319D9@gmail.com>"],+["Date",+"Tue,+17+Jan+2012+13:56:17+-0500"],+["To",+"\"joemail@joeschedule.mailgun.org\"+<joemail@joeschedule.mailgun.org>\"],+[\"X-Mailgun-Spf\",+\"Neutral\"]]");
+        //    //request.AddParameter("message-headers", "[[\"Received\",+\"by+184.173.173.18+with+SMTP+mgrt+-1057111050%3B+Tue,+17+Jan+2012+18:56:20++0000\"],+[\"X-Envelope-From\",+\"<mastronardif@gmail.com>\"],+[\"Received\",+\"from+mail-vx0-f182.google.com+(mail-vx0-f182.google.com+[209.85.220.182])\tby+mxa.mailgun.org+(Postfix)+with+ESMTPS+id+E1BDDF0209F\tfor+<joemail@joeschedule.mailgun.org>%3B+Tue,+17+Jan+2012+18:56:19++0000+(UTC)\"],+[\"Received\",+\"by+vcbfl17+with+SMTP+id+fl17so3214754vcb.13++++++++for+<joemail@joeschedule.mailgun.org>%3B+Tue,+17+Jan+2012+10:56:19+-0800+(PST)\"],+[\"Dkim-Signature\",+\"v=1%3B+a=rsa-sha256%3B+c=relaxed/relaxed%3B++++++++d=gmail.com%3B+s=gamma%3B++++++++h=subject:from:content-type:x-mailer:message-id:date:to+++++++++:content-transfer-encoding:mime-version%3B++++++++bh=ZYFs+jTX+yDm+CU7V4aOn0xfMazZHenergPOiHqdz0I=%3B++++++++b=iGgQ3eNkFyTUVXBPJ6VTnZ3y7cYE0koa4adSKZ4XuRx03hRqo2AkpfWMRvr4DUllAb+++++++++zpIvo4BFS3fP9+BsbprJlmB0tzzJKZWYIxFyTsHEonC5yPBnOaFEplutOtO5WsRW8JEF+++++++++HuOEz88KqELQ8m2lXvv6fYNu4Jr2Fq/w58nCk=\"],+[\"Received\",+\"by+10.220.149.68+with+SMTP+id+s4mr11262277vcv.43.1326826579740%3B++++++++Tue,+17+Jan+2012+10:56:19+-0800+(PST)\"],+[\"Received\",+\"from+[192.168.1.101]+(static-64-115-239-70.isp.broadviewnet.net.+[64.115.239.70])++++++++by+mx.google.com+with+ESMTPS+id+fe5sm19231559vdc.8.2012.01.17.10.56.18++++++++(version=TLSv1/SSLv3+cipher=OTHER)%3B++++++++Tue,+17+Jan+2012+10:56:19+-0800+(PST)\"],+[\"Subject\",+\"oeping+joemailweb\"],+[\"From\",+\"Frank+Mastronardi+<mastronardif@gmail.com>"],+["X-Mailer",+"iPod+Mail+(9A405)"],+["Message-Id",+"<8950389B-9325-4430-83FB-343C91A319D9@gmail.com>"],+["Date",+"Tue,+17+Jan+2012+13:56:17+-0500"],+["To",+"\"joemail@joeschedule.mailgun.org\"+<joemail@joeschedule.mailgun.org>\"],+[\"X-Mailgun-Spf\",+\"Neutral\"]]");
 
-            string body = "&lt;tags img = keep&gt;<tags img = keep>http://drudgereport.com</tags>&lt;/tags&gt;";
-            //body = System.Web.HttpUtility.HtmlEncode(body);
-            request.AddParameter("text", body);
-            //request.AddParameter("html", "<html>HTML version of the body <TAGS>http://drudgereport.com</TAGS> </html>");
+        //    string body = "&lt;tags img = keep&gt;<tags img = keep>http://drudgereport.com</tags>&lt;/tags&gt;";
+        //    //body = System.Web.HttpUtility.HtmlEncode(body);
+        //    request.AddParameter("text", body);
+        //    //request.AddParameter("html", "<html>HTML version of the body <TAGS>http://drudgereport.com</TAGS> </html>");
 
-            request.Method = Method.POST;
-            IRestResponse resp = client.Execute(request);
+        //    request.Method = Method.POST;
+        //    IRestResponse resp = client.Execute(request);
 
-            retval = resp.Content.ToString();
+        //    retval = resp.Content.ToString();
 
 
-            return retval;
-        }
+        //    return retval;
+        //}
 
 
         static public string prepForGmail(string tagValue)

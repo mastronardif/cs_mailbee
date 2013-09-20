@@ -20,7 +20,6 @@
 
     <!-- RabbitMQ settings -->
     <add key="CLOUDAMQP_URL" value="amqp://guest:guest@127.0.0.1/"/>
-    <add key="CLOUDAMQP_URL2233" value="amqp://dpmkytge:rCUQlkYztQPX6-hipTyVxK2rCKno-Dhp@lemur.cloudamqp.com/dpmkytge"/>
 
     <add key="RabbitMQqueue" value="test_q"/>
     <add key="RabbitMQexchange" value="test_x"/>

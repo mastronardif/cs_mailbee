@@ -122,7 +122,6 @@ namespace RabbitMQ
                 // AppSettings["CLOUDAMQP_URL"] contains the connection string
                 // when you've added the CloudAMQP Addon
                 Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL"]
- 				//Uri = ConfigurationManager.AppSettings["CLOUDAMQP_URL22"]
             };
 
 
@@ -151,12 +150,7 @@ namespace RabbitMQ
                         string message = System.Text.Encoding.UTF8.GetString(body);
                         System.Console.WriteLine(" [x] Received {0}", message);
 
-                        string results = reply(message);
-
-                        System.Console.WriteLine("{0}\n", results);
-                        System.Console.WriteLine(" [*] Waiting for messages." +
-                                             "To exit press CTRL+C");
-
+                        reply(message);
 
                     }
                 }

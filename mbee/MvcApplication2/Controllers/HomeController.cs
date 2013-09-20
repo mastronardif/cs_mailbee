@@ -37,48 +37,60 @@ namespace MvcApplication2.Controllers
         public ActionResult publish22(FormCollection collection)
         {
             string op = collection["Operation"];
+            //string op= (collection["Operation"] == null) ? string.Empty : collection["Operation"];
 
 
             string msg = collection["message"];
             string debug = string.Empty;
-
-            // July 15th 2013
-            //$msg = jm002ra::reply(\%allparams);
-            //makeReplyFromMailGun
-            string msgMG = MyMailGun.makeReplyFromMailGun(collection);
-            if ((msgMG.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1) &&
-                (msgMG.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1))
+            try
             {
-                msg = msgMG;
-                op = "publish";
+                // July 15th 2013
+                //$msg = jm002ra::reply(\%allparams);
+                //makeReplyFromMailGun
+                string msgMG = MyMailGun.makeReplyFromMailGun(collection);
+                if ((msgMG.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1) &&
+                    (msgMG.IndexOf("<mymail>", StringComparison.OrdinalIgnoreCase) != -1))
+                {
+                    msg = msgMG;
+                    op = "publish";
+                }
+
+                // July 15th 2013
+
+
+                _log.Debug("op  = " + op);
+                _log.Debug("msg = " + msg);
+
+                string sw = op.ToLower();
+                switch (sw)
+                {
+                    case "publish":
+                        // Fm 9/15/13 something went wrong!!!! debug = busMail.publish(msg);
+                        break;
+                    case "send to my_gmail":
+                        string tagValue = collection["message"];
+                        debug = busMail.sendToGmail(tagValue);
+                        _log.Debug("debug = " + debug);
+                        break;
+                    case "rabbit vcap_services":
+
+                        break;
+                    default:
+                        // do nothing
+                        break;
+                }
+
+                // I don't want a million ___ views.  I will use the current view.
+                return RedirectToAction("Index");
             }
-
-            // July 15th 2013
-
-
-            _log.Debug("op = " + op);
-            _log.Debug("op = " + msg);
-
-            string sw = op.ToLower();
-            switch (sw)
-            {
-                case "publish":
-                   // Fm 915/13 something went wrong!!!! debug = busMail.publish(msg);
-                    break;
-                case "send to my_gmail":
-                    string tagValue = collection["message"];
-                    debug = busMail.sendToGmail(tagValue);
-                    _log.Debug("debug = " + debug);
-                    break;
-                case "rabbit vcap_services":
-
-                    break;
-                default:
-                    // do nothing
-                    break;
-            }            
-            // I don't want a million ___ views.  I will use the current view.
-            return RedirectToAction("Index");
+            catch (Exception ex)
+            { 
+                //return a 403
+                //return new HttpStatusCodeResult(404, "wtf! " + ex.Message);
+                return Content(string.Format("<html>wtf: {0}</html>", ex.Message) );
+                //return new HttpStatusCodeResult(500, "wtf! " + ex.Message);
+                //return Json(new { Success = false, Message = ex.Message });
+            }
             //return View("Index");
         }
 
