@@ -1,4 +1,4 @@
-2013-09-20 22:47:31,044 [1] DEBUG RabbitMQ.Program - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+2013-09-21 16:44:27,015 [1] DEBUG RabbitMQ.Program - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
 
@@ -493,7 +493,7 @@ All rights reserved worldwide.<br>
 </div></body>
 </html>
 
-2013-09-20 22:47:31,068 [1] DEBUG RabbitMQ.Program - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+2013-09-21 16:44:27,028 [1] DEBUG RabbitMQ.Program - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
 
@@ -584,25 +584,25 @@ Welcome! Please sign in</font> </td>
 </div>
 
 <div id="leftnav">
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Home joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_index01.htm</tags> %26lt%3B%2Ftags%26gt">Home</a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject=Home joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_index01.htm</tags> %26lt%3B%2Ftags%26gt">Home</a>
 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= ABA Programs  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm</tags> %26lt%3B%2Ftags%26gt"> ABA Programs </a> 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= ABA Programs  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm</tags> %26lt%3B%2Ftags%26gt"> ABA Programs </a> 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= 
 Schedules  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/ps0abakitxm22.htm</tags> %26lt%3B%2Ftags%26gt"> 
 Schedules </a> 
 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= In The Class  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_ic01.htm</tags> %26lt%3B%2Ftags%26gt"> In The Class </a> 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= In The Home  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_ih01.htm</tags> %26lt%3B%2Ftags%26gt"> In The Home </a> 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= In The Class  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_ic01.htm</tags> %26lt%3B%2Ftags%26gt"> In The Class </a> 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= In The Home  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_ih01.htm</tags> %26lt%3B%2Ftags%26gt"> In The Home </a> 
 <!-- <a class="navlink" href="./js3col_hp01.htm"> Home Programs</a> -->
 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Token Boards  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_tb01.htm</tags> %26lt%3B%2Ftags%26gt"> Token Boards </a>
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Visual Stories  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_vs01.htm</tags> %26lt%3B%2Ftags%26gt"> Visual Stories </a> 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= Token Boards  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_tb01.htm</tags> %26lt%3B%2Ftags%26gt"> Token Boards </a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= Visual Stories  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_vs01.htm</tags> %26lt%3B%2Ftags%26gt"> Visual Stories </a> 
 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Behavior Charts   joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_be01.htm</tags> %26lt%3B%2Ftags%26gt"> Behavior Charts  </a> 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Pictures     joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_pi01.htm</tags> %26lt%3B%2Ftags%26gt"> Pictures    </a>
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Games     joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_ga01.htm</tags> %26lt%3B%2Ftags%26gt"> Games    </a>
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= How-To Guide  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_hg01.htm</tags> %26lt%3B%2Ftags%26gt"> How-To Guide </a> 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject= Specifics    joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_sp01.htm</tags> %26lt%3B%2Ftags%26gt"> Specifics   </a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= Behavior Charts   joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_be01.htm</tags> %26lt%3B%2Ftags%26gt"> Behavior Charts  </a> 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= Pictures     joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_pi01.htm</tags> %26lt%3B%2Ftags%26gt"> Pictures    </a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= Games     joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_ga01.htm</tags> %26lt%3B%2Ftags%26gt"> Games    </a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= How-To Guide  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_hg01.htm</tags> %26lt%3B%2Ftags%26gt"> How-To Guide </a> 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject= Specifics    joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_sp01.htm</tags> %26lt%3B%2Ftags%26gt"> Specifics   </a>
 
 <!--
 <a class="navlink" href="./js3col_ih01.htm"> Activity Schedules </a> 
@@ -614,14 +614,14 @@ Schedules </a>
 
 <div id="rightCol">
 
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Subscribe joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">Subscribe</a>
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=User Guide joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/JoeSchedules_Visual_Toolkit/Welcome.html</tags> %26lt%3B%2Ftags%26gt">User Guide</a> 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject=Subscribe joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">Subscribe</a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject=User Guide joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/JoeSchedules_Visual_Toolkit/Welcome.html</tags> %26lt%3B%2Ftags%26gt">User Guide</a> 
 <!-- <a class="navlink" href="/cgi/ngfop/samples.htm">Samples</a> -->
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Contact us joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_contactus01.htm</tags> %26lt%3B%2Ftags%26gt">Contact us</a>
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Help Document joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi/ngfop/joehelp.htm</tags> %26lt%3B%2Ftags%26gt" target="_blank">Help Document</a> 
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject=Contact us joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_contactus01.htm</tags> %26lt%3B%2Ftags%26gt">Contact us</a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject=Help Document joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/joehelp.htm</tags> %26lt%3B%2Ftags%26gt" target="_blank">Help Document</a> 
 <!-- <a class="navlink" href="http://joeschedule.com/">In The News</a> -->
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Links joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_li01.htm</tags> %26lt%3B%2Ftags%26gt">Links</a>
-<a class="navlink" href="mailto:jimmy@joeschedule.mailgun.org?subject=Research joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_re01.htm</tags> %26lt%3B%2Ftags%26gt">Research</a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject=Links joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_li01.htm</tags> %26lt%3B%2Ftags%26gt">Links</a>
+<a class="navlink" href="mailto:test@joeschedule.mailgun.org?subject=Research joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_re01.htm</tags> %26lt%3B%2Ftags%26gt">Research</a>
 </div>
 
 
@@ -646,7 +646,7 @@ ABA Programs Demo<br>
 <p>
 <b>
 All in one tool for teaching kids with autism spectrum disorders.<br>
-<a href="mailto:jimmy@joeschedule.mailgun.org?subject=
+<a href="mailto:test@joeschedule.mailgun.org?subject=
 
 New!!!!!
 Now you can view your picture s... joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/ijoe.htm</tags> %26lt%3B%2Ftags%26gt">
@@ -656,7 +656,7 @@ Now you can view your picture schedules on an iPad.
 Go to: joeschedule.com/ijoe.htm</i></b></font>
 </a>
 <br>
-Run <a href="mailto:jimmy@joeschedule.mailgun.org?subject= ABA Programs  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm</tags> %26lt%3B%2Ftags%26gt"> ABA Programs </a>,
+Run <a href="mailto:test@joeschedule.mailgun.org?subject= ABA Programs  joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/other2.pl?htmlname=members/Sussina/AD0abakitxm22.htm</tags> %26lt%3B%2Ftags%26gt"> ABA Programs </a>,
 Create Activity Schedules, Token Boards, Social Stories, Behavior Charts and more.</b>
 <br>
 <!--
@@ -665,7 +665,7 @@ Create Activity Schedules, Token Boards, Social Stories, Behavior Charts and mor
 -->
 
 <br>
-<a href="mailto:jimmy@joeschedule.mailgun.org?subject=12 Month Subscription - $20.00. joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">12 Month Subscription - $20.00.</a>
+<a href="mailto:test@joeschedule.mailgun.org?subject=12 Month Subscription - $20.00. joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">12 Month Subscription - $20.00.</a>
 &nbsp; Subscribers can access:
  
 </p>
@@ -948,12 +948,12 @@ How-To-Guide,&nbsp; that will teach you step by step how to create schedules and
 
 <p>
 <center>
-    <a title="Sample Chapter of The Activity Schedule Idea How-To Guide" href="mailto:jimmy@joeschedule.mailgun.org?subject=
+    <a title="Sample Chapter of The Activity Schedule Idea How-To Guide" href="mailto:test@joeschedule.mailgun.org?subject=
    (Sample Pages)
    
 
 
-         joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/cgi/ngfop/samplebk.pdf</tags> %26lt%3B%2Ftags%26gt">
+         joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/cgi/ngfop/samplebk.pdf</tags> %26lt%3B%2Ftags%26gt">
    (Sample Pages)
    <br>
 
@@ -970,12 +970,12 @@ Subscribers have access to all of the examples in the eBook on the website. They
 personal needs.
 <br>
 <br>
-<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Subscribe Today! joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">Subscribe Today!</a>
+<a href="mailto:test@joeschedule.mailgun.org?subject=Subscribe Today! joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/js3col_sub01.htm</tags> %26lt%3B%2Ftags%26gt">Subscribe Today!</a>
 </p>
 
 <center>
 <font size="1">
-[<a href="mailto:jimmy@joeschedule.mailgun.org?subject=Back to Top joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://joeschedule.com/#top</tags> %26lt%3B%2Ftags%26gt">Back to Top</a>]
+[<a href="mailto:test@joeschedule.mailgun.org?subject=Back to Top joemailweb&body=%26lttags img=keep%26gt<tags img=keep>http://www.joeschedule.com/#top</tags> %26lt%3B%2Ftags%26gt">Back to Top</a>]
 </font>
 </center>
 <!-- ________ -->

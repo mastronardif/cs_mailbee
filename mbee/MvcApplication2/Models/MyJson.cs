@@ -212,3 +212,67 @@ public class RootObject
 </root>
 
 *********************/
+
+/*****
+ 
+Fiddler Notes!
+Fiddler post, request, body text
+
+http://localhost:57987/Home/publish22
+
+User-Agent: Fiddler
+Content-Type: application/x-www-form-urlencoded
+Host: localhost:57987
+Content-Length: 592
+
+
+message-headers=[["Received",
+"by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000"],
+["Subject",
+"curl test27 joemailweb"],
+["From",
+"Frank Mastronardi <mastronardif@gmail.com>"],
+["X-Mailer",
+"iPod Mail (9A405)"],
+["Message-Id",
+"<8950389B-9325-4430-83FB-343C91A319D9@gmail.com>"],
+["Date",
+"Tue, 17 Jan 2012 13:56:17 -0500"],
+["To",
+"\"joemail@joeschedule.mailgun.org\" <joemail@joeschedule.mailgun.org>"],
+["X-Mailgun-Spf",
+"Neutral"]]
+&sender=mastronardif@gmail.com 
+&body-plain=<tags>http://www.joeschedule.com</tags>
+&recipient=test@joeschedule.mailgun.org
+
+ * 
+ Curl notes!
+ curl http://postbin.ryanbigg.com/96cfee41 \
+curl http://csmailbee.apphb.com/ \
+curl http://csmailbee.apphb.com/Home/publish22 \
+curl http://localhost:57987/Home/publish22 \
+
+
+curl http://localhost:57987/Home/publish22 \
+-F message-headers='[["Received",
+"by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000"],
+["Subject",
+"curl test27 joemailweb"],
+["From",
+"Frank Mastronardi <mastronardif@gmail.com>"],
+["X-Mailer",
+"iPod Mail (9A405)"],
+["Message-Id",
+"<8950389B-9325-4430-83FB-343C91A319D9@gmail.com>"],
+["Date",
+"Tue, 17 Jan 2012 13:56:17 -0500"],
+["To",
+"\"joemail@joeschedule.mailgun.org\" <joemail@joeschedule.mailgun.org>"],
+["X-Mailgun-Spf",
+"Neutral"]]' \
+-F sender=mastronardif\@gmail.com \
+-F body-plain=' <tags>http://www.joeschedule.com</tags>' \
+-F recipient=test\@joeschedule.mailgun.org \
+
+******/

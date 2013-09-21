@@ -1074,3 +1074,309 @@ Content-Type: text/html; charset="UTF-8"
 2013-09-20 22:56:25,790 [12] DEBUG MvcApplication2.Controllers.HomeController - msg = sssss
 2013-09-20 22:59:11,279 [18] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
 2013-09-20 22:59:11,289 [18] DEBUG MvcApplication2.Controllers.HomeController - msg = ffff
+2013-09-21 14:54:58,508 [16] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 14:54:58,519 [16] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+&lt;tags use=curl&gt;http://joeschedule.com&lt;/tags&gt;
+</MYMAIL>
+
+2013-09-21 14:59:51,308 [28] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 14:59:51,308 [28] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+&lt;tags&gt;http://joeschedule.com&lt;/tags&gt;
+</MYMAIL>
+
+2013-09-21 15:12:45,101 [41] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:12:45,101 [41] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:19:55,832 [46] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:19:55,832 [46] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test24 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+
+</MYMAIL>
+
+2013-09-21 15:21:24,089 [47] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:21:24,089 [47] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test25 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:23:15,790 [38] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:23:15,790 [38] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From:  
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To:  
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test25 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:23:34,776 [44] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:23:34,776 [44] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From:  
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To:  
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test25 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:24:20,494 [44] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:24:20,494 [44] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To:  
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test25 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:25:35,395 [18] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:25:35,395 [18] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test25 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:26:17,893 [44] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:26:17,893 [44] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From:  
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test25 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:26:39,920 [44] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:26:39,921 [44] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: joemail@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test25 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:38:27,377 [12] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:38:27,378 [12] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:47:08,375 [9] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:47:08,375 [29] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:47:08,378 [29] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:47:08,375 [9] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:47:09,422 [12] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:47:10,494 [12] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:47:13,306 [29] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:47:13,307 [29] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:47:14,918 [9] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:47:15,854 [9] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:47:14,923 [12] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:47:15,925 [12] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:48:23,732 [12] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:48:23,733 [12] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:49:26,357 [9] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:49:26,357 [9] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: test@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test27 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:50:16,508 [30] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:50:16,509 [30] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:50:53,300 [33] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:50:53,301 [33] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:54:35,200 [42] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:54:35,201 [42] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:57:28,127 [12] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 15:57:28,127 [12] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: test@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20 +0000
+Subject: curl test27 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ <tags>http://www.joeschedule.com</tags>
+</MYMAIL>
+
+2013-09-21 15:58:29,600 [31] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:58:29,600 [31] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:58:55,982 [31] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:58:55,983 [31] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 15:59:47,287 [32] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 15:59:47,288 [32] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 16:00:56,446 [37] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 16:00:56,447 [37] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 16:03:20,596 [28] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-21 16:03:20,596 [28] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-21 16:11:55,102 [14] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 16:11:55,103 [14] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: test@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+ 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20  0000
+Subject: curl test27 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+<tags>http://www.joeschedule.com</tags>
+
+</MYMAIL>
+
+2013-09-21 16:44:26,489 [55] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2013-09-21 16:44:26,500 [55] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+<MYMAIL>
+<HEADER>
+From: test@joeschedule.mailgun.org 
+Message-Id: FM <8950389B-9325-4430-83FB-343C91A319D9@gmail.com> 
+To: mastronardif@gmail.com 
+ 
+Received: by 184.173.173.18 with SMTP mgrt -1057111050; Tue, 17 Jan 2012 18:56:20  0000
+Subject: curl test27 joemailweb
+X-Mailer: iPod Mail (9A405)
+Date: Tue, 17 Jan 2012 13:56:17 -0500
+X-Mailgun-Spf: Neutral
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+<tags>http://www.joeschedule.com</tags>
+
+</MYMAIL>
+
