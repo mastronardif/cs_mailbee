@@ -82,7 +82,11 @@ namespace MvcApplication2.Controllers
                 }
 
                 // I don't want a million ___ views.  I will use the current view.
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                string str = string.Format("You in the hive <b>{0}</b>", Request.UserHostAddress);
+
+                //filterContext.RequestContext.HttpContext.Request.UrlReferrer.AbsolutePath
+                return Content(string.Format("<hr>{0}</hr>", str));
             }
             catch (Exception ex)
             { 
