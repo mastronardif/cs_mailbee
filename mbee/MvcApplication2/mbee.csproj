@@ -46,10 +46,6 @@
     <Reference Include="RabbitMQ.Client">
       <HintPath>..\packages\RabbitMQ.Client.3.1.1\lib\net30\RabbitMQ.Client.dll</HintPath>
     </Reference>
-    <Reference Include="SpreadsheetGear2012, Version=7.0.5.140, Culture=neutral, PublicKeyToken=39c186f5904944ec, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\SpreadsheetGear2012.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -128,22 +124,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\Sample22.cs">
-      <DependentUpon>Sample22.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\Sample22.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Sample22.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\Sample33.cs">
-      <DependentUpon>Sample33.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\Sample33.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Sample33.xsd</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -224,28 +204,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="App_Data\Sample22.xsc">
-      <DependentUpon>Sample22.xsd</DependentUpon>
-    </Content>
-    <None Include="App_Data\Sample22.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Sample22.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="App_Data\Sample22.xss">
-      <DependentUpon>Sample22.xsd</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Sample33.xsc">
-      <DependentUpon>Sample33.xsd</DependentUpon>
-    </Content>
-    <None Include="App_Data\Sample33.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Sample33.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="App_Data\Sample33.xss">
-      <DependentUpon>Sample33.xsd</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\e1diag.JPG" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -293,7 +251,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_MainLayout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
