@@ -39,6 +39,13 @@ namespace MvcApplication2.Controllers
             string op = collection["Operation"];
             //string op= (collection["Operation"] == null) ? string.Empty : collection["Operation"];
 
+            if (string.Compare(op, "each", true) == 0)
+            {
+                string xml = myhelpers.Class1.makeXML_FromRequestData("root", Request);
+                return Content(xml);
+            
+            }
+
 
             string msg = collection["message"];
             string debug = string.Empty;

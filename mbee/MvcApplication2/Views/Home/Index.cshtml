@@ -6,10 +6,25 @@
 <head profile="http://www.w3.org/2005/10/profile">
 <link rel="icon" type="image/png" href="http://joeschedule.com/faviconBee.ico"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script>
+       function submitOnClick(formName) {
+          // alert('sssss');
+           //message
+           //alert(document.forms['myform']['message'].value);
+           document.forms['myform']['message'].value = formName;
+           //alert(document.forms['myform'].message.value); //.forms[myform]); //.message.value);
+           //alert(document.forms['myform']['Operation'][2].value); //.click() );
+           document.forms['myform']['Operation'][2].click();
+           //document.forms['myform']['Operation22'].click();
+                   //document.getElementsByTagName('button')[0].click();
+       //document.forms[myform].submit();
+       }
+</script>
 </head>
 
 <body>
-<form action="Home/publish22" method="POST">
+<form name= "myform" action="Home/publish22" method="POST">
 <table class="center"  style="width:728px; border-collapse:collapse; border-spacing: 0; padding:0">
   <tr>
     <td>
@@ -59,13 +74,17 @@
         </table>
 
      <table width="483" border="0" cellspacing="0" cellpadding="10">
-      <tr><td><p style="font:bold 16px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 0px 0; border-bottom:dotted 1px #bcbcbc;">Today's Top Stories</p></td></tr>
+      <tr><td>
+          <p style="font:bold 16px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 0px 0; border-bottom:dotted 1px #bcbcbc;">
+              Get the Below Pages in you email
+          </p>
+          </td></tr>
       <p>                  
       
       <label for="message">Mail message :</label> <input type="submit"  name="Operation" value="Publish"/>
 	    <label for="message"> message: <br/>
-	    <textarea rows="3" cols="25" name="message"></textarea> <br/>
-       
+	    <textarea rows="3" cols="25" id= "idMessage" name="message"></textarea> <br/>
+        <label for="email:">email :</label> <input  type="email" size="24" id="email" name="email" value="" /> <br />
         <input type="submit"  name="Operation" value="each"/>
         <button name="Operation" value="send to my_gmail" type="submit">send glazzed response to my_gmail</button>
             <!--
@@ -78,15 +97,16 @@
 
                   <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
 
-				  <a style="color:#0074ee;" href="http://www.nytimes.com/pages/business/index.html">The New York Times</a></p>
+				  <a style="color:#0074ee;"
+                      onclick="submitOnClick('http://www.nytimes.com/pages/business/index.html');return false;">The New York Times</a></p>
 
                   <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
 
-				  <a style="color:#0074ee;" href="http://drudgereport.com">Drudge Report</a></p>
+				  <a style="color:#0074ee;" href="#" onclick="submitOnClick('http://drudgereport.com');return false;">Drudge Report</a></p>
 
                   <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
 
-				  <a style="color:#0074ee;" href="http://slashdot.org">Slashdot.org</a></p>
+				  <a style="color:#0074ee;" href="#" onclick="submitOnClick('http://slashdot.org');return false;">Slashdot.org</a></p>
 
 
 

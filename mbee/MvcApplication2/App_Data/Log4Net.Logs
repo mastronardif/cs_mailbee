@@ -1,0 +1,242 @@
+2013-09-22 12:42:15,424 [15] DEBUG MvcApplication2.Controllers.HomeController - op  = each
+2013-09-22 12:42:15,434 [15] DEBUG MvcApplication2.Controllers.HomeController - msg = 
+2013-09-22 12:42:20,079 [10] DEBUG MvcApplication2.Controllers.HomeController - op  = each
+2013-09-22 12:42:20,080 [10] DEBUG MvcApplication2.Controllers.HomeController - msg = jhhi
+2013-09-22 12:46:02,243 [23] DEBUG MvcApplication2.Controllers.HomeController - op  = each
+2013-09-22 12:46:02,244 [23] DEBUG MvcApplication2.Controllers.HomeController - msg = lllllllll
+2013-09-22 15:39:22,607 [56] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-09-22 15:39:22,617 [56] DEBUG MvcApplication2.Controllers.HomeController - msg = http://slashdot.org
+2013-09-22 15:39:22,933 [56] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-22 15:56:05,256 [61] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-09-22 15:56:05,257 [61] DEBUG MvcApplication2.Controllers.HomeController - msg = http://slashdot.org
+2013-09-22 15:56:05,343 [61] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-22 16:01:25,466 [14] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-22 16:01:25,467 [14] DEBUG MvcApplication2.Controllers.HomeController - msg = http://slashdot.org
+2013-09-22 16:02:08,187 [14] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-22 16:02:11,314 [14] DEBUG MvcApplication2.Controllers.HomeController - msg = http://slashdot.org
+2013-09-22 16:03:49,925 [57] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-22 16:03:50,531 [57] DEBUG MvcApplication2.Controllers.HomeController - msg = http://slashdot.org
+2013-09-22 16:05:32,873 [59] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-22 16:05:32,874 [59] DEBUG MvcApplication2.Controllers.HomeController - msg = http://joeschedule.com
+2013-09-22 16:06:00,273 [59] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-22 16:06:00,273 [59] DEBUG MvcApplication2.Controllers.HomeController - msg = http://joeschedule.com
+2013-09-22 16:06:09,153 [57] DEBUG MvcApplication2.Controllers.HomeController - op  = 
+2013-09-22 16:06:09,154 [57] DEBUG MvcApplication2.Controllers.HomeController - msg = http://joeschedule.com
+2013-09-22 16:06:34,235 [14] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-09-22 16:06:34,236 [14] DEBUG MvcApplication2.Controllers.HomeController - msg = joeschedule.com
+2013-09-22 16:06:34,300 [14] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-22 16:09:51,286 [67] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-09-22 16:09:51,287 [67] DEBUG MvcApplication2.Controllers.HomeController - msg = http://slashdot.org
+2013-09-22 16:09:51,349 [67] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-22 16:27:33,611 [50] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-09-22 16:27:33,611 [50] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2013-09-22 16:27:33,679 [50] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-22 16:29:12,902 [54] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-09-22 16:29:13,396 [54] DEBUG MvcApplication2.Controllers.HomeController - msg = http://www.nytimes.com/pages/business/index.html
+2013-09-22 16:29:15,606 [54] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-22 16:29:53,906 [51] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-09-22 16:29:53,906 [51] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2013-09-22 16:29:53,959 [51] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-22 16:29:57,432 [51] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-09-22 16:29:57,433 [51] DEBUG MvcApplication2.Controllers.HomeController - msg = http://slashdot.org
+2013-09-22 16:29:57,484 [51] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-09-22 18:30:32,178 [145] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
+2013-09-22 18:30:32,179 [145] DEBUG MvcApplication2.Controllers.HomeController - msg = <MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523f6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+<div dir="ltr"><tags><a href="http://www.joeschedule.com">http://www.joeschedule.com</a></tags></div>
+
+</MYMAIL>
+2013-09-22 18:44:32,434 [118] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
+2013-09-22 18:44:32,435 [118] DEBUG MvcApplication2.Controllers.HomeController - msg = <MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523f6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ssssssssssss
+</MYMAIL>
+2013-09-22 19:09:02,778 [100] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
+2013-09-22 19:09:02,779 [100] DEBUG MvcApplication2.Controllers.HomeController - msg = <MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523f6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ssssssssssss
+</MYMAIL>
+2013-09-22 19:36:08,730 [119] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
+2013-09-22 19:36:08,731 [119] DEBUG MvcApplication2.Controllers.HomeController - msg = <MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523fA6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+ssssssssssss
+</MYMAIL>
+2013-09-22 20:00:59,620 [105] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
+2013-09-22 20:00:59,621 [105] DEBUG MvcApplication2.Controllers.HomeController - msg = <MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523fA6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+<div dir="ltr">&lttags img=keep&gt<tags img=keep><a href="http://www.theworkbuzz.com/on-the-job/7-common-types-of-managers-and-how-to-work-with-them/">http://www.theworkbuzz.com/on-the-job/7-common-types-of-managers-and-how-to-work-with-them/</a></tags> &lt;/tags&gt</div>
+</MYMAIL>
+2013-09-22 20:08:06,894 [128] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
+2013-09-22 20:08:06,895 [128] DEBUG MvcApplication2.Controllers.HomeController - msg = <MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523fA6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+                                On Sat, Sep 21, 2013 at 5:09 PM, Frank Mastronardi
+<mastronardif@gmail.com>wrote:
+
+> &lttags img=keep&gt<tags img=keep>
+> http://science.slashdot.org/story/13/08/21/0235227/whats-causing-the-rise-in-obesity-everything?sdsrc=popbyskid</tags>
+> &lt;/tags&gt
+>
+
+</MYMAIL>
+2013-09-22 20:09:38,182 [104] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
+2013-09-22 20:09:38,183 [104] DEBUG MvcApplication2.Controllers.HomeController - msg = <MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523fA6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+                                <div dir="ltr"><br></div><div class="gmail_extra"><br><br><div class="gmail_quote">On Sat, Sep 21, 2013 at 5:09 PM, Frank Mastronardi <span dir="ltr">&lt;<a href="mailto:mastronardif@gmail.com" target="_blank">mastronardif@gmail.com</a>&gt;</span> wrote:<br>
+<blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">&amp;lttags img=keep&amp;gt&lt;tags img=keep&gt;<a href="http://science.slashdot.org/story/13/08/21/0235227/whats-causing-the-rise-in-obesity-everything?sdsrc=popbyskid" target="_blank">http://science.slashdot.org/story/13/08/21/0235227/whats-causing-the-rise-in-obesity-everything?sdsrc=popbyskid</a>&lt;/tags&gt; &amp;lt;/tags&amp;gt</div>
+
+</blockquote></div><br></div>
+
+
+</MYMAIL>
+2013-09-22 20:20:02,002 [115] DEBUG MvcApplication2.Controllers.HomeController - op  = Publish
+2013-09-22 20:20:02,003 [115] DEBUG MvcApplication2.Controllers.HomeController - msg = <MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523fA6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+<div dir="ltr">&amp;lttags img=keep&amp;gt&lt;tags img=keep&gt;<a href="http://www.theworkbuzz.com/on-the-job/dress-code/">http://www.theworkbuzz.com/on-the-job/dress-code/</a>&lt;/tags&gt; &amp;lt;/tags&amp;gt</div>
+
+
+
+</MYMAIL>

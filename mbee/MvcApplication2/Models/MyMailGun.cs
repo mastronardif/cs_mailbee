@@ -106,10 +106,12 @@ namespace mymailgun
 
             retval +=  mailheader + "\n";
 
-            string body = collection["body-html"];
+            //fm 9/22/13 string body = collection["body-html"];
+            string body = collection["body-plain"];
             if (body == null)
             {
-                body = collection["body-plain"];
+                body = collection["body-html"];
+                //fm 9/22/13 body = collection["body-plain"];
             }           
             retval +=  body;
 

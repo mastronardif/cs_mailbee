@@ -43,6 +43,7 @@ namespace RabbitMQ.Business
         static public string Reply(string msg)
         {
             string retval = string.Empty;
+            string sendReplys = string.Empty;
             string resp;
 
             try
@@ -65,8 +66,10 @@ namespace RabbitMQ.Business
                     // get tag urls
                     //List<string> tags = MyBrowser.getUniqueTagUrls(hdr.Body);
                     Dictionary<string, string> tags = MyBrowser.getUniqueTagUrls(hdr.Body);
+                    retval += "NO TAGS FOUND!\n" + hdr.Body;
 
                     // for each Tag/url do _____________, mail it
+                    
                     foreach (var tag in tags)
                     {
                         string theUrl = tag.Key;
@@ -87,8 +90,12 @@ namespace RabbitMQ.Business
                         tagLine += url; //encode_entities($tag);
                         //_tagLine
 
-                        retval += mymail.MyMail.SendByMG22(to, from, resp + tagLine);
-                        retval += "\n";
+                        sendReplys += mymail.MyMail.SendByMG22(to, from, resp + tagLine);
+                        sendReplys += "\n";
+                    }
+                    if (!string.IsNullOrWhiteSpace(sendReplys) )
+                    {
+                        retval = sendReplys;
                     }
                 }
                 else
@@ -100,7 +107,7 @@ namespace RabbitMQ.Business
 
                     //Program._log.Debug(retval);
 
-                    retval += mymail.MyMail.SendByMG22(to, from, resp);
+                    retval = mymail.MyMail.SendByMG22(to, from, resp);
                     retval += "\n";
                 }
             }

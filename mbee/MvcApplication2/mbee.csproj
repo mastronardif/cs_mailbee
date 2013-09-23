@@ -144,6 +144,7 @@
     <Compile Include="Models\MyXml.cs" />
     <Compile Include="Models\Root.cs" />
     <Compile Include="Models\TestDataClass1.cs" />
+    <Compile Include="MyHelpers\Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
