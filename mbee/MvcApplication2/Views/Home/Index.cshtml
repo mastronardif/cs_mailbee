@@ -4,22 +4,31 @@
 <html>
 
 <head profile="http://www.w3.org/2005/10/profile">
+    <title>Mail Bee</title>
 <link rel="icon" type="image/png" href="http://joeschedule.com/faviconBee.ico"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <script>
        function submitOnClick(formName) {
-          // alert('sssss');
-           //message
-           //alert(document.forms['myform']['message'].value);
+           //alert(formName); return;
+
            document.forms['myform']['message'].value = formName;
-           //alert(document.forms['myform'].message.value); //.forms[myform]); //.message.value);
-           //alert(document.forms['myform']['Operation'][2].value); //.click() );
            document.forms['myform']['Operation'][2].click();
            //document.forms['myform']['Operation22'].click();
                    //document.getElementsByTagName('button')[0].click();
        //document.forms[myform].submit();
        }
+</script>
+
+<script>
+    !function (d, s, id)
+    {
+        var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) {
+            js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, "script", "twitter-wjs");
+
 </script>
 </head>
 
@@ -41,7 +50,7 @@
           <td width="40%"><a href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=adtemp2.htm"><img src="http://joeschedule.com/bee.jpg" width="120px" height="120px" alt="Mailbee Mailapps" /></a></td>
           <td width="0%"><img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/header_whiteLine.png" width="1" height="42" /></td>
           <td width="30%"><p style="font-family:Tahoma, Geneva, sans-serif; color:#fff; font-size:18px;">MaillBee prototype 201</p></td>
-          <td width="30%"><p style="font-family:Tahoma, Geneva, sans-serif; color:#fff; font-size: 13px;">Sept 19, 2013</p></td>
+          <td width="30%"><p style="font-family:Tahoma, Geneva, sans-serif; color:#fff; font-size: 13px;">Oct 06, 2013</p></td>
         </tr>
       </table>
 
@@ -96,18 +105,19 @@
                   <td>
 
                   <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
-
 				  <a style="color:#0074ee;"
                       onclick="submitOnClick('http://www.nytimes.com/pages/business/index.html');return false;">The New York Times</a></p>
 
                   <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
+				  <a style="color:#0074ee;"
+                      onclick="submitOnClick('./business/gettweets/'+ document.forms['myform']['message'].value);return false;">Get tweets#</a></p>
 
+
+                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
 				  <a style="color:#0074ee;" href="#" onclick="submitOnClick('http://drudgereport.com');return false;">Drudge Report</a></p>
 
                   <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
-
 				  <a style="color:#0074ee;" href="#" onclick="submitOnClick('http://slashdot.org');return false;">Slashdot.org</a></p>
-
 
 
                   <div style="margin: 12px 0 12px 0;">
@@ -160,7 +170,9 @@ Put your url of choice there. Then mail it back. That's it.
 
 
 
-                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=office2.htm">Office Space</a></p>
+                  <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
+                      <a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=office2.htm">Office Space</a>
+                  </p>
 
                   <div style="margin: 12px 0 12px 0;">
 
@@ -171,14 +183,11 @@ Put your url of choice there. Then mail it back. That's it.
                         <td>
 
                           <table width="150" border="0" align="left" cellpadding="0" cellspacing="0">
-
                             <tr>
+                              <td>
+                                  <a href="http://ad.doubleclick.net/jump/bzj.nl.dailyupdates/unknown;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=" rel="nofollow">
 
-
-
-                              <td><a href="http://ad.doubleclick.net/jump/bzj.nl.dailyupdates/unknown;beh=;pos=text2;sz=1x1;kw=nl.dailyupdates;dcove=r;ord=" rel="nofollow">
-
-							  <img src="http://www.balincsali.net/kepek/D.jpg" width="120" align="left" border="0" /></a></td>
+							  <img src="http://www.earthtimes.org/newsimage/busy_bees_27111.jpg" width="120" align="left" border="0" /></a></td>
 
                             </tr>
 
@@ -245,7 +254,13 @@ Put your url of choice there. Then mail it back. That's it.
 
                       <td><a href="http://c.izjo.com/ct/c/45810541//"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_facebook.png"></a></td>
 
-                      <td><a href="http://c.izjo.com/ct/c/45810551//"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_twitter.png"></a></td>
+                      <td>
+
+                          <a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en">Tweet</a>
+
+@*                          <a href="http://c.izjo.com/ct/c/45810551//">
+                          <img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_twitter.png"></a>*@
+                      </td>
 
                       <td><a href="http://c.izjo.com/ct/c/45810561//"><img border="0" src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_linkedin.png"></a></td>
 
@@ -283,30 +298,13 @@ Put your url of choice there. Then mail it back. That's it.
 
                     </table><!--end SPACER-->
 
-
-
-
-
-
-
                     <table height="100%" width="200" border="0" cellspacing="0" cellpadding="0">
-
-
-
                         <tr>
-
                             <td>
-
                                  <img src="http://joeschedule.com/beehivetree.jpg " 							 
-
 								 alt="" width="200" border="0" height="400">
-
-
-
                             </td>
-
                         </tr>
-
                     </table>
 
                     <!--begin SPACER-->
@@ -314,42 +312,25 @@ Put your url of choice there. Then mail it back. That's it.
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" background="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_back_lines.png" style="background-color: #d5d5d5;">
 
                         <tr>
-
-
-
                             <td>
-
                                 <img src="http://assets.bizjournals.com/lib/img/email/dailyUpdate/du_spacer_12vert.png" width="1" height="12" />
-
-
-
                             </td>
-
                         </tr>
 
                     </table><!--end SPACER-->
-
                     <table height="100%" width="200" border="0" cellspacing="0" cellpadding="10">
 
                         <tr>
-
                             <td>
-
-                                
-
             <p style="font:bold 12px Georgia, Times New Roman, Times, serif; color:#000; padding:0 0 8px 0; margin:0 0 8px 0; border-bottom:dotted 1px #bcbcbc;">Planning Ahead</p>
 
             <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://www.joeschedule.com/rd/msg/17851">Search</a></p>
-
-
 
             <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/jmother2.pl?htmlname=adtemp2.htm">this</a></p>
 
             <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/cgi/ngfop/isch3b.pl?id=Visitor&pw=visitor&htmlname=isch3b.htm&name=sch181872076.xml">Picture Schedules Inc.</a></p>
 
             <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;">North Carolina Department of Transportation <a style="color:#0074ee;" href="http://c.izjournals.com/ct/c/45810611//">(1)</a> <a style="color:#0074ee;" href="http://c.izjournals.com/ct/c/45810621//">(2)</a></p>
-
-
 
             <p style="font:normal 13px Tahoma, Geneva, sans-serif; margin:0; padding:0 0 7px 0;"><a style="color:#0074ee;" href="http://joeschedule.com/cgi-bin/cgi/ngfop/isch.pl?id=Visitor&pw=visitor">more pic schedules</a></p>
 

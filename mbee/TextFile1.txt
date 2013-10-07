@@ -1,0 +1,30 @@
+
+<MYMAIL>
+<HEADER>
+Message-Id: FM <CAAAKxgJ8w5DkFXwKU43C56nub-M_EUq3FcvUXLHjmh3uvvNC=A@mail.gmail.com>
+From: ah@joeschedule.mailgun.org
+To: mastronardif@gmail.com
+Received: by luna.mailgun.net with SMTP mgrt 8770768033857; Sun, 22 Sep 2013 22:21:16 +0000
+X-Envelope-From: <mastronardif@gmail.com>
+Received: from mail-la0-f51.google.com (mail-la0-f51.google.com [209.85.215.51]) by mxa.mailgun.org with ESMTP id 523f6d5a.568bf70-in2; Sun, 22 Sep 2013 22:21:14 -0000 (UTC)
+Received: by mail-la0-f51.google.com with SMTP id es20so1913075lab.38 for <ah@joeschedule.mailgun.org>; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20120113; h=mime-version:date:message-id:subject:from:to:content-type; bh=HcKCDX7QL6mw75sLS//Imb0TvEz4OhfA6yDQ/s2xwYw=; b=F2Ryi87RJxwEcvUsqbIAZynMOKFro2aI3hw5Jfy6jX95HMHsaRQX8GhjAR4xLQE0E5 ZmFY6JV6KOjPUNPMV4W0yE/G2IRnd+7Bmysp6iLV2XMpD5z/nANPWYAXvUTqiFOtOWHt 4tDxABwhd52HnWcfND8fzW7Y2/vrdPrlQLA1noZe0nGv8HF7JUkKoTvDJD89IyIMSQUs uMujoV9W1U/N2Ez8Gl0488jXoRwEOq2xGIcyb4XYxG6ogvwLlrJDvNNJ99fpSgo33mQp uBNtaLq8MAdueT6tUpCjE2m5P+33DwZ0hvYWPfwVO3rX6dTmZxou91AW2M9JY4y/xkMF qSVg==
+Mime-Version: 1.0
+X-Received: by 10.152.116.7 with SMTP id js7mr17247365lab.11.1379888472222; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Received: by 10.114.84.35 with HTTP; Sun, 22 Sep 2013 15:21:12 -0700 (PDT)
+Date: Sun, 22 Sep 2013 18:21:12 -0400
+Subject: t2 joemailweb
+Content-Type: multipart/alternative; boundary="001a11c2672a3771d304e70052ae"
+X-Mailgun-Incoming: Yes
+Content-Type: text/html; charset="UTF-8"
+</HEADER>
+
+<div dir="ltr"><tags><a href="http://www.joeschedule.com">http://www.joeschedule.com</a></tags></div>
+
+</MYMAIL>
+
+
+
+[*] Waiting for messages.To exit press CTRL+C
+[x] Received
+<MYMAIL>

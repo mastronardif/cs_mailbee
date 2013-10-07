@@ -240,3 +240,21 @@ Content-Type: text/html; charset="UTF-8"
 
 
 </MYMAIL>
+2013-10-06 20:50:21,918 [17] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-06 20:50:21,937 [17] DEBUG MvcApplication2.Controllers.HomeController - msg = http://www.nytimes.com/pages/business/index.html
+2013-10-06 20:50:23,939 [17] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-06 20:50:38,723 [11] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-06 20:50:38,724 [11] DEBUG MvcApplication2.Controllers.HomeController - msg = http://www.nytimes.com/pages/business/index.html
+2013-10-06 20:50:38,878 [11] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-06 21:17:07,509 [15] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-06 21:17:07,509 [15] DEBUG MvcApplication2.Controllers.HomeController - msg = ./business/gettweets/
+2013-10-06 21:17:07,567 [15] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-06 21:17:11,778 [19] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-06 21:17:11,779 [19] DEBUG MvcApplication2.Controllers.HomeController - msg = http://www.nytimes.com/pages/business/index.html
+2013-10-06 21:17:11,835 [19] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-06 21:17:36,195 [21] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-06 21:17:36,196 [21] DEBUG MvcApplication2.Controllers.HomeController - msg = ./business/gettweets/tsy
+2013-10-06 21:17:36,306 [21] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-06 21:33:20,723 [24] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-06 21:33:20,723 [24] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2013-10-06 21:33:20,811 [24] DEBUG MvcApplication2.Controllers.HomeController - debug = 
