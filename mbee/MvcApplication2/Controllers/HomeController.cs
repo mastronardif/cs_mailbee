@@ -15,10 +15,14 @@ namespace MvcApplication2.Controllers
     public class HomeController : Controller
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(HomeController));
-        //private static readonly log4net.ILog _logger
-        //    = log4net.LogManager.GetLogger(
-        //            System.Reflection.MethodBase.GetCurrentMethod()
-        //             .DeclaringType);
+
+        [HttpGet]
+        public ActionResult gettweetsfor(string q)
+        {
+            var str = "what you sent";
+            string page = busMail.getTweetPage(q);
+            return Content(string.Format("<hr>{0}</hr>", page));
+        }
 
         public ActionResult wtf(FormCollection collection)
         {

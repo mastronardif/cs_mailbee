@@ -9,6 +9,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <script>
+    function useThisRoot(formName)
+    {
+        var root = window.location.host;
+        console.log(window);
+        return root;
+        /*
+        window.location.host : you'll get sub.domain.com:8080 or sub.domain.com:80
+window.location.hostname : you'll get sub.domain.com
+window.location.protocol : you'll get http:
+window.location.port : you'll get 8080 or 80
+window.location.origin : y
+        */
+
+        //alet('root');
+    }
        function submitOnClick(formName) {
            //alert(formName); return;
 
@@ -110,7 +125,7 @@
 
                   <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">
 				  <a style="color:#0074ee;"
-                      onclick="submitOnClick('./business/gettweets/'+ document.forms['myform']['message'].value);return false;">Get tweets#</a></p>
+                      onclick="submitOnClick(useThisRoot()+'/home/gettweetsfor?q='+ document.forms['myform']['message'].value);return false;">Get tweets#</a></p>
 
 
                   <p style="margin:0px; padding:0 0 6px 0; font:normal 16px Tahoma, Geneva, sans-serif;">

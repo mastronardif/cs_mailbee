@@ -10,43 +10,43 @@ using System.IO;
 
 namespace myjson
 {
-    //public class Product
-    //{
-    //    public string Cell { get; set; }
-    //    public string Row { get; set; }
-    //    public string Value { get; set; }
-    //}
+    public class Product
+    {
+        public string Cell { get; set; }
+        public string Row { get; set; }
+        public string Value { get; set; }
+    }
 
-    //public class CELL
-    //{
-    //    public string Cell { get; set; }
-    //    public string Row { get; set; }
-    //    public string Value { get; set; }
-    //}
+    public class CELL
+    {
+        public string Cell { get; set; }
+        public string Row { get; set; }
+        public string Value { get; set; }
+    }
 
-    //public class RootWbPf
-    //{
-    //    public string name { get; set; }
-    //    public List<CELL> CELL { get; set; }
-    //}
+    public class RootWbPf
+    {
+        public string name { get; set; }
+        public List<CELL> CELL { get; set; }
+    }
 
-    //public class RootObject
-    //{
-    //    public RootWbPf root_wb_pf { get; set; }
-    //}
+    public class RootObject
+    {
+        public RootWbPf root_wb_pf { get; set; }
+    }
 
 
 
     class MyJson
     {
-        //static public string test()
-        //{
-        //    Product product = new Product();
-        //    string json = JsonConvert.SerializeObject(product);
+        static public string test()
+        {
+            Product product = new Product();
+            string json = JsonConvert.SerializeObject(product);
 
-        //    return json;
+            return json;
 
-        //}
+        }
 
         static public string testXMLToJson(string xml)
         {
@@ -63,10 +63,7 @@ namespace myjson
             string strRetval = string.Empty;
             try
             {
-                //var wtf = Newtonsoft.Json.JsonConvert.DeserializeXNode(json);
-                XmlDocument xmlDoc = (XmlDocument)JsonConvert.DeserializeXmlNode(json, "root");
-
-                //XmlDocument xmlDoc = (XmlDocument)Newtonsoft.Json.JsonConvert.DeserializeXmlNode(json);
+                XmlDocument xmlDoc = (XmlDocument)Newtonsoft.Json.JsonConvert.DeserializeXmlNode(json);
 //                XmlTextWriter writer = new XmlTextWriter("json.xml", null);
                 StringWriter sw = new StringWriter();  
                 XmlTextWriter xw = new XmlTextWriter(sw);  

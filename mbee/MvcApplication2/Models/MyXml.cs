@@ -21,6 +21,31 @@ namespace myxslxml
             myXslTransform.Transform(fnXml, fnOut); 
         }
 
+        static public void my_XslXmlTransformToString(string strXml, string strXslt, ref string results)
+        {
+            XslCompiledTransform myXslTransform;
+            myXslTransform = new XslCompiledTransform();
+            //myXslTransform.Load(fnXsl);
+
+            myXslTransform.Load(new XmlTextReader(new StringReader(strXslt)));
+
+            using (var sw = new StringWriter())
+            {
+                using (var xw = XmlWriter.Create(sw))
+                {
+                    // Build Xml with xw.
+                    //myXslTransform.Transform(fnXml, xw);           
+                    using (var xwi = XmlReader.Create(new StringReader(strXml)))
+                    {
+                        myXslTransform.Transform(xwi, xw);
+                    }
+
+                    results = sw.ToString();
+                }
+            }
+        }
+
+
         static public T Deserialize<T>(string xml)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));

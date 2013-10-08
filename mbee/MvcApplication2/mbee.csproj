@@ -141,10 +141,11 @@
     <Compile Include="Models\MyBitmap.cs" />
     <Compile Include="Models\MyJson.cs" />
     <Compile Include="Models\MyRequest.cs" />
+    <Compile Include="Models\MyTwitter.cs" />
     <Compile Include="Models\MyXml.cs" />
-    <Compile Include="Models\Root.cs" />
     <Compile Include="Models\TestDataClass1.cs" />
     <Compile Include="MyHelpers\Class1.cs" />
+    <Compile Include="MyHelpers\MyHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

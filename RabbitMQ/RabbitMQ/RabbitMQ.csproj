@@ -67,6 +67,7 @@
     <Compile Include="Models\MyBrowser.cs" />
     <Compile Include="Models\MyMail.cs" />
     <Compile Include="Models\MyRabbitMQ.cs" />
+    <Compile Include="Models\MyTwitter.cs" />
     <Compile Include="Models\TestDataClass1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
