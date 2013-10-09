@@ -348,3 +348,8 @@ Content-Type: text/html; charset="UTF-8"
 2013-10-08 21:43:51,877 [13] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
 2013-10-08 21:43:51,877 [13] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=ijijij
 2013-10-08 21:47:26,860 [13] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 23:04:23,934 [44] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 23:04:23,975 [44] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=fuck
+2013-10-08 23:05:10,482 [47] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 23:05:10,800 [47] DEBUG MvcApplication2.Controllers.HomeController - msg = http://localhost:57987/home/gettweetsfor?q=fuck
+2013-10-08 23:05:22,716 [47] DEBUG MvcApplication2.Controllers.HomeController - debug = 
