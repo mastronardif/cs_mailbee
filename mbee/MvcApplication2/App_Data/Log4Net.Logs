@@ -312,3 +312,39 @@ Content-Type: text/html; charset="UTF-8"
 2013-10-07 22:22:16,867 [53] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
 2013-10-07 22:22:16,868 [53] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=jump
 2013-10-07 22:22:16,923 [53] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 20:36:28,405 [11] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 20:36:28,444 [11] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=
+2013-10-08 20:36:28,569 [11] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 20:48:43,456 [17] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 20:48:43,457 [17] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=
+2013-10-08 20:48:43,511 [17] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 20:58:29,843 [27] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 20:58:29,844 [27] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=
+2013-10-08 20:58:29,898 [27] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 21:00:19,449 [27] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:00:19,449 [27] DEBUG MvcApplication2.Controllers.HomeController - msg = http://localhost:57987/home/gettweetsfor?q=
+2013-10-08 21:00:19,507 [27] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 21:02:41,990 [9] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:02:41,991 [9] DEBUG MvcApplication2.Controllers.HomeController - msg = http://localhost:57987/home/gettweetsfor?q=ass
+2013-10-08 21:02:42,044 [9] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 21:04:53,541 [29] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:04:53,542 [29] DEBUG MvcApplication2.Controllers.HomeController - msg = http://localhost:57987/home/gettweetsfor
+2013-10-08 21:04:53,598 [29] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 21:06:45,519 [34] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:06:45,520 [34] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=cheeks
+2013-10-08 21:06:45,577 [34] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 21:10:47,684 [35] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:10:48,284 [35] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=assholes
+2013-10-08 21:23:45,483 [35] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 21:28:47,664 [20] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:28:47,673 [20] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=assholes
+2013-10-08 21:29:31,468 [33] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:29:31,468 [33] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=ass
+2013-10-08 21:30:56,136 [6] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:30:56,147 [6] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=ass
+2013-10-08 21:33:18,237 [6] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:33:18,246 [6] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=lool
+2013-10-08 21:43:24,437 [6] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2013-10-08 21:43:51,877 [13] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2013-10-08 21:43:51,877 [13] DEBUG MvcApplication2.Controllers.HomeController - msg = localhost:57987/home/gettweetsfor?q=ijijij
+2013-10-08 21:47:26,860 [13] DEBUG MvcApplication2.Controllers.HomeController - debug = 

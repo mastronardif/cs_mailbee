@@ -19,9 +19,16 @@ namespace MvcApplication2.Controllers
         [HttpGet]
         public ActionResult gettweetsfor(string q)
         {
-            var str = "what you sent";
-            string page = busMail.getTweetPage(q);
-            return Content(string.Format("<hr>{0}</hr>", page));
+            try
+            {
+                var str = "what you sent";
+                string page = busMail.getTweetPage(q);
+                return Content(string.Format("<hr>{0}</hr>", page));
+            }
+            catch (Exception ex)
+            {
+                return Content(string.Format("<html>wtf: {0}</html>", ex.Message));
+            }
         }
 
         public ActionResult wtf(FormCollection collection)
@@ -81,6 +88,11 @@ namespace MvcApplication2.Controllers
                         break;
                     case "send to my_gmail":
                         string tagValue = collection["message"];
+
+                        Uri baseUri = new Uri(tagValue);
+                        Uri myUri = new Uri(baseUri,tagValue);
+                        tagValue = myUri.ToString();
+
                         debug = busMail.sendToGmail(tagValue);
                         _log.Debug("debug = " + debug);
                         break;
