@@ -33,9 +33,10 @@ namespace MvcApplication2.Business
             string tweetHash = tag ?? "Government%20Shutdown";
 
             var resp = twh.GetTweets(tweetHash);
+            //strxml += "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>";
             var strxml = myjson.MyJson.testJsonToXML(resp);
 
-            //myhelpers.MyHelpers.hlp_WriteToFile(".\\wtf.xml", strxml);
+            myhelpers.MyHelpers.hlp_WriteToFile(".\\wtf.xml", strxml);
 
 
             string strXslt = string.Empty;

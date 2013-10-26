@@ -108,11 +108,23 @@ namespace mymailgun
 
             //fm 9/22/13 string body = collection["body-html"];
             string body = collection["body-plain"];
-            if (body == null)
+
+
+            // FM 10/25/13
+            // Cheesy fix for now.  Find the format to get the tags.  The default and 
+            // better format is 
+            Dictionary<string, string> tags = mybrowser.MyBrowser.getUniqueTagUrls(body);
+            if (tags.Count == 0)
             {
                 body = collection["body-html"];
-                //fm 9/22/13 body = collection["body-plain"];
-            }           
+            }
+            // FM 10/25/13
+
+            //commented out 10/25/13 if (body == null)
+            //{
+            //    body = collection["body-html"];
+            //    //fm 9/22/13 body = collection["body-plain"];
+            //}           
             retval +=  body;
 
             retval +=  "\n</MYMAIL>\n";
