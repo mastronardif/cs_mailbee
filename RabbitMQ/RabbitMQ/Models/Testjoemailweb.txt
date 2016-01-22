@@ -13,7 +13,11 @@ Content-Type: text/html; charset="UTF-8"
 </HEADER>
 
 <tags>
- http://nytimes.com
+http://joeschedule.com/cgi-bin/cgi/ngfop/isch3b.pl?id=Visitor&pw=visitor&htmlname=isch3b.htm&name=sch84536557.xml
+</tags>
+
+<tags>
+aHR0cDovL2pvZXNjaGVkdWxlLmNvbS9jZ2ktYmluL2NnaS9uZ2ZvcC9pc2NoM2IucGw/aWQ9VmlzaXRvciZwdz12aXNpdG9yJmh0bWxuYW1lPWlzY2gzYi5odG0mbmFtZT1zY2g4NDUzNjU1Ny54bWw=
 </tags>
 
 <tags>

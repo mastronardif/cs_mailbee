@@ -41,6 +41,7 @@ namespace RabbitMQ.Models
            
         static public Dictionary<string, string> getUniqueTagUrls(string src)
         {
+            Console.WriteLine("\t *** FM getUniqueTagUrls =  " + src);
             //List<string> tags = getTags(src);
             Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
@@ -49,10 +50,13 @@ namespace RabbitMQ.Models
                  
             var links = doc.DocumentNode.SelectNodes("//tags");
             if (links == null)
+            {
                 return dictionary;
-
+            }
+            Console.WriteLine("\t *** FM line 54 ");
             foreach (var ttt in links)
             {
+                Console.WriteLine("\t *** FM line 59 ");
                 string tag = ttt.OuterHtml;
                 tag = tag.ToString().Replace("\n", "");
 
@@ -72,6 +76,17 @@ namespace RabbitMQ.Models
                         //        sss = ttt.Attributes[0].Name;
                         //    }
                         //}
+
+                // FM 1/21/16
+                Console.WriteLine("\t *** FM url =  " + url);
+                if (IsBase64(url))
+                {
+                    // Decode
+                    var base64EncodedBytes = System.Convert.FromBase64String(url);
+                    url = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+                    Console.WriteLine("\t ***** FM Decoded = " + tag);
+                }
+                // FM 1/21/16
 
                         if (!dictionary.ContainsKey(url))
                         {
@@ -97,6 +112,8 @@ namespace RabbitMQ.Models
         {
             Program._log.Debug(src);
             string retval = string.Empty;
+            string strEncoded;
+            string urlEmailSafe = string.Empty;
             var webGet = new HtmlWeb();
             HtmlDocument document = new HtmlDocument();
             const int kMax = 42;
@@ -150,15 +167,67 @@ namespace RabbitMQ.Models
                     if (urlNext != null && urlNext.ToString().Contains("http"))
                     {
                         //Console.WriteLine(link.Attributes["href"].Value);
+                        urlEmailSafe = urlNext.ToString();
 
                         int iMax = (link.InnerText.Length > kMax) ? kMax : link.InnerText.Length;
                         string elisp = (link.InnerText.Length > kMax) ? "..." : "";
 
+                        // FM 1/21/16 begin
+                        // if url GET has args i.e. bbb=3&ccc=5
+                        {
+                            if (urlNext.Query.Length > 0)
+                            {
+                                Console.WriteLine("\t ***** FM urlNext BEGIN = " + urlNext.Query);
+
+                                
+                                strEncoded = urlNext.ToString();
+
+                                {   // test for exception.
+                                    // Decode
+                                    if (IsBase64(strEncoded)) 
+                                    {
+
+                                    var base64EncodedBytes22 = System.Convert.FromBase64String(strEncoded);
+                                    strEncoded = System.Text.Encoding.UTF8.GetString(base64EncodedBytes22);
+                                    Console.WriteLine("\t ***** FM Decode = " + strEncoded);         
+                                    }
+                                }
+
+                                // Encode
+                                var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(strEncoded);
+                                strEncoded = System.Convert.ToBase64String(plainTextBytes);
+                                urlEmailSafe = strEncoded;
+                                Console.WriteLine("\t ***** FM Encode = " + strEncoded);
+
+
+                                // Decode
+                                var base64EncodedBytes = System.Convert.FromBase64String(strEncoded);
+                                strEncoded = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+                                Console.WriteLine("\t ***** FM Decode = " + strEncoded);
+
+                                Console.WriteLine("\t ***** FM urlNext " + "END");
+
+
+
+                            }
+                            Console.WriteLine("\t ***** FM urlNext = " + urlNext.Query);
+                        }
+
+
+                        // if encoded decode call str = fixString();
+                        Console.WriteLine("urlNext = " + urlNext);
+                        Program._log.Debug("FM line 79, theUrl = " + urlNext);
+                        // 64bitencode urlNext becuase when  <a href="mailto:ah@joeschedule.mailgun.org ?subject &body=___
+                        // extra & args get ignored in the email uri and the if the http url has them the get request will not see them and not work.
+                        // FM 1/21/16 begin
+
+
                         string subject = link.InnerText.ToString().Substring(0, iMax) + elisp + " joemailweb";
                         string replacement = @"mailto:" + emailRoot + "?subject=" + subject +
                                              @"&body=%26lttags img=keep%26gt" +
-                                             @"<tags img=keep>" + urlNext +
-                                             //@"<tags img=keep>" + link.Attributes["href"].Value +
+                                             @"<tags img=keep>" + urlEmailSafe +
+//                                             @"<tags img=keep>" + urlNext +
+                            //@"<tags img=keep>" + link.Attributes["href"].Value +
                                              @"</tags> %26lt%3B%2Ftags%26gt";
                         link.Attributes["href"].Value = replacement;
                     }
@@ -176,7 +245,7 @@ namespace RabbitMQ.Models
 
 
 
-        static public string NormalizeHttpToEmail33(string url, string src, string emailRoot)
+        static private string NormalizeHttpToEmail33_REMOVE_ME(string url, string src, string emailRoot)
         {
             Program._log.Debug(src);
             string retval = string.Empty;
@@ -243,7 +312,7 @@ namespace RabbitMQ.Models
 
 
 
-        static public string NormalizeHttpToEmail22(string src, string emailRoot)
+        static private string NormalizeHttpToEmail22_REMOVE_ME(string src, string emailRoot)
         {
             Program._log.Debug(src);
             string retval = string.Empty;
@@ -337,8 +406,26 @@ namespace RabbitMQ.Models
             //html.ToString();
         }
 
+        public static bool IsBase64(string base64String)
+        {
+            // Credit: oybek http://stackoverflow.com/users/794764/oybek
+            if (base64String == null || base64String.Length == 0 || base64String.Length % 4 != 0
+               || base64String.Contains(" ") || base64String.Contains("\t") || base64String.Contains("\r") || base64String.Contains("\n"))
+                ; // wtf  return false;
 
-        static public string REMOVME______NormalizeHttpToEmail(string url, string src, string emailRoot)
+            try
+            {
+                Convert.FromBase64String(base64String);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                // Handle the exception
+            }
+            return false;
+        }
+
+        static private string NormalizeHttpToEmail_REMOVE_ME(string url, string src, string emailRoot)
         {
             return NormalizeHttpToEmail(url, src, emailRoot, false);
             //return NormalizeHttpToEmail33(url, src, emailRoot);

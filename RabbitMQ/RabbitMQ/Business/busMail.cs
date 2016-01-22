@@ -73,6 +73,12 @@ namespace RabbitMQ.Business
                     foreach (var tag in tags)
                     {
                         string theUrl = tag.Key;
+
+                        // FM 1/21/15
+                        // if encoded decode call str = fixString();
+                        Console.WriteLine("theUrl = " + theUrl);
+                        Program._log.Debug("FM line 79, theUrl = " + theUrl);
+                        // FM 1/21/15
                         // get value
                         // get attribs
                         Uri url = new System.Uri(theUrl);

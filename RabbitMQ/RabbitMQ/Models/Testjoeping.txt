@@ -11,6 +11,10 @@ MIME-Version: 1.0
 Content-Type: text/html; charset="UTF-8"
 
 </HEADER>
+<br/>
+<a href="https://www.google.com/url?rct=j&amp;sa=t&amp;url=http://www.pbs.org/newshour/bb/author-explores-life-on-the-expanding-autism-spectrum/&amp;ct=ga&amp;cd=CAEYACoUMTcxMzM5NDI3NTc1ODYxNDMzNjgyGjlkYTBhYzQxMTAwNzhiNzQ6Y29tOmVuOlVT&amp;usg=AFQjCNF_g1b4U8LjLRx_ofLncAPp6zMgTw" style="color:#427fed;display:inline;text-decoration:none;font-size:16px;line-height:20px" target="_blank"> <span>Author explores life on the expanding <b>autism</b> spectrum</span> </a>
+<br/>
+
 
 <div class="yom-mod yom-art-content " id="mediablogbody"><div class="bd" id="yui_3_8_1_21_1371936724100_437"><!-- google_ad_section_start -->
 <p class="first"><span class="yom-figure yom-fig-right" style="width:190px;"><img src="http://l2.yimg.com/bt/api/res/1.2/r6y_w09UYJzPPkHmRW6XMw--/YXBwaWQ9eW5ld3M7cT04NTt3PTE5MA--/http://media.zenfs.com/en-US/blogs/partner/farmers_market_produce.jpg" alt="farmers market" height="135" width="190" border="0" title="farmers market"><span class="legend">farmers market</span></span>

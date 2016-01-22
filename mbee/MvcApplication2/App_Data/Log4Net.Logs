@@ -356,3 +356,36 @@ Content-Type: text/html; charset="UTF-8"
 2013-10-24 19:22:19,746 [5] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
 2013-10-24 19:22:19,756 [5] DEBUG MvcApplication2.Controllers.HomeController - msg = http://localhost:57987/home/gettweetsfor?q=software
 2013-10-24 19:22:33,980 [5] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2016-01-20 11:30:53,517 [5] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 11:30:53,580 [5] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 11:31:28,999 [5] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 11:31:29,003 [5] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 11:47:01,289 [13] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2016-01-20 11:47:01,299 [13] DEBUG MvcApplication2.Controllers.HomeController - msg = https://www.google.com/url?rct=j&sa=t&url=https://www.geisinger.org/for-researchers/institutes-and-departments/pages/autism-and-developmental-medicine-institute.html&ct=ga&cd=CAEYACoUMTcxMzM5NDI3NTc1ODYxNDMzNjgyGjlkYTBhYzQxMTAwNzhiNzQ6Y29tOmVuOlVT&usg=AFQjCNFl5MTwzML8CyaIdo0ciInroEhB2g>
+
+2016-01-20 11:47:04,194 [13] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2016-01-20 13:12:15,914 [91] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 13:12:15,922 [91] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 13:13:21,394 [94] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 13:13:21,412 [94] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 13:14:48,016 [105] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 13:14:48,016 [105] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 13:21:29,368 [94] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 13:21:29,418 [94] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 13:26:41,253 [112] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2016-01-20 13:26:43,326 [112] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 13:28:13,682 [112] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2016-01-20 13:30:06,926 [121] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2016-01-20 13:30:06,933 [121] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 13:30:10,674 [121] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2016-01-20 21:20:22,330 [8] DEBUG MvcApplication2.Controllers.HomeController - op  = send to my_gmail
+2016-01-20 21:20:22,357 [8] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 21:20:23,152 [8] DEBUG MvcApplication2.Controllers.HomeController - debug = 
+2016-01-20 21:34:38,447 [8] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 21:34:38,484 [8] DEBUG MvcApplication2.Controllers.HomeController - msg = http://drudgereport.com
+2016-01-20 21:36:03,645 [8] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 21:36:03,650 [8] DEBUG MvcApplication2.Controllers.HomeController - msg = what the rabit  http://drudgereport.com is going on
+2016-01-20 21:38:50,272 [5] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 21:38:50,279 [5] DEBUG MvcApplication2.Controllers.HomeController - msg = what the rabit  http://drudgereport.com is going on
+2016-01-20 21:39:34,440 [6] DEBUG MvcApplication2.Controllers.HomeController - op  = publish
+2016-01-20 21:39:34,446 [6] DEBUG MvcApplication2.Controllers.HomeController - msg = what the rabit  http://drudgereport.com is going on
