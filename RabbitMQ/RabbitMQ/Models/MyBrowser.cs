@@ -182,35 +182,35 @@ namespace RabbitMQ.Models
                                 
                                 strEncoded = urlNext.ToString();
 
-                                {   // test for exception.
-                                    // Decode
-                                    if (IsBase64(strEncoded)) 
-                                    {
+                                //{   // test for exception.
+                                //    // Decode
+                                //    if (IsBase64(strEncoded)) 
+                                //    {
 
-                                    var base64EncodedBytes22 = System.Convert.FromBase64String(strEncoded);
-                                    strEncoded = System.Text.Encoding.UTF8.GetString(base64EncodedBytes22);
-                                    Console.WriteLine("\t ***** FM Decode = " + strEncoded);         
-                                    }
-                                }
+                                //    var base64EncodedBytes22 = System.Convert.FromBase64String(strEncoded);
+                                //    strEncoded = System.Text.Encoding.UTF8.GetString(base64EncodedBytes22);
+                                //    Console.WriteLine("\t ***** FM Decode = " + strEncoded);         
+                                //    }
+                                //}
 
                                 // Encode
                                 var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(strEncoded);
                                 strEncoded = System.Convert.ToBase64String(plainTextBytes);
                                 urlEmailSafe = strEncoded;
-                                Console.WriteLine("\t ***** FM Encode = " + strEncoded);
+                                //Console.WriteLine("\t ***** FM Encode = " + strEncoded);
 
 
                                 // Decode
-                                var base64EncodedBytes = System.Convert.FromBase64String(strEncoded);
-                                strEncoded = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
-                                Console.WriteLine("\t ***** FM Decode = " + strEncoded);
+                                //var base64EncodedBytes = System.Convert.FromBase64String(strEncoded);
+                                //strEncoded = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+                                //Console.WriteLine("\t ***** FM Decode = " + strEncoded);
 
-                                Console.WriteLine("\t ***** FM urlNext " + "END");
+                                //Console.WriteLine("\t ***** FM urlNext " + "END");
 
 
 
                             }
-                            Console.WriteLine("\t ***** FM urlNext = " + urlNext.Query);
+                            //Console.WriteLine("\t ***** FM urlNext = " + urlNext.Query);
                         }
 
 
@@ -228,7 +228,7 @@ namespace RabbitMQ.Models
                                              @"<tags img=keep>" + urlEmailSafe +
 //                                             @"<tags img=keep>" + urlNext +
                             //@"<tags img=keep>" + link.Attributes["href"].Value +
-                                             @"</tags> %26lt%3B%2Ftags%26gt";
+                                             @"</tags> %26lt%3B%2Ftags%26gt fm was here";
                         link.Attributes["href"].Value = replacement;
                     }
                 }
